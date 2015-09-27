@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		953FDF3A1BB80CF600D2C9DA /* BusLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF381BB80CF600D2C9DA /* BusLineViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		953FDF3B1BB80CF600D2C9DA /* BusLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF391BB80CF600D2C9DA /* BusLineViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; settings = {ASSET_TAGS = (); }; };
+		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; settings = {ASSET_TAGS = (); }; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
 		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
@@ -17,6 +17,8 @@
 		95A4CBEF1B5A852B002FB3E9 /* SaldoEMTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBEE1B5A852B002FB3E9 /* SaldoEMTTests.swift */; };
 		95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
+		95D4356C1BB8458400745E64 /* BusLineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		95D435711BB846DC00745E64 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D435701BB846DC00745E64 /* BusLine.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		953FDF381BB80CF600D2C9DA /* BusLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineViewController.swift; sourceTree = "<group>"; };
-		953FDF391BB80CF600D2C9DA /* BusLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineViewController.xib; sourceTree = "<group>"; };
+		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
+		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
 		95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaldoEMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBD71B5A852A002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		95A4CBEE1B5A852B002FB3E9 /* SaldoEMTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldoEMTTests.swift; sourceTree = "<group>"; };
 		95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
+		95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineCollectionViewController.swift; sourceTree = "<group>"; };
+		95D435701BB846DC00745E64 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,8 @@
 		953FDF2D1BB8072F00D2C9DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				953FDF391BB80CF600D2C9DA /* BusLineViewController.xib */,
+				953FDF461BB812B500D2C9DA /* BusLineView.swift */,
+				953FDF441BB8126900D2C9DA /* BusLineView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -76,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
-				953FDF381BB80CF600D2C9DA /* BusLineViewController.swift */,
+				95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */,
 				95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				95D153D21B6A923C00866B59 /* Extensions */,
+				95D4356E1BB846CF00745E64 /* Logic */,
 				953FDF421BB80EB400D2C9DA /* Presentation */,
 				95BF51E71B5B97FA00E4259B /* Resources */,
 				95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */,
@@ -162,6 +168,22 @@
 				95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95D4356E1BB846CF00745E64 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				95D4356F1BB846D300745E64 /* Model */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		95D4356F1BB846D300745E64 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95D435701BB846DC00745E64 /* BusLine.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,8 +269,8 @@
 			files = (
 				95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */,
 				95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */,
+				953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
-				953FDF3B1BB80CF600D2C9DA /* BusLineViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
-				953FDF3A1BB80CF600D2C9DA /* BusLineViewController.swift in Sources */,
+				95D4356C1BB8458400745E64 /* BusLineCollectionViewController.swift in Sources */,
+				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
+				95D435711BB846DC00745E64 /* BusLine.swift in Sources */,
 				95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 			);

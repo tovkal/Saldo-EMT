@@ -30,10 +30,11 @@
                                     <rect key="frame" x="-2" y="490" width="404" height="80"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlg-7O-HpL">
-                                <rect key="frame" x="509" y="551" width="71" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlg-7O-HpL">
+                                <rect key="frame" x="509" y="550" width="71" height="50"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="Khd-e2-TpU"/>
                                     <constraint firstAttribute="height" constant="50" id="UFI-JH-EWF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -44,10 +45,11 @@
                                     <rect key="frame" x="-13" y="508" width="125" height="46"/>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW4-dl-NtV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW4-dl-NtV">
                                 <rect key="frame" x="20" y="550" width="82" height="50"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="8lu-rD-T2l"/>
                                     <constraint firstAttribute="height" constant="50" id="P2M-1F-tFL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -158,6 +160,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHX-5Z-h4t">
+                                <rect key="frame" x="20" y="236" width="560" height="159"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.37468443899999998" green="0.98704040049999997" blue="0.97885426760000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="qjw-IG-afC" kind="embed" id="q9R-mB-Mh5"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.32549019607843138" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
@@ -168,6 +178,7 @@
                             <constraint firstItem="axf-xd-CQI" firstAttribute="top" secondItem="riz-Ho-yCY" secondAttribute="bottom" constant="8" id="8Vs-R7-cTH"/>
                             <constraint firstItem="axf-xd-CQI" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="75" id="Abw-k9-K6K"/>
                             <constraint firstItem="mlc-qT-Ddr" firstAttribute="top" secondItem="AZC-KR-Cub" secondAttribute="bottom" constant="20" id="B1g-JW-jVS"/>
+                            <constraint firstItem="yHX-5Z-h4t" firstAttribute="leading" secondItem="CW4-dl-NtV" secondAttribute="leading" id="B2o-rg-hn2"/>
                             <constraint firstItem="oRH-iv-HhN" firstAttribute="top" secondItem="AZC-KR-Cub" secondAttribute="bottom" constant="20" id="DRj-ac-Bne"/>
                             <constraint firstItem="axf-xd-CQI" firstAttribute="leading" secondItem="2TK-hC-oU3" secondAttribute="trailing" constant="20" id="HBM-Wf-gqJ"/>
                             <constraint firstItem="riz-Ho-yCY" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="75" id="Qw8-yx-YmZ"/>
@@ -179,11 +190,14 @@
                             <constraint firstItem="8cP-w7-dTC" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" multiplier="0.4" id="YZv-aH-6AD"/>
                             <constraint firstItem="riz-Ho-yCY" firstAttribute="top" secondItem="mlc-qT-Ddr" secondAttribute="bottom" constant="9" id="ZSL-TI-bhK"/>
                             <constraint firstItem="2Pw-59-1Rd" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="amn-SW-2BE"/>
+                            <constraint firstItem="yHX-5Z-h4t" firstAttribute="top" secondItem="axf-xd-CQI" secondAttribute="bottom" constant="22" id="bGR-Xt-kE1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="CW4-dl-NtV" secondAttribute="leading" id="bf7-Y6-K6t"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8cP-w7-dTC" secondAttribute="bottom" id="cGt-8T-GZN"/>
                             <constraint firstItem="CW4-dl-NtV" firstAttribute="top" secondItem="2Pw-59-1Rd" secondAttribute="bottom" constant="-50" id="ljW-Rs-qPf"/>
+                            <constraint firstItem="yHX-5Z-h4t" firstAttribute="trailing" secondItem="vlg-7O-HpL" secondAttribute="trailing" id="nDr-L7-euM"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="2Pw-59-1Rd" secondAttribute="bottom" id="uHb-QY-evL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="AZC-KR-Cub" secondAttribute="leading" id="vpc-9G-YVm"/>
+                            <constraint firstItem="8cP-w7-dTC" firstAttribute="top" secondItem="yHX-5Z-h4t" secondAttribute="bottom" constant="72" id="wz4-Dh-x38"/>
                             <constraint firstItem="2Pw-59-1Rd" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="xZ7-hj-dHF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vlg-7O-HpL" secondAttribute="trailing" id="xto-0q-BML"/>
                             <constraint firstItem="mlc-qT-Ddr" firstAttribute="leading" secondItem="oRH-iv-HhN" secondAttribute="trailing" constant="20" id="zMU-Wv-K1e"/>
@@ -314,6 +328,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xco-e0-m1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1352" y="462"/>
+        </scene>
+        <!--Bus Line Collection View Controller-->
+        <scene sceneID="C05-Vq-bUi">
+            <objects>
+                <collectionViewController id="qjw-IG-afC" customClass="BusLineCollectionViewController" customModule="SaldoEMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3Md-Od-ndP">
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="159"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="fOr-jf-4d3">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="BusLine" id="bKN-lu-G9n" customClass="BusLineView" customModule="SaldoEMT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="qjw-IG-afC" id="mei-76-8kH"/>
+                            <outlet property="delegate" destination="qjw-IG-afC" id="bzP-eN-BN1"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pm1-bR-VYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="1007"/>
         </scene>
     </scenes>
     <resources>

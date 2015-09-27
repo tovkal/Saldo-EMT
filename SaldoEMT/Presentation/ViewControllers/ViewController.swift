@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let viewModel = SaldoViewModel()
-
     @IBOutlet weak var remainingAmount: UILabel!
     @IBOutlet weak var tripsMade: UILabel!
     @IBOutlet weak var tripsRemaining: UILabel!
@@ -29,7 +27,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addTrip(sender: UIButton) {
-        viewModel.addTrip()
         updateLabels()
     }
     

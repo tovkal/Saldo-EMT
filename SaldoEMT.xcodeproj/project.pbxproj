@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		953FDF3A1BB80CF600D2C9DA /* BusLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF381BB80CF600D2C9DA /* BusLineViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		953FDF3B1BB80CF600D2C9DA /* BusLineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF391BB80CF600D2C9DA /* BusLineViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
+		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
+		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
+		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
+		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
+		95A4CBEF1B5A852B002FB3E9 /* SaldoEMTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBEE1B5A852B002FB3E9 /* SaldoEMTTests.swift */; };
+		95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */; };
+		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95A4CBE91B5A852B002FB3E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A4CBCB1B5A852A002FB3E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95A4CBD21B5A852A002FB3E9;
+			remoteInfo = SaldoEMT;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		953FDF381BB80CF600D2C9DA /* BusLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineViewController.swift; sourceTree = "<group>"; };
+		953FDF391BB80CF600D2C9DA /* BusLineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineViewController.xib; sourceTree = "<group>"; };
+		95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaldoEMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A4CBD71B5A852A002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95A4CBDD1B5A852A002FB3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		95A4CBE21B5A852A002FB3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A4CBED1B5A852B002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A4CBEE1B5A852B002FB3E9 /* SaldoEMTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldoEMTTests.swift; sourceTree = "<group>"; };
+		95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
+		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95A4CBD01B5A852A002FB3E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A4CBE51B5A852B002FB3E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		953FDF2D1BB8072F00D2C9DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				953FDF391BB80CF600D2C9DA /* BusLineViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		953FDF411BB80EA700D2C9DA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
+				953FDF381BB80CF600D2C9DA /* BusLineViewController.swift */,
+				95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		953FDF421BB80EB400D2C9DA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				953FDF411BB80EA700D2C9DA /* ViewControllers */,
+				953FDF2D1BB8072F00D2C9DA /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		95A4CBCA1B5A852A002FB3E9 = {
+			isa = PBXGroup;
+			children = (
+				95A4CBD41B5A852A002FB3E9 /* Products */,
+				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
+				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
+			);
+			sourceTree = "<group>";
+		};
+		95A4CBD41B5A852A002FB3E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */,
+				95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95A4CBD51B5A852A002FB3E9 /* SaldoEMT */ = {
+			isa = PBXGroup;
+			children = (
+				95D153D21B6A923C00866B59 /* Extensions */,
+				953FDF421BB80EB400D2C9DA /* Presentation */,
+				95BF51E71B5B97FA00E4259B /* Resources */,
+				95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */,
+			);
+			path = SaldoEMT;
+			sourceTree = "<group>";
+		};
+		95A4CBD61B5A852A002FB3E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95A4CBD71B5A852A002FB3E9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */ = {
+			isa = PBXGroup;
+			children = (
+				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
+				95A4CBEE1B5A852B002FB3E9 /* SaldoEMTTests.swift */,
+			);
+			path = SaldoEMTTests;
+			sourceTree = "<group>";
+		};
+		95A4CBEC1B5A852B002FB3E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				95A4CBED1B5A852B002FB3E9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		95BF51E71B5B97FA00E4259B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95A4CBD61B5A852A002FB3E9 /* Supporting Files */,
+				95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */,
+				95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */,
+				95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95D153D21B6A923C00866B59 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95A4CBD21B5A852A002FB3E9 /* SaldoEMT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95A4CBF21B5A852B002FB3E9 /* Build configuration list for PBXNativeTarget "SaldoEMT" */;
+			buildPhases = (
+				95A4CBCF1B5A852A002FB3E9 /* Sources */,
+				95A4CBD01B5A852A002FB3E9 /* Frameworks */,
+				95A4CBD11B5A852A002FB3E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaldoEMT;
+			productName = SaldoEMT;
+			productReference = 95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95A4CBE71B5A852B002FB3E9 /* SaldoEMTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95A4CBF51B5A852B002FB3E9 /* Build configuration list for PBXNativeTarget "SaldoEMTTests" */;
+			buildPhases = (
+				95A4CBE41B5A852B002FB3E9 /* Sources */,
+				95A4CBE51B5A852B002FB3E9 /* Frameworks */,
+				95A4CBE61B5A852B002FB3E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95A4CBEA1B5A852B002FB3E9 /* PBXTargetDependency */,
+			);
+			name = SaldoEMTTests;
+			productName = SaldoEMTTests;
+			productReference = 95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95A4CBCB1B5A852A002FB3E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = tovkal;
+				TargetAttributes = {
+					95A4CBD21B5A852A002FB3E9 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					95A4CBE71B5A852B002FB3E9 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 95A4CBD21B5A852A002FB3E9;
+					};
+				};
+			};
+			buildConfigurationList = 95A4CBCE1B5A852A002FB3E9 /* Build configuration list for PBXProject "SaldoEMT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95A4CBCA1B5A852A002FB3E9;
+			productRefGroup = 95A4CBD41B5A852A002FB3E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95A4CBD21B5A852A002FB3E9 /* SaldoEMT */,
+				95A4CBE71B5A852B002FB3E9 /* SaldoEMTTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95A4CBD11B5A852A002FB3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */,
+				95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */,
+				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
+				953FDF3B1BB80CF600D2C9DA /* BusLineViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A4CBE61B5A852B002FB3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95A4CBCF1B5A852A002FB3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
+				953FDF3A1BB80CF600D2C9DA /* BusLineViewController.swift in Sources */,
+				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
+				95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */,
+				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95A4CBE41B5A852B002FB3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95A4CBEF1B5A852B002FB3E9 /* SaldoEMTTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95A4CBEA1B5A852B002FB3E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95A4CBD21B5A852A002FB3E9 /* SaldoEMT */;
+			targetProxy = 95A4CBE91B5A852B002FB3E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A4CBDD1B5A852A002FB3E9 /* Base */,
+			);
+			name = Main.storyboard;
+			path = .;
+			sourceTree = "<group>";
+		};
+		95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95A4CBE21B5A852A002FB3E9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95A4CBF01B5A852B002FB3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95A4CBF11B5A852B002FB3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95A4CBF31B5A852B002FB3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		95A4CBF41B5A852B002FB3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		95A4CBF61B5A852B002FB3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SaldoEMTTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaldoEMT.app/SaldoEMT";
+			};
+			name = Debug;
+		};
+		95A4CBF71B5A852B002FB3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SaldoEMTTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaldoEMT.app/SaldoEMT";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95A4CBCE1B5A852A002FB3E9 /* Build configuration list for PBXProject "SaldoEMT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95A4CBF01B5A852B002FB3E9 /* Debug */,
+				95A4CBF11B5A852B002FB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95A4CBF21B5A852B002FB3E9 /* Build configuration list for PBXNativeTarget "SaldoEMT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95A4CBF31B5A852B002FB3E9 /* Debug */,
+				95A4CBF41B5A852B002FB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95A4CBF51B5A852B002FB3E9 /* Build configuration list for PBXNativeTarget "SaldoEMTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95A4CBF61B5A852B002FB3E9 /* Debug */,
+				95A4CBF71B5A852B002FB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95A4CBCB1B5A852A002FB3E9 /* Project object */;
+}

@@ -44,6 +44,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="-13" y="508" width="125" height="46"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="Vyn-bm-Okm" kind="show" id="xdM-Dt-XWg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW4-dl-NtV">
                                 <rect key="frame" x="20" y="550" width="82" height="50"/>

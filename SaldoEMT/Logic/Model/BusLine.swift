@@ -9,11 +9,15 @@
 import UIKit
 
 struct BusLine {
-    let lineNumber: String
-    let lineColor: UIColor
+    let number: String
+    let color: UIColor
+    let name: String
+    let fares: [Fare]
     
-    init(number: String, color: UIColor) {
-        lineNumber = number
-        lineColor = color
+    init(number: String, color: UIColor, name: String, fares: [Fare]) {
+        self.number = number
+        self.color = color
+        self.name = name
+        self.fares = fares
     }
 }

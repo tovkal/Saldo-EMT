@@ -1,0 +1,1980 @@
+{
+    "lines": [
+        {
+            "1": {
+                "color": "44743F",
+                "name": "Aeroport - Ciutat - Port",
+                "fares": [
+                    {
+                        "name": "Carnet Gran y familia numerosa",
+                        "price": 1.0
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 1.0
+                    },
+                    {
+                        "name": "Residents ",
+                        "price": 1.5
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "2": {
+                "color": "B78DBA",
+                "name": "Circumval\u00b7laci\u00f3 centre hist\u00f2ric",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "3": {
+                "color": "F45BA4",
+                "name": "Es Pont d'Inca - Illetes",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "5": {
+                "color": "72C0D8",
+                "name": "Es Rafal Nou - Son Dureta",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "6": {
+                "color": "4F6D5E",
+                "name": "Nou Llevant - Son Espases",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "7": {
+                "color": "499C75",
+                "name": "Son Rapinya - Son Gotleu",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "8": {
+                "color": "4E43B1",
+                "name": "Son Roca",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "9": {
+                "color": "AB478F",
+                "name": "Son Espanyol",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "10": {
+                "color": "623E5A",
+                "name": "Son Cladera - Sa Indioteria",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "11": {
+                "color": "F3DB78",
+                "name": "Sa Indioteria",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "12": {
+                "color": "F1B543",
+                "name": "Son Sardina - Nou Llevant",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "14": {
+                "color": "6173C7",
+                "name": "Son Ferriol",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "15": {
+                "color": "2474CC",
+                "name": "Platja de Palma - Pla\u00e7a de la Reina",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "16": {
+                "color": "5496AF",
+                "name": "Establiments - Son Fuster",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "18": {
+                "color": "716240",
+                "name": "Son Riera",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "19": {
+                "color": "5EA532",
+                "name": "Universitat",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "20": {
+                "color": "de544e",
+                "name": "Sant Agust\u00ed - Son Espases",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "21": {
+                "color": "6c0007",
+                "name": "S'Arenal - Aeroport",
+                "fares": [
+                    {
+                        "name": "Carnet Gran y familia numerosa",
+                        "price": 1.0
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 1.0
+                    },
+                    {
+                        "name": "Residents ",
+                        "price": 1.5
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "23": {
+                "color": "B39633",
+                "name": "Palma - S'arenal - Cala Blava",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "24": {
+                "color": "605677",
+                "name": "Son Ll\u00e0tzer - Son Hugo",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "25": {
+                "color": "666666",
+                "name": "Platja de Palma Expr\u00e9s",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "28": {
+                "color": "E9A0C8",
+                "name": "Son Ll\u00e0tzer circular",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "29": {
+                "color": "C4A695",
+                "name": "Circular Son Espases",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "30": {
+                "color": "A04541",
+                "name": "Sant Joan de D\u00e9u",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "31": {
+                "color": "d3dd7d",
+                "name": "Porta Sant Antoni - Son Ll\u00e0tzer - Sant Jordi",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "33": {
+                "color": "687981",
+                "name": "Son Espases",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "34": {
+                "color": "969691",
+                "name": "Son Espases - Es Rafal",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        },
+        {
+            "46": {
+                "color": "EEAA60",
+                "name": "G\u00e8nova - Sant Agust\u00ed",
+                "fares": [
+                    {
+                        "name": "Carnet Gran B y verd residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Estudiantes y universitarios residentes",
+                        "price": 0.45
+                    },
+                    {
+                        "name": "Familia numerosa residente",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "Menores entre 5 y 16 años residentes",
+                        "price": 0.3
+                    },
+                    {
+                        "name": "No residentes",
+                        "price": 1.15
+                    },
+                    {
+                        "name": "Residentes",
+                        "price": 0.8
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/20 viajes / 30 días",
+                        "price": 13.0,
+                        "rides": 20
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/50 viajes/30 días",
+                        "price": 29.0,
+                        "rides": 50
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días familia numerosa",
+                        "price": 10.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días menores de 17 años",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/Viajes ilimitados 30 días pensionistas",
+                        "price": 7.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días",
+                        "price": 37.0,
+                        "rides": null
+                    },
+                    {
+                        "days": 30,
+                        "name": "T/viajes ilimitados/30 días para estudiantes y universitarios residentes",
+                        "price": 20.0,
+                        "rides": null
+                    }
+                ]
+            }
+        }
+    ]
+}

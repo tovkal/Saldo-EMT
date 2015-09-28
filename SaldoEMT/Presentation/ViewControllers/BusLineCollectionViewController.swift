@@ -12,9 +12,9 @@ class BusLineCollectionViewController: UICollectionViewController {
     
     private let reuseIdentifier = "BusLine"
     
-    private var busLines = [BusLine(number: "1", color: UIColor.redColor()),
+    private var busLines = [BusLine(number: "1", color: UIColor.redColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)])]/*,
                             BusLine(number: "2", color: UIColor.yellowColor()),
-                            BusLine(number: "3", color: UIColor.blueColor())]
+                            BusLine(number: "3", color: UIColor.blueColor())]*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,8 @@ extension BusLineCollectionViewController {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BusLineView
         
-        cell.busLine.text = busLines[indexPath.row].lineNumber
-        cell.backgroundColor = busLines[indexPath.row].lineColor
+        cell.busLine.text = busLines[indexPath.row].number
+        cell.backgroundColor = busLines[indexPath.row].color
         
         return cell
     }

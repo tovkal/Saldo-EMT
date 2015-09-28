@@ -10,8 +10,6 @@ import Foundation
 
 // MARK: - Comparable
 
-extension NSDecimalNumber: Comparable {}
-
 public func ==(lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> Bool {
     return lhs.compare(rhs) == .OrderedSame
 }

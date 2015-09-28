@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; settings = {ASSET_TAGS = (); }; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; settings = {ASSET_TAGS = (); }; };
+		9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B71BB85B53000ED3E1 /* fares_ca.json */; settings = {ASSET_TAGS = (); }; };
+		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; settings = {ASSET_TAGS = (); }; };
+		9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8BB1BB85CAE000ED3E1 /* Fare.swift */; settings = {ASSET_TAGS = (); }; };
+		9566B8BE1BB87A1E000ED3E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */; };
+		9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */; };
+		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; settings = {ASSET_TAGS = (); }; };
+		9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C81BB884CC000ED3E1 /* UIColor.swift */; settings = {ASSET_TAGS = (); }; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
 		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
@@ -31,9 +38,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9566B8C01BB87AAA000ED3E1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
+		9566B8B71BB85B53000ED3E1 /* fares_ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_ca.json; sourceTree = "<group>"; };
+		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
+		9566B8BB1BB85CAE000ED3E1 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
+		9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
+		9566B8C31BB87B0D000ED3E1 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		9566B8C81BB884CC000ED3E1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaldoEMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBD71B5A852A002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9566B8BE1BB87A1E000ED3E1 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +124,20 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		9566B8B61BB85B4A000ED3E1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9566B8B71BB85B53000ED3E1 /* fares_ca.json */,
+				9566B8B81BB85B53000ED3E1 /* fares_es.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		95A4CBCA1B5A852A002FB3E9 = {
 			isa = PBXGroup;
 			children = (
+				9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */,
+				9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */,
 				95A4CBD41B5A852A002FB3E9 /* Products */,
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
@@ -117,6 +156,7 @@
 		95A4CBD51B5A852A002FB3E9 /* SaldoEMT */ = {
 			isa = PBXGroup;
 			children = (
+				9566B8B61BB85B4A000ED3E1 /* Assets */,
 				95D153D21B6A923C00866B59 /* Extensions */,
 				95D4356E1BB846CF00745E64 /* Logic */,
 				953FDF421BB80EB400D2C9DA /* Presentation */,
@@ -166,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */,
+				9566B8C81BB884CC000ED3E1 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				95D4356F1BB846D300745E64 /* Model */,
+				9566B8C31BB87B0D000ED3E1 /* Store.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -182,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				95D435701BB846DC00745E64 /* BusLine.swift */,
+				9566B8BB1BB85CAE000ED3E1 /* Fare.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +239,8 @@
 				95A4CBCF1B5A852A002FB3E9 /* Sources */,
 				95A4CBD01B5A852A002FB3E9 /* Frameworks */,
 				95A4CBD11B5A852A002FB3E9 /* Resources */,
+				9566B8BF1BB87A2D000ED3E1 /* ShellScript */,
+				9566B8C01BB87AAA000ED3E1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -269,6 +314,8 @@
 			files = (
 				95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */,
 				95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */,
+				9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */,
+				9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */,
 				953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
 			);
@@ -283,6 +330,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9566B8BF1BB87A2D000ED3E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		95A4CBCF1B5A852A002FB3E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -291,7 +355,10 @@
 				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
 				95D4356C1BB8458400745E64 /* BusLineCollectionViewController.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
+				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
+				9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
+				9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */,
 				95D435711BB846DC00745E64 /* BusLine.swift in Sources */,
 				95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
@@ -424,6 +491,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
@@ -435,6 +506,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";

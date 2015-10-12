@@ -19,12 +19,6 @@ class BusLineView: UICollectionViewCell {
             layer.masksToBounds = cornerRadius > 0
         }
     }
-/*    @IBInspectable var backgrounddColor: UIColor? {
-        didSet {
-            layer.backgroundColor = backgrounddColor?.CGColor
-        }
-    }*/
-
     
     init(frame: CGRect, color: UIColor, lineNumber: String) {
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct BusLine {
+struct BusLine: Equatable {
     let number: String
     let color: UIColor
     let name: String
@@ -20,4 +20,8 @@ struct BusLine {
         self.name = name
         self.fares = fares
     }
+}
+
+func == (lhs: BusLine, rhs: BusLine) -> Bool {
+    return lhs.number == rhs.number && lhs.color == rhs.color && lhs.name == rhs.name && lhs.fares == rhs.fares
 }

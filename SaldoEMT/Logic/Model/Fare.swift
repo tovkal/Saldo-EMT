@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Fare {
+struct Fare: Equatable {
     let name: String
     let cost: Double
     let days: Int?
@@ -20,4 +20,8 @@ struct Fare {
         self.days = days
         self.rides = rides
     }
+}
+
+func == (lhs: Fare, rhs: Fare) -> Bool {
+    return lhs.name == rhs.name && lhs.cost == rhs.cost && lhs.days == rhs.days && lhs.rides == rhs.rides
 }

@@ -20,7 +20,6 @@ class FaresViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "FareCell", bundle: nil), forCellReuseIdentifier: identifier)
-        //tableView.registerClass(FareCell.self, forCellReuseIdentifier: identifier)
         tableView.estimatedRowHeight = 150;
         tableView.rowHeight = UITableViewAutomaticDimension;
         
@@ -54,36 +53,11 @@ extension FaresViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FareCell
         
-        //cell.fareName.text = "Potato"
-        //cell.busLinesCollectionView = storyboard!.instantiateViewControllerWithIdentifier("BusLineCollectionViewController") as! BusLineCollectionViewController
-        //cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: BusLineCollectionViewController(), index: indexPath.row)
-        
-        let busLineCollection = contentViewControllers[indexPath.row] //storyboard!.instantiateViewControllerWithIdentifier("BusLineCollectionViewController") as! BusLineCollectionViewController
-/*        if busLineCollection.view != nil {
-            cell.contentView.addSubview(busLineCollection.view)
-        }*/
+        let busLineCollection = contentViewControllers[indexPath.row]
         if busLineCollection.view != nil && cell.busLinesView != nil {
             cell.busLinesView.addSubview(busLineCollection.view)
         }
-        /*
-        if cell.busLinesCollectionView == nil {
-        print("cell view nil")
-        }
-        if busLineCollection.view == nil {
-        print("buslinecoll view nil")
-        }
-        //busLineCollection.collectionView.frame = cell.busLinesCollectionView.bounds
-        //busLineCollection.collectionView = UICollectionView
-        cell.busLinesCollectionView.addSubview(busLineCollection.view)
-        
-        */
-        
-        /*
-        cell.busLinesCollectionView = UIView()
-        busLineCollection.collectionView = cell.busLinesCollectionView*/
-        
-        // Configure the cell...
-        
+
         return cell
     }
 }

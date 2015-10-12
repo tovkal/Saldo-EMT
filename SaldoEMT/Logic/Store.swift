@@ -15,12 +15,14 @@ class Store {
     
     private init() {}
     
-    func getLines() {//-> [String: BusLine] {
+    func getLines() -> [BusLine]? {
         // TODO Check updates
         
         if let data = getFileData() {
             return processJson(JSON(data: data))
         }
+        
+        return nil
     }
     
     private func getFileData() -> NSData? {
@@ -37,7 +39,7 @@ class Store {
         return nil
     }
     
-    private func processJson(json: JSON) {//-> [String: BusLine]? {
+    private func processJson(json: JSON) -> [BusLine] {
 
         var lines = [BusLine]()
 
@@ -47,7 +49,7 @@ class Store {
             }
         }
         
-        print("hey")
+        return lines
     }
     
     private func processFares(fares: JSON) -> [Fare] {

@@ -8,35 +8,43 @@
 
 import UIKit
 
-class BusLineCollectionViewController: UICollectionViewController {
+private let identifier = "BusLine"
+
+class BusLineCollectionViewController: UIViewController { // UIViewController, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDataSource
     
-    private let reuseIdentifier = "BusLine"
+    @IBOutlet var collectionView: UICollectionView!
     
-    private var busLines = [BusLine(number: "1", color: UIColor.redColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)])]/*,
-                            BusLine(number: "2", color: UIColor.yellowColor()),
-                            BusLine(number: "3", color: UIColor.blueColor())]*/
+    var busLines = [BusLine(number: "1", color: UIColor.redColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)]),
+                            BusLine(number: "2", color: UIColor.yellowColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)]),
+                            BusLine(number: "3", color: UIColor.blueColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)])]
+    
+    convenience init(busLines: [BusLine]) {
+        self.init()
+        
+        self.busLines = busLines
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView!.registerClass(BusLineView.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.registerClass(BusLineView.self, forCellWithReuseIdentifier: identifier)
     }
 }
 
 // MARK: UICollectionViewDataSource
 
-extension BusLineCollectionViewController {
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+extension BusLineCollectionViewController: UICollectionViewDataSource {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return busLines.count
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! BusLineView
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! BusLineView
         
         cell.busLine.text = busLines[indexPath.row].number
         cell.backgroundColor = busLines[indexPath.row].color

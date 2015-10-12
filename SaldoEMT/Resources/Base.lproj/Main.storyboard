@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -62,6 +62,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="-13" y="508" width="125" height="46"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="XTu-Cu-tWs" kind="show" id="5bX-Rb-SJr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-w7-dTC">
                                 <rect key="frame" x="180" y="467" width="240" height="133"/>
@@ -335,7 +338,7 @@
         <!--Bus Line Collection View Controller-->
         <scene sceneID="C05-Vq-bUi">
             <objects>
-                <collectionViewController id="qjw-IG-afC" customClass="BusLineCollectionViewController" customModule="SaldoEMT" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="BusLineCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qjw-IG-afC" customClass="BusLineCollectionViewController" customModule="SaldoEMT" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3Md-Od-ndP">
                         <rect key="frame" x="0.0" y="0.0" width="560" height="159"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,10 +368,78 @@
                             <outlet property="delegate" destination="qjw-IG-afC" id="bzP-eN-BN1"/>
                         </connections>
                     </collectionView>
+                    <connections>
+                        <outlet property="collectionView" destination="3Md-Od-ndP" id="w1j-mu-be1"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pm1-bR-VYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="699" y="1007"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UYp-9u-zBW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XTu-Cu-tWs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u3U-AI-zgo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="93Y-m2-n3y" kind="relationship" relationship="rootViewController" id="taK-GC-3C2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxZ-S4-08K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365" y="1181"/>
+        </scene>
+        <!--Fares View Controller-->
+        <scene sceneID="6nO-vT-dkO">
+            <objects>
+                <viewController id="93Y-m2-n3y" customClass="FaresViewController" customModule="SaldoEMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GQX-SP-mZ4"/>
+                        <viewControllerLayoutGuide type="bottom" id="LMw-Yv-LN2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="87D-tt-WqB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dWH-6l-2jw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="93Y-m2-n3y" id="Igg-uk-qHC"/>
+                                    <outlet property="delegate" destination="93Y-m2-n3y" id="2g7-VO-VmV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dWH-6l-2jw" firstAttribute="centerX" secondItem="87D-tt-WqB" secondAttribute="centerX" id="7KX-y8-ITR"/>
+                            <constraint firstItem="dWH-6l-2jw" firstAttribute="width" secondItem="87D-tt-WqB" secondAttribute="width" id="Nuk-Tf-j3j"/>
+                            <constraint firstItem="dWH-6l-2jw" firstAttribute="height" secondItem="87D-tt-WqB" secondAttribute="height" id="PRQ-Y1-GHQ"/>
+                            <constraint firstItem="dWH-6l-2jw" firstAttribute="centerY" secondItem="87D-tt-WqB" secondAttribute="centerY" id="dhB-g3-lXg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eq1-9K-DWT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rxn-FP-Ui0">
+                            <connections>
+                                <action selector="didCancelFareSelection:" destination="93Y-m2-n3y" id="ELl-aa-YDm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="dWH-6l-2jw" id="ffx-Fy-eFj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fa-Uo-HMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2098" y="1181"/>
         </scene>
     </scenes>
     <resources>

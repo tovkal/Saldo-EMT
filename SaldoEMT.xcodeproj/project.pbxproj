@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; settings = {ASSET_TAGS = (); }; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; settings = {ASSET_TAGS = (); }; };
+		954020A01BC970AE009419EA /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9540209F1BC970AE009419EA /* Warnings.xcconfig */; settings = {ASSET_TAGS = (); }; };
+		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B71BB85B53000ED3E1 /* fares_ca.json */; settings = {ASSET_TAGS = (); }; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; settings = {ASSET_TAGS = (); }; };
 		9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8BB1BB85CAE000ED3E1 /* Fare.swift */; settings = {ASSET_TAGS = (); }; };
@@ -22,6 +25,7 @@
 		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
 		95A4CBEF1B5A852B002FB3E9 /* SaldoEMTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBEE1B5A852B002FB3E9 /* SaldoEMTTests.swift */; };
+		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; settings = {ASSET_TAGS = (); }; };
 		95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D4356C1BB8458400745E64 /* BusLineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -54,6 +58,9 @@
 /* Begin PBXFileReference section */
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
+		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
+		954020A11BC9714A009419EA /* FaresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresViewController.swift; sourceTree = "<group>"; };
+		954020AB1BCA627C009419EA /* FareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareCell.swift; sourceTree = "<group>"; };
 		9566B8B71BB85B53000ED3E1 /* fares_ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_ca.json; sourceTree = "<group>"; };
 		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
 		9566B8BB1BB85CAE000ED3E1 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 		95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBED1B5A852B002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A4CBEE1B5A852B002FB3E9 /* SaldoEMTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldoEMTTests.swift; sourceTree = "<group>"; };
+		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
 		95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineCollectionViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +109,8 @@
 			children = (
 				953FDF461BB812B500D2C9DA /* BusLineView.swift */,
 				953FDF441BB8126900D2C9DA /* BusLineView.xib */,
+				954020AB1BCA627C009419EA /* FareCell.swift */,
+				95AC90861BCC000D00787C79 /* FareCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,9 +118,10 @@
 		953FDF411BB80EA700D2C9DA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
-				95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */,
 				95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */,
+				95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */,
+				954020A11BC9714A009419EA /* FaresViewController.swift */,
+				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -137,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */,
+				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
 				9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */,
 				95A4CBD41B5A852A002FB3E9 /* Products */,
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
@@ -281,6 +293,7 @@
 				TargetAttributes = {
 					95A4CBD21B5A852A002FB3E9 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = JVHN2X67GT;
 					};
 					95A4CBE71B5A852B002FB3E9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -315,8 +328,10 @@
 				95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */,
 				95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */,
 				9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */,
+				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */,
 				953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */,
+				954020A01BC970AE009419EA /* Warnings.xcconfig in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +369,7 @@
 			files = (
 				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
 				95D4356C1BB8458400745E64 /* BusLineCollectionViewController.swift in Sources */,
+				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
 				9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */,
@@ -362,6 +378,7 @@
 				95D435711BB846DC00745E64 /* BusLine.swift in Sources */,
 				95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
+				954020A21BC9714A009419EA /* FaresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +424,7 @@
 /* Begin XCBuildConfiguration section */
 		95A4CBF01B5A852B002FB3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -452,6 +470,7 @@
 		};
 		95A4CBF11B5A852B002FB3E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -489,8 +508,10 @@
 		};
 		95A4CBF31B5A852B002FB3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -504,8 +525,10 @@
 		};
 		95A4CBF41B5A852B002FB3E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -519,6 +542,7 @@
 		};
 		95A4CBF61B5A852B002FB3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -539,6 +563,7 @@
 		};
 		95A4CBF71B5A852B002FB3E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

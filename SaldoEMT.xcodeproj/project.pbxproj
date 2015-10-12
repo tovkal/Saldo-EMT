@@ -15,7 +15,6 @@
 		9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B71BB85B53000ED3E1 /* fares_ca.json */; settings = {ASSET_TAGS = (); }; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; settings = {ASSET_TAGS = (); }; };
 		9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8BB1BB85CAE000ED3E1 /* Fare.swift */; settings = {ASSET_TAGS = (); }; };
-		9566B8BE1BB87A1E000ED3E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */; };
 		9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */; };
 		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; settings = {ASSET_TAGS = (); }; };
 		9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C81BB884CC000ED3E1 /* UIColor.swift */; settings = {ASSET_TAGS = (); }; };
@@ -25,7 +24,6 @@
 		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; settings = {ASSET_TAGS = (); }; };
-		95AC908D1BCC11DF00787C79 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */; };
 		95AC90911BCC272800787C79 /* BusLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC90901BCC272800787C79 /* BusLineTests.swift */; settings = {ASSET_TAGS = (); }; };
 		95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
@@ -65,7 +63,6 @@
 		9566B8B71BB85B53000ED3E1 /* fares_ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_ca.json; sourceTree = "<group>"; };
 		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
 		9566B8BB1BB85CAE000ED3E1 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
-		9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = ../Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		9566B8C31BB87B0D000ED3E1 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9566B8C81BB884CC000ED3E1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -84,6 +81,7 @@
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineCollectionViewController.swift; sourceTree = "<group>"; };
 		95D435701BB846DC00745E64 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
+		95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9566B8BE1BB87A1E000ED3E1 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC908D1BCC11DF00787C79 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,10 +116,10 @@
 		953FDF411BB80EA700D2C9DA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */,
+				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
 				95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */,
 				954020A11BC9714A009419EA /* FaresViewController.swift */,
-				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
+				95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -149,11 +145,12 @@
 		95A4CBCA1B5A852A002FB3E9 = {
 			isa = PBXGroup;
 			children = (
-				9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */,
-				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
+				95A4CBD41B5A852A002FB3E9 /* Products */,
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
-				95A4CBD41B5A852A002FB3E9 /* Products */,
+				95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */,
+				9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */,
+				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,7 +187,6 @@
 		95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */ = {
 			isa = PBXGroup;
 			children = (
-				9566B8BD1BB87A1E000ED3E1 /* SwiftyJSON.framework */,
 				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
 				95AC90901BCC272800787C79 /* BusLineTests.swift */,
 			);

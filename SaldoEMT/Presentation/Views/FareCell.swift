@@ -29,5 +29,10 @@ class FareCell: UITableViewCell {
         
         busLinesView = nil
     }
+    
+    func populateWithBusLines(busLinesVC: BusLineCollectionViewController) {
+        if busLinesVC.view != nil && busLinesView != nil {
+            busLinesView.addSubview(busLinesVC.view)
+        }
+    }
 }
-

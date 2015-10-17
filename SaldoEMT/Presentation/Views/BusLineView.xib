@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BusLineView" customModule="SaldoEMT" customModuleProvider="target">
             <connections>
-                <outlet property="busLine" destination="8iN-xp-1DN" id="XxT-yc-AFk"/>
+                <outlet property="busLine" destination="8iN-xp-1DN" id="0zT-6F-oXm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

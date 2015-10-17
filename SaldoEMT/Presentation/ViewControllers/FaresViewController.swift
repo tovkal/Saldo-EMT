@@ -53,11 +53,8 @@ extension FaresViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FareCell
         
-        let busLineCollection = contentViewControllers[indexPath.row]
-        if busLineCollection.view != nil && cell.busLinesView != nil {
-            cell.busLinesView.addSubview(busLineCollection.view)
-        }
-
+        cell.populateWithBusLines(contentViewControllers[indexPath.row])
+        
         return cell
     }
 }

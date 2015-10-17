@@ -10,7 +10,7 @@ import UIKit
 
 private let identifier = "BusLine"
 
-class BusLineCollectionViewController: UIViewController { // UIViewController, UICollectionViewDelegate, UIScrollViewDelegate, UICollectionViewDataSource
+class BusLineCollectionViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -46,8 +46,7 @@ extension BusLineCollectionViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! BusLineView
         
-        cell.busLine.text = busLines[indexPath.row].number
-        cell.backgroundColor = busLines[indexPath.row].color
+        cell.populateWithBusLine(busLines[indexPath.row])
         
         return cell
     }

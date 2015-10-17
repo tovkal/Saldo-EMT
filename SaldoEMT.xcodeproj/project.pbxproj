@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; settings = {ASSET_TAGS = (); }; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; settings = {ASSET_TAGS = (); }; };
 		954020A01BC970AE009419EA /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9540209F1BC970AE009419EA /* Warnings.xcconfig */; settings = {ASSET_TAGS = (); }; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +148,7 @@
 		95A4CBCA1B5A852A002FB3E9 = {
 			isa = PBXGroup;
 			children = (
+				953987421BD2699E005DB2C7 /* iAd.framework */,
 				95A4CBD41B5A852A002FB3E9 /* Products */,
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,

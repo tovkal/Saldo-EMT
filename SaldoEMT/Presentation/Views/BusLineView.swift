@@ -29,13 +29,6 @@ class BusLineView: UICollectionViewCell {
         viewSetup()
     }
     
-    /**
-    Frame init.
-
-    - parameter frame: view frame
-    
-    - returns: view
-    */
     override init(frame: CGRect) {
         // 1. setup any properties here
         
@@ -48,13 +41,6 @@ class BusLineView: UICollectionViewCell {
         viewSetup()
     }
     
-    /**
-    NSCoder init
-    
-    - parameter aDecoder: coder
-    
-    - returns: view
-    */
     required init?(coder aDecoder: NSCoder) {
         // 1. setup any properties here
         
@@ -67,11 +53,13 @@ class BusLineView: UICollectionViewCell {
         viewSetup()
     }
     
+    func populateWithBusLine(busLine: BusLine) {
+        self.busLine.text = busLine.number
+        backgroundColor = busLine.color
+    }
+    
     // MARK: - View setup methonds
     
-    /**
-    Setup view from xib.
-    */
     private func xibSetup() {
         view = loadViewFromNib()
         
@@ -85,11 +73,7 @@ class BusLineView: UICollectionViewCell {
         addSubview(view)
     }
     
-    /**
-    Load view from nib.
-    
-    - returns: view from nib.
-    */
+
     private func loadViewFromNib() -> UIView {
         
         let bundle = NSBundle(forClass: self.dynamicType)
@@ -98,10 +82,10 @@ class BusLineView: UICollectionViewCell {
         
         return view
     }
-    /**
-    Do some view setup.
-    */
+
     private func viewSetup() {
         cornerRadius = frame.width / 2
     }
+    
+    
 }

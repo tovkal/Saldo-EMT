@@ -25,7 +25,7 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9C-Ze-yhN">
                         <rect key="frame" x="8" y="41" width="304" height="100"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.45326972967869339" blue="0.35356549479682653" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>
                 <animations/>

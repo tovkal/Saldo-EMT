@@ -418,6 +418,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="93Y-m2-n3y" id="Igg-uk-qHC"/>
                                     <outlet property="delegate" destination="93Y-m2-n3y" id="2g7-VO-VmV"/>
@@ -434,6 +435,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eq1-9K-DWT">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rxn-FP-Ui0">
                             <connections>
                                 <action selector="didCancelFareSelection:" destination="93Y-m2-n3y" id="ELl-aa-YDm"/>
@@ -441,10 +443,27 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchDisplayController" destination="afZ-31-91m" id="0m8-BO-jb8"/>
                         <outlet property="tableView" destination="dWH-6l-2jw" id="ffx-Fy-eFj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fa-Uo-HMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="xIZ-aF-20T">
+                    <connections>
+                        <outlet property="delegate" destination="93Y-m2-n3y" id="BVw-nz-V6z"/>
+                        <outlet property="searchContentsController" destination="93Y-m2-n3y" id="zW3-No-tW3"/>
+                        <outlet property="searchResultsDataSource" destination="93Y-m2-n3y" id="WBF-nJ-OyP"/>
+                        <outlet property="searchResultsDelegate" destination="93Y-m2-n3y" id="MZz-7L-iJ9"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="afZ-31-91m">
+                    <connections>
+                        <outlet property="delegate" destination="93Y-m2-n3y" id="Wlx-ei-y3h"/>
+                        <outlet property="searchContentsController" destination="93Y-m2-n3y" id="v7u-q1-gwG"/>
+                        <outlet property="searchResultsDataSource" destination="93Y-m2-n3y" id="jGP-PA-o86"/>
+                        <outlet property="searchResultsDelegate" destination="93Y-m2-n3y" id="gvE-J0-5Tk"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2115" y="1208"/>
         </scene>

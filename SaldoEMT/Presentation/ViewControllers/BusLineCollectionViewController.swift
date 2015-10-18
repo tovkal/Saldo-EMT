@@ -14,14 +14,10 @@ class BusLineCollectionViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var busLines = [BusLine(number: "1", color: UIColor.redColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)]),
-                            BusLine(number: "2", color: UIColor.yellowColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)]),
-                            BusLine(number: "3", color: UIColor.blueColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)])]
-    
-    convenience init(busLines: [BusLine]) {
-        self.init()
+    var busLines = [BusLine]()
         
-        self.busLines = busLines
+    override func awakeFromNib() {
+        self.busLines = Store.sharedInstance.getBusLinesForFare(Store.sharedInstance.getSelectedFare())
     }
 
     override func viewDidLoad() {
@@ -54,11 +50,11 @@ extension BusLineCollectionViewController: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 
-extension BusLineCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        
-        // Center bus line bubbles horizontally
-        let edgeInsets = (self.view.frame.width - (CGFloat(busLines.count) * 50) - (CGFloat(busLines.count) * 10)) / 2
-        return UIEdgeInsetsMake(0, edgeInsets, 0, 0);
-    }
-}
+//extension BusLineCollectionViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+//        
+//        // Center bus line bubbles horizontally
+//        let edgeInsets = (self.view.frame.width - (CGFloat(busLines.count) * 50) - (CGFloat(busLines.count) * 10)) / 2
+//        return UIEdgeInsetsMake(0, edgeInsets, 0, 0);
+//    }
+//}

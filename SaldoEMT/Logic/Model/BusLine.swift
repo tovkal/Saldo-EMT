@@ -12,16 +12,14 @@ struct BusLine: Equatable {
     let number: String
     let color: UIColor
     let name: String
-    let fares: [Fare]
     
-    init(number: String, color: UIColor, name: String, fares: [Fare]) {
+    init(number: String, color: UIColor, name: String) {
         self.number = number
         self.color = color
         self.name = name
-        self.fares = fares
     }
 }
 
 func == (lhs: BusLine, rhs: BusLine) -> Bool {
-    return lhs.number == rhs.number && lhs.color == rhs.color && lhs.name == rhs.name && lhs.fares == rhs.fares
+    return lhs.number == rhs.number && lhs.color == rhs.color && lhs.name == rhs.name
 }

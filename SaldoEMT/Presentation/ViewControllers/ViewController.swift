@@ -20,8 +20,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         updateLabels()
-        
-        Store.sharedInstance.getLines()
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,17 +13,60 @@ import UIKit
 class Store {
     static let sharedInstance = Store()
     
-    private init() {}
+    private var jsonData: NSData?
+    private(set) var busLines: [String: BusLine]?
+    private(set) var fares: [String: Fare]?
     
-    func getLines() -> [BusLine]? {
-        // TODO Check updates
+    // MARK: - Public
+    
+    func getBusLinesForFare(fare: String) -> [BusLine] {
+        if let fare = fares?[fare] {
+            
+            var lines = [BusLine]()
+            
+            for line in fare.lines {
+                lines.append(busLines!["\(line)"]!)
+            }
+            
+            return lines
+        } else {
+            return [BusLine]()
+        }
+    }
+    
+    func getSelectedFare() -> String {
+        return "1"
+    }
+    
+    // MARK: - Init
+    
+    private init() {
+        jsonData = getFileData()
+        busLines = initBusLines()
+        fares = initFares()
+    }
+    
+    private func initBusLines() -> [String: BusLine] {
+        var busLines = [String: BusLine]()
         
-        if let data = getFileData() {
-            return processJson(JSON(data: data))
+        if let json = jsonData {
+            busLines = getBusLinesFromJson(JSON(data: json))
         }
         
-        return nil
+        return busLines
     }
+    
+    private func initFares() -> [String: Fare] {
+        var fares = [String: Fare]()
+        
+        if let json = jsonData {
+            fares = getFaresFromJson(JSON(data: json))
+        }
+        
+        return fares
+    }
+    
+    // MARK: - JSON Processing
     
     private func getFileData() -> NSData? {
         if let path = NSBundle.mainBundle().pathForResource("fares_es", ofType: "json") {
@@ -39,27 +82,29 @@ class Store {
         return nil
     }
     
-    private func processJson(json: JSON) -> [BusLine] {
-
-        var lines = [BusLine]()
-
+    private func getBusLinesFromJson(json: JSON) -> [String: BusLine] {
+        
+        var lines = [String: BusLine]()
+        
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
-                lines.append(BusLine(number: lineNumber, color: UIColor(rgba: "#" + lineInfo["color"].stringValue), name: lineInfo["name"].stringValue, fares: processFares(lineInfo["fares"])))
+                lines.updateValue(BusLine(number: lineNumber, color: UIColor(rgba: "#" + lineInfo["color"].stringValue), name: lineInfo["name"].stringValue), forKey: lineNumber)
             }
         }
         
         return lines
     }
     
-    private func processFares(fares: JSON) -> [Fare] {
+    private func getFaresFromJson(json: JSON) -> [String: Fare] {
         
-        var processedFares = [Fare]()
+        var fares = [String: Fare]()
         
-        for (_, fare) in fares {
-            processedFares.append(Fare(name: fare["name"].stringValue, cost: fare["price"].doubleValue, days: fare["days"].intValue, rides: fare["rides"].intValue))
+        for (_, fare) in json["fares"] {
+            for (fareNumber, fareInfo) in fare {
+                fares.updateValue(Fare(name: fareInfo["name"].stringValue, cost: fareInfo["price"].doubleValue, days: fareInfo["days"].intValue, rides: fareInfo["rides"].intValue, lines: fareInfo["lines"].arrayObject as! [Int]), forKey: fareNumber)
+            }
         }
         
-        return processedFares
+        return fares
     }
 }

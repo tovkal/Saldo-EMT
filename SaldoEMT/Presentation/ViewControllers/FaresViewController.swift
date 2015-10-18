@@ -13,7 +13,7 @@ private let identifier = "FareCell"
 class FaresViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private var busLines = [BusLine(number: "1", color: UIColor.redColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)])]
+    private var busLines = [BusLine]()//[BusLine(number: "1", color: UIColor.redColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)])]
     private var contentViewControllers: [BusLineCollectionViewController] = []
     
     override func viewDidLoad() {

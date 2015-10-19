@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class ViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tripsRemaining: UILabel!
     @IBOutlet weak var tripButton: UIButton!
     @IBOutlet weak var moneyButton: UIButton!
+    @IBOutlet weak var bannerView: ADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,17 @@ class ViewController: UIViewController {
         if let remainingTrips = viewModel.tripsRemaining where remainingTrips == 0 {
             self.tripButton.enabled = false
         }*/
+    }
+}
+
+extension ViewController: ADBannerViewDelegate {
+    
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        bannerView.hidden = false
+    }
+    
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
+        bannerView.hidden = true
     }
 }
 

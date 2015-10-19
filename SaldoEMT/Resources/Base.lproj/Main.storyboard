@@ -177,6 +177,9 @@
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8cn-mc-CGc">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="qld-N5-K6W"/>
+                                </connections>
                             </adBannerView>
                         </subviews>
                         <animations/>
@@ -216,6 +219,9 @@
                             <constraint firstItem="mlc-qT-Ddr" firstAttribute="leading" secondItem="oRH-iv-HhN" secondAttribute="trailing" constant="20" id="zMU-Wv-K1e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bannerView" destination="8cn-mc-CGc" id="PEg-Vz-9br"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -50,11 +50,16 @@ extension BusLineCollectionViewController: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 
-//extension BusLineCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension BusLineCollectionViewController: UICollectionViewDelegateFlowLayout {
 //    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
 //        
 //        // Center bus line bubbles horizontally
 //        let edgeInsets = (self.view.frame.width - (CGFloat(busLines.count) * 50) - (CGFloat(busLines.count) * 10)) / 2
 //        return UIEdgeInsetsMake(0, edgeInsets, 0, 0);
 //    }
-//}
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(40, 40)
+    }
+    
+}

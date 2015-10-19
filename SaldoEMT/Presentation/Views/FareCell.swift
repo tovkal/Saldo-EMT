@@ -23,6 +23,10 @@ class FareCell: UITableViewCell {
         busLinesView = nil
     }
     
+    func populateWithFare(fare: Fare) {
+        fareName.text = fare.name
+    }
+    
     func populateWithBusLines(busLinesVC: BusLineCollectionViewController) {
         if busLinesVC.view != nil && busLinesView != nil {
             busLinesView.addSubview(busLinesVC.view)

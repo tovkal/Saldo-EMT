@@ -14,18 +14,20 @@ class Store {
     static let sharedInstance = Store()
     
     private var jsonData: NSData?
-    private(set) var busLines: [String: BusLine]?
-    private(set) var fares: [String: Fare]?
+    private(set) var busLines = [String: BusLine]()
+    private(set) var fares = [String: Fare]()
     
     // MARK: - Public
     
     func getBusLinesForFare(fare: String) -> [BusLine] {
-        if let fare = fares?[fare] {
+        if let fare = fares[fare] {
             
             var lines = [BusLine]()
             
             for line in fare.lines {
-                lines.append(busLines!["\(line)"]!)
+                if let busLine = busLines["\(line)"] {
+                    lines.append(busLine)
+                }
             }
             
             return lines
@@ -101,7 +103,7 @@ class Store {
         
         for (_, fare) in json["fares"] {
             for (fareNumber, fareInfo) in fare {
-                fares.updateValue(Fare(name: fareInfo["name"].stringValue, cost: fareInfo["price"].doubleValue, days: fareInfo["days"].intValue, rides: fareInfo["rides"].intValue, lines: fareInfo["lines"].arrayObject as! [Int]), forKey: fareNumber)
+                fares.updateValue(Fare(number: fareNumber, name: fareInfo["name"].stringValue, cost: fareInfo["price"].doubleValue, days: fareInfo["days"].intValue, rides: fareInfo["rides"].intValue, lines: fareInfo["lines"].arrayObject as! [Int]), forKey: fareNumber)
             }
         }
         

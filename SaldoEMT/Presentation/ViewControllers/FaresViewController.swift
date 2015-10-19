@@ -13,7 +13,7 @@ private let identifier = "FareCell"
 class FaresViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private var busLines = [BusLine]()//[BusLine(number: "1", color: UIColor.redColor(), name: "test", fares: [Fare(name: "tal", cost: 1.0, days: nil, rides: nil)])]
+    private var fares = [Fare]()
     private var contentViewControllers: [BusLineCollectionViewController] = []
     
     override func viewDidLoad() {
@@ -23,8 +23,12 @@ class FaresViewController: UIViewController {
         tableView.estimatedRowHeight = 150;
         tableView.rowHeight = UITableViewAutomaticDimension;
         
-        for _ in 1...10 {
+        fares = Array(Store.sharedInstance.fares.values)
+        fares.sortInPlace({ Int($0.number) < Int($1.number) })
+        
+        for fare in fares {
             let busLineCollectionViewController = storyboard!.instantiateViewControllerWithIdentifier("BusLineCollectionViewController") as! BusLineCollectionViewController
+            busLineCollectionViewController.busLines = Store.sharedInstance.getBusLinesForFare(fare.number)
             self.addChildViewController(busLineCollectionViewController)
             contentViewControllers.append(busLineCollectionViewController)
         }
@@ -47,12 +51,13 @@ extension FaresViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return fares.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FareCell
         
+        cell.populateWithFare(fares[indexPath.row])
         cell.populateWithBusLines(contentViewControllers[indexPath.row])
         
         return cell

@@ -9,13 +9,15 @@
 import Foundation
 
 struct Fare: Equatable {
+    let number: String
     let name: String
     let cost: Double
     let days: Int?
     let rides: Int?
     let lines: [Int]
     
-    init(name: String, cost: Double, days: Int?, rides: Int?, lines: [Int]) {
+    init(number: String, name: String, cost: Double, days: Int?, rides: Int?, lines: [Int]) {
+        self.number = number
         self.name = name
         self.cost = cost
         self.days = days
@@ -25,5 +27,5 @@ struct Fare: Equatable {
 }
 
 func == (lhs: Fare, rhs: Fare) -> Bool {
-    return lhs.name == rhs.name && lhs.cost == rhs.cost && lhs.days == rhs.days && lhs.rides == rhs.rides && lhs.lines == rhs.lines
+    return lhs.number == rhs.number && lhs.name == rhs.name && lhs.cost == rhs.cost && lhs.days == rhs.days && lhs.rides == rhs.rides && lhs.lines == rhs.lines
 }

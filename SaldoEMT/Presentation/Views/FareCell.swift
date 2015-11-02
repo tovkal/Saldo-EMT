@@ -11,25 +11,14 @@ import UIKit
 class FareCell: UITableViewCell {
     
     @IBOutlet weak var fareName: UILabel!
-    @IBOutlet weak var busLinesView: UIView!
+
+    var heightConstraint: NSLayoutConstraint?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        busLinesView = nil
-    }
-    
     func populateWithFare(fare: Fare) {
         fareName.text = fare.name
-    }
-    
-    func populateWithBusLines(busLinesVC: BusLineCollectionViewController) {
-        if busLinesVC.view != nil && busLinesView != nil {
-            busLinesView.addSubview(busLinesVC.view)
-        }
     }
 }

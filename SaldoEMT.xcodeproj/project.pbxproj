@@ -8,28 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
-		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; settings = {ASSET_TAGS = (); }; };
-		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; settings = {ASSET_TAGS = (); }; };
-		954020A01BC970AE009419EA /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9540209F1BC970AE009419EA /* Warnings.xcconfig */; settings = {ASSET_TAGS = (); }; };
-		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B71BB85B53000ED3E1 /* fares_ca.json */; settings = {ASSET_TAGS = (); }; };
-		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; settings = {ASSET_TAGS = (); }; };
-		9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8BB1BB85CAE000ED3E1 /* Fare.swift */; settings = {ASSET_TAGS = (); }; };
+		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
+		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
+		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
+		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; };
+		9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B71BB85B53000ED3E1 /* fares_ca.json */; };
+		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
+		9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8BB1BB85CAE000ED3E1 /* Fare.swift */; };
 		9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */; };
-		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; settings = {ASSET_TAGS = (); }; };
-		9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C81BB884CC000ED3E1 /* UIColor.swift */; settings = {ASSET_TAGS = (); }; };
+		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; };
+		9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C81BB884CC000ED3E1 /* UIColor.swift */; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
 		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
 		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
-		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; settings = {ASSET_TAGS = (); }; };
-		95AC90911BCC272800787C79 /* BusLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC90901BCC272800787C79 /* BusLineTests.swift */; settings = {ASSET_TAGS = (); }; };
+		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
+		95AC90911BCC272800787C79 /* BusLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC90901BCC272800787C79 /* BusLineTests.swift */; };
 		95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
-		95D4356C1BB8458400745E64 /* BusLineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		95D435711BB846DC00745E64 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D435701BB846DC00745E64 /* BusLine.swift */; settings = {ASSET_TAGS = (); }; };
+		95D435711BB846DC00745E64 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D435701BB846DC00745E64 /* BusLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +79,6 @@
 		95AC90901BCC272800787C79 /* BusLineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineTests.swift; sourceTree = "<group>"; };
 		95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
-		95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineCollectionViewController.swift; sourceTree = "<group>"; };
 		95D435701BB846DC00745E64 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
 		95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
-				95D4356B1BB8458400745E64 /* BusLineCollectionViewController.swift */,
 				954020A11BC9714A009419EA /* FaresViewController.swift */,
 				95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */,
 			);
@@ -290,7 +286,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = tovkal;
 				TargetAttributes = {
 					95A4CBD21B5A852A002FB3E9 = {
@@ -333,7 +329,6 @@
 				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */,
 				953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */,
-				954020A01BC970AE009419EA /* Warnings.xcconfig in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
-				95D4356C1BB8458400745E64 /* BusLineCollectionViewController.swift in Sources */,
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
@@ -463,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -503,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -29,7 +29,7 @@
                             </mask>
                         </variation>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MuchLines" translatesAutoresizingMaskIntoConstraints="NO" id="Skq-N4-Zvs">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Skq-N4-Zvs">
                         <rect key="frame" x="8" y="41" width="304" height="173"/>
                         <animations/>
                     </imageView>
@@ -47,12 +47,10 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="busLines" destination="Skq-N4-Zvs" id="ao4-Yq-9es"/>
                 <outlet property="fareName" destination="D97-aZ-RaH" id="kkY-xU-Kl3"/>
             </connections>
             <point key="canvasLocation" x="99" y="-128"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="MuchLines" width="310" height="175"/>
-    </resources>
 </document>

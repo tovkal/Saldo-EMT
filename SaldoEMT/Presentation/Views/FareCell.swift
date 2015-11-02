@@ -8,11 +8,13 @@
 
 import UIKit
 
+private let few = "FewLines"
+private let many = "MuchLines"
+
 class FareCell: UITableViewCell {
     
     @IBOutlet weak var fareName: UILabel!
-
-    var heightConstraint: NSLayoutConstraint?
+    @IBOutlet weak var busLines: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +22,6 @@ class FareCell: UITableViewCell {
     
     func populateWithFare(fare: Fare) {
         fareName.text = fare.name
+        busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)        
     }
 }

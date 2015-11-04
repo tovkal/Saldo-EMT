@@ -73,7 +73,7 @@ class BusLineView: UICollectionViewCell {
         addSubview(view)
     }
     
-
+    
     private func loadViewFromNib() -> UIView {
         
         let bundle = NSBundle(forClass: self.dynamicType)
@@ -82,7 +82,7 @@ class BusLineView: UICollectionViewCell {
         
         return view
     }
-
+    
     private func viewSetup() {
         cornerRadius = frame.width / 2
     }

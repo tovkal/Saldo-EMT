@@ -15,6 +15,7 @@ class FareCell: UITableViewCell {
     
     @IBOutlet weak var fareName: UILabel!
     @IBOutlet weak var busLines: UIImageView!
+    @IBOutlet weak var costPerRide: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,6 @@ class FareCell: UITableViewCell {
     func populateWithFare(fare: Fare) {
         fareName.text = fare.name
         busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)
+        costPerRide.text = String(format:"%.1f", fare.cost)
     }
 }

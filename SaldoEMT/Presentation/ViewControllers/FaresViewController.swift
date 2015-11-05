@@ -8,7 +8,8 @@
 
 import UIKit
 
-private let identifier = "FareCell"
+private let fareIdentifier = "FareCell"
+private let fareWithRidesIdentifier = "FareWithLimitedRidesCell"
 
 class FaresViewController: UIViewController {
     
@@ -18,7 +19,8 @@ class FaresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "FareCell", bundle: nil), forCellReuseIdentifier: identifier)
+        tableView.registerNib(UINib(nibName: "FareCell", bundle: nil), forCellReuseIdentifier: fareIdentifier)
+        tableView.registerNib(UINib(nibName: "FareWithLimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithRidesIdentifier)
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 200.0
         
@@ -42,10 +44,21 @@ extension FaresViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! FareCell
         
-        cell.populateWithFare(fares[indexPath.row])
+        let fare = fares[indexPath.row]
         
-        return cell
+        if fare.rides == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(fareIdentifier, forIndexPath: indexPath) as! FareCell
+            
+            cell.populateWithFare(fare)
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(fareWithRidesIdentifier, forIndexPath: indexPath) as! FareWithLimitedRidesCell
+            
+            cell.populateWithFare(fare)
+            
+            return cell
+        }
     }
 }

@@ -28,6 +28,8 @@
 		95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153CF1B6A923100866B59 /* NSDecimalNumber.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D435711BB846DC00745E64 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D435701BB846DC00745E64 /* BusLine.swift */; };
+		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
+		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95D435701BB846DC00745E64 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
 		95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
+		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				953FDF441BB8126900D2C9DA /* BusLineView.xib */,
 				954020AB1BCA627C009419EA /* FareCell.swift */,
 				95AC90861BCC000D00787C79 /* FareCell.xib */,
+				95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */,
+				95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */,
 				953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */,
+				95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +381,7 @@
 				95D435711BB846DC00745E64 /* BusLine.swift in Sources */,
 				95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
+				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
 				954020A21BC9714A009419EA /* FaresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +523,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +541,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

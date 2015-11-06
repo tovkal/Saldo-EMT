@@ -30,6 +30,8 @@
 		95D435711BB846DC00745E64 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D435701BB846DC00745E64 /* BusLine.swift */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
+		95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */; };
+		95E27DFF1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
+		95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithUnlimitedRidesCell.swift; sourceTree = "<group>"; };
+		95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithUnlimitedRidesCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				95AC90861BCC000D00787C79 /* FareCell.xib */,
 				95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */,
 				95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */,
+				95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */,
+				95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 			files = (
 				95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */,
 				95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */,
+				95E27DFF1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib in Resources */,
 				9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */,
 				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */,
@@ -378,6 +385,7 @@
 				9566B8BC1BB85CAE000ED3E1 /* Fare.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
 				9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */,
+				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95D435711BB846DC00745E64 /* BusLine.swift in Sources */,
 				95D153D01B6A923100866B59 /* NSDecimalNumber.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,

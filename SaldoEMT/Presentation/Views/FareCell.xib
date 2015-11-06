@@ -63,7 +63,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus55 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="gwB-J2-Xd4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="gwB-J2-Xd4">
                                 <rect key="frame" x="81" y="3" width="25" height="25"/>
                                 <animations/>
                                 <constraints>
@@ -120,7 +120,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bus55 (1)" width="512" height="512"/>
+        <image name="bus" width="25" height="25"/>
         <image name="euro" width="50" height="50"/>
     </resources>
 </document>

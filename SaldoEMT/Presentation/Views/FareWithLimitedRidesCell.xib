@@ -73,7 +73,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus55 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="R2s-Z0-dYJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="R2s-Z0-dYJ">
                                         <rect key="frame" x="75" y="3" width="25" height="25"/>
                                         <animations/>
                                         <constraints>
@@ -133,7 +133,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus55 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="iVk-0h-bXc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="iVk-0h-bXc">
                                         <rect key="frame" x="35" y="3" width="25" height="25"/>
                                         <animations/>
                                         <constraints>
@@ -273,7 +273,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bus55 (1)" width="512" height="512"/>
+        <image name="bus" width="25" height="25"/>
         <image name="euro" width="50" height="50"/>
     </resources>
 </document>

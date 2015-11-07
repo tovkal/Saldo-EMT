@@ -69,3 +69,7 @@ extension FaresViewController: UITableViewDataSource {
         }
     }
 }
+
+extension FaresViewController: UITableViewDelegate {
+    
+}

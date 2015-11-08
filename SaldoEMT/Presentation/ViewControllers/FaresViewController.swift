@@ -72,4 +72,10 @@ extension FaresViewController: UITableViewDataSource {
 
 extension FaresViewController: UITableViewDelegate {
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        dispatch_async(dispatch_get_main_queue(), {
+            Store.sharedInstance.setNewCurrentFare(self.fares[indexPath.row])
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
+    }
 }

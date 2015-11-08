@@ -11,6 +11,7 @@ import iAd
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var fareName: UILabel!
     @IBOutlet weak var remainingAmount: UILabel!
     @IBOutlet weak var tripsMade: UILabel!
     @IBOutlet weak var tripsRemaining: UILabel!
@@ -21,6 +22,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //updateLabels()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         updateLabels()
     }
 
@@ -43,6 +48,12 @@ class ViewController: UIViewController {
         if let remainingTrips = viewModel.tripsRemaining where remainingTrips == 0 {
             self.tripButton.enabled = false
         }*/
+        
+        if let fare = Store.sharedInstance.getCurrentFare() {
+            fareName.text = fare.name
+        } else {
+            // TODO: Select a fare
+        }
     }
 }
 

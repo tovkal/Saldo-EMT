@@ -11,10 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="331"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3rU-MI-J2r" id="Hh6-1Y-nT2">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="331"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fare namedsfdsfdshhjjgjhgjds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="D97-aZ-RaH">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fare namedsfdsfdshhjjgjhgjds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D97-aZ-RaH">
                         <rect key="frame" x="8" y="8" width="304" height="26"/>
                         <animations/>
                         <constraints>
@@ -42,7 +42,7 @@
                                 <rect key="frame" x="67" y="-4" width="9" height="34"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="euro" translatesAutoresizingMaskIntoConstraints="NO" id="SUP-ME-hGW">

@@ -11,10 +11,10 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="331"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GFW-gU-2Qg" id="1SS-d0-WVp">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="330.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="331"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fare namedsfdsfdshhjjgjhgjds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="1tI-ma-juP">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fare namedsfdsfdshhjjgjhgjds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1tI-ma-juP">
                         <rect key="frame" x="8" y="8" width="304" height="26"/>
                         <animations/>
                         <constraints>

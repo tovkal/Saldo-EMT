@@ -16,6 +16,7 @@ class Store {
     private var jsonData: NSData?
     private(set) var busLines = [String: BusLine]()
     private(set) var fares = [String: Fare]()
+    private var currentFare: Fare?
     
     // MARK: - Public
     
@@ -38,6 +39,18 @@ class Store {
     
     func getSelectedFare() -> String {
         return "1"
+    }
+    
+    func getCurrentFare() -> Fare? {
+        return currentFare
+        
+        // TODO: Load from CoreData
+    }
+    
+    func setNewCurrentFare(fare: Fare) {
+        currentFare = fare
+        
+        // TODO: Save in CoreData
     }
     
     // MARK: - Init

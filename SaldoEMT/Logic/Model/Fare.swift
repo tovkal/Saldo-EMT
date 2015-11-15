@@ -2,30 +2,16 @@
 //  Fare.swift
 //  SaldoEMT
 //
-//  Created by Andrés Pizá on 27/9/15.
+//  Created by Andrés Pizá Bückmann on 15/11/15.
 //  Copyright © 2015 tovkal. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-struct Fare: Equatable {
-    let number: String
-    let name: String
-    let cost: Double
-    let days: Int?
-    let rides: Int?
-    let lines: [Int]
-    
-    init(number: String, name: String, cost: Double, days: Int?, rides: Int?, lines: [Int]) {
-        self.number = number
-        self.name = name
-        self.cost = cost
-        self.days = days
-        self.rides = rides
-        self.lines = lines
-    }
-}
 
-func == (lhs: Fare, rhs: Fare) -> Bool {
-    return lhs.number == rhs.number && lhs.name == rhs.name && lhs.cost == rhs.cost && lhs.days == rhs.days && lhs.rides == rhs.rides && lhs.lines == rhs.lines
+class Fare: NSManagedObject {
+
+// Insert code here to add functionality to your managed object subclass
+
 }

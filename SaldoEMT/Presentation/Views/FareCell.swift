@@ -22,8 +22,10 @@ class FareCell: UITableViewCell {
     }
     
     func populateWithFare(fare: Fare) {
+        let lines = fare.lines as! [Int]
+        
         fareName.text = fare.name
-        busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)
-        costPerRide.text = String(format:"%.1f", fare.cost)
+        busLines.image = UIImage(named: lines.count == 2 ? few : many)
+        costPerRide.text = String(format:"%.1f", fare.cost!)
     }
 }

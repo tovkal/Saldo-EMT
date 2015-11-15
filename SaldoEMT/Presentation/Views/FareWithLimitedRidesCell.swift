@@ -15,8 +15,8 @@ class FareWithLimitedRidesCell: FareCell {
     
     override func populateWithFare(fare: Fare) {
         super.populateWithFare(fare)
-        costPerRide.text = String(format:"%.1f", fare.cost/Double(fare.rides!))
+        costPerRide.text = String(format:"%.1f", Double(fare.cost!)/Double(fare.rides!))
         totalRides.text = String(format:"%d", fare.rides!)
-        totalCost.text = String(format:"%.1f", fare.cost)
+        totalCost.text = String(format:"%.1f", fare.cost!)
     }
 }

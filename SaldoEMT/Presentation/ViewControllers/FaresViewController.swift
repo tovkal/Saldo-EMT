@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 private let fareIdentifier = "FareCell"
 private let fareWithRidesIdentifier = "FareWithLimitedRidesCell"
@@ -23,11 +24,32 @@ class FaresViewController: UIViewController {
         tableView.registerNib(UINib(nibName: "FareCell", bundle: nil), forCellReuseIdentifier: fareIdentifier)
         tableView.registerNib(UINib(nibName: "FareWithLimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithRidesIdentifier)
         tableView.registerNib(UINib(nibName: "FareWithUnlimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithUnlimitedRidesIdentifier)
-        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200.0
         
-        fares = Array(Store.sharedInstance.fares.values)
-        fares.sortInPlace({ Int($0.number) < Int($1.number) })
+        
+        
+        //fares = Array(Store.sharedInstance.fares.values)
+        //fares.sortInPlace({ Int($0.number) < Int($1.number) })
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Fare")
+        
+        //3
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            fares = results as! [Fare]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+
     }
     
     @IBAction func didCancelFareSelection(sender: UIBarButtonItem) {
@@ -74,7 +96,7 @@ extension FaresViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         dispatch_async(dispatch_get_main_queue(), {
-            Store.sharedInstance.setNewCurrentFare(self.fares[indexPath.row])
+            //Store.sharedInstance.setNewCurrentFare(self.fares[indexPath.row])
             self.dismissViewControllerAnimated(true, completion: nil)
         })
     }

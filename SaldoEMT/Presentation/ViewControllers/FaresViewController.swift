@@ -27,8 +27,6 @@ class FaresViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200.0
         
-        
-        
         //fares = Array(Store.sharedInstance.fares.values)
         //fares.sortInPlace({ Int($0.number) < Int($1.number) })
     }

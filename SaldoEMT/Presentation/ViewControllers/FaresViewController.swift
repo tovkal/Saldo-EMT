@@ -26,9 +26,6 @@ class FaresViewController: UIViewController {
         tableView.registerNib(UINib(nibName: "FareWithUnlimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithUnlimitedRidesIdentifier)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200.0
-        
-        //fares = Array(Store.sharedInstance.fares.values)
-        //fares.sortInPlace({ Int($0.number) < Int($1.number) })
     }
     
     override func viewWillAppear(animated: Bool) {

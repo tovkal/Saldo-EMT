@@ -22,10 +22,17 @@ class FareCell: UITableViewCell {
     }
     
     func populateWithFare(fare: Fare) {
-        let lines = fare.lines as! [Int]
-        
-        fareName.text = fare.name
-        busLines.image = UIImage(named: lines.count == 2 ? few : many)
-        costPerRide.text = String(format:"%.1f", fare.cost!)
+        if let lines = fare.lines as? [Int] {
+            fareName.text = fare.name
+            busLines.image = UIImage(named: lines.count == 2 ? few : many)
+            
+            if let cost = fare.cost {
+                let formatter = NSNumberFormatter()
+                formatter.numberStyle = .DecimalStyle
+                formatter.minimumFractionDigits = 1
+                
+                costPerRide.text = formatter.stringFromNumber(cost)
+            }
+        }
     }
 }

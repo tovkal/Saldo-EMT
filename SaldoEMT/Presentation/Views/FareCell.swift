@@ -26,12 +26,8 @@ class FareCell: UITableViewCell {
             fareName.text = fare.name
             busLines.image = UIImage(named: lines.count == 2 ? few : many)
             
-            if let cost = fare.cost {
-                let formatter = NSNumberFormatter()
-                formatter.numberStyle = .DecimalStyle
-                formatter.minimumFractionDigits = 1
-                
-                costPerRide.text = formatter.stringFromNumber(cost)
+            if let cost = fare.cost {                
+                costPerRide.text = cost.toDecimalString()
             }
         }
     }

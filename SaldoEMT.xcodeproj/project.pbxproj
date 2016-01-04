@@ -27,7 +27,6 @@
 		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
-		95AC90911BCC272800787C79 /* BusLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AC90901BCC272800787C79 /* BusLineTests.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
@@ -86,7 +85,6 @@
 		95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBED1B5A852B002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
-		95AC90901BCC272800787C79 /* BusLineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineTests.swift; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
-				95AC90901BCC272800787C79 /* BusLineTests.swift */,
 			);
 			path = SaldoEMTTests;
 			sourceTree = "<group>";
@@ -410,7 +407,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95AC90911BCC272800787C79 /* BusLineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

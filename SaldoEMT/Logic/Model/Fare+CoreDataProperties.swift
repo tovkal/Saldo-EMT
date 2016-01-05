@@ -14,11 +14,12 @@ import CoreData
 
 extension Fare {
 
-    @NSManaged var cost: NSNumber?
+    @NSManaged var cost: NSNumber
     @NSManaged var days: NSNumber?
-    @NSManaged var lines: NSObject?
-    @NSManaged var name: String?
-    @NSManaged var number: String?
+    @NSManaged var lines: NSObject
+    @NSManaged var name: String
+    @NSManaged var number: String
     @NSManaged var rides: NSNumber?
+    @NSManaged var current: Bool
 
 }

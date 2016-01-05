@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15C40a" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="BusLines" representedClassName="" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,6 +7,7 @@
     </entity>
     <entity name="Fare" representedClassName=".Fare" syncable="YES">
         <attribute name="cost" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="current" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
         <attribute name="days" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="lines" attributeType="Transformable" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -15,6 +16,6 @@
     </entity>
     <elements>
         <element name="BusLines" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Fare" positionX="117" positionY="-54" width="128" height="133"/>
+        <element name="Fare" positionX="117" positionY="-54" width="128" height="150"/>
     </elements>
 </model>

@@ -49,11 +49,7 @@ class ViewController: UIViewController {
             self.tripButton.enabled = false
         }*/
         
-        if let fare = Store.sharedInstance.getCurrentFare() {
-            fareName.text = fare.name
-        } else {
-            // TODO: Select a fare
-        }
+        fareName.text = Store.sharedInstance.getSelectedFare()
     }
 }
 

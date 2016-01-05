@@ -16,10 +16,11 @@ class FareWithLimitedRidesCell: FareCell {
     override func populateWithFare(fare: Fare) {
         super.populateWithFare(fare)
         
-        if let cost = fare.cost, let rides = fare.rides {
-            costPerRide.text = (cost/rides).toDecimalString()
+        totalCost.text = fare.cost.toDecimalString()
+
+        if let rides = fare.rides {
+            costPerRide.text = (fare.cost/rides).toDecimalString()
             totalRides.text = rides.stringValue
-            totalCost.text = cost.toDecimalString()
         }
     }
 }

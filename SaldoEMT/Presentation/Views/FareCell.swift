@@ -25,10 +25,7 @@ class FareCell: UITableViewCell {
         if let lines = fare.lines as? [Int] {
             fareName.text = fare.name
             busLines.image = UIImage(named: lines.count == 2 ? few : many)
-            
-            if let cost = fare.cost {                
-                costPerRide.text = cost.toDecimalString()
-            }
+            costPerRide.text = fare.cost.toDecimalString()
         }
     }
 }

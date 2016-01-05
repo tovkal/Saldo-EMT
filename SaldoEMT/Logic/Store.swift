@@ -17,7 +17,6 @@ class Store {
     private var jsonData: NSData?
     private(set) var busLines = [String: BusLineJSON]()
     private(set) var fares = [String: FareJSON]()
-    private var currentFare: FareJSON?
     
     // MARK: - Public
     
@@ -39,19 +38,35 @@ class Store {
     }
     
     func getSelectedFare() -> String {
-        return "1"
+        if let fare = getCurrentFare()?[0] {
+            return fare.name
+        } else {
+            return "ERROR"
+        }
     }
     
-    func getCurrentFare() -> FareJSON? {
-        return currentFare
+    func setNewCurrentFare(fare: Fare) {
         
-        // TODO: Load from CoreData
+        if let oldFare = getCurrentFare()?[0], let newFare = getFareForName(fare.name)?[0] {
+            oldFare.current = false
+            newFare.current = true
+                        
+            saveContext()
+        }
     }
     
-    func setNewCurrentFare(fare: FareJSON) {
-        currentFare = fare
+    func getAllFares() -> [Fare] {
         
-        // TODO: Save in CoreData
+        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
+        
+        do {
+            let results = try getManagedContext().executeFetchRequest(fetchRequest)
+            return results as! [Fare]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        return []
     }
     
     // MARK: - Init
@@ -79,13 +94,12 @@ class Store {
             fares = getFaresFromJson(JSON(data: json))
         }
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        let entity =  NSEntityDescription.entityForName("Fare", inManagedObjectContext:managedContext)
+        let managedContext = getManagedContext()
+        let entity =  NSEntityDescription.entityForName(Fare.entityName, inManagedObjectContext:managedContext)
         
         for fareJSON in fares {
             let fare = Fare(entity: entity!, insertIntoManagedObjectContext: managedContext)
-
+            
             fare.setValue(fareJSON.1.name, forKey: "name")
             fare.setValue(fareJSON.1.number, forKey: "number")
             fare.setValue(fareJSON.1.rides, forKey: "rides")
@@ -93,11 +107,13 @@ class Store {
             fare.setValue(fareJSON.1.days, forKey: "days")
             fare.setValue(fareJSON.1.lines, forKey: "lines")
             
-            do {
-                try managedContext.save()
-            } catch let error as NSError  {
-                print("Could not save \(error), \(error.userInfo)")
+            if fareJSON.1.name == "Residentes" {
+                fare.setValue(true, forKey: "current")
+            } else {
+                fare.setValue(false, forKey: "current")
             }
+            
+            saveContext()
         }
         
         return fares
@@ -143,5 +159,54 @@ class Store {
         }
         
         return fares
+    }
+    
+    // MARK: - CoreData functions
+    
+    private func getManagedContext() -> NSManagedObjectContext {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.managedObjectContext
+    }
+    
+    private func saveContext() {
+        do {
+            try getManagedContext().save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    private func getCurrentFare() -> [Fare]? {
+        
+        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
+        fetchRequest.predicate = NSPredicate(format: "current = YES")
+        
+        do {
+            if let results = try getManagedContext().executeFetchRequest(fetchRequest) as? [Fare] where results.count == 1 {
+                return results
+            }
+        } catch {
+            // TODO log error
+            print(error)
+        }
+        
+        return nil
+    }
+    
+    private func getFareForName(fareName: String) -> [Fare]? {
+        
+        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
+        fetchRequest.predicate = NSPredicate(format: "name = %@", fareName)
+        
+        do {
+            if let results = try getManagedContext().executeFetchRequest(fetchRequest) as? [Fare] where results.count > 0 {
+                return results
+            }
+        } catch {
+            // TODO log error
+            print(error)
+        }
+        
+        return nil
     }
 }

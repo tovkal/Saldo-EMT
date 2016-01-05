@@ -13,5 +13,7 @@ import CoreData
 class Fare: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
+    
+    internal static let entityName = "Fare"
 
 }

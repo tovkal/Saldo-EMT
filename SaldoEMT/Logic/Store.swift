@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 import UIKit
 import CoreData
+import Crashlytics
 
 class Store {
     static let sharedInstance = Store()
@@ -63,7 +64,7 @@ class Store {
             let results = try getManagedContext().executeFetchRequest(fetchRequest)
             return results as! [Fare]
         } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+            Crashlytics.sharedInstance().recordError(error)
         }
         
         return []
@@ -126,7 +127,7 @@ class Store {
             do {
                 return try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
             } catch let error as NSError {
-                print(error.localizedDescription)
+                Crashlytics.sharedInstance().recordError(error)
             }
         } else {
             print("Invalid filename/path.")
@@ -172,7 +173,7 @@ class Store {
         do {
             try getManagedContext().save()
         } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
+            Crashlytics.sharedInstance().recordError(error)
         }
     }
     

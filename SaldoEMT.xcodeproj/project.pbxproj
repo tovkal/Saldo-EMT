@@ -27,6 +27,8 @@
 		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
+		95C31B781C46592800365F87 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C31B761C46592800365F87 /* Fabric.framework */; };
+		95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C31B771C46592800365F87 /* Crashlytics.framework */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
@@ -85,6 +87,8 @@
 		95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBED1B5A852B002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
+		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */,
+				95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */,
+				95C31B781C46592800365F87 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +171,8 @@
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
 				95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */,
 				9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */,
+				95C31B761C46592800365F87 /* Fabric.framework */,
+				95C31B771C46592800365F87 /* Crashlytics.framework */,
 				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
 				953987421BD2699E005DB2C7 /* iAd.framework */,
 			);
@@ -269,6 +277,7 @@
 				95A4CBD11B5A852A002FB3E9 /* Resources */,
 				9566B8BF1BB87A2D000ED3E1 /* ShellScript */,
 				9566B8C01BB87AAA000ED3E1 /* CopyFiles */,
+				95C31B751C46590400365F87 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -376,6 +385,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		95C31B751C46590400365F87 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -537,6 +559,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -555,6 +578,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -9,8 +9,8 @@
 import Foundation
 import SwiftyJSON
 import UIKit
-import CoreData
 import Crashlytics
+import RealmSwift
 
 class Store {
     static let sharedInstance = Store()
@@ -39,35 +39,27 @@ class Store {
     }
     
     func getSelectedFare() -> String {
-        if let fare = getCurrentFare()?[0] {
-            return fare.name
+        let results = getCurrentFare()
+        if results.count == 1 {
+            return results[0].name
         } else {
             return "ERROR"
         }
     }
     
     func setNewCurrentFare(fare: Fare) {
+        let oldFare = getCurrentFare()
+        let newFare = getFareForName(fare.name)
         
-        if let oldFare = getCurrentFare()?[0], let newFare = getFareForName(fare.name)?[0] {
-            oldFare.current = false
-            newFare.current = true
-                        
-            saveContext()
+        if oldFare.count == 1 && newFare.count == 1 {
+            oldFare[0].current = false
+            newFare[0].current = true
         }
     }
     
-    func getAllFares() -> [Fare] {
-        
-        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
-        
-        do {
-            let results = try getManagedContext().executeFetchRequest(fetchRequest)
-            return results as! [Fare]
-        } catch let error as NSError {
-            Crashlytics.sharedInstance().recordError(error)
-        }
-        
-        return []
+    func getAllFares() -> Results<Fare> {
+        let realm = try! Realm()
+        return realm.objects(Fare)
     }
     
     // MARK: - Init
@@ -95,26 +87,30 @@ class Store {
             fares = getFaresFromJson(JSON(data: json))
         }
         
-        let managedContext = getManagedContext()
-        let entity =  NSEntityDescription.entityForName(Fare.entityName, inManagedObjectContext:managedContext)
+        var firstCurrent = true
         
-        for fareJSON in fares {
-            let fare = Fare(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        for (_, fareJSON) in fares {
+            let fare = Fare()
             
-            fare.setValue(fareJSON.1.name, forKey: "name")
-            fare.setValue(fareJSON.1.number, forKey: "number")
-            fare.setValue(fareJSON.1.rides, forKey: "rides")
-            fare.setValue(fareJSON.1.cost, forKey: "cost")
-            fare.setValue(fareJSON.1.days, forKey: "days")
-            fare.setValue(fareJSON.1.lines, forKey: "lines")
+            fare.name = fareJSON.name
+            fare.number = fareJSON.number
+            fare.rides.value = fareJSON.rides
+            fare.cost = fareJSON.cost
+            fare.days.value = fareJSON.days
+            //fare.lines.append() = fareJSON.lines
             
-            if fareJSON.1.name == "Residentes" {
-                fare.setValue(true, forKey: "current")
-            } else {
-                fare.setValue(false, forKey: "current")
+            if fareJSON.name == "Residentes" && firstCurrent {
+                fare.current = true
+                firstCurrent = false
             }
             
-            saveContext()
+            let realm = try! Realm()
+            
+            if realm.objectForPrimaryKey(Fare.self, key: fare.number) == nil { // Add if not exists
+                try! realm.write {
+                    realm.add(fare, update: false)
+                }
+            }
         }
         
         return fares
@@ -162,52 +158,19 @@ class Store {
         return fares
     }
     
-    // MARK: - CoreData functions
+    // MARK: - Realm private functions
     
-    private func getManagedContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.managedObjectContext
+    private func getCurrentFare() -> Results<Fare> {
+        let realm = try! Realm()
+        
+        let predicate = NSPredicate(format: "current == YES")
+        return realm.objects(Fare).filter(predicate)
     }
     
-    private func saveContext() {
-        do {
-            try getManagedContext().save()
-        } catch let error as NSError  {
-            Crashlytics.sharedInstance().recordError(error)
-        }
-    }
-    
-    private func getCurrentFare() -> [Fare]? {
+    private func getFareForName(fareName: String) -> Results<Fare> {
+        let realm = try! Realm()
         
-        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
-        fetchRequest.predicate = NSPredicate(format: "current = YES")
-        
-        do {
-            if let results = try getManagedContext().executeFetchRequest(fetchRequest) as? [Fare] where results.count == 1 {
-                return results
-            }
-        } catch {
-            // TODO log error
-            print(error)
-        }
-        
-        return nil
-    }
-    
-    private func getFareForName(fareName: String) -> [Fare]? {
-        
-        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
-        fetchRequest.predicate = NSPredicate(format: "name = %@", fareName)
-        
-        do {
-            if let results = try getManagedContext().executeFetchRequest(fetchRequest) as? [Fare] where results.count > 0 {
-                return results
-            }
-        } catch {
-            // TODO log error
-            print(error)
-        }
-        
-        return nil
+        let predicate = NSPredicate(format: "name == %@", fareName)
+        return realm.objects(Fare).filter(predicate)
     }
 }

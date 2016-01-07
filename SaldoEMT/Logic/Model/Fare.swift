@@ -2,18 +2,23 @@
 //  Fare.swift
 //  SaldoEMT
 //
-//  Created by Andrés Pizá Bückmann on 15/11/15.
-//  Copyright © 2015 tovkal. All rights reserved.
+//  Created by Andrés Pizá Bückmann on 16/1/16.
+//  Copyright © 2016 tovkal. All rights reserved.
 //
 
 import Foundation
-import CoreData
+import RealmSwift
 
-
-class Fare: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
+class Fare: Object {
+    dynamic var cost = 0.0
+    let days = RealmOptional<Int>()
+    let lines = List<BusLine>()
+    dynamic var name = ""
+    dynamic var number = ""
+    let rides = RealmOptional<Int>()
+    dynamic var current = false
     
-    internal static let entityName = "Fare"
-
+    override static func primaryKey() -> String? {
+        return "number"
+    }
 }

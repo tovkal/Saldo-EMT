@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 private let fareIdentifier = "FareCell"
 private let fareWithRidesIdentifier = "FareWithLimitedRidesCell"
@@ -16,7 +16,7 @@ private let fareWithUnlimitedRidesIdentifier = "FareWithUnlimitedRidesCell"
 class FaresViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private var fares = [Fare]()
+    private var fares: Results<Fare> = Store.sharedInstance.getAllFares()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,8 @@ class FaresViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         fares = Store.sharedInstance.getAllFares()
+        print(fares.count)
+        print(fares[0].name)
     }
     
     @IBAction func didCancelFareSelection(sender: UIBarButtonItem) {
@@ -50,13 +52,13 @@ extension FaresViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let fare = fares[indexPath.row]
         
-        if fare.rides == nil && fare.days == nil {
+        if fare.rides.value == nil && fare.days.value == nil {
             let cell = tableView.dequeueReusableCellWithIdentifier(fareIdentifier, forIndexPath: indexPath) as! FareCell
             
             cell.populateWithFare(fare)
             
             return cell
-        } else if fare.rides == nil && fare.days != nil {
+        } else if fare.rides.value == nil && fare.days.value != nil {
             let cell = tableView.dequeueReusableCellWithIdentifier(fareWithUnlimitedRidesIdentifier, forIndexPath: indexPath) as! FareWithUnlimitedRidesCell
             
             cell.populateWithFare(fare)

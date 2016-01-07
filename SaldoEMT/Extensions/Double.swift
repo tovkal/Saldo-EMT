@@ -1,15 +1,14 @@
 //
-//  NSNumber.swift
+//  Double.swift
 //  SaldoEMT
 //
-//  Created by Andrés Pizá Bückmann on 10/1/16.
+//  Created by Andrés Pizá Bückmann on 16/1/16.
 //  Copyright © 2016 tovkal. All rights reserved.
 //
 
 import Foundation
 
-extension NSNumber {
-    
+extension Double {
     func toDecimalString() -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .DecimalStyle
@@ -17,8 +16,4 @@ extension NSNumber {
         
         return formatter.stringFromNumber(self)!
     }
-}
-
-public func /(lhs: NSNumber, rhs: NSNumber) -> NSNumber {
-    return (lhs.doubleValue / rhs.doubleValue) as NSNumber
 }

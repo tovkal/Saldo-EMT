@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
-		953DC9301C42E2440073A4DC /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC92F1C42E2440073A4DC /* NSNumber.swift */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
 		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
 		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; };
+		9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D2291C4AB8CE008E2A47 /* Fare.swift */; };
+		9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22B1C4AB97B008E2A47 /* BusLine.swift */; };
+		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
 		9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B71BB85B53000ED3E1 /* fares_ca.json */; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
 		9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */; };
 		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; };
 		9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C81BB884CC000ED3E1 /* UIColor.swift */; };
-		95A312C51BF893490094C33D /* Fare+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A312C31BF893490094C33D /* Fare+CoreDataProperties.swift */; };
-		95A312C61BF893490094C33D /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A312C41BF893490094C33D /* Fare.swift */; };
 		95A312C81BF894990094C33D /* FareJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A312C71BF894990094C33D /* FareJSON.swift */; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
@@ -63,19 +63,21 @@
 
 /* Begin PBXFileReference section */
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		953DC92F1C42E2440073A4DC /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		954020A11BC9714A009419EA /* FaresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresViewController.swift; sourceTree = "<group>"; };
 		954020AB1BCA627C009419EA /* FareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareCell.swift; sourceTree = "<group>"; };
+		9562D2221C4AB85A008E2A47 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9562D2231C4AB85A008E2A47 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9562D2291C4AB8CE008E2A47 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
+		9562D22B1C4AB97B008E2A47 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
+		9562D22D1C4AE00B008E2A47 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		9566B8B71BB85B53000ED3E1 /* fares_ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_ca.json; sourceTree = "<group>"; };
 		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
 		9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		9566B8C31BB87B0D000ED3E1 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		9566B8C81BB884CC000ED3E1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		95A312C31BF893490094C33D /* Fare+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fare+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		95A312C41BF893490094C33D /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
 		95A312C71BF894990094C33D /* FareJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareJSON.swift; sourceTree = "<group>"; };
 		95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaldoEMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBD71B5A852A002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,6 +168,8 @@
 		95A4CBCA1B5A852A002FB3E9 = {
 			isa = PBXGroup;
 			children = (
+				9562D2221C4AB85A008E2A47 /* Realm.framework */,
+				9562D2231C4AB85A008E2A47 /* RealmSwift.framework */,
 				95A4CBD41B5A852A002FB3E9 /* Products */,
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
@@ -240,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				9566B8C81BB884CC000ED3E1 /* UIColor.swift */,
-				953DC92F1C42E2440073A4DC /* NSNumber.swift */,
+				9562D22D1C4AE00B008E2A47 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,8 +263,8 @@
 			children = (
 				95F9E8961BF88A66002ECCF9 /* BusLineJSON.swift */,
 				95A312C71BF894990094C33D /* FareJSON.swift */,
-				95A312C31BF893490094C33D /* Fare+CoreDataProperties.swift */,
-				95A312C41BF893490094C33D /* Fare.swift */,
+				9562D2291C4AB8CE008E2A47 /* Fare.swift */,
+				9562D22B1C4AB97B008E2A47 /* BusLine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +383,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -407,16 +413,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F9E8981BF88A66002ECCF9 /* BusLineJSON.swift in Sources */,
-				953DC9301C42E2440073A4DC /* NSNumber.swift in Sources */,
 				95A312C81BF894990094C33D /* FareJSON.swift in Sources */,
+				9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */,
 				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
-				95A312C61BF893490094C33D /* Fare.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
-				95A312C51BF893490094C33D /* Fare+CoreDataProperties.swift in Sources */,
+				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
 				95F9E88D1BF887D9002ECCF9 /* Model.xcdatamodeld in Sources */,
 				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
+				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,
 				9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */,
 				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,

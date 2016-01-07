@@ -18,9 +18,10 @@ class FareWithLimitedRidesCell: FareCell {
         
         totalCost.text = fare.cost.toDecimalString()
 
-        if let rides = fare.rides {
-            costPerRide.text = (fare.cost/rides).toDecimalString()
-            totalRides.text = rides.stringValue
+        if let rides = fare.rides.value {
+            let doubleRides = Double(rides)
+            costPerRide.text = (fare.cost/doubleRides).toDecimalString()
+            totalRides.text = String(rides)
         }
     }
 }

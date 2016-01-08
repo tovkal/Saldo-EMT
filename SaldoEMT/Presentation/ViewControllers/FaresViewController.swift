@@ -30,8 +30,6 @@ class FaresViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         fares = Store.sharedInstance.getAllFares()
-        print(fares.count)
-        print(fares[0].name)
     }
     
     @IBAction func didCancelFareSelection(sender: UIBarButtonItem) {

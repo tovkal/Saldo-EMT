@@ -9,11 +9,11 @@
 import UIKit
 
 struct BusLineJSON: Equatable {
-    let number: String
+    let number: Int
     let color: UIColor
     let name: String
     
-    init(number: String, color: UIColor, name: String) {
+    init(number: Int, color: UIColor, name: String) {
         self.number = number
         self.color = color
         self.name = name

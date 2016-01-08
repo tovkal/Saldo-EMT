@@ -54,7 +54,7 @@ class BusLineView: UICollectionViewCell {
     }
     
     func populateWithBusLine(busLine: BusLineJSON) {
-        self.busLine.text = busLine.number
+        self.busLine.text = String(busLine.number)
         backgroundColor = busLine.color
     }
     

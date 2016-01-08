@@ -16,27 +16,25 @@ class Store {
     static let sharedInstance = Store()
     
     private var jsonData: NSData?
-    private(set) var busLines = [String: BusLineJSON]()
-    private(set) var fares = [String: FareJSON]()
     
     // MARK: - Public
     
-    func getBusLinesForFare(fare: String) -> [BusLineJSON] {
-        if let fare = fares[fare] {
-            
-            var lines = [BusLineJSON]()
-            
-            for line in fare.lines {
-                if let busLine = busLines["\(line)"] {
-                    lines.append(busLine)
-                }
-            }
-            
-            return lines
-        } else {
-            return [BusLineJSON]()
-        }
-    }
+//    func getBusLinesForFare(fare: String) -> [BusLineJSON] {
+//        if let fare = fares[fare] {
+//            
+//            var lines = [BusLineJSON]()
+//            
+//            for line in fare.lines {
+//                if let busLine = busLines["\(line)"] {
+//                    lines.append(busLine)
+//                }
+//            }
+//            
+//            return lines
+//        } else {
+//            return [BusLineJSON]()
+//        }
+//    }
     
     func getSelectedFare() -> String {
         let results = getCurrentFare()
@@ -66,8 +64,8 @@ class Store {
     
     private init() {
         jsonData = getFileData()
-        busLines = initBusLines()
-        fares = initFares()
+        initBusLines()
+        initFares()
     }
     
     private func initBusLines() -> [String: BusLineJSON] {
@@ -75,6 +73,22 @@ class Store {
         
         if let json = jsonData {
             busLines = getBusLinesFromJson(JSON(data: json))
+        }
+        
+        let realm = try! Realm()
+        
+        for (_, busLineJSON) in busLines {
+            let busLine = BusLine()
+            
+            busLine.number = busLineJSON.number
+            busLine.hexColor = busLineJSON.color.hexString(true)
+            busLine.name = busLineJSON.name
+            
+            if realm.objectForPrimaryKey(BusLine.self, key: busLine.number) == nil { // Add if not exists
+                try! realm.write {
+                    realm.add(busLine, update: false)
+                }
+            }
         }
         
         return busLines
@@ -88,6 +102,7 @@ class Store {
         }
         
         var firstCurrent = true
+        let realm = try! Realm()
         
         for (_, fareJSON) in fares {
             let fare = Fare()
@@ -97,14 +112,15 @@ class Store {
             fare.rides.value = fareJSON.rides
             fare.cost = fareJSON.cost
             fare.days.value = fareJSON.days
-            //fare.lines.append() = fareJSON.lines
+            print(getBusLinesForLineNumbers(fareJSON.lines).count)
+            for busLine in getBusLinesForLineNumbers(fareJSON.lines) {
+                fare.lines.append(busLine)
+            }
             
             if fareJSON.name == "Residentes" && firstCurrent {
                 fare.current = true
                 firstCurrent = false
             }
-            
-            let realm = try! Realm()
             
             if realm.objectForPrimaryKey(Fare.self, key: fare.number) == nil { // Add if not exists
                 try! realm.write {
@@ -138,7 +154,7 @@ class Store {
         
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
-                lines.updateValue(BusLineJSON(number: lineNumber, color: UIColor(rgba: "#" + lineInfo["color"].stringValue), name: lineInfo["name"].stringValue), forKey: lineNumber)
+                lines.updateValue(BusLineJSON(number: Int(lineNumber)!, color: UIColor(rgba: "#" + lineInfo["color"].stringValue), name: lineInfo["name"].stringValue), forKey: lineNumber)
             }
         }
         
@@ -172,5 +188,12 @@ class Store {
         
         let predicate = NSPredicate(format: "name == %@", fareName)
         return realm.objects(Fare).filter(predicate)
+    }
+    
+    private func getBusLinesForLineNumbers(busLines: [Int]) -> Results<BusLine> {
+        let realm = try! Realm()
+
+        let predicate = NSPredicate(format: "number IN %@", busLines)
+        return realm.objects(BusLine).filter(predicate)
     }
 }

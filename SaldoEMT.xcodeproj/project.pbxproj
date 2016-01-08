@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950408AD1C4B9FF600B067B0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */; };
 		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
@@ -19,7 +20,6 @@
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
 		9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */; };
 		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; };
-		9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C81BB884CC000ED3E1 /* UIColor.swift */; };
 		95A312C81BF894990094C33D /* FareJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A312C71BF894990094C33D /* FareJSON.swift */; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
@@ -62,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
 		9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		9566B8C31BB87B0D000ED3E1 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		9566B8C81BB884CC000ED3E1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95A312C71BF894990094C33D /* FareJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareJSON.swift; sourceTree = "<group>"; };
 		95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaldoEMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBD71B5A852A002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		95D153D21B6A923C00866B59 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9566B8C81BB884CC000ED3E1 /* UIColor.swift */,
+				950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */,
 				9562D22D1C4AE00B008E2A47 /* Double.swift */,
 			);
 			path = Extensions;
@@ -412,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950408AD1C4B9FF600B067B0 /* UIColorExtension.swift in Sources */,
 				95F9E8981BF88A66002ECCF9 /* BusLineJSON.swift in Sources */,
 				95A312C81BF894990094C33D /* FareJSON.swift in Sources */,
 				9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */,
@@ -423,7 +424,6 @@
 				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
 				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,
-				9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */,
 				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,

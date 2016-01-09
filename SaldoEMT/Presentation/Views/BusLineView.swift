@@ -53,9 +53,9 @@ class BusLineView: UICollectionViewCell {
         viewSetup()
     }
     
-    func populateWithBusLine(busLine: BusLineJSON) {
+    func populateWithBusLine(busLine: BusLine) {
         self.busLine.text = String(busLine.number)
-        backgroundColor = busLine.color
+        backgroundColor = UIColor(rgba: busLine.hexColor)
     }
     
     // MARK: - View setup methonds
@@ -86,6 +86,4 @@ class BusLineView: UICollectionViewCell {
     private func viewSetup() {
         cornerRadius = frame.width / 2
     }
-    
-    
 }

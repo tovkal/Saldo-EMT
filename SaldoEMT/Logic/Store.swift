@@ -14,6 +14,7 @@ import RealmSwift
 
 class Store {
     static let sharedInstance = Store()
+    private let realm = try! Realm()
     
     // MARK: - Public
     
@@ -31,13 +32,14 @@ class Store {
         let newFare = getFareForName(fare.name)
         
         if oldFare.count == 1 && newFare.count == 1 {
-            oldFare[0].current = false
-            newFare[0].current = true
+            try! realm.write {
+                oldFare[0].current = false
+                newFare[0].current = true
+            }
         }
     }
     
     func getAllFares() -> Results<Fare> {
-        let realm = try! Realm()
         return realm.objects(Fare)
     }
     
@@ -68,8 +70,6 @@ class Store {
     }
     
     private func parseBusLines(json: JSON) {
-        let realm = try! Realm()
-        
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
                 let busLine = BusLine()
@@ -88,7 +88,6 @@ class Store {
     }
     
     private func parseFares(json: JSON) {
-        let realm = try! Realm()
         var firstCurrent = true
         
         for (_, fare) in json["fares"] {
@@ -122,22 +121,16 @@ class Store {
     // MARK: - Realm private functions
     
     private func getCurrentFare() -> Results<Fare> {
-        let realm = try! Realm()
-        
         let predicate = NSPredicate(format: "current == YES")
         return realm.objects(Fare).filter(predicate)
     }
     
     private func getFareForName(fareName: String) -> Results<Fare> {
-        let realm = try! Realm()
-        
         let predicate = NSPredicate(format: "name == %@", fareName)
         return realm.objects(Fare).filter(predicate)
     }
     
-    private func getBusLinesForLineNumbers(busLines: [Int]) -> Results<BusLine> {
-        let realm = try! Realm()
-        
+    private func getBusLinesForLineNumbers(busLines: [Int]) -> Results<BusLine> {        
         let predicate = NSPredicate(format: "number IN %@", busLines)
         return realm.objects(BusLine).filter(predicate)
     }

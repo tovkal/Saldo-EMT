@@ -12,7 +12,12 @@ extension Double {
     func toDecimalString() -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .DecimalStyle
-        formatter.minimumFractionDigits = 1
+        
+        if self != 0.0 {
+            formatter.minimumFractionDigits = 1
+        } else {
+            formatter.minimumFractionDigits = 0
+        }
         
         return formatter.stringFromNumber(self)!
     }

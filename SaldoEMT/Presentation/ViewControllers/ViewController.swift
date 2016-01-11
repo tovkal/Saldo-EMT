@@ -50,6 +50,9 @@ class ViewController: UIViewController {
         }*/
         
         fareName.text = Store.sharedInstance.getSelectedFare()
+        tripsMade.text = "\(Store.sharedInstance.getTripsDone())"
+        tripsRemaining.text = "\(Store.sharedInstance.getTripsRemaining())"
+        remainingAmount.text = Store.sharedInstance.getRemainingBalance().toDecimalString()
     }
 }
 

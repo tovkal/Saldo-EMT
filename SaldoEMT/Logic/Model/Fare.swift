@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class Fare: Object {
-    dynamic var cost = 0.0
+    dynamic var cost: Double = 0.0
     let days = RealmOptional<Int>()
     let lines = List<BusLine>()
     dynamic var name = ""

@@ -43,12 +43,34 @@ class Store {
         return realm.objects(Fare)
     }
     
+    func getTripsDone() -> Int {
+        return realm.objects(Balance)[0].tripsDone
+    }
+    
+    func getTripsRemaining() -> Int {
+        return realm.objects(Balance)[0].tripsRemaining
+    }
+    
+    func getRemainingBalance() -> Double {
+        return realm.objects(Balance)[0].remaining
+    }
+    
     // MARK: - Init
     
     private init() {
         if let json = getFileData() {
             parseBusLines(json)
             parseFares(json)
+        }
+        
+        initBalance()
+    }
+    
+    private func initBalance() {
+        if realm.objects(Balance).count == 0 {
+            try! realm.write {
+                realm.add(Balance())
+            }
         }
     }
     

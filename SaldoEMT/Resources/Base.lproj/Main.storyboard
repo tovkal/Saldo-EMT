@@ -228,6 +228,10 @@
                     <connections>
                         <outlet property="bannerView" destination="7d0-om-Dxg" id="ldY-Es-tkw"/>
                         <outlet property="fareName" destination="AZC-KR-Cub" id="EHX-8H-xjE"/>
+                        <outlet property="remainingAmount" destination="2TK-hC-oU3" id="ked-4I-6o7"/>
+                        <outlet property="tripButton" destination="8cP-w7-dTC" id="BMc-e2-kGY"/>
+                        <outlet property="tripsMade" destination="oRH-iv-HhN" id="v7V-xL-gbv"/>
+                        <outlet property="tripsRemaining" destination="KO8-gf-1Jp" id="AcP-GA-csE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

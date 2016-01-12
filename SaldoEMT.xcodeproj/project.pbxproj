@@ -13,6 +13,8 @@
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
 		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
 		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; };
+		95559B151C516CF10003E32F /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95559B141C516CF10003E32F /* SVProgressHUD.framework */; };
+		95559B171C516E6B0003E32F /* StoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95559B161C516E6B0003E32F /* StoreError.swift */; };
 		9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D2291C4AB8CE008E2A47 /* Fare.swift */; };
 		9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22B1C4AB97B008E2A47 /* BusLine.swift */; };
 		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
@@ -67,6 +69,8 @@
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		954020A11BC9714A009419EA /* FaresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresViewController.swift; sourceTree = "<group>"; };
 		954020AB1BCA627C009419EA /* FareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareCell.swift; sourceTree = "<group>"; };
+		95559B141C516CF10003E32F /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		95559B161C516E6B0003E32F /* StoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
 		9562D2221C4AB85A008E2A47 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9562D2231C4AB85A008E2A47 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9562D2291C4AB8CE008E2A47 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			files = (
 				953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */,
 				95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */,
+				95559B151C516CF10003E32F /* SVProgressHUD.framework in Frameworks */,
 				95C31B781C46592800365F87 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +169,7 @@
 		95A4CBCA1B5A852A002FB3E9 = {
 			isa = PBXGroup;
 			children = (
+				95559B141C516CF10003E32F /* SVProgressHUD.framework */,
 				9562D2221C4AB85A008E2A47 /* Realm.framework */,
 				9562D2231C4AB85A008E2A47 /* RealmSwift.framework */,
 				95A4CBD41B5A852A002FB3E9 /* Products */,
@@ -249,6 +255,7 @@
 			children = (
 				95D4356F1BB846D300745E64 /* Model */,
 				9566B8C31BB87B0D000ED3E1 /* Store.swift */,
+				95559B161C516E6B0003E32F /* StoreError.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -379,6 +386,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			outputPaths = (
 			);
@@ -412,6 +420,7 @@
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
+				95559B171C516E6B0003E32F /* StoreError.swift in Sources */,
 				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
 				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,

@@ -1,2 +1,3 @@
 github "SwiftyJSON/SwiftyJSON"
 github "realm/realm-cocoa"
+github "SVProgressHUD/SVProgressHUD"

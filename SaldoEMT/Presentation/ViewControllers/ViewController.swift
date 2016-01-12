@@ -8,6 +8,7 @@
 
 import UIKit
 import iAd
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -16,24 +17,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var tripsMade: UILabel!
     @IBOutlet weak var tripsRemaining: UILabel!
     @IBOutlet weak var tripButton: UIButton!
-    @IBOutlet weak var moneyButton: UIButton!
     @IBOutlet weak var bannerView: ADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //updateLabels()
     }
     
     override func viewWillAppear(animated: Bool) {
         updateLabels()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    @IBAction func addTrip(sender: UIButton) {
+    
+    @IBAction func addTrip(sender: UIButton) {        
+        if let errorMessage = Store.sharedInstance.addTrip() {
+            SVProgressHUD.showErrorWithStatus(errorMessage)
+        }
+                
         updateLabels()
     }
     
@@ -41,14 +43,6 @@ class ViewController: UIViewController {
     }
     
     private func updateLabels() {
-        /*remainingAmount.text = "\(viewModel.amount!) €"
-        tripsMade.text = String(viewModel.tripsMade!)
-        tripsRemaining.text = String(viewModel.tripsRemaining!)
-        
-        if let remainingTrips = viewModel.tripsRemaining where remainingTrips == 0 {
-            self.tripButton.enabled = false
-        }*/
-        
         fareName.text = Store.sharedInstance.getSelectedFare()
         tripsMade.text = "\(Store.sharedInstance.getTripsDone())"
         tripsRemaining.text = "\(Store.sharedInstance.getTripsRemaining())"

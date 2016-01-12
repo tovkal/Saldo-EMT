@@ -55,6 +55,42 @@ class Store {
         return realm.objects(Balance)[0].remaining
     }
     
+    func getCurrentTripCost() throws -> Double {
+        let results = getCurrentFare()
+        if results.count == 1 {
+            return results[0].tripCost
+        }
+        
+        throw StoreError.CostPerTripUnknown
+    }
+    
+    func addTrip() -> String? {
+        do {
+            let costPerTrip = try getCurrentTripCost()
+
+            if getRemainingBalance() < costPerTrip {
+                throw StoreError.InsufficientBalance
+            }
+            
+            let remaining = realm.objects(Balance)[0].remaining - costPerTrip
+            
+            try realm.write {
+                realm.objects(Balance)[0].tripsDone++;
+                realm.objects(Balance)[0].tripsRemaining--;
+                realm.objects(Balance)[0].remaining = remaining
+            }
+        } catch StoreError.CostPerTripUnknown {
+            return "Cost per trip is unknown, can't add trip"
+        } catch StoreError.InsufficientBalance {
+            return "There is not enough money to pay for the trip"
+        } catch let error as NSError {
+            Crashlytics.sharedInstance().recordError(error)
+            return "Unknown error ocurred"
+        }
+        
+        return nil
+    }
+    
     // MARK: - Init
     
     private init() {
@@ -70,6 +106,9 @@ class Store {
         if realm.objects(Balance).count == 0 {
             try! realm.write {
                 realm.add(Balance())
+                
+                realm.objects(Balance)[0].remaining = 4
+                realm.objects(Balance)[0].tripsRemaining = 5
             }
         }
     }
@@ -131,6 +170,12 @@ class Store {
                     firstCurrent = false
                 }
                 
+                if let rides = fare.rides.value {
+                    fare.tripCost = fare.cost / Double(rides)
+                } else {
+                    fare.tripCost = fare.cost
+                }
+                
                 if realm.objectForPrimaryKey(Fare.self, key: fare.number) == nil { // Add if not exists
                     try! realm.write {
                         realm.add(fare, update: false)
@@ -152,7 +197,7 @@ class Store {
         return realm.objects(Fare).filter(predicate)
     }
     
-    private func getBusLinesForLineNumbers(busLines: [Int]) -> Results<BusLine> {        
+    private func getBusLinesForLineNumbers(busLines: [Int]) -> Results<BusLine> {
         let predicate = NSPredicate(format: "number IN %@", busLines)
         return realm.objects(BusLine).filter(predicate)
     }

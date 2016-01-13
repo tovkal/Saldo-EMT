@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func addTrip(sender: UIButton) {        
+    @IBAction func addTrip(sender: UIButton) {
         if let errorMessage = Store.sharedInstance.addTrip() {
             SVProgressHUD.showErrorWithStatus(errorMessage)
         }

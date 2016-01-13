@@ -67,7 +67,7 @@ class Store {
     func addTrip() -> String? {
         do {
             let costPerTrip = try getCurrentTripCost()
-
+            
             if getRemainingBalance() < costPerTrip {
                 throw StoreError.InsufficientBalance
             }
@@ -89,6 +89,21 @@ class Store {
         }
         
         return nil
+    }
+    
+    func addMoney(amount: Double) {
+        do {
+            
+            let remaining = amount + realm.objects(Balance)[0].remaining
+            let costPerTrip = try getCurrentTripCost()
+            
+            try realm.write {
+                realm.objects(Balance)[0].tripsRemaining = Int(remaining / costPerTrip)
+                realm.objects(Balance)[0].remaining = remaining
+            }
+        } catch let error as NSError {
+            Crashlytics.sharedInstance().recordError(error)
+        }
     }
     
     // MARK: - Init

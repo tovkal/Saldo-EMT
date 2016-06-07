@@ -75,8 +75,8 @@ class Store {
             let remaining = realm.objects(Balance)[0].remaining - costPerTrip
             
             try realm.write {
-                realm.objects(Balance)[0].tripsDone++;
-                realm.objects(Balance)[0].tripsRemaining--;
+                realm.objects(Balance)[0].tripsDone += 1;
+                realm.objects(Balance)[0].tripsRemaining -= 1;
                 realm.objects(Balance)[0].remaining = remaining
             }
         } catch StoreError.CostPerTripUnknown {

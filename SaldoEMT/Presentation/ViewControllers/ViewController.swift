@@ -8,7 +8,6 @@
 
 import UIKit
 import iAd
-import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         updateLabels()
     }
     
@@ -31,18 +30,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func addTrip(sender: UIButton) {
-        if let errorMessage = Store.sharedInstance.addTrip() {
-            SVProgressHUD.showErrorWithStatus(errorMessage)
-        }
+    @IBAction func addTrip(_ sender: UIButton) {
+        /*if let errorMessage = Store.sharedInstance.addTrip() {
+            SVProgressHUD.showError(withStatus: errorMessage)
+        }*/ // TODO Redo
                 
         updateLabels()
     }
     
-    @IBAction func addMoney(sender: UIButton) {
+    @IBAction func addMoney(_ sender: UIButton) {
     }
     
-    private func updateLabels() {
+    fileprivate func updateLabels() {
         fareName.text = Store.sharedInstance.getSelectedFare()
         tripsMade.text = "\(Store.sharedInstance.getTripsDone())"
         tripsRemaining.text = "\(Store.sharedInstance.getTripsRemaining())"
@@ -52,12 +51,12 @@ class ViewController: UIViewController {
 
 extension ViewController: ADBannerViewDelegate {
     
-    func bannerViewDidLoadAd(banner: ADBannerView!) {
-        bannerView.hidden = false
+    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
+        bannerView.isHidden = false
     }
     
-    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        bannerView.hidden = true
+    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
+        bannerView.isHidden = true
     }
 }
 

@@ -7,24 +7,23 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class AddMoneyViewController: UIViewController {
     
     @IBOutlet weak var input: UITextField!
     
-    @IBAction func cancelModal(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelModal(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func acceptAmount(sender: UIButton) {
+    @IBAction func acceptAmount(_ sender: UIButton) {
         if let input = input.text, let amount = Double(input) {
             
-            guard amount > 5 else { SVProgressHUD.showErrorWithStatus("A minimum of 5 € is required"); return}
+            guard amount > 5 else { /* TODO Redo SVProgressHUD.showError(withStatus: "A minimum of 5 € is required"); return*/print("Minimum 5€"); return }
             
             Store.sharedInstance.addMoney(amount)
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }

@@ -16,54 +16,54 @@ private let fareWithUnlimitedRidesIdentifier = "FareWithUnlimitedRidesCell"
 class FaresViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private var fares: Results<Fare> = Store.sharedInstance.getAllFares()
+    fileprivate var fares: Results<Fare> = Store.sharedInstance.getAllFares()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "FareCell", bundle: nil), forCellReuseIdentifier: fareIdentifier)
-        tableView.registerNib(UINib(nibName: "FareWithLimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithRidesIdentifier)
-        tableView.registerNib(UINib(nibName: "FareWithUnlimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithUnlimitedRidesIdentifier)
+        tableView.register(UINib(nibName: "FareCell", bundle: nil), forCellReuseIdentifier: fareIdentifier)
+        tableView.register(UINib(nibName: "FareWithLimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithRidesIdentifier)
+        tableView.register(UINib(nibName: "FareWithUnlimitedRidesCell", bundle: nil), forCellReuseIdentifier: fareWithUnlimitedRidesIdentifier)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200.0
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         fares = Store.sharedInstance.getAllFares()
     }
     
-    @IBAction func didCancelFareSelection(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didCancelFareSelection(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
 extension FaresViewController: UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fares.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let fare = fares[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let fare = fares[(indexPath as NSIndexPath).row]
         
         if fare.rides.value == nil && fare.days.value == nil {
-            let cell = tableView.dequeueReusableCellWithIdentifier(fareIdentifier, forIndexPath: indexPath) as! FareCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: fareIdentifier, for: indexPath) as! FareCell
             
             cell.populateWithFare(fare)
             
             return cell
         } else if fare.rides.value == nil && fare.days.value != nil {
-            let cell = tableView.dequeueReusableCellWithIdentifier(fareWithUnlimitedRidesIdentifier, forIndexPath: indexPath) as! FareWithUnlimitedRidesCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: fareWithUnlimitedRidesIdentifier, for: indexPath) as! FareWithUnlimitedRidesCell
             
             cell.populateWithFare(fare)
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(fareWithRidesIdentifier, forIndexPath: indexPath) as! FareWithLimitedRidesCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: fareWithRidesIdentifier, for: indexPath) as! FareWithLimitedRidesCell
             
             cell.populateWithFare(fare)
             
@@ -74,10 +74,10 @@ extension FaresViewController: UITableViewDataSource {
 
 extension FaresViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        dispatch_async(dispatch_get_main_queue(), {
-            Store.sharedInstance.setNewCurrentFare(self.fares[indexPath.row])
-            self.dismissViewControllerAnimated(true, completion: nil)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async(execute: {
+            Store.sharedInstance.setNewCurrentFare(self.fares[(indexPath as NSIndexPath).row])
+            self.dismiss(animated: true, completion: nil)
         })
     }
 }

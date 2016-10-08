@@ -1,3 +1,2 @@
-github "SVProgressHUD/SVProgressHUD" "2.0"
-github "SwiftyJSON/SwiftyJSON" "2.3.3"
-github "realm/realm-cocoa" "v0.98.6"
+github "SwiftyJSON/SwiftyJSON" "v3.1.1"
+github "realm/realm-cocoa" "v2.0.2"

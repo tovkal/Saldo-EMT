@@ -14,7 +14,7 @@ import RealmSwift
 
 class Store {
     static let sharedInstance = Store()
-    private let realm = try! Realm()
+    fileprivate let realm = try! Realm()
     
     // MARK: - Public
     
@@ -27,7 +27,7 @@ class Store {
         }
     }
     
-    func setNewCurrentFare(fare: Fare) {
+    func setNewCurrentFare(_ fare: Fare) {
         let oldFare = getCurrentFare()
         let newFare = getFareForName(fare.name)
         
@@ -40,19 +40,19 @@ class Store {
     }
     
     func getAllFares() -> Results<Fare> {
-        return realm.objects(Fare)
+        return realm.objects(Fare.self)
     }
     
     func getTripsDone() -> Int {
-        return realm.objects(Balance)[0].tripsDone
+        return realm.objects(Balance.self)[0].tripsDone
     }
     
     func getTripsRemaining() -> Int {
-        return realm.objects(Balance)[0].tripsRemaining
+        return realm.objects(Balance.self)[0].tripsRemaining
     }
     
     func getRemainingBalance() -> Double {
-        return realm.objects(Balance)[0].remaining
+        return realm.objects(Balance.self)[0].remaining
     }
     
     func getCurrentTripCost() throws -> Double {
@@ -61,7 +61,7 @@ class Store {
             return results[0].tripCost
         }
         
-        throw StoreError.CostPerTripUnknown
+        throw StoreError.costPerTripUnknown
     }
     
     func addTrip() -> String? {
@@ -69,19 +69,19 @@ class Store {
             let costPerTrip = try getCurrentTripCost()
             
             if getRemainingBalance() < costPerTrip {
-                throw StoreError.InsufficientBalance
+                throw StoreError.insufficientBalance
             }
             
-            let remaining = realm.objects(Balance)[0].remaining - costPerTrip
+            let remaining = realm.objects(Balance.self)[0].remaining - costPerTrip
             
             try realm.write {
-                realm.objects(Balance)[0].tripsDone += 1;
-                realm.objects(Balance)[0].tripsRemaining -= 1;
-                realm.objects(Balance)[0].remaining = remaining
+                realm.objects(Balance.self)[0].tripsDone += 1;
+                realm.objects(Balance.self)[0].tripsRemaining -= 1;
+                realm.objects(Balance.self)[0].remaining = remaining
             }
-        } catch StoreError.CostPerTripUnknown {
+        } catch StoreError.costPerTripUnknown {
             return "Cost per trip is unknown, can't add trip"
-        } catch StoreError.InsufficientBalance {
+        } catch StoreError.insufficientBalance {
             return "There is not enough money to pay for the trip"
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
@@ -91,15 +91,15 @@ class Store {
         return nil
     }
     
-    func addMoney(amount: Double) {
+    func addMoney(_ amount: Double) {
         do {
             
-            let remaining = amount + realm.objects(Balance)[0].remaining
+            let remaining = amount + realm.objects(Balance.self)[0].remaining
             let costPerTrip = try getCurrentTripCost()
             
             try realm.write {
-                realm.objects(Balance)[0].tripsRemaining = Int(remaining / costPerTrip)
-                realm.objects(Balance)[0].remaining = remaining
+                realm.objects(Balance.self)[0].tripsRemaining = Int(remaining / costPerTrip)
+                realm.objects(Balance.self)[0].remaining = remaining
             }
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
@@ -108,7 +108,7 @@ class Store {
     
     // MARK: - Init
     
-    private init() {
+    fileprivate init() {
         if let json = getFileData() {
             parseBusLines(json)
             parseFares(json)
@@ -117,23 +117,23 @@ class Store {
         initBalance()
     }
     
-    private func initBalance() {
-        if realm.objects(Balance).count == 0 {
+    fileprivate func initBalance() {
+        if realm.objects(Balance.self).count == 0 {
             try! realm.write {
                 realm.add(Balance())
                 
-                realm.objects(Balance)[0].remaining = 4
-                realm.objects(Balance)[0].tripsRemaining = 5
+                realm.objects(Balance.self)[0].remaining = 4
+                realm.objects(Balance.self)[0].tripsRemaining = 5
             }
         }
     }
     
     // MARK: - JSON Processing
     
-    private func getFileData() -> JSON? {
-        if let path = NSBundle.mainBundle().pathForResource("fares_es", ofType: "json") {
+    fileprivate func getFileData() -> JSON? {
+        if let path = Bundle.main.path(forResource: "fares_es", ofType: "json") {
             do {
-                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
                 return JSON(data: data)
             } catch let error as NSError {
                 Crashlytics.sharedInstance().recordError(error)
@@ -145,7 +145,7 @@ class Store {
         return nil
     }
     
-    private func parseBusLines(json: JSON) {
+    fileprivate func parseBusLines(_ json: JSON) {
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
                 let busLine = BusLine()
@@ -154,7 +154,7 @@ class Store {
                 busLine.hexColor = lineInfo["color"].stringValue
                 busLine.name = lineInfo["name"].stringValue
                 
-                if realm.objectForPrimaryKey(BusLine.self, key: busLine.number) == nil { // Add if not exists
+                if realm.object(ofType: BusLine.self, forPrimaryKey: busLine.number) == nil { // Add if not exists
                     try! realm.write {
                         realm.add(busLine, update: false)
                     }
@@ -163,7 +163,7 @@ class Store {
         }
     }
     
-    private func parseFares(json: JSON) {
+    fileprivate func parseFares(_ json: JSON) {
         var firstCurrent = true
         
         for (_, fare) in json["fares"] {
@@ -191,7 +191,7 @@ class Store {
                     fare.tripCost = fare.cost
                 }
                 
-                if realm.objectForPrimaryKey(Fare.self, key: fare.number) == nil { // Add if not exists
+                if realm.object(ofType: Fare.self, forPrimaryKey: fare.number) == nil { // Add if not exists
                     try! realm.write {
                         realm.add(fare, update: false)
                     }
@@ -202,18 +202,18 @@ class Store {
     
     // MARK: - Realm private functions
     
-    private func getCurrentFare() -> Results<Fare> {
+    fileprivate func getCurrentFare() -> Results<Fare> {
         let predicate = NSPredicate(format: "current == YES")
-        return realm.objects(Fare).filter(predicate)
+        return realm.objects(Fare.self).filter(predicate)
     }
     
-    private func getFareForName(fareName: String) -> Results<Fare> {
+    fileprivate func getFareForName(_ fareName: String) -> Results<Fare> {
         let predicate = NSPredicate(format: "name == %@", fareName)
-        return realm.objects(Fare).filter(predicate)
+        return realm.objects(Fare.self).filter(predicate)
     }
     
-    private func getBusLinesForLineNumbers(busLines: [Int]) -> Results<BusLine> {
+    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> Results<BusLine> {
         let predicate = NSPredicate(format: "number IN %@", busLines)
-        return realm.objects(BusLine).filter(predicate)
+        return realm.objects(BusLine.self).filter(predicate)
     }
 }

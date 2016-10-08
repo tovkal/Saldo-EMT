@@ -10,8 +10,8 @@ import Foundation
 
 extension Double {
     func toDecimalString() -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .DecimalStyle
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
         
         if self != 0.0 {
             formatter.minimumFractionDigits = 1
@@ -19,6 +19,6 @@ extension Double {
             formatter.minimumFractionDigits = 0
         }
         
-        return formatter.stringFromNumber(self)!
+        return formatter.string(from: NSNumber(value: self))!
     }
 }

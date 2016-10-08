@@ -21,7 +21,7 @@ class FareCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func populateWithFare(fare: Fare) {
+    func populateWithFare(_ fare: Fare) {
         if fare.lines.count > 0 {
             fareName.text = fare.name
             busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)

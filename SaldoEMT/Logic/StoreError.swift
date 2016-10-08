@@ -6,7 +6,7 @@
 //  Copyright © 2016 tovkal. All rights reserved.
 //
 
-enum StoreError : ErrorType {
-    case CostPerTripUnknown
-    case InsufficientBalance
+enum StoreError : Error {
+    case costPerTripUnknown
+    case insufficientBalance
 }

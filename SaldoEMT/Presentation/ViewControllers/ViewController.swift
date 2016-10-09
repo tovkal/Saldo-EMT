@@ -39,6 +39,11 @@ class ViewController: UIViewController {
         updateLabels()
     }
     
+    @IBAction func reset(_ sender: UIButton) {
+        Store.sharedInstance.reset()
+        updateLabels()
+    }
+    
     @IBAction func addMoney(_ sender: UIButton) {
     }
     

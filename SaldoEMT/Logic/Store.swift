@@ -29,13 +29,24 @@ class Store {
     
     func setNewCurrentFare(_ fare: Fare) {
         let oldFare = getCurrentFare()
-        let newFare = getFareForName(fare.name)
+        let newFare = getFare(forName: fare.name)
         
         if oldFare.count == 1 && newFare.count == 1 {
             try! realm.write {
                 oldFare[0].current = false
                 newFare[0].current = true
             }
+        } else {
+            
+            for fare in newFare {
+                print(fare.name)
+            }
+            
+            
+            
+            print("Old fare count: \(oldFare.count), New fare cound: \(newFare.count)")
+            //Crashlytics.sharedInstance().reco
+            //Crashlytics.sharedInstance().recordCustomExceptionName("Fare Swap Error", reason: "Old fare count: \(oldFare.count), New fare cound: \(newFare.count)", frameArray: [])
         }
     }
     
@@ -103,6 +114,26 @@ class Store {
             }
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+    
+    func reset() {
+        
+        
+        print("Fare before reset: \(getSelectedFare())")
+        
+        setNewCurrentFare(getFare(forName: "No residentes")[0])
+        
+        print("Fare after reset: \(getSelectedFare())")
+        
+        try! realm.write {
+            if realm.objects(Balance.self).count == 0 {
+                realm.add(Balance())
+            }
+            
+            realm.objects(Balance.self)[0].remaining = 4
+            realm.objects(Balance.self)[0].tripsRemaining = 5
+            realm.objects(Balance.self)[0].tripsDone = 0;
         }
     }
     
@@ -191,6 +222,8 @@ class Store {
                     fare.tripCost = fare.cost
                 }
                 
+                print("Add fare: \(fare.name)")
+                
                 if realm.object(ofType: Fare.self, forPrimaryKey: fare.number) == nil { // Add if not exists
                     try! realm.write {
                         realm.add(fare, update: false)
@@ -207,7 +240,7 @@ class Store {
         return realm.objects(Fare.self).filter(predicate)
     }
     
-    fileprivate func getFareForName(_ fareName: String) -> Results<Fare> {
+    fileprivate func getFare(forName fareName: String) -> Results<Fare> {
         let predicate = NSPredicate(format: "name == %@", fareName)
         return realm.objects(Fare.self).filter(predicate)
     }

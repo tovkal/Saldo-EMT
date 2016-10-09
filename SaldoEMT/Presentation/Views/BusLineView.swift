@@ -53,39 +53,37 @@ class BusLineView: UICollectionViewCell {
         viewSetup()
     }
     
-    func populateWithBusLine(busLine: BusLineJSON) {
-        self.busLine.text = busLine.number
-        backgroundColor = busLine.color
+    func populateWithBusLine(_ busLine: BusLine) {
+        self.busLine.text = String(busLine.number)
+        backgroundColor = UIColor(rgba: busLine.hexColor)
     }
     
     // MARK: - View setup methonds
     
-    private func xibSetup() {
+    fileprivate func xibSetup() {
         view = loadViewFromNib()
         
         // use bounds not frame or it'll be offset
         view.frame = bounds
         
         // Make the view stretch with containing view
-        view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Adding custom subview on top of our view (over any custom drawing > see note below)
         addSubview(view)
     }
     
     
-    private func loadViewFromNib() -> UIView {
+    fileprivate func loadViewFromNib() -> UIView {
         
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "BusLineView", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
     }
     
-    private func viewSetup() {
+    fileprivate func viewSetup() {
         cornerRadius = frame.width / 2
     }
-    
-    
 }

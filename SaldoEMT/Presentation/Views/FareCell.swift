@@ -21,10 +21,10 @@ class FareCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func populateWithFare(fare: Fare) {
-        if let lines = fare.lines as? [Int] {
+    func populateWithFare(_ fare: Fare) {
+        if fare.lines.count > 0 {
             fareName.text = fare.name
-            busLines.image = UIImage(named: lines.count == 2 ? few : many)
+            busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)
             costPerRide.text = fare.cost.toDecimalString()
         }
     }

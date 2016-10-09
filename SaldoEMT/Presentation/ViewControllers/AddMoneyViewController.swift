@@ -7,36 +7,24 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AddMoneyViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBOutlet weak var input: UITextField!
+    
+    @IBAction func cancelModal(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
-    @IBAction func cancelModal(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func acceptAmount(sender: UIButton) {
+    @IBAction func acceptAmount(_ sender: UIButton) {
+        if let input = input.text, let amount = Double(input) {
+            
+            guard amount > 5 else { SVProgressHUD.showError(withStatus: "A minimum of 5 € is required"); return }
+            
+            Store.sharedInstance.addMoney(amount)
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

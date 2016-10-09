@@ -9,123 +9,163 @@
 import Foundation
 import SwiftyJSON
 import UIKit
-import CoreData
 import Crashlytics
+import RealmSwift
 
 class Store {
     static let sharedInstance = Store()
-    
-    private var jsonData: NSData?
-    private(set) var busLines = [String: BusLineJSON]()
-    private(set) var fares = [String: FareJSON]()
+    fileprivate let realm = try! Realm()
     
     // MARK: - Public
     
-    func getBusLinesForFare(fare: String) -> [BusLineJSON] {
-        if let fare = fares[fare] {
-            
-            var lines = [BusLineJSON]()
-            
-            for line in fare.lines {
-                if let busLine = busLines["\(line)"] {
-                    lines.append(busLine)
-                }
-            }
-            
-            return lines
-        } else {
-            return [BusLineJSON]()
-        }
-    }
-    
     func getSelectedFare() -> String {
-        if let fare = getCurrentFare()?[0] {
-            return fare.name
+        let results = getCurrentFare()
+        if results.count == 1 {
+            return results[0].name
         } else {
             return "ERROR"
         }
     }
     
-    func setNewCurrentFare(fare: Fare) {
+    func setNewCurrentFare(_ fare: Fare) {
+        let oldFare = getCurrentFare()
+        let newFare = getFare(forName: fare.name)
         
-        if let oldFare = getCurrentFare()?[0], let newFare = getFareForName(fare.name)?[0] {
-            oldFare.current = false
-            newFare.current = true
-                        
-            saveContext()
+        if oldFare.count == 1 && newFare.count == 1 {
+            try! realm.write {
+                oldFare[0].current = false
+                newFare[0].current = true
+            }
+        } else {
+            
+            for fare in newFare {
+                print(fare.name)
+            }
+            
+            
+            
+            print("Old fare count: \(oldFare.count), New fare cound: \(newFare.count)")
+            //Crashlytics.sharedInstance().reco
+            //Crashlytics.sharedInstance().recordCustomExceptionName("Fare Swap Error", reason: "Old fare count: \(oldFare.count), New fare cound: \(newFare.count)", frameArray: [])
         }
     }
     
-    func getAllFares() -> [Fare] {
+    func getAllFares() -> Results<Fare> {
+        return realm.objects(Fare.self)
+    }
+    
+    func getTripsDone() -> Int {
+        return realm.objects(Balance.self)[0].tripsDone
+    }
+    
+    func getTripsRemaining() -> Int {
+        return realm.objects(Balance.self)[0].tripsRemaining
+    }
+    
+    func getRemainingBalance() -> Double {
+        return realm.objects(Balance.self)[0].remaining
+    }
+    
+    func getCurrentTripCost() throws -> Double {
+        let results = getCurrentFare()
+        if results.count == 1 {
+            return results[0].tripCost
+        }
         
-        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
-        
+        throw StoreError.costPerTripUnknown
+    }
+    
+    func addTrip() -> String? {
         do {
-            let results = try getManagedContext().executeFetchRequest(fetchRequest)
-            return results as! [Fare]
+            let costPerTrip = try getCurrentTripCost()
+            
+            if getRemainingBalance() < costPerTrip {
+                throw StoreError.insufficientBalance
+            }
+            
+            let remaining = realm.objects(Balance.self)[0].remaining - costPerTrip
+            
+            try realm.write {
+                realm.objects(Balance.self)[0].tripsDone += 1;
+                realm.objects(Balance.self)[0].tripsRemaining -= 1;
+                realm.objects(Balance.self)[0].remaining = remaining
+            }
+        } catch StoreError.costPerTripUnknown {
+            return "Cost per trip is unknown, can't add trip"
+        } catch StoreError.insufficientBalance {
+            return "There is not enough money to pay for the trip"
+        } catch let error as NSError {
+            Crashlytics.sharedInstance().recordError(error)
+            return "Unknown error ocurred"
+        }
+        
+        return nil
+    }
+    
+    func addMoney(_ amount: Double) {
+        do {
+            
+            let remaining = amount + realm.objects(Balance.self)[0].remaining
+            let costPerTrip = try getCurrentTripCost()
+            
+            try realm.write {
+                realm.objects(Balance.self)[0].tripsRemaining = Int(remaining / costPerTrip)
+                realm.objects(Balance.self)[0].remaining = remaining
+            }
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
+    }
+    
+    func reset() {
         
-        return []
+        
+        print("Fare before reset: \(getSelectedFare())")
+        
+        setNewCurrentFare(getFare(forName: "No residentes")[0])
+        
+        print("Fare after reset: \(getSelectedFare())")
+        
+        try! realm.write {
+            if realm.objects(Balance.self).count == 0 {
+                realm.add(Balance())
+            }
+            
+            realm.objects(Balance.self)[0].remaining = 4
+            realm.objects(Balance.self)[0].tripsRemaining = 5
+            realm.objects(Balance.self)[0].tripsDone = 0;
+        }
     }
     
     // MARK: - Init
     
-    private init() {
-        jsonData = getFileData()
-        busLines = initBusLines()
-        fares = initFares()
-    }
-    
-    private func initBusLines() -> [String: BusLineJSON] {
-        var busLines = [String: BusLineJSON]()
-        
-        if let json = jsonData {
-            busLines = getBusLinesFromJson(JSON(data: json))
+    fileprivate init() {
+        if let json = getFileData() {
+            parseBusLines(json)
+            parseFares(json)
         }
         
-        return busLines
+        initBalance()
     }
     
-    private func initFares() -> [String: FareJSON] {
-        var fares = [String: FareJSON]()
-        
-        if let json = jsonData {
-            fares = getFaresFromJson(JSON(data: json))
-        }
-        
-        let managedContext = getManagedContext()
-        let entity =  NSEntityDescription.entityForName(Fare.entityName, inManagedObjectContext:managedContext)
-        
-        for fareJSON in fares {
-            let fare = Fare(entity: entity!, insertIntoManagedObjectContext: managedContext)
-            
-            fare.setValue(fareJSON.1.name, forKey: "name")
-            fare.setValue(fareJSON.1.number, forKey: "number")
-            fare.setValue(fareJSON.1.rides, forKey: "rides")
-            fare.setValue(fareJSON.1.cost, forKey: "cost")
-            fare.setValue(fareJSON.1.days, forKey: "days")
-            fare.setValue(fareJSON.1.lines, forKey: "lines")
-            
-            if fareJSON.1.name == "Residentes" {
-                fare.setValue(true, forKey: "current")
-            } else {
-                fare.setValue(false, forKey: "current")
+    fileprivate func initBalance() {
+        if realm.objects(Balance.self).count == 0 {
+            try! realm.write {
+                realm.add(Balance())
+                
+                realm.objects(Balance.self)[0].remaining = 4
+                realm.objects(Balance.self)[0].tripsRemaining = 5
             }
-            
-            saveContext()
         }
-        
-        return fares
     }
     
     // MARK: - JSON Processing
     
-    private func getFileData() -> NSData? {
-        if let path = NSBundle.mainBundle().pathForResource("fares_es", ofType: "json") {
+    fileprivate func getFileData() -> JSON? {
+        if let path = Bundle.main.path(forResource: "fares_es", ofType: "json") {
             do {
-                return try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
+                return JSON(data: data)
             } catch let error as NSError {
                 Crashlytics.sharedInstance().recordError(error)
             }
@@ -136,78 +176,77 @@ class Store {
         return nil
     }
     
-    private func getBusLinesFromJson(json: JSON) -> [String: BusLineJSON] {
-        
-        var lines = [String: BusLineJSON]()
-        
+    fileprivate func parseBusLines(_ json: JSON) {
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
-                lines.updateValue(BusLineJSON(number: lineNumber, color: UIColor(rgba: "#" + lineInfo["color"].stringValue), name: lineInfo["name"].stringValue), forKey: lineNumber)
+                let busLine = BusLine()
+                
+                busLine.number = Int(lineNumber)!
+                busLine.hexColor = lineInfo["color"].stringValue
+                busLine.name = lineInfo["name"].stringValue
+                
+                if realm.object(ofType: BusLine.self, forPrimaryKey: busLine.number) == nil { // Add if not exists
+                    try! realm.write {
+                        realm.add(busLine, update: false)
+                    }
+                }
             }
         }
-        
-        return lines
     }
     
-    private func getFaresFromJson(json: JSON) -> [String: FareJSON] {
-        
-        var fares = [String: FareJSON]()
+    fileprivate func parseFares(_ json: JSON) {
+        var firstCurrent = true
         
         for (_, fare) in json["fares"] {
             for (fareNumber, fareInfo) in fare {
-                fares.updateValue(FareJSON(number: fareNumber, name: fareInfo["name"].stringValue, cost: fareInfo["price"].doubleValue, days: fareInfo["days"].int, rides: fareInfo["rides"].int, lines: fareInfo["lines"].arrayObject as! [Int]), forKey: fareNumber)
+                
+                let fare = Fare()
+                
+                fare.name = fareInfo["name"].stringValue
+                fare.number = fareNumber
+                fare.rides.value = fareInfo["rides"].int
+                fare.cost = fareInfo["price"].doubleValue
+                fare.days.value = fareInfo["days"].int
+                for busLine in getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as! [Int]) {
+                    fare.lines.append(busLine)
+                }
+                
+                if fare.name == "Residentes" && firstCurrent {
+                    fare.current = true
+                    firstCurrent = false
+                }
+                
+                if let rides = fare.rides.value {
+                    fare.tripCost = fare.cost / Double(rides)
+                } else {
+                    fare.tripCost = fare.cost
+                }
+                
+                print("Add fare: \(fare.name)")
+                
+                if realm.object(ofType: Fare.self, forPrimaryKey: fare.number) == nil { // Add if not exists
+                    try! realm.write {
+                        realm.add(fare, update: false)
+                    }
+                }
             }
         }
-        
-        return fares
     }
     
-    // MARK: - CoreData functions
+    // MARK: - Realm private functions
     
-    private func getManagedContext() -> NSManagedObjectContext {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.managedObjectContext
+    fileprivate func getCurrentFare() -> Results<Fare> {
+        let predicate = NSPredicate(format: "current == YES")
+        return realm.objects(Fare.self).filter(predicate)
     }
     
-    private func saveContext() {
-        do {
-            try getManagedContext().save()
-        } catch let error as NSError  {
-            Crashlytics.sharedInstance().recordError(error)
-        }
+    fileprivate func getFare(forName fareName: String) -> Results<Fare> {
+        let predicate = NSPredicate(format: "name == %@", fareName)
+        return realm.objects(Fare.self).filter(predicate)
     }
     
-    private func getCurrentFare() -> [Fare]? {
-        
-        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
-        fetchRequest.predicate = NSPredicate(format: "current = YES")
-        
-        do {
-            if let results = try getManagedContext().executeFetchRequest(fetchRequest) as? [Fare] where results.count == 1 {
-                return results
-            }
-        } catch {
-            // TODO log error
-            print(error)
-        }
-        
-        return nil
-    }
-    
-    private func getFareForName(fareName: String) -> [Fare]? {
-        
-        let fetchRequest = NSFetchRequest(entityName: Fare.entityName)
-        fetchRequest.predicate = NSPredicate(format: "name = %@", fareName)
-        
-        do {
-            if let results = try getManagedContext().executeFetchRequest(fetchRequest) as? [Fare] where results.count > 0 {
-                return results
-            }
-        } catch {
-            // TODO log error
-            print(error)
-        }
-        
-        return nil
+    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> Results<BusLine> {
+        let predicate = NSPredicate(format: "number IN %@", busLines)
+        return realm.objects(BusLine.self).filter(predicate)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Fare.swift
+//  BusLine.swift
 //  SaldoEMT
 //
 //  Created by Andrés Pizá Bückmann on 16/1/16.
@@ -8,16 +8,12 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
-class Fare: Object {
-    dynamic var cost: Double = 0.0
-    let days = RealmOptional<Int>()
-    let lines = List<BusLine>()
+class BusLine: Object {
+    dynamic var number = 0
+    dynamic var hexColor = ""
     dynamic var name = ""
-    dynamic var number = ""
-    let rides = RealmOptional<Int>()
-    dynamic var current = false
-    dynamic var tripCost: Double = 0.0
     
     override static func primaryKey() -> String? {
         return "number"

@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950408AD1C4B9FF600B067B0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */; };
+		952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
-		953DC9301C42E2440073A4DC /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953DC92F1C42E2440073A4DC /* NSNumber.swift */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
 		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
 		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; };
+		95559B171C516E6B0003E32F /* StoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95559B161C516E6B0003E32F /* StoreError.swift */; };
+		9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D2291C4AB8CE008E2A47 /* Fare.swift */; };
+		9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22B1C4AB97B008E2A47 /* BusLine.swift */; };
+		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
 		9566B8B91BB85B53000ED3E1 /* fares_ca.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B71BB85B53000ED3E1 /* fares_ca.json */; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
-		9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */; };
 		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; };
-		9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C81BB884CC000ED3E1 /* UIColor.swift */; };
-		95A312C51BF893490094C33D /* Fare+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A312C31BF893490094C33D /* Fare+CoreDataProperties.swift */; };
-		95A312C61BF893490094C33D /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A312C41BF893490094C33D /* Fare.swift */; };
-		95A312C81BF894990094C33D /* FareJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A312C71BF894990094C33D /* FareJSON.swift */; };
+		9578B9711DA93B4C0073CC66 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
+		9578B97E1DA93E810073CC66 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
+		9578B97F1DA93E810073CC66 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
+		9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
 		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
@@ -30,12 +34,11 @@
 		95C31B781C46592800365F87 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C31B761C46592800365F87 /* Fabric.framework */; };
 		95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C31B771C46592800365F87 /* Crashlytics.framework */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
+		95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9F5FB1C4C0C9000A696B9 /* Balance.swift */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
 		95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */; };
 		95E27DFF1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */; };
-		95F9E88D1BF887D9002ECCF9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95F9E88B1BF887D9002ECCF9 /* Model.xcdatamodeld */; };
-		95F9E8981BF88A66002ECCF9 /* BusLineJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F9E8961BF88A66002ECCF9 /* BusLineJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,35 +51,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		9566B8C01BB87AAA000ED3E1 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				9566B8C21BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		953DC92F1C42E2440073A4DC /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		954020A11BC9714A009419EA /* FaresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresViewController.swift; sourceTree = "<group>"; };
 		954020AB1BCA627C009419EA /* FareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareCell.swift; sourceTree = "<group>"; };
+		95559B161C516E6B0003E32F /* StoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
+		9562D2291C4AB8CE008E2A47 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
+		9562D22B1C4AB97B008E2A47 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
+		9562D22D1C4AE00B008E2A47 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		9566B8B71BB85B53000ED3E1 /* fares_ca.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_ca.json; sourceTree = "<group>"; };
 		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
-		9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		9566B8C31BB87B0D000ED3E1 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		9566B8C81BB884CC000ED3E1 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		95A312C31BF893490094C33D /* Fare+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fare+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		95A312C41BF893490094C33D /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
-		95A312C71BF894990094C33D /* FareJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareJSON.swift; sourceTree = "<group>"; };
+		9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = SOURCE_ROOT; };
+		9578B97B1DA93E810073CC66 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9578B97C1DA93E810073CC66 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaldoEMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBD71B5A852A002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,13 +83,11 @@
 		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
-		95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		95D9F5FB1C4C0C9000A696B9 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 		95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithUnlimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithUnlimitedRidesCell.xib; sourceTree = "<group>"; };
-		95F9E88C1BF887D9002ECCF9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		95F9E8961BF88A66002ECCF9 /* BusLineJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +95,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9578B97E1DA93E810073CC66 /* Realm.framework in Frameworks */,
+				9578B97F1DA93E810073CC66 /* RealmSwift.framework in Frameworks */,
+				9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */,
 				953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */,
 				95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */,
+				952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */,
 				95C31B781C46592800365F87 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9578B9711DA93B4C0073CC66 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,18 +159,27 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		9578B96B1DA93A550073CC66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9578B97B1DA93E810073CC66 /* Realm.framework */,
+				9578B97C1DA93E810073CC66 /* RealmSwift.framework */,
+				9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		95A4CBCA1B5A852A002FB3E9 = {
 			isa = PBXGroup;
 			children = (
 				95A4CBD41B5A852A002FB3E9 /* Products */,
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
-				95DEB6BE1BCC2F9C00C24528 /* SwiftyJSON.framework */,
-				9566B8C11BB87AC2000ED3E1 /* SwiftyJSON.framework.dSYM */,
 				95C31B761C46592800365F87 /* Fabric.framework */,
 				95C31B771C46592800365F87 /* Crashlytics.framework */,
 				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
 				953987421BD2699E005DB2C7 /* iAd.framework */,
+				9578B96B1DA93A550073CC66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,7 +201,6 @@
 				953FDF421BB80EB400D2C9DA /* Presentation */,
 				95BF51E71B5B97FA00E4259B /* Resources */,
 				95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */,
-				95F9E88B1BF887D9002ECCF9 /* Model.xcdatamodeld */,
 			);
 			path = SaldoEMT;
 			sourceTree = "<group>";
@@ -212,6 +216,7 @@
 		95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */ = {
 			isa = PBXGroup;
 			children = (
+				9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */,
 				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
 			);
 			path = SaldoEMTTests;
@@ -239,8 +244,8 @@
 		95D153D21B6A923C00866B59 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9566B8C81BB884CC000ED3E1 /* UIColor.swift */,
-				953DC92F1C42E2440073A4DC /* NSNumber.swift */,
+				950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */,
+				9562D22D1C4AE00B008E2A47 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			children = (
 				95D4356F1BB846D300745E64 /* Model */,
 				9566B8C31BB87B0D000ED3E1 /* Store.swift */,
+				95559B161C516E6B0003E32F /* StoreError.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -257,10 +263,9 @@
 		95D4356F1BB846D300745E64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				95F9E8961BF88A66002ECCF9 /* BusLineJSON.swift */,
-				95A312C71BF894990094C33D /* FareJSON.swift */,
-				95A312C31BF893490094C33D /* Fare+CoreDataProperties.swift */,
-				95A312C41BF893490094C33D /* Fare.swift */,
+				9562D2291C4AB8CE008E2A47 /* Fare.swift */,
+				9562D22B1C4AB97B008E2A47 /* BusLine.swift */,
+				95D9F5FB1C4C0C9000A696B9 /* Balance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,9 +280,8 @@
 				95A4CBCF1B5A852A002FB3E9 /* Sources */,
 				95A4CBD01B5A852A002FB3E9 /* Frameworks */,
 				95A4CBD11B5A852A002FB3E9 /* Resources */,
-				9566B8BF1BB87A2D000ED3E1 /* ShellScript */,
-				9566B8C01BB87AAA000ED3E1 /* CopyFiles */,
 				95C31B751C46590400365F87 /* ShellScript */,
+				95383DA61DAA4991001914DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -313,15 +317,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = tovkal;
 				TargetAttributes = {
 					95A4CBD21B5A852A002FB3E9 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = JVHN2X67GT;
+						LastSwiftMigration = 0800;
 					};
 					95A4CBE71B5A852B002FB3E9 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 						TestTargetID = 95A4CBD21B5A852A002FB3E9;
 					};
 				};
@@ -372,19 +378,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9566B8BF1BB87A2D000ED3E1 /* ShellScript */ = {
+		95383DA61DAA4991001914DC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		95C31B751C46590400365F87 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -406,21 +415,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95F9E8981BF88A66002ECCF9 /* BusLineJSON.swift in Sources */,
-				953DC9301C42E2440073A4DC /* NSNumber.swift in Sources */,
-				95A312C81BF894990094C33D /* FareJSON.swift in Sources */,
+				950408AD1C4B9FF600B067B0 /* UIColorExtension.swift in Sources */,
+				9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */,
 				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
-				95A312C61BF893490094C33D /* Fare.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
-				95A312C51BF893490094C33D /* Fare+CoreDataProperties.swift in Sources */,
-				95F9E88D1BF887D9002ECCF9 /* Model.xcdatamodeld in Sources */,
+				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
+				95559B171C516E6B0003E32F /* StoreError.swift in Sources */,
 				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
-				9566B8C91BB884CC000ED3E1 /* UIColor.swift in Sources */,
+				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,
 				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
+				95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */,
 				954020A21BC9714A009419EA /* FaresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,8 +486,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -525,8 +535,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -546,6 +558,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -560,12 +573,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -579,12 +594,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -606,6 +623,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaldoEMT.app/SaldoEMT";
 			};
 			name = Debug;
@@ -624,6 +642,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaldoEMT.app/SaldoEMT";
 			};
 			name = Release;
@@ -659,19 +678,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		95F9E88B1BF887D9002ECCF9 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				95F9E88C1BF887D9002ECCF9 /* Model.xcdatamodel */,
-			);
-			currentVersion = 95F9E88C1BF887D9002ECCF9 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 95A4CBCB1B5A852A002FB3E9 /* Project object */;
 }

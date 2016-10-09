@@ -8,6 +8,7 @@
 
 import UIKit
 import iAd
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -31,9 +32,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addTrip(_ sender: UIButton) {
-        /*if let errorMessage = Store.sharedInstance.addTrip() {
+        if let errorMessage = Store.sharedInstance.addTrip() {
             SVProgressHUD.showError(withStatus: errorMessage)
-        }*/ // TODO Redo
+        }
                 
         updateLabels()
     }

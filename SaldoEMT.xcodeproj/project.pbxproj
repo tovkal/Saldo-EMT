@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		950408AD1C4B9FF600B067B0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */; };
+		952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
@@ -24,9 +25,6 @@
 		9578B97E1DA93E810073CC66 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
 		9578B97F1DA93E810073CC66 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
-		9578B9811DA93E8D0073CC66 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9578B9821DA93E8D0073CC66 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9578B9831DA93E8D0073CC66 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* ViewController.swift */; };
 		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
@@ -52,21 +50,6 @@
 			remoteInfo = SaldoEMT;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9578B97A1DA93E070073CC66 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9578B9811DA93E8D0073CC66 /* Realm.framework in CopyFiles */,
-				9578B9821DA93E8D0073CC66 /* RealmSwift.framework in CopyFiles */,
-				9578B9831DA93E8D0073CC66 /* SwiftyJSON.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -117,6 +100,7 @@
 				9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */,
 				953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */,
 				95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */,
+				952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */,
 				95C31B781C46592800365F87 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +281,7 @@
 				95A4CBD01B5A852A002FB3E9 /* Frameworks */,
 				95A4CBD11B5A852A002FB3E9 /* Resources */,
 				95C31B751C46590400365F87 /* ShellScript */,
-				9578B9791DA93D870073CC66 /* ShellScript */,
-				9578B97A1DA93E070073CC66 /* CopyFiles */,
+				95383DA61DAA4991001914DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -395,7 +378,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9578B9791DA93D870073CC66 /* ShellScript */ = {
+		95383DA61DAA4991001914DC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,12 +386,13 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/local/bin/carthage copy-frameworks";
-			shellScript = Carthage;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		95C31B751C46590400365F87 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

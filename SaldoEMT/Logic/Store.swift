@@ -14,7 +14,6 @@ import RealmSwift
 
 class Store {
     static let sharedInstance = Store()
-    fileprivate let realm = try! Realm()
     
     // MARK: - Public
     
@@ -28,6 +27,7 @@ class Store {
     }
     
     func setNewCurrentFare(_ fare: Fare) {
+        let realm = try! Realm()
         let oldFare = getCurrentFare()
         let newFare = getFare(forName: fare.name)
         
@@ -51,18 +51,22 @@ class Store {
     }
     
     func getAllFares() -> Results<Fare> {
+        let realm = try! Realm()
         return realm.objects(Fare.self)
     }
     
     func getTripsDone() -> Int {
+        let realm = try! Realm()
         return realm.objects(Balance.self)[0].tripsDone
     }
     
     func getTripsRemaining() -> Int {
+        let realm = try! Realm()
         return realm.objects(Balance.self)[0].tripsRemaining
     }
     
     func getRemainingBalance() -> Double {
+        let realm = try! Realm()
         return realm.objects(Balance.self)[0].remaining
     }
     
@@ -76,6 +80,7 @@ class Store {
     }
     
     func addTrip() -> String? {
+        let realm = try! Realm()
         do {
             let costPerTrip = try getCurrentTripCost()
             
@@ -103,6 +108,7 @@ class Store {
     }
     
     func addMoney(_ amount: Double) {
+        let realm = try! Realm()
         do {
             
             let remaining = amount + realm.objects(Balance.self)[0].remaining
@@ -118,7 +124,7 @@ class Store {
     }
     
     func reset() {
-        
+        let realm = try! Realm()
         
         print("Fare before reset: \(getSelectedFare())")
         
@@ -153,6 +159,7 @@ class Store {
     }
     
     fileprivate func initBalance() {
+        let realm = try! Realm()
         if realm.objects(Balance.self).count == 0 {
             try! realm.write {
                 realm.add(Balance())
@@ -166,9 +173,9 @@ class Store {
     // MARK: - JSON Processing
     
     fileprivate func processData(json: JSON) {
-        print(json)
-        parseBusLines(json)
-        parseFares(json)
+        let realm = try! Realm()
+        parseBusLines(json, realm: realm)
+        parseFares(json, realm: realm)
     }
     
     fileprivate func fetchFares() {
@@ -199,28 +206,6 @@ class Store {
             }
             
             self.processData(json: JSON(data: responseData))
-            // parse the result as JSON, since that's what the API provides
-            /*do {
-                //return JSON(data: responseData)
-                guard let todo = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: AnyObject] else {
-                    print("error trying to convert data to JSON")
-                    return
-                }
-                // now we have the todo, let's just print it to prove we can access it
-                print("The todo is: " + todo.description)
-                
-                // the todo object is a dictionary
-                // so we just access the title using the "title" key
-                // so check for a title and print it if we have one
-                guard let todoTitle = todo["title"] as? String else {
-                    print("Could not get todo title from JSON")
-                    return
-                }
-                print("The title is: " + todoTitle)
-            } catch  {
-                print("error trying to convert data to JSON")
-                return
-            }*/
         }
         
         task.resume()
@@ -241,7 +226,7 @@ class Store {
         return nil
     }
     
-    fileprivate func parseBusLines(_ json: JSON) {
+    fileprivate func parseBusLines(_ json: JSON, realm: Realm) {
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
                 let busLine = BusLine()
@@ -259,7 +244,7 @@ class Store {
         }
     }
     
-    fileprivate func parseFares(_ json: JSON) {
+    fileprivate func parseFares(_ json: JSON, realm: Realm) {
         var firstCurrent = true
         
         for (_, fare) in json["fares"] {
@@ -287,8 +272,6 @@ class Store {
                     fare.tripCost = fare.cost
                 }
                 
-                print("Add fare: \(fare.name)")
-                
                 if realm.object(ofType: Fare.self, forPrimaryKey: fare.number) == nil { // Add if not exists
                     try! realm.write {
                         realm.add(fare, update: false)
@@ -301,16 +284,19 @@ class Store {
     // MARK: - Realm private functions
     
     fileprivate func getCurrentFare() -> Results<Fare> {
+        let realm = try! Realm()
         let predicate = NSPredicate(format: "current == YES")
         return realm.objects(Fare.self).filter(predicate)
     }
     
     fileprivate func getFare(forName fareName: String) -> Results<Fare> {
+        let realm = try! Realm()
         let predicate = NSPredicate(format: "name == %@", fareName)
         return realm.objects(Fare.self).filter(predicate)
     }
     
     fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> Results<BusLine> {
+        let realm = try! Realm()
         let predicate = NSPredicate(format: "number IN %@", busLines)
         return realm.objects(BusLine.self).filter(predicate)
     }

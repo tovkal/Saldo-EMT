@@ -128,7 +128,7 @@ class Store {
         
         print("Fare before reset: \(getSelectedFare())")
         
-        setNewCurrentFare(getFare(forName: "No residentes")[0])
+        setNewCurrentFare(getFare(forName: "No residente")[0])
         
         print("Fare after reset: \(getSelectedFare())")
         

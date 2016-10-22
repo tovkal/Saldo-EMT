@@ -42,11 +42,7 @@ class Store {
                 print(fare.name)
             }
             
-            
-            
             print("Old fare count: \(oldFare.count), New fare cound: \(newFare.count)")
-            //Crashlytics.sharedInstance().reco
-            //Crashlytics.sharedInstance().recordCustomExceptionName("Fare Swap Error", reason: "Old fare count: \(oldFare.count), New fare cound: \(newFare.count)", frameArray: [])
         }
     }
     
@@ -128,7 +124,7 @@ class Store {
         
         print("Fare before reset: \(getSelectedFare())")
         
-        setNewCurrentFare(getFare(forName: "No residente")[0])
+        setNewCurrentFare(getFare(forId: "1")[0])
         
         print("Fare after reset: \(getSelectedFare())")
         
@@ -167,6 +163,12 @@ class Store {
                 realm.objects(Balance.self)[0].remaining = 4
                 realm.objects(Balance.self)[0].tripsRemaining = 5
             }
+        }
+    }
+    
+    func initFare() {
+        if "ERROR" == getSelectedFare() {
+            setNewCurrentFare(getFare(forId: "1")[0]) // TODO Sent notification when processed downloaded fares so can't init data... async or sync? Sync is better, won't take too long
         }
     }
     
@@ -253,7 +255,7 @@ class Store {
                 let fare = Fare()
                 
                 fare.name = fareInfo["name"].stringValue
-                fare.number = fareNumber
+                fare.id = fareNumber
                 fare.rides.value = fareInfo["rides"].int
                 fare.cost = fareInfo["price"].doubleValue
                 fare.days.value = fareInfo["days"].int
@@ -261,6 +263,7 @@ class Store {
                     fare.lines.append(busLine)
                 }
                 
+                // TODO Why residentes?
                 if fare.name == "Residentes" && firstCurrent {
                     fare.current = true
                     firstCurrent = false
@@ -272,7 +275,7 @@ class Store {
                     fare.tripCost = fare.cost
                 }
                 
-                if realm.object(ofType: Fare.self, forPrimaryKey: fare.number) == nil { // Add if not exists
+                if realm.object(ofType: Fare.self, forPrimaryKey: fare.id) == nil { // Add if not exists
                     try! realm.write {
                         realm.add(fare, update: false)
                     }
@@ -292,6 +295,12 @@ class Store {
     fileprivate func getFare(forName fareName: String) -> Results<Fare> {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "name == %@", fareName)
+        return realm.objects(Fare.self).filter(predicate)
+    }
+    
+    fileprivate func getFare(forId fareId: String) -> Results<Fare> {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "id == %@", fareId)
         return realm.objects(Fare.self).filter(predicate)
     }
     

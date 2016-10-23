@@ -21,21 +21,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Store.sharedInstance.initFare()
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateLabels), name: NSNotification.Name(rawValue: BUS_AND_FARES_UPDATE), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateLabels()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     @IBAction func addTrip(_ sender: UIButton) {
         if let errorMessage = Store.sharedInstance.addTrip() {
             SVProgressHUD.showError(withStatus: errorMessage)
         }
-                
+        
         updateLabels()
     }
     
@@ -47,7 +46,7 @@ class ViewController: UIViewController {
     @IBAction func addMoney(_ sender: UIButton) {
     }
     
-    fileprivate func updateLabels() {
+    @objc fileprivate func updateLabels() {
         fareName.text = Store.sharedInstance.getSelectedFare()
         tripsMade.text = "\(Store.sharedInstance.getTripsDone())"
         tripsRemaining.text = "\(Store.sharedInstance.getTripsRemaining())"

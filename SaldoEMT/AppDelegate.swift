@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-                
         Fabric.with([Crashlytics.self])
         
         let config = Realm.Configuration(
@@ -39,7 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
-                
+        
+        // Download JSON and update bus lines and fare info if needed
+        Store.sharedInstance.updateFares()
+        
         return true
     }
     

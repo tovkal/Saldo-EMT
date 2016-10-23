@@ -1,0 +1,6 @@
+* Logging framework
+* There are lot of prints that can be logs and errors. Maybe I should do a Error and pass a string to it
+* db2json should upload result to AWS S3
+* Add timestamp to db2json script to avoid parsing json if there are no changes
+* Background fetch of new json file
+* Remove iAd and search alternative

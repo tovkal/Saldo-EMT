@@ -15,31 +15,81 @@ import RealmSwift
 class Store {
     static let sharedInstance = Store()
     
+    // MARK: - Init
+    
+    /**
+     Init Store
+     
+     By default bus lines and fares are extracted from a minimized json filed bundled with the app in the Assets folder.
+     */
+    fileprivate init() {
+        let realm = try! Realm()
+        
+        if realm.isEmpty, let json = getFileData() {
+            processJSON(json: json, realm: realm)
+            print("finished parsing file")
+        }
+        
+        initBalance(realm)
+    }
+    
+    fileprivate func initBalance(_ realm: Realm) {
+        if realm.objects(Balance.self).count == 0 {
+            try! realm.write {
+                realm.add(Balance())
+                
+                realm.objects(Balance.self)[0].remaining = 4
+                realm.objects(Balance.self)[0].tripsRemaining = 5
+            }
+        }
+    }
+    
+    /**
+     If there is no selected fare, select default (Resident for urban zone)
+     */
+    func initFare() {
+        if getSelectedFare() == nil {
+            let realm = try! Realm()
+            let fare = getFare(forId: "1")
+            
+            try! realm.write {
+                fare[0].current = true
+            }
+        }
+    }
+    
     // MARK: - Public
     
-    func getSelectedFare() -> String {
+    /**
+     Get current selected fare.
+     
+     @return Selected fare. If no fare is selected returns nil.
+     */
+    func getSelectedFare() -> String? {
         let results = getCurrentFare()
         if results.count == 1 {
             return results[0].name
         } else {
-            return "ERROR"
+            return nil
         }
     }
     
     func setNewCurrentFare(_ fare: Fare) {
         let realm = try! Realm()
         let oldFare = getCurrentFare()
-        let newFare = getFare(forName: fare.name)
+        let newFare = getFare(forId: fare.id)
         
         if oldFare.count == 1 && newFare.count == 1 {
             try! realm.write {
                 oldFare[0].current = false
                 newFare[0].current = true
             }
-        } else {
+        } else { // TODO Necessary? Both count should always be 1
             
-            for fare in newFare {
-                print(fare.name)
+            if newFare.count == 1 {
+                for fare in newFare {
+                    print(fare.name)
+                }
             }
             
             print("Old fare count: \(oldFare.count), New fare cound: \(newFare.count)")
@@ -139,48 +189,13 @@ class Store {
         }
     }
     
-    // MARK: - Init
-    
-    fileprivate init() {
-        
-        // TODO Rethink this bit
-        /*if let json = fetchFares() {
-            parseBusLines(json)
-            parseFares(json)
-        }*/
-        
-        fetchFares()
-        
-        initBalance()
-    }
-    
-    fileprivate func initBalance() {
-        let realm = try! Realm()
-        if realm.objects(Balance.self).count == 0 {
-            try! realm.write {
-                realm.add(Balance())
-                
-                realm.objects(Balance.self)[0].remaining = 4
-                realm.objects(Balance.self)[0].tripsRemaining = 5
-            }
-        }
-    }
-    
-    func initFare() {
-        if "ERROR" == getSelectedFare() {
-            setNewCurrentFare(getFare(forId: "1")[0]) // TODO Sent notification when processed downloaded fares so can't init data... async or sync? Sync is better, won't take too long
-        }
-    }
-    
-    // MARK: - JSON Processing
-    
-    fileprivate func processData(json: JSON) {
-        let realm = try! Realm()
-        parseBusLines(json, realm: realm)
-        parseFares(json, realm: realm)
-    }
-    
-    fileprivate func fetchFares() {
+    /**
+     Update fares and bus lines.
+     
+     Downloads JSON file from AWS S3 and updates fares and bus lines in Realm.
+     */
+    func updateFares() {
+        print("Updating fares")
         let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
         guard let url = URL(string: endpoint) else {
             print("Error: cannot create URL")
@@ -207,10 +222,37 @@ class Store {
                 return
             }
             
-            self.processData(json: JSON(data: responseData))
+            let realm = try! Realm()
+            self.processJSON(json: JSON(data: responseData), realm: realm)
+            self.updateBalanceAfterUpdatingFares()
+            NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
         }
         
         task.resume()
+    }
+    
+    fileprivate func updateBalanceAfterUpdatingFares() {
+        let realm = try! Realm()
+        do {
+            let costPerTrip = try getCurrentTripCost()
+            
+            let remaining = realm.objects(Balance.self)[0].remaining - costPerTrip
+            
+            try realm.write {
+                realm.objects(Balance.self)[0].tripsDone += 1;
+                realm.objects(Balance.self)[0].tripsRemaining -= 1;
+                realm.objects(Balance.self)[0].remaining = remaining
+            }
+        } catch let error as NSError {
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+    
+    // MARK: - JSON Processing
+    
+    fileprivate func processJSON(json: JSON, realm: Realm) {
+        parseBusLines(json, realm: realm)
+        parseFares(json, realm: realm)
     }
     
     fileprivate func getFileData() -> JSON? {
@@ -237,18 +279,15 @@ class Store {
                 busLine.hexColor = lineInfo["color"].stringValue
                 busLine.name = lineInfo["name"].stringValue
                 
-                if realm.object(ofType: BusLine.self, forPrimaryKey: busLine.number) == nil { // Add if not exists
-                    try! realm.write {
-                        realm.add(busLine, update: false)
-                    }
+                try! realm.write {
+                    // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
+                    realm.add(busLine, update: true)
                 }
             }
         }
     }
     
     fileprivate func parseFares(_ json: JSON, realm: Realm) {
-        var firstCurrent = true
-        
         for (_, fare) in json["fares"] {
             for (fareNumber, fareInfo) in fare {
                 
@@ -263,22 +302,15 @@ class Store {
                     fare.lines.append(busLine)
                 }
                 
-                // TODO Why residentes?
-                if fare.name == "Residentes" && firstCurrent {
-                    fare.current = true
-                    firstCurrent = false
-                }
-                
                 if let rides = fare.rides.value {
                     fare.tripCost = fare.cost / Double(rides)
                 } else {
                     fare.tripCost = fare.cost
                 }
                 
-                if realm.object(ofType: Fare.self, forPrimaryKey: fare.id) == nil { // Add if not exists
-                    try! realm.write {
-                        realm.add(fare, update: false)
-                    }
+                try! realm.write {
+                    // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
+                    realm.add(fare, update: true)
                 }
             }
         }

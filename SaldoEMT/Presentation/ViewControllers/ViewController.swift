@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        updateLabels()
+        setupLabels()
     }
     
     @IBAction func addTrip(_ sender: UIButton) {
@@ -46,11 +46,18 @@ class ViewController: UIViewController {
     @IBAction func addMoney(_ sender: UIButton) {
     }
     
-    @objc fileprivate func updateLabels() {
+    fileprivate func setupLabels() {
+        print("Setting up labels")
         fareName.text = Store.sharedInstance.getSelectedFare()
         tripsMade.text = "\(Store.sharedInstance.getTripsDone())"
         tripsRemaining.text = "\(Store.sharedInstance.getTripsRemaining())"
         remainingAmount.text = Store.sharedInstance.getRemainingBalance().toDecimalString()
+    }
+    
+    @objc fileprivate func updateLabels() {
+        DispatchQueue.main.async {
+            self.setupLabels()
+        }
     }
 }
 

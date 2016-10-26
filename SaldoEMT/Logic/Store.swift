@@ -25,9 +25,13 @@ class Store {
     fileprivate init() {
         let realm = try! Realm()
         
-        if realm.isEmpty, let json = getFileData() {
-            processJSON(json: json, realm: realm)
-            print("finished parsing file")
+        if realm.isEmpty {
+            initSettings()
+            
+            if let json = getFileData() {
+                processJSON(json: json, realm: realm)
+                print("finished parsing file")
+            }
         }
         
         initBalance(realm)
@@ -195,7 +199,8 @@ class Store {
      Downloads JSON file from AWS S3 and updates fares and bus lines in Realm.
      */
     func updateFares() {
-        print("Updating fares")
+        print("Downloading fares json")
+        
         let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
         guard let url = URL(string: endpoint) else {
             print("Error: cannot create URL")
@@ -210,6 +215,9 @@ class Store {
         // make the request
         let task = session.dataTask(with: urlRequest) {
             (data, response, error) in
+            
+            print("Finished downloading fares json")
+            
             // check for any errors
             guard error == nil else {
                 print("error fetching fares")
@@ -222,10 +230,17 @@ class Store {
                 return
             }
             
+            print("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
+            
             let realm = try! Realm()
-            self.processJSON(json: JSON(data: responseData), realm: realm)
-            self.updateBalanceAfterUpdatingFares()
-            NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
+            let json = JSON(data: responseData)
+            if self.isNewUpdate(json: json, realm: realm) {
+                print("New fare json update, processing...")
+                self.processJSON(json: json, realm: realm)
+                self.updateBalanceAfterUpdatingFares()
+                NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
+                print("Done processing file")
+            }
         }
         
         task.resume()
@@ -340,5 +355,24 @@ class Store {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "number IN %@", busLines)
         return realm.objects(BusLine.self).filter(predicate)
+    }
+    
+    // MARK: - Setting functions
+    
+    fileprivate func initSettings() {
+        let realm = try! Realm()
+        let settings = Settings()
+        
+        try! realm.write {
+            realm.add(settings)
+        }
+    }
+    
+    fileprivate func isNewUpdate(json: JSON, realm: Realm) -> Bool {
+        let settings = realm.objects(Settings.self)[0]
+        let timestamp = json["timestamp"].intValue
+                
+        // Settins.lastTimestamp is 0 when a fares json file has never been processed
+        return settings.lastTimestamp == 0 || settings.lastTimestamp < timestamp
     }
 }

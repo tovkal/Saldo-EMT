@@ -14,9 +14,8 @@ class Fare: Object {
     let days = RealmOptional<Int>()
     let lines = List<BusLine>()
     dynamic var name = ""
-    dynamic var id = ""
+    dynamic var id = -1
     let rides = RealmOptional<Int>()
-    dynamic var current = false
     dynamic var tripCost: Double = 0.0
     
     override static func primaryKey() -> String? {

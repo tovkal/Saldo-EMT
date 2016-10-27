@@ -8,8 +8,10 @@ iOS app to log bus rides and manually manage bus pass balance
 - [x] Add timestamp to db2json script to avoid parsing json if there are no changes (2016-10-23)
 - [ ] Background fetch of new json file (2016-10-23)
 - [ ] Remove iAd and search alternative (2016-10-23)
+- [ ] i18n (2016-10-27)
+- [ ] App icon (2016-10-27)
 
 # Worklog
 
-- There seems to be a bug again with resetting fare, no fare name
+- Add dev button to download fare file on command
 - Pending upload of go script without indentation of json file

@@ -12,4 +12,6 @@ import RealmSwift
 class Settings: Object {
     // Last processed fares files timestamp
     dynamic var lastTimestamp = 0
+    // Current selected fare
+    dynamic var currentFare = -1
 }

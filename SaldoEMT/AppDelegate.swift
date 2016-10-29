@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import RealmSwift
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
+        
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
@@ -44,26 +47,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        // Saves changes in the application's managed object context before the application terminates.
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print("Downloading fares json")
+        
+        let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
+        guard let url = URL(string: endpoint) else {
+            print("Error: cannot create URL")
+            return completionHandler(.failed)
+        }
+        let urlRequest = URLRequest(url: url)
+        
+        // set up the session
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        // make the request
+        let task = session.dataTask(with: urlRequest) {
+            (data, response, error) in
+            
+            print("Finished downloading fares json")
+            
+            // check for any errors
+            guard error == nil else {
+                print("error fetching fares")
+                print(error!)
+                return completionHandler(.failed)
+            }
+            // make sure we got data
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return completionHandler(.failed)
+            }
+            
+            print("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
+            
+            let realm = try! Realm()
+            let json = JSON(data: responseData)
+            if Store.sharedInstance.isNewUpdate(json: json, realm: realm) {
+                print("New fare json update, processing...")
+                Store.sharedInstance.processJSON(json: json, realm: realm)
+                Store.sharedInstance.updateBalanceAfterUpdatingFares()
+                NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
+                print("Done processing file")
+                return completionHandler(.newData)
+            } else {
+                return completionHandler(.noData)
+            }
+        }
+        
+        task.resume()
     }
 }

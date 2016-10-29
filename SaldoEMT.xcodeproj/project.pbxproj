@@ -22,8 +22,6 @@
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
 		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; };
 		9578B9711DA93B4C0073CC66 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
-		9578B97E1DA93E810073CC66 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
-		9578B97F1DA93E810073CC66 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
 		957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957FE81E1DBFE5FF002833D5 /* Settings.swift */; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
@@ -36,6 +34,8 @@
 		95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C31B771C46592800365F87 /* Crashlytics.framework */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9F5FB1C4C0C9000A696B9 /* Balance.swift */; };
+		95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
+		95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
 		95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */; };
@@ -97,8 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9578B97E1DA93E810073CC66 /* Realm.framework in Frameworks */,
-				9578B97F1DA93E810073CC66 /* RealmSwift.framework in Frameworks */,
+				95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */,
+				95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */,
 				9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */,
 				953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */,
 				95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */,
@@ -327,6 +327,11 @@
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = JVHN2X67GT;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					95A4CBE71B5A852B002FB3E9 = {
 						CreatedOnToolsVersion = 6.4;
@@ -580,7 +585,7 @@
 					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,7 +606,7 @@
 					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

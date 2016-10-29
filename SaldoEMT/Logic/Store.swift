@@ -212,7 +212,7 @@ class Store {
             // check for any errors
             guard error == nil else {
                 print("error fetching fares")
-                print(error)
+                print(error!)
                 return
             }
             // make sure we got data
@@ -237,7 +237,7 @@ class Store {
         task.resume()
     }
     
-    fileprivate func updateBalanceAfterUpdatingFares() {
+    func updateBalanceAfterUpdatingFares() {
         let realm = try! Realm()
         do {
             let costPerTrip = try getCurrentTripCost()
@@ -256,7 +256,7 @@ class Store {
     
     // MARK: - JSON Processing
     
-    fileprivate func processJSON(json: JSON, realm: Realm) {
+    func processJSON(json: JSON, realm: Realm) {
         parseBusLines(json, realm: realm)
         parseFares(json, realm: realm)
     }
@@ -359,7 +359,7 @@ class Store {
         }
     }
     
-    fileprivate func isNewUpdate(json: JSON, realm: Realm) -> Bool {
+    func isNewUpdate(json: JSON, realm: Realm) -> Bool {
         let settings = realm.objects(Settings.self).first!
         let timestamp = json["timestamp"].intValue
         

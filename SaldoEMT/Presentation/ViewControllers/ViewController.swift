@@ -12,6 +12,8 @@ import SVProgressHUD
 
 class ViewController: UIViewController {
     
+    // MARK: - Properties
+    
     @IBOutlet weak var fareName: UILabel!
     @IBOutlet weak var remainingAmount: UILabel!
     @IBOutlet weak var tripsMade: UILabel!
@@ -19,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tripButton: UIButton!
     @IBOutlet weak var bannerView: ADBannerView!
     
+    // MARK: - Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +33,8 @@ class ViewController: UIViewController {
         setupLabels()
     }
     
+    // MARK: - Actions
+    
     @IBAction func addTrip(_ sender: UIButton) {
         if let errorMessage = Store.sharedInstance.addTrip() {
             SVProgressHUD.showError(withStatus: errorMessage)
@@ -38,13 +43,18 @@ class ViewController: UIViewController {
         updateLabels()
     }
     
+    // MARK: Dev actions
+    
     @IBAction func reset(_ sender: UIButton) {
         Store.sharedInstance.reset()
         updateLabels()
     }
     
-    @IBAction func addMoney(_ sender: UIButton) {
+    @IBAction func forceDownload(_ sender: UIButton) {
+        Store.sharedInstance.updateFares(performFetchWithCompletionHandler: nil)
     }
+    
+    // MARK: - Private functions
     
     fileprivate func setupLabels() {
         print("Setting up labels")
@@ -60,6 +70,8 @@ class ViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Extensions
 
 extension ViewController: ADBannerViewDelegate {
     

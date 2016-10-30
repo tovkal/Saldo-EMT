@@ -11,7 +11,5 @@ iOS app to log bus rides and manually manage bus pass balance
 - [ ] i18n (2016-10-27)
 - [ ] App icon (2016-10-27)
 
-# Worklog
+# Worklog (to remember what I was doing)
 
-- Refactor somehow performFetchWithCompletionHandler, I don't like the dupe code plus unecessary public methods in Store
-- Add dev button to download fare file on command

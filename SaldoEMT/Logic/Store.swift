@@ -120,6 +120,8 @@ class Store {
         throw StoreError.costPerTripUnknown
     }
     
+    // MARK: User actions
+    
     func addTrip() -> String? {
         let realm = try! Realm()
         do {
@@ -164,6 +166,7 @@ class Store {
         }
     }
     
+    // MARK: Dev functions
     func reset() {
         let realm = try! Realm()
         
@@ -212,8 +215,6 @@ class Store {
         let task = session.dataTask(with: urlRequest) {
             (data, response, error) in
             
-            print("Finished downloading fares json")
-            
             // check for any errors
             guard error == nil else {
                 print("error fetching fares")
@@ -241,16 +242,25 @@ class Store {
             let realm = try! Realm()
             let json = JSON(data: responseData)
             if self.isNewUpdate(json: json, realm: realm) {
-                print("New fare json update, processing...")
                 self.processJSON(json: json, realm: realm)
                 self.updateBalanceAfterUpdatingFares()
+                
+                let settings = realm.objects(Settings.self).first!
+                try! realm.write {
+                    settings.lastTimestamp = json["timestamp"].intValue
+                }
+                
+                // Send updated fares notification
                 NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
-                print("Done processing file")
+                
+                print("Processed new fare data")
                 
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.newData)
                 }
             } else {
+                print("No new data downloaded")
+                
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.noData)
                 }
@@ -385,6 +395,9 @@ class Store {
     fileprivate func isNewUpdate(json: JSON, realm: Realm) -> Bool {
         let settings = realm.objects(Settings.self).first!
         let timestamp = json["timestamp"].intValue
+        
+        // TODO: Dev only, debug
+        print("settings timestamp < downloaded timestamp: \(settings.lastTimestamp) < \(timestamp)")
         
         // Settins.lastTimestamp is 0 when a fares json file has never been processed
         return settings.lastTimestamp == 0 || settings.lastTimestamp < timestamp

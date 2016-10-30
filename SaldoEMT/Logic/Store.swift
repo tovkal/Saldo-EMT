@@ -189,12 +189,17 @@ class Store {
      
      Downloads JSON file from AWS S3 and updates fares and bus lines in Realm.
      */
-    func updateFares() {
+    func updateFares(performFetchWithCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         print("Downloading fares json")
         
         let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
         guard let url = URL(string: endpoint) else {
             print("Error: cannot create URL")
+            
+            if let completionHandler = performFetchWithCompletionHandler {
+                completionHandler(.failed)
+            }
+            
             return
         }
         let urlRequest = URLRequest(url: url)
@@ -213,11 +218,21 @@ class Store {
             guard error == nil else {
                 print("error fetching fares")
                 print(error!)
+                
+                if let completionHandler = performFetchWithCompletionHandler {
+                    completionHandler(.failed)
+                }
+                
                 return
             }
             // make sure we got data
             guard let responseData = data else {
                 print("Error: did not receive data")
+                
+                if let completionHandler = performFetchWithCompletionHandler {
+                    completionHandler(.failed)
+                }
+                
                 return
             }
             
@@ -231,32 +246,23 @@ class Store {
                 self.updateBalanceAfterUpdatingFares()
                 NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
                 print("Done processing file")
+                
+                if let completionHandler = performFetchWithCompletionHandler {
+                    completionHandler(.newData)
+                }
+            } else {
+                if let completionHandler = performFetchWithCompletionHandler {
+                    completionHandler(.noData)
+                }
             }
         }
         
         task.resume()
     }
     
-    func updateBalanceAfterUpdatingFares() {
-        let realm = try! Realm()
-        do {
-            let costPerTrip = try getCurrentTripCost()
-            
-            let remaining = realm.objects(Balance.self).first!.remaining - costPerTrip
-            
-            try realm.write {
-                realm.objects(Balance.self).first!.tripsDone += 1;
-                realm.objects(Balance.self).first!.tripsRemaining -= 1;
-                realm.objects(Balance.self).first!.remaining = remaining
-            }
-        } catch let error as NSError {
-            Crashlytics.sharedInstance().recordError(error)
-        }
-    }
-    
     // MARK: - JSON Processing
     
-    func processJSON(json: JSON, realm: Realm) {
+    fileprivate func processJSON(json: JSON, realm: Realm) {
         parseBusLines(json, realm: realm)
         parseFares(json, realm: realm)
     }
@@ -348,6 +354,23 @@ class Store {
         return realm.objects(BusLine.self).filter(predicate)
     }
     
+    fileprivate func updateBalanceAfterUpdatingFares() {
+        let realm = try! Realm()
+        do {
+            let costPerTrip = try getCurrentTripCost()
+            
+            let remaining = realm.objects(Balance.self).first!.remaining - costPerTrip
+            
+            try realm.write {
+                realm.objects(Balance.self).first!.tripsDone += 1;
+                realm.objects(Balance.self).first!.tripsRemaining -= 1;
+                realm.objects(Balance.self).first!.remaining = remaining
+            }
+        } catch let error as NSError {
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+    
     // MARK: - Setting functions
     
     fileprivate func initSettings() {
@@ -359,7 +382,7 @@ class Store {
         }
     }
     
-    func isNewUpdate(json: JSON, realm: Realm) -> Bool {
+    fileprivate func isNewUpdate(json: JSON, realm: Realm) -> Bool {
         let settings = realm.objects(Settings.self).first!
         let timestamp = json["timestamp"].intValue
         

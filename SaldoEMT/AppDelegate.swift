@@ -42,59 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         
         // Download JSON and update bus lines and fare info if needed
-        Store.sharedInstance.updateFares()
+        Store.sharedInstance.updateFares(performFetchWithCompletionHandler: nil)
         
         return true
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print("Downloading fares json")
-        
-        let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
-        guard let url = URL(string: endpoint) else {
-            print("Error: cannot create URL")
-            return completionHandler(.failed)
-        }
-        let urlRequest = URLRequest(url: url)
-        
-        // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        
-        // make the request
-        let task = session.dataTask(with: urlRequest) {
-            (data, response, error) in
-            
-            print("Finished downloading fares json")
-            
-            // check for any errors
-            guard error == nil else {
-                print("error fetching fares")
-                print(error!)
-                return completionHandler(.failed)
-            }
-            // make sure we got data
-            guard let responseData = data else {
-                print("Error: did not receive data")
-                return completionHandler(.failed)
-            }
-            
-            print("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
-            
-            let realm = try! Realm()
-            let json = JSON(data: responseData)
-            if Store.sharedInstance.isNewUpdate(json: json, realm: realm) {
-                print("New fare json update, processing...")
-                Store.sharedInstance.processJSON(json: json, realm: realm)
-                Store.sharedInstance.updateBalanceAfterUpdatingFares()
-                NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
-                print("Done processing file")
-                return completionHandler(.newData)
-            } else {
-                return completionHandler(.noData)
-            }
-        }
-        
-        task.resume()
+        Store.sharedInstance.updateFares(performFetchWithCompletionHandler: completionHandler)
     }
 }

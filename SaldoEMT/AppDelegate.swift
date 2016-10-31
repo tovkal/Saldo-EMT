@@ -10,7 +10,6 @@ import UIKit
 import Fabric
 import Crashlytics
 import RealmSwift
-import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -44,10 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Download JSON and update bus lines and fare info if needed
         Store.sharedInstance.updateFares(performFetchWithCompletionHandler: nil)
         
+        log.debug("End didFinishLaunchingWithOptions")
+        
         return true
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Store.sharedInstance.updateFares(performFetchWithCompletionHandler: completionHandler)
+        
+        log.debug("End background fetch")
     }
 }

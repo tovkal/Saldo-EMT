@@ -34,6 +34,8 @@
 		95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C31B771C46592800365F87 /* Crashlytics.framework */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9F5FB1C4C0C9000A696B9 /* Balance.swift */; };
+		95DACD851DC64DB5005C7180 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
+		95DACD891DC905B0005C7180 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DACD881DC905B0005C7180 /* Logger.swift */; };
 		95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
 		95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
@@ -86,6 +88,8 @@
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95D9F5FB1C4C0C9000A696B9 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		95DACD841DC64DB5005C7180 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
+		95DACD881DC905B0005C7180 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 		95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithUnlimitedRidesCell.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95DACD851DC64DB5005C7180 /* XCGLogger.framework in Frameworks */,
 				95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */,
 				95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */,
 				9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */,
@@ -163,6 +168,7 @@
 		9578B96B1DA93A550073CC66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95DACD841DC64DB5005C7180 /* XCGLogger.framework */,
 				9578B97B1DA93E810073CC66 /* Realm.framework */,
 				9578B97C1DA93E810073CC66 /* RealmSwift.framework */,
 				9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */,
@@ -258,6 +264,7 @@
 				9566B8C31BB87B0D000ED3E1 /* Store.swift */,
 				95559B161C516E6B0003E32F /* StoreError.swift */,
 				950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */,
+				95DACD881DC905B0005C7180 /* Logger.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 			);
 			outputPaths = (
 			);
@@ -435,6 +443,7 @@
 				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,
 				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
+				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
 				95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */,
 				950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */,
@@ -578,6 +587,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -587,6 +597,7 @@
 				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -599,6 +610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

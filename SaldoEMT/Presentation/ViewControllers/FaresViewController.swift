@@ -77,7 +77,7 @@ extension FaresViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async(execute: {
             Store.sharedInstance.setNewCurrentFare(self.fares[(indexPath as NSIndexPath).row])
-            print("Selected fare: \(self.fares[(indexPath as NSIndexPath).row].name)")
+            log.debug("Selected fare: \(self.fares[(indexPath as NSIndexPath).row].name)")
             self.dismiss(animated: true, completion: nil)
         })
     }

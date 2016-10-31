@@ -25,12 +25,14 @@ class Store {
     fileprivate init() {
         let realm = try! Realm()
         
+        log.info("hey")
+        
         if realm.isEmpty {
             initSettings()
             
             if let json = getFileData() {
                 processJSON(json: json, realm: realm)
-                print("finished parsing file")
+                log.debug("finished parsing file")
             }
         }
         
@@ -170,11 +172,11 @@ class Store {
     func reset() {
         let realm = try! Realm()
         
-        print("Fare before reset: \(getSelectedFare())")
+        log.debug("Fare before reset: \(getSelectedFare())")
         
         setNewCurrentFare(getFare(forId: 1).first!)
         
-        print("Fare after reset: \(getSelectedFare())")
+        log.debug("Fare after reset: \(getSelectedFare())")
         
         try! realm.write {
             if realm.objects(Balance.self).count == 0 {
@@ -193,11 +195,11 @@ class Store {
      Downloads JSON file from AWS S3 and updates fares and bus lines in Realm.
      */
     func updateFares(performFetchWithCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) {
-        print("Downloading fares json")
+        log.debug("Downloading fares json")
         
         let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
         guard let url = URL(string: endpoint) else {
-            print("Error: cannot create URL")
+            log.error("Error: cannot create URL")
             
             if let completionHandler = performFetchWithCompletionHandler {
                 completionHandler(.failed)
@@ -217,8 +219,8 @@ class Store {
             
             // check for any errors
             guard error == nil else {
-                print("error fetching fares")
-                print(error!)
+                log.error("error fetching fares")
+                log.error(error!)
                 
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.failed)
@@ -228,7 +230,7 @@ class Store {
             }
             // make sure we got data
             guard let responseData = data else {
-                print("Error: did not receive data")
+                log.error("Error: did not receive data")
                 
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.failed)
@@ -237,7 +239,7 @@ class Store {
                 return
             }
             
-            print("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
+            log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
             
             let realm = try! Realm()
             let json = JSON(data: responseData)
@@ -253,13 +255,13 @@ class Store {
                 // Send updated fares notification
                 NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
                 
-                print("Processed new fare data")
+                log.debug("Processed new fare data")
                 
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.newData)
                 }
             } else {
-                print("No new data downloaded")
+                log.debug("No new data downloaded")
                 
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.noData)
@@ -286,7 +288,7 @@ class Store {
                 Crashlytics.sharedInstance().recordError(error)
             }
         } else {
-            print("Invalid filename/path.")
+            log.error("Invalid filename/path.")
         }
         
         return nil
@@ -396,8 +398,7 @@ class Store {
         let settings = realm.objects(Settings.self).first!
         let timestamp = json["timestamp"].intValue
         
-        // TODO: Dev only, debug
-        print("settings timestamp < downloaded timestamp: \(settings.lastTimestamp) < \(timestamp)")
+        log.debug("settings timestamp < downloaded timestamp: \(settings.lastTimestamp) < \(timestamp)")
         
         // Settins.lastTimestamp is 0 when a fares json file has never been processed
         return settings.lastTimestamp == 0 || settings.lastTimestamp < timestamp

@@ -24,9 +24,7 @@ class Store {
      */
     fileprivate init() {
         let realm = try! Realm()
-        
-        log.info("hey")
-        
+                
         if realm.isEmpty {
             initSettings()
             
@@ -172,11 +170,11 @@ class Store {
     func reset() {
         let realm = try! Realm()
         
-        log.debug("Fare before reset: \(getSelectedFare())")
+        log.debug("Fare before reset: \(self.getSelectedFare())")
         
         setNewCurrentFare(getFare(forId: 1).first!)
         
-        log.debug("Fare after reset: \(getSelectedFare())")
+        log.debug("Fare after reset: \(self.getSelectedFare())")
         
         try! realm.write {
             if realm.objects(Balance.self).count == 0 {

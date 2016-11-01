@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     // MARK: - Private functions
     
     fileprivate func setupLabels() {
-        log.info("Setting up labels")
+        log.debug("Setting up labels")
         fareName.text = Store.sharedInstance.getSelectedFare()
         tripsMade.text = "\(Store.sharedInstance.getTripsDone())"
         tripsRemaining.text = "\(Store.sharedInstance.getTripsRemaining())"

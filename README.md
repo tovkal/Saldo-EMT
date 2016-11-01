@@ -8,7 +8,7 @@ iOS app to log bus rides and manually manage bus pass balance
 - [x] Add timestamp to db2json script to avoid parsing json if there are no changes (2016-10-23)
 - [x] Background fetch of new json file (2016-10-23)
 - [ ] Remove iAd and search alternative (2016-10-23)
-- [ ] i18n (2016-10-27)
+- [x] i18n (2016-10-27)
 - [ ] App icon (2016-10-27)
 
 # Worklog (to remember what I was doing)

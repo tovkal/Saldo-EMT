@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "100"; ObjectID = "2TK-hC-oU3"; */
+"2TK-hC-oU3.text" = "100";
+
+/* Class = "UIButton"; normalTitle = "+1 Viatge"; ObjectID = "8cP-w7-dTC"; */
+"8cP-w7-dTC.normalTitle" = "+1 Viaje";
+
+/* Class = "UIButton"; normalTitle = "Tarifes"; ObjectID = "CW4-dl-NtV"; */
+"CW4-dl-NtV.normalTitle" = "Tarifas";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "KO8-gf-1Jp"; */
+"KO8-gf-1Jp.text" = "100";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "PaW-Z1-1y4"; */
+"PaW-Z1-1y4.normalTitle" = "Aceptar";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Zs1-yc-vmE"; */
+"Zs1-yc-vmE.normalTitle" = "Cancelar";
+
+/* Class = "UILabel"; text = "€ saldo restant"; ObjectID = "axf-xd-CQI"; */
+"axf-xd-CQI.text" = "€ saldo restante";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "iE5-gK-Dt3"; */
+"iE5-gK-Dt3.normalTitle" = "Reset";
+
+/* Class = "UILabel"; text = "viatges fets"; ObjectID = "mlc-qT-Ddr"; */
+"mlc-qT-Ddr.text" = "viajes hechos";
+
+/* Class = "UIButton"; normalTitle = "Force Download"; ObjectID = "o6F-oz-NZp"; */
+"o6F-oz-NZp.normalTitle" = "Forzar descarga";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "oRH-iv-HhN"; */
+"oRH-iv-HhN.text" = "100";
+
+/* Class = "UILabel"; text = "viatges restants"; ObjectID = "riz-Ho-yCY"; */
+"riz-Ho-yCY.text" = "viajes restantes";
+
+/* Class = "UIButton"; normalTitle = "Saldo"; ObjectID = "vlg-7O-HpL"; */
+"vlg-7O-HpL.normalTitle" = "Saldo";

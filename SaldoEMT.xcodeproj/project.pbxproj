@@ -90,6 +90,10 @@
 		95D9F5FB1C4C0C9000A696B9 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		95DACD841DC64DB5005C7180 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DACD881DC905B0005C7180 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		95DACD8A1DC91F14005C7180 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		95DACD8B1DC91F14005C7180 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		95DACD8C1DC91F24005C7180 /* ca-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ca-ES"; path = "ca-ES.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		95DACD8D1DC91F24005C7180 /* ca-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ca-ES"; path = "ca-ES.lproj/Main.strings"; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 		95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithUnlimitedRidesCell.swift; sourceTree = "<group>"; };
@@ -473,6 +477,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A4CBDD1B5A852A002FB3E9 /* Base */,
+				95DACD8B1DC91F14005C7180 /* es */,
+				95DACD8D1DC91F24005C7180 /* ca-ES */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -482,6 +488,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				95A4CBE21B5A852A002FB3E9 /* Base */,
+				95DACD8A1DC91F14005C7180 /* es */,
+				95DACD8C1DC91F24005C7180 /* ca-ES */,
 			);
 			name = LaunchScreen.xib;
 			path = .;
@@ -495,6 +503,7 @@
 			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -544,6 +553,7 @@
 			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

@@ -9,7 +9,7 @@ iOS app to log bus rides and manually manage bus pass balance
 - [x] Background fetch of new json file (2016-10-23)
 - [ ] Remove iAd and search alternative (2016-10-23)
 - [x] i18n (2016-10-27)
-- [ ] App icon (2016-10-27)
+- [x] App icon (2016-10-27)
 
 # Worklog (to remember what I was doing)
 

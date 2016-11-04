@@ -55,7 +55,7 @@ class BusLineView: UICollectionViewCell {
     
     func populateWithBusLine(_ busLine: BusLine) {
         self.busLine.text = String(busLine.number)
-        backgroundColor = UIColor(rgba: busLine.hexColor)
+        backgroundColor = UIColor(busLine.hexColor)
     }
     
     // MARK: - View setup methonds

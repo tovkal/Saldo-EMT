@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950408AD1C4B9FF600B067B0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */; };
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
 		952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
+		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
+		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
+		953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
 		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
@@ -21,7 +23,6 @@
 		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
 		9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9566B8C31BB87B0D000ED3E1 /* Store.swift */; };
-		9578B9711DA93B4C0073CC66 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
 		957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957FE81E1DBFE5FF002833D5 /* Settings.swift */; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
@@ -55,9 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleTests.swift; path = Extensions/DoubleTests.swift; sourceTree = "<group>"; };
+		953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorTests.swift; path = Extensions/UIColorTests.swift; sourceTree = "<group>"; };
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
@@ -120,13 +123,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9578B9711DA93B4C0073CC66 /* SVProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		953C2CC21DCE009600C8CEF7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */,
+				953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		953FDF2D1BB8072F00D2C9DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +238,7 @@
 		95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */ = {
 			isa = PBXGroup;
 			children = (
+				953C2CC21DCE009600C8CEF7 /* Extensions */,
 				9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */,
 				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
 			);
@@ -255,8 +267,8 @@
 		95D153D21B6A923C00866B59 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				950408AC1C4B9FF600B067B0 /* UIColorExtension.swift */,
 				9562D22D1C4AE00B008E2A47 /* Double.swift */,
+				953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,7 +358,8 @@
 					};
 					95A4CBE71B5A852B002FB3E9 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 95A4CBD21B5A852A002FB3E9;
 					};
 				};
@@ -398,7 +411,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		95383DA61DAA4991001914DC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -416,7 +429,7 @@
 		};
 		95C31B751C46590400365F87 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -434,7 +447,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				950408AD1C4B9FF600B067B0 /* UIColorExtension.swift in Sources */,
 				9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */,
 				95A4CBDB1B5A852A002FB3E9 /* ViewController.swift in Sources */,
 				957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */,
@@ -442,6 +454,7 @@
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
 				95559B171C516E6B0003E32F /* StoreError.swift in Sources */,
+				953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */,
 				9566B8C41BB87B0D000ED3E1 /* Store.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
 				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,
@@ -459,6 +472,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */,
+				953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +656,9 @@
 			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -654,6 +672,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaldoEMT.app/SaldoEMT";
 			};
@@ -664,6 +683,9 @@
 			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

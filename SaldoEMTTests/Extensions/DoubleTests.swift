@@ -9,7 +9,7 @@
 import XCTest
 @testable import SaldoEMT
 
-class DoubleTests: XCTestCase {
+class DoubleTests: BaseTest {
     
     func testDoubleToStringShouldReturnStringWithoutDecimalsWhenInputZero() {
         let double = 0.0

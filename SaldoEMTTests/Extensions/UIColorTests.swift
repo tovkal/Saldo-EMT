@@ -9,8 +9,8 @@
 import XCTest
 @testable import SaldoEMT
 
-class UIColorTest: XCTestCase {
- 
+class UIColorTest: BaseTest {
+    
     func testInitShouldCreateWhiteColorWhenWhiteHexColor() {
         let hexColor = "FFFFFF"
         

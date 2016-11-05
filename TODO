@@ -1,1 +1,0 @@
-- When app not loading for first time, I think the fare info and all that is already stored with CoreData, so ti remembers the current fare but when Store.sharedInstance is called it loads again the file making the default the current but as the updateLabels is not displayed it's still showing the previously selected one. So only reload data when coredata is empty

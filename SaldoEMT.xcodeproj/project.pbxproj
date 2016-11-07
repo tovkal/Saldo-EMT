@@ -10,10 +10,12 @@
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
 		952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
+		953B35AA1DD1042B00B36AA9 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
 		953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */; };
 		953C2CCF1DCE80B100C8CEF7 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */; };
+		953C2CD21DCE836400C8CEF7 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CD11DCE836400C8CEF7 /* StoreTests.swift */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
 		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
@@ -59,10 +61,12 @@
 /* Begin PBXFileReference section */
 		950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleTests.swift; path = Extensions/DoubleTests.swift; sourceTree = "<group>"; };
 		953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorTests.swift; path = Extensions/UIColorTests.swift; sourceTree = "<group>"; };
 		953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
+		953C2CD11DCE836400C8CEF7 /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreTests.swift; path = Logic/StoreTests.swift; sourceTree = "<group>"; };
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953B35AA1DD1042B00B36AA9 /* GoogleMobileAds.framework in Frameworks */,
 				95DACD851DC64DB5005C7180 /* XCGLogger.framework in Frameworks */,
 				95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */,
 				95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */,
@@ -138,6 +143,14 @@
 				953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		953C2CD01DCE834D00C8CEF7 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				953C2CD11DCE836400C8CEF7 /* StoreTests.swift */,
+			);
+			name = Logic;
 			sourceTree = "<group>";
 		};
 		953FDF2D1BB8072F00D2C9DA /* Views */ = {
@@ -185,6 +198,7 @@
 		9578B96B1DA93A550073CC66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */,
 				95C31B771C46592800365F87 /* Crashlytics.framework */,
 				95C31B761C46592800365F87 /* Fabric.framework */,
 				953987421BD2699E005DB2C7 /* iAd.framework */,
@@ -242,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				953C2CC21DCE009600C8CEF7 /* Extensions */,
+				953C2CD01DCE834D00C8CEF7 /* Logic */,
 				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
 				953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */,
 			);
@@ -478,6 +493,7 @@
 				953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */,
 				953C2CCF1DCE80B100C8CEF7 /* BaseTest.swift in Sources */,
 				953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */,
+				953C2CD21DCE836400C8CEF7 /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

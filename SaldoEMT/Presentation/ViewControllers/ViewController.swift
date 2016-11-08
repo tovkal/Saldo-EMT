@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import iAd
 import SVProgressHUD
+import GoogleMobileAds
 
 class ViewController: UIViewController {
     
@@ -19,11 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var tripsMade: UILabel!
     @IBOutlet weak var tripsRemaining: UILabel!
     @IBOutlet weak var tripButton: UIButton!
-    @IBOutlet weak var bannerView: ADBannerView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     // MARK: - Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initBanner()
         
         Store.sharedInstance.initFare()
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateLabels), name: NSNotification.Name(rawValue: BUS_AND_FARES_UPDATE), object: nil)
@@ -69,18 +71,14 @@ class ViewController: UIViewController {
             self.setupLabels()
         }
     }
-}
-
-// MARK: - Extensions
-
-extension ViewController: ADBannerViewDelegate {
     
-    func bannerViewDidLoadAd(_ banner: ADBannerView!) {
-        bannerView.isHidden = false
-    }
-    
-    func bannerView(_ banner: ADBannerView!, didFailToReceiveAdWithError error: Error!) {
-        bannerView.isHidden = true
+    fileprivate func initBanner() {
+        bannerView.adUnitID = "ca-app-pub-0951032527002077/6731131411"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        bannerView.load(request)
     }
 }
+
 

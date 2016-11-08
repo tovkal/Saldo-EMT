@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
 		952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
-		953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953987421BD2699E005DB2C7 /* iAd.framework */; };
 		953B35AA1DD1042B00B36AA9 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
@@ -119,7 +118,6 @@
 				95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */,
 				95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */,
 				9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */,
-				953987431BD2699E005DB2C7 /* iAd.framework in Frameworks */,
 				95C31B791C46592900365F87 /* Crashlytics.framework in Frameworks */,
 				952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */,
 				95C31B781C46592800365F87 /* Fabric.framework in Frameworks */,

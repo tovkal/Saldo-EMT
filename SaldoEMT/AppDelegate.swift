@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import RealmSwift
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
+        // Initialize Google Mobile Ads SDK
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-0951032527002077~5254398214")
         
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used

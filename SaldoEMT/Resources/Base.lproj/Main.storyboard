@@ -110,7 +110,7 @@
                                     <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hGz-aY-zH4"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-vJ-3Zk">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-vJ-3Zk" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="686" width="414" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -225,6 +225,7 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="bannerView" destination="Oce-vJ-3Zk" id="XLy-Pa-gA7"/>
                         <outlet property="fareName" destination="AZC-KR-Cub" id="EHX-8H-xjE"/>
                         <outlet property="remainingAmount" destination="2TK-hC-oU3" id="ked-4I-6o7"/>
                         <outlet property="tripButton" destination="8cP-w7-dTC" id="BMc-e2-kGY"/>

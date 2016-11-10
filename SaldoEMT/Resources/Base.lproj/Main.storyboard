@@ -100,11 +100,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MuchLines" translatesAutoresizingMaskIntoConstraints="NO" id="cNc-Bj-r0d">
-                                <rect key="frame" x="20" y="236" width="374" height="352"/>
+                                <rect key="frame" x="20" y="236" width="374" height="352.33333333333337"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE5-gK-Dt3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE5-gK-Dt3">
                                 <rect key="frame" x="38" y="598" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="iot-u0-UzM"/>
+                                </constraints>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="reset:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="hGz-aY-zH4"/>
@@ -150,7 +152,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-w7-dTC">
-                                <rect key="frame" x="124" y="594" width="166" height="92"/>
+                                <rect key="frame" x="124.33333333333331" y="594.33333333333348" width="165.33333333333337" height="91.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8cP-w7-dTC" secondAttribute="height" multiplier="65:36" id="NC1-OB-2c4"/>
                                 </constraints>
@@ -197,6 +199,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="o6F-oz-NZp" secondAttribute="trailing" id="M5C-QK-81v"/>
                             <constraint firstItem="riz-Ho-yCY" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="75" id="Qw8-yx-YmZ"/>
                             <constraint firstItem="2TK-hC-oU3" firstAttribute="top" secondItem="KO8-gf-1Jp" secondAttribute="bottom" constant="8" id="Spl-pG-EHw"/>
+                            <constraint firstItem="2Pw-59-1Rd" firstAttribute="top" secondItem="iE5-gK-Dt3" secondAttribute="bottom" constant="8" id="UJF-rV-Nlr"/>
                             <constraint firstItem="mlc-qT-Ddr" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="75" id="V5s-oJ-g1V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AZC-KR-Cub" secondAttribute="trailing" id="VCU-7B-HLW"/>
                             <constraint firstItem="2Pw-59-1Rd" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="VWf-Vr-XJ6"/>
@@ -204,6 +207,7 @@
                             <constraint firstAttribute="trailing" secondItem="vlg-7O-HpL" secondAttribute="trailing" id="Yb3-qG-NGb"/>
                             <constraint firstItem="CW4-dl-NtV" firstAttribute="height" secondItem="2Pw-59-1Rd" secondAttribute="height" id="ZDa-mh-QuY"/>
                             <constraint firstItem="riz-Ho-yCY" firstAttribute="top" secondItem="mlc-qT-Ddr" secondAttribute="bottom" constant="9" id="ZSL-TI-bhK"/>
+                            <constraint firstItem="iE5-gK-Dt3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="18" id="bo7-iW-o5N"/>
                             <constraint firstAttribute="leading" secondItem="2Pw-59-1Rd" secondAttribute="leading" id="cea-9U-lzY"/>
                             <constraint firstItem="8cP-w7-dTC" firstAttribute="top" secondItem="cNc-Bj-r0d" secondAttribute="bottom" constant="6" id="ehd-k0-DPQ"/>
                             <constraint firstItem="CW4-dl-NtV" firstAttribute="bottom" secondItem="2Pw-59-1Rd" secondAttribute="bottom" id="fZx-eM-iAK"/>

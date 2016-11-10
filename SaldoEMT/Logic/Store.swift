@@ -182,8 +182,8 @@ class Store {
             }
             
             realm.objects(Balance.self).first!.remaining = 4
-            realm.objects(Balance.self).first!.tripsRemaining = 5
-            realm.objects(Balance.self).first!.tripsDone = 0;
+            realm.objects(Balance.self).first!.tripsRemaining = 4
+            realm.objects(Balance.self).first!.tripsDone = 0
         }
     }
     

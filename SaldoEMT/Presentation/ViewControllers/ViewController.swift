@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-0951032527002077/6731131411"
         bannerView.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+        request.testDevices = [kGADSimulatorID, "8c4736685495e1d2bd6b4c2c78c101d7"]
         bannerView.load(request)
     }
 }

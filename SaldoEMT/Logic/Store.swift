@@ -369,12 +369,10 @@ class Store {
         do {
             let costPerTrip = try getCurrentTripCost()
             
-            let remaining = realm.objects(Balance.self).first!.remaining - costPerTrip
+            let remaining = realm.objects(Balance.self).first!.remaining
             
             try realm.write {
-                realm.objects(Balance.self).first!.tripsDone += 1;
-                realm.objects(Balance.self).first!.tripsRemaining -= 1;
-                realm.objects(Balance.self).first!.remaining = remaining
+                realm.objects(Balance.self).first!.tripsRemaining = Int(remaining / costPerTrip)
             }
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)

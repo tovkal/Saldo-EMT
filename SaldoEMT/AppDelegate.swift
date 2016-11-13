@@ -44,8 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
         
-        // Download JSON and update bus lines and fare info if needed
-        Store.sharedInstance.updateFares(performFetchWithCompletionHandler: nil)
+        #if DEBUG
+            if "true" == ProcessInfo.processInfo.environment["-isUITest"] {
+                Store.sharedInstance.reset()
+            }
+        #else
+            // Download JSON and update bus lines and fare info if needed
+            Store.sharedInstance.updateFares(performFetchWithCompletionHandler: nil)
+        #endif
         
         log.debug("End didFinishLaunchingWithOptions")
         

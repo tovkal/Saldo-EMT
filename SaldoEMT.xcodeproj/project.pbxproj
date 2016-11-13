@@ -10,6 +10,7 @@
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
 		952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		953B35AA1DD1042B00B36AA9 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */; };
+		953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* MainTests.swift */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
 		953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */; };
@@ -48,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		953B35C61DD674A100B36AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A4CBCB1B5A852A002FB3E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95A4CBD21B5A852A002FB3E9;
+			remoteInfo = SaldoEMT;
+		};
 		95A4CBE91B5A852B002FB3E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95A4CBCB1B5A852A002FB3E9 /* Project object */;
@@ -61,6 +69,9 @@
 		950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		953B35C51DD674A100B36AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		953B35CD1DD675D600B36AA9 /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
 		953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoubleTests.swift; path = Extensions/DoubleTests.swift; sourceTree = "<group>"; };
 		953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorTests.swift; path = Extensions/UIColorTests.swift; sourceTree = "<group>"; };
@@ -109,6 +120,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		953B35BE1DD674A100B36AA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95A4CBD01B5A852A002FB3E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		953B35C21DD674A100B36AA9 /* SaldoEMTUITests */ = {
+			isa = PBXGroup;
+			children = (
+				953B35C51DD674A100B36AA9 /* Info.plist */,
+				953B35CD1DD675D600B36AA9 /* MainTests.swift */,
+			);
+			path = SaldoEMTUITests;
+			sourceTree = "<group>";
+		};
 		953C2CC21DCE009600C8CEF7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +242,7 @@
 				95A4CBD41B5A852A002FB3E9 /* Products */,
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
+				953B35C21DD674A100B36AA9 /* SaldoEMTUITests */,
 				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
 				9578B96B1DA93A550073CC66 /* Frameworks */,
 			);
@@ -225,6 +253,7 @@
 			children = (
 				95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */,
 				95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */,
+				953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,6 +344,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		953B35C01DD674A100B36AA9 /* SaldoEMTUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 953B35C81DD674A100B36AA9 /* Build configuration list for PBXNativeTarget "SaldoEMTUITests" */;
+			buildPhases = (
+				953B35BD1DD674A100B36AA9 /* Sources */,
+				953B35BE1DD674A100B36AA9 /* Frameworks */,
+				953B35BF1DD674A100B36AA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				953B35C71DD674A100B36AA9 /* PBXTargetDependency */,
+			);
+			name = SaldoEMTUITests;
+			productName = SaldoEMTUITests;
+			productReference = 953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		95A4CBD21B5A852A002FB3E9 /* SaldoEMT */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95A4CBF21B5A852B002FB3E9 /* Build configuration list for PBXNativeTarget "SaldoEMT" */;
@@ -358,10 +405,16 @@
 		95A4CBCB1B5A852A002FB3E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = tovkal;
 				TargetAttributes = {
+					953B35C01DD674A100B36AA9 = {
+						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 95A4CBD21B5A852A002FB3E9;
+					};
 					95A4CBD21B5A852A002FB3E9 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = JVHN2X67GT;
@@ -395,11 +448,19 @@
 			targets = (
 				95A4CBD21B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBE71B5A852B002FB3E9 /* SaldoEMTTests */,
+				953B35C01DD674A100B36AA9 /* SaldoEMTUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		953B35BF1DD674A100B36AA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95A4CBD11B5A852A002FB3E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,6 +520,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		953B35BD1DD674A100B36AA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		95A4CBCF1B5A852A002FB3E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,6 +567,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		953B35C71DD674A100B36AA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95A4CBD21B5A852A002FB3E9 /* SaldoEMT */;
+			targetProxy = 953B35C61DD674A100B36AA9 /* PBXContainerItemProxy */;
+		};
 		95A4CBEA1B5A852B002FB3E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 95A4CBD21B5A852A002FB3E9 /* SaldoEMT */;
@@ -531,6 +605,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		953B35C91DD674A100B36AA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SaldoEMTUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SaldoEMT;
+			};
+			name = Debug;
+		};
+		953B35CA1DD674A100B36AA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = SaldoEMTUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SaldoEMT;
+			};
+			name = Release;
+		};
 		95A4CBF01B5A852B002FB3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9540209F1BC970AE009419EA /* Warnings.xcconfig */;
@@ -721,6 +840,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		953B35C81DD674A100B36AA9 /* Build configuration list for PBXNativeTarget "SaldoEMTUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				953B35C91DD674A100B36AA9 /* Debug */,
+				953B35CA1DD674A100B36AA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		95A4CBCE1B5A852A002FB3E9 /* Build configuration list for PBXProject "SaldoEMT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

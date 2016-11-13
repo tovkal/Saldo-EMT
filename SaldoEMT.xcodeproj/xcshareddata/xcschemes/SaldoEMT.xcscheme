@@ -39,6 +39,16 @@
                ReferencedContainer = "container:SaldoEMT.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "953B35C01DD674A100B36AA9"
+               BuildableName = "SaldoEMTUITests.xctest"
+               BlueprintName = "SaldoEMTUITests"
+               ReferencedContainer = "container:SaldoEMT.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -24,7 +24,7 @@ class Store {
      */
     fileprivate init() {
         let realm = try! Realm()
-                
+        
         if realm.isEmpty {
             initSettings()
             

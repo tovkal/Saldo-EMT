@@ -11,6 +11,7 @@ iOS app to log bus rides and manually manage bus pass balance
 - [x] i18n (2016-10-27)
 - [x] App icon (2016-10-27)
 - [ ] Accessibility to help UI tests (2016-11-14)
+- [ ] Test if Realm fails when doing background fetch https://realm.io/docs/swift/latest/#using-realm-with-background-app-refresh (2016-11-16)
 
 # Worklog (to remember what I was doing)
 

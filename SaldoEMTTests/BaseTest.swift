@@ -7,13 +7,13 @@
 //
 
 import XCTest
-import UIKit
+import RealmSwift
 
 class BaseTest: XCTestCase {
+        
     override func setUp() {
         super.setUp()
-        UIApplication.shared.delegate = MockAppDelegate()
+        
+        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
     }
 }
-
-class MockAppDelegate: NSObject, UIApplicationDelegate {}

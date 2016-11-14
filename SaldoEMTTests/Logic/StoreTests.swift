@@ -8,15 +8,21 @@
 
 import XCTest
 import RealmSwift
+@testable import SaldoEMT
 
 class StoreTests: BaseTest {
-    override func setUp() {
-        super.setUp()
+    
+    func testInit() {print("test init")
+        let realm = try! Realm()
+        let _ = Store()
         
-        // Use an in-memory Realm identified by the name of the current test.
-        // This ensures that each test can't accidentally access or modify the data
-        // from other tests or the application itself, and because they're in-memory,
-        // there's nothing that needs to be cleaned up.
-        Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
+        validateSettings(realm: realm)
+    }
+    
+    fileprivate func validateSettings(realm: Realm) {
+        print(realm.configuration.inMemoryIdentifier ?? "no inmemory id")
+        
+        XCTAssertEqual(realm.objects(Fare.self).count, 25)
+        XCTAssertEqual(realm.objects(Settings.self).count, 1)
     }
 }

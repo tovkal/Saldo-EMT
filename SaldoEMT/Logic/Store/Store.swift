@@ -13,7 +13,11 @@ import Crashlytics
 import RealmSwift
 
 class Store {
+    
     static let sharedInstance = Store()
+    
+    fileprivate let settingsStore = SettingsStore()
+    fileprivate let realm: Realm
     
     // MARK: - Init
     
@@ -23,10 +27,10 @@ class Store {
      By default bus lines and fares are extracted from a minimized json filed bundled with the app in the Assets folder.
      */
     fileprivate init() {
-        let realm = try! Realm()
+        realm = try! Realm()
         
         if realm.isEmpty {
-            initSettings()
+            settingsStore.initSettings(in: realm)
             
             if let json = getFileData() {
                 processJSON(json: json, realm: realm)
@@ -34,10 +38,10 @@ class Store {
             }
         }
         
-        initBalance(realm)
+        initBalance(in: realm)
     }
     
-    fileprivate func initBalance(_ realm: Realm) {
+    fileprivate func initBalance(in realm: Realm) {
         if realm.objects(Balance.self).count == 0 {
             try! realm.write {
                 realm.add(Balance())
@@ -52,7 +56,6 @@ class Store {
      If there is no selected fare, select default (Resident for urban zone)
      */
     func initFare() {
-        let realm = try! Realm()
         let settings = realm.objects(Settings.self).first!
         if settings.currentFare == -1 {
             let results = getFare(forId: 1).first
@@ -83,7 +86,6 @@ class Store {
     }
     
     func setNewCurrentFare(_ fare: Fare) {
-        let realm = try! Realm()
         let settings = realm.objects(Settings.self).first!
         
         try! realm.write {
@@ -92,22 +94,18 @@ class Store {
     }
     
     func getAllFares() -> Results<Fare> {
-        let realm = try! Realm()
         return realm.objects(Fare.self)
     }
     
     func getTripsDone() -> Int {
-        let realm = try! Realm()
         return realm.objects(Balance.self).first!.tripsDone
     }
     
     func getTripsRemaining() -> Int {
-        let realm = try! Realm()
         return realm.objects(Balance.self).first!.tripsRemaining
     }
     
     func getRemainingBalance() -> Double {
-        let realm = try! Realm()
         return realm.objects(Balance.self).first!.remaining
     }
     
@@ -123,7 +121,6 @@ class Store {
     // MARK: User actions
     
     func addTrip() -> String? {
-        let realm = try! Realm()
         do {
             let costPerTrip = try getCurrentTripCost()
             
@@ -151,7 +148,6 @@ class Store {
     }
     
     func addMoney(_ amount: Double) {
-        let realm = try! Realm()
         do {
             
             let remaining = amount + realm.objects(Balance.self).first!.remaining
@@ -168,8 +164,6 @@ class Store {
     
     // MARK: Dev functions
     func reset() {
-        let realm = try! Realm()
-        
         log.debug("Fare before reset: \(self.getSelectedFare())")
         
         setNewCurrentFare(getFare(forId: 1).first!)
@@ -239,14 +233,13 @@ class Store {
             
             log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
             
-            let realm = try! Realm()
             let json = JSON(data: responseData)
-            if self.isNewUpdate(json: json, realm: realm) {
-                self.processJSON(json: json, realm: realm)
+            if self.settingsStore.isNewUpdate(json: json, realm: self.realm) {
+                self.processJSON(json: json, realm: self.realm)
                 self.updateBalanceAfterUpdatingFares()
                 
-                let settings = realm.objects(Settings.self).first!
-                try! realm.write {
+                let settings = self.realm.objects(Settings.self).first!
+                try! self.realm.write {
                     settings.lastTimestamp = json["timestamp"].intValue
                 }
                 
@@ -341,31 +334,26 @@ class Store {
     // MARK: - Realm private functions
     
     fileprivate func getCurrentFare() -> Results<Fare> {
-        let realm = try! Realm()
         let settings = realm.objects(Settings.self).first!
         return getFare(forId: settings.currentFare)
     }
     
     fileprivate func getFare(forName fareName: String) -> Results<Fare> {
-        let realm = try! Realm()
         let predicate = NSPredicate(format: "name == %@", fareName)
         return realm.objects(Fare.self).filter(predicate)
     }
     
     fileprivate func getFare(forId fareId: Int) -> Results<Fare> {
-        let realm = try! Realm()
         let predicate = NSPredicate(format: "id == %d", fareId)
         return realm.objects(Fare.self).filter(predicate)
     }
     
     fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> Results<BusLine> {
-        let realm = try! Realm()
         let predicate = NSPredicate(format: "number IN %@", busLines)
         return realm.objects(BusLine.self).filter(predicate)
     }
     
     fileprivate func updateBalanceAfterUpdatingFares() {
-        let realm = try! Realm()
         do {
             let costPerTrip = try getCurrentTripCost()
             
@@ -377,26 +365,5 @@ class Store {
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
-    }
-    
-    // MARK: - Setting functions
-    
-    fileprivate func initSettings() {
-        let realm = try! Realm()
-        let settings = Settings()
-        
-        try! realm.write {
-            realm.add(settings)
-        }
-    }
-    
-    fileprivate func isNewUpdate(json: JSON, realm: Realm) -> Bool {
-        let settings = realm.objects(Settings.self).first!
-        let timestamp = json["timestamp"].intValue
-        
-        log.debug("settings timestamp < downloaded timestamp: \(settings.lastTimestamp) < \(timestamp)")
-        
-        // Settins.lastTimestamp is 0 when a fares json file has never been processed
-        return settings.lastTimestamp == 0 || settings.lastTimestamp < timestamp
     }
 }

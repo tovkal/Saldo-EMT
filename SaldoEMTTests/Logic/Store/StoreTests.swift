@@ -14,7 +14,7 @@ class StoreTests: BaseTest {
     
     func testInit() {print("test init")
         let realm = try! Realm()
-        let _ = Store()
+        let _ = Store.sharedInstance
         
         validateSettings(realm: realm)
     }

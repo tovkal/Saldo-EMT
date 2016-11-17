@@ -16,8 +16,9 @@ class Store {
     
     static let sharedInstance = Store()
     
-    fileprivate let settingsStore = SettingsStore()
     fileprivate let realm: Realm
+    fileprivate let settingsStore: SettingsStore
+    fileprivate let fareStore: FareStore
     
     // MARK: - Init
     
@@ -28,9 +29,10 @@ class Store {
      */
     fileprivate init() {
         realm = try! Realm()
+        settingsStore = SettingsStore(realm: realm)
+        fareStore = FareStore(realm: realm)
         
         if realm.isEmpty {
-            settingsStore.initSettings(in: realm)
             
             if let json = getFileData() {
                 processJSON(json: json, realm: realm)
@@ -56,12 +58,11 @@ class Store {
      If there is no selected fare, select default (Resident for urban zone)
      */
     func initFare() {
-        let settings = realm.objects(Settings.self).first!
+        let settings = settingsStore.getSettings()
         if settings.currentFare == -1 {
-            let results = getFare(forId: 1).first
+            let results = fareStore.getFare(forId: 1).first
             
             if let fare = results {
-                let settings = realm.objects(Settings.self).first!
                 try! realm.write {
                     settings.currentFare = fare.id
                 }
@@ -91,10 +92,6 @@ class Store {
         try! realm.write {
             settings.currentFare = fare.id
         }
-    }
-    
-    func getAllFares() -> Results<Fare> {
-        return realm.objects(Fare.self)
     }
     
     func getTripsDone() -> Int {
@@ -166,7 +163,7 @@ class Store {
     func reset() {
         log.debug("Fare before reset: \(self.getSelectedFare())")
         
-        setNewCurrentFare(getFare(forId: 1).first!)
+        setNewCurrentFare(fareStore.getFare(forId: 1).first!)
         
         log.debug("Fare after reset: \(self.getSelectedFare())")
         
@@ -234,7 +231,7 @@ class Store {
             log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
             
             let json = JSON(data: responseData)
-            if self.settingsStore.isNewUpdate(json: json, realm: self.realm) {
+            if self.settingsStore.isNewUpdate(timestamp: json["timestamp"].intValue) {
                 self.processJSON(json: json, realm: self.realm)
                 self.updateBalanceAfterUpdatingFares()
                 
@@ -267,7 +264,7 @@ class Store {
     
     fileprivate func processJSON(json: JSON, realm: Realm) {
         parseBusLines(json, realm: realm)
-        parseFares(json, realm: realm)
+        parseFares(json)
     }
     
     fileprivate func getFileData() -> JSON? {
@@ -288,6 +285,8 @@ class Store {
     fileprivate func parseBusLines(_ json: JSON, realm: Realm) {
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
+                
+                // TODO: Move to BusLineStore
                 let busLine = BusLine()
                 
                 busLine.number = Int(lineNumber)!
@@ -298,59 +297,18 @@ class Store {
                     // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
                     realm.add(busLine, update: true)
                 }
-            }
-        }
-    }
-    
-    fileprivate func parseFares(_ json: JSON, realm: Realm) {
-        for (_, fare) in json["fares"] {
-            for (fareNumber, fareInfo) in fare {
                 
-                let fare = Fare()
-                
-                fare.name = fareInfo["name"].stringValue
-                fare.id = Int(fareNumber)!
-                fare.rides.value = fareInfo["rides"].int
-                fare.cost = fareInfo["price"].doubleValue
-                fare.days.value = fareInfo["days"].int
-                for busLine in getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as! [Int]) {
-                    fare.lines.append(busLine)
-                }
-                
-                if let rides = fare.rides.value {
-                    fare.tripCost = fare.cost / Double(rides)
-                } else {
-                    fare.tripCost = fare.cost
-                }
-                
-                try! realm.write {
-                    // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
-                    realm.add(fare, update: true)
-                }
+                // END
             }
         }
     }
     
     // MARK: - Realm private functions
     
-    fileprivate func getCurrentFare() -> Results<Fare> {
-        let settings = realm.objects(Settings.self).first!
-        return getFare(forId: settings.currentFare)
-    }
-    
-    fileprivate func getFare(forName fareName: String) -> Results<Fare> {
-        let predicate = NSPredicate(format: "name == %@", fareName)
-        return realm.objects(Fare.self).filter(predicate)
-    }
-    
-    fileprivate func getFare(forId fareId: Int) -> Results<Fare> {
-        let predicate = NSPredicate(format: "id == %d", fareId)
-        return realm.objects(Fare.self).filter(predicate)
-    }
-    
-    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> Results<BusLine> {
+    // TODO: Move to BusLineStore
+    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> [BusLine] {
         let predicate = NSPredicate(format: "number IN %@", busLines)
-        return realm.objects(BusLine.self).filter(predicate)
+        return Array(realm.objects(BusLine.self).filter(predicate))
     }
     
     fileprivate func updateBalanceAfterUpdatingFares() {
@@ -364,6 +322,24 @@ class Store {
             }
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+    
+    // MARK: - Fare functions
+    
+    func getAllFares() -> [Fare] {
+        return fareStore.getAllFares()
+    }
+    
+    fileprivate func getCurrentFare() -> [Fare] {
+        return fareStore.getFare(forId: settingsStore.getSettings().currentFare)
+    }
+    
+    fileprivate func parseFares(_ json: JSON) {
+        for (_, fare) in json["fares"] {
+            for (fareNumber, fareInfo) in fare {
+                fareStore.storeFare(id: Int(fareNumber)!, name: fareInfo["name"].stringValue, rides: fareInfo["rides"].int, price: fareInfo["price"].doubleValue, days: fareInfo["days"].int, busLines: getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as! [Int]))
+            }
         }
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 private let fareIdentifier = "FareCell"
 private let fareWithRidesIdentifier = "FareWithLimitedRidesCell"
@@ -16,7 +15,7 @@ private let fareWithUnlimitedRidesIdentifier = "FareWithUnlimitedRidesCell"
 class FaresViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    fileprivate var fares: Results<Fare> = Store.sharedInstance.getAllFares()
+    fileprivate var fares: [Fare] = Store.sharedInstance.getAllFares()
     
     override func viewDidLoad() {
         super.viewDidLoad()

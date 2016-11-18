@@ -51,11 +51,12 @@ class MainTests: XCTestCase {
     
     func testAddTrip() {
         let app = XCUIApplication()
-        XCTAssert(app.staticTexts["4"].exists)
+        XCTAssert(app.staticTexts["5"].exists)
         let button = app.buttons["+1 Trip"]
         button.tap()
-        XCTAssert(app.staticTexts["3"].exists)
+        XCTAssert(app.staticTexts["4"].exists)
         XCTAssert(app.staticTexts["1"].exists)
+        button.tap()
         button.tap()
         button.tap()
         button.tap()

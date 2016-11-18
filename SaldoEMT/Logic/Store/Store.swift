@@ -19,6 +19,7 @@ class Store {
     fileprivate let realm: Realm
     fileprivate let settingsStore: SettingsStore
     fileprivate let fareStore: FareStore
+    fileprivate let balanceStore: BalanceStore
     
     // MARK: - Init
     
@@ -31,25 +32,12 @@ class Store {
         realm = try! Realm()
         settingsStore = SettingsStore(realm: realm)
         fareStore = FareStore(realm: realm)
+        balanceStore = BalanceStore(realm: realm)
         
-        if realm.isEmpty {
-            
+        if fareStore.getAllFares().isEmpty {
             if let json = getFileData() {
                 processJSON(json: json, realm: realm)
                 log.debug("finished parsing file")
-            }
-        }
-        
-        initBalance(in: realm)
-    }
-    
-    fileprivate func initBalance(in realm: Realm) {
-        if realm.objects(Balance.self).count == 0 {
-            try! realm.write {
-                realm.add(Balance())
-                
-                realm.objects(Balance.self).first!.remaining = 4
-                realm.objects(Balance.self).first!.tripsRemaining = 5
             }
         }
     }
@@ -94,18 +82,6 @@ class Store {
         }
     }
     
-    func getTripsDone() -> Int {
-        return realm.objects(Balance.self).first!.tripsDone
-    }
-    
-    func getTripsRemaining() -> Int {
-        return realm.objects(Balance.self).first!.tripsRemaining
-    }
-    
-    func getRemainingBalance() -> Double {
-        return realm.objects(Balance.self).first!.remaining
-    }
-    
     func getCurrentTripCost() throws -> Double {
         let results = getCurrentFare()
         if let fare = results.first {
@@ -119,19 +95,13 @@ class Store {
     
     func addTrip() -> String? {
         do {
-            let costPerTrip = try getCurrentTripCost()
+            let cost = try getCurrentTripCost()
             
-            if getRemainingBalance() < costPerTrip {
+            if getRemainingBalance() < cost {
                 throw StoreError.insufficientBalance
             }
             
-            let remaining = realm.objects(Balance.self).first!.remaining - costPerTrip
-            
-            try realm.write {
-                realm.objects(Balance.self).first!.tripsDone += 1;
-                realm.objects(Balance.self).first!.tripsRemaining -= 1;
-                realm.objects(Balance.self).first!.remaining = remaining
-            }
+            try balanceStore.addTrip(withCost: cost)
         } catch StoreError.costPerTripUnknown {
             return "Cost per trip is unknown, can't add trip"
         } catch StoreError.insufficientBalance {
@@ -146,14 +116,9 @@ class Store {
     
     func addMoney(_ amount: Double) {
         do {
-            
-            let remaining = amount + realm.objects(Balance.self).first!.remaining
             let costPerTrip = try getCurrentTripCost()
             
-            try realm.write {
-                realm.objects(Balance.self).first!.tripsRemaining = Int(remaining / costPerTrip)
-                realm.objects(Balance.self).first!.remaining = remaining
-            }
+            try balanceStore.recalculateRemainingTrips(addingToBalance: amount, withTripCost: costPerTrip)
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
@@ -168,13 +133,7 @@ class Store {
         log.debug("Fare after reset: \(self.getSelectedFare())")
         
         try! realm.write {
-            if realm.objects(Balance.self).count == 0 {
-                realm.add(Balance())
-            }
-            
-            realm.objects(Balance.self).first!.remaining = 4
-            realm.objects(Balance.self).first!.tripsRemaining = 4
-            realm.objects(Balance.self).first!.tripsDone = 0
+            balanceStore.reset()
         }
     }
     
@@ -313,13 +272,9 @@ class Store {
     
     fileprivate func updateBalanceAfterUpdatingFares() {
         do {
-            let costPerTrip = try getCurrentTripCost()
+            let newCost = try getCurrentTripCost()
             
-            let remaining = realm.objects(Balance.self).first!.remaining
-            
-            try realm.write {
-                realm.objects(Balance.self).first!.tripsRemaining = Int(remaining / costPerTrip)
-            }
+            try balanceStore.recalculateRemainingTrips(withNewTripCost: newCost)
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
@@ -341,5 +296,19 @@ class Store {
                 fareStore.storeFare(id: Int(fareNumber)!, name: fareInfo["name"].stringValue, rides: fareInfo["rides"].int, price: fareInfo["price"].doubleValue, days: fareInfo["days"].int, busLines: getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as! [Int]))
             }
         }
+    }
+    
+    // MARK: - Balance functions
+    
+    func getTripsDone() -> Int {
+        return balanceStore.getBalance().tripsDone
+    }
+    
+    func getTripsRemaining() -> Int {
+        return balanceStore.getBalance().tripsRemaining
+    }
+    
+    func getRemainingBalance() -> Double {
+        return balanceStore.getBalance().current
     }
 }

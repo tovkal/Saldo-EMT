@@ -126,11 +126,11 @@ class Store {
     
     // MARK: Dev functions
     func reset() {
-        log.debug("Fare before reset: \(self.getSelectedFare())")
+        log.debug("Fare before reset: \(self.getSelectedFare() ?? "unknown")")
         
         setNewCurrentFare(fareStore.getFare(forId: 1).first!)
         
-        log.debug("Fare after reset: \(self.getSelectedFare())")
+        log.debug("Fare after reset: \(self.getSelectedFare() ?? "unknown")")
         
         try! realm.write {
             balanceStore.reset()

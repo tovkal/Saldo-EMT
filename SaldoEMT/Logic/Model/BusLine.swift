@@ -11,9 +11,9 @@ import RealmSwift
 import UIKit
 
 class BusLine: Object {
-    dynamic var number = 0
-    dynamic var hexColor = ""
-    dynamic var name = ""
+    @objc dynamic var number = 0
+    @objc dynamic var hexColor = ""
+    @objc dynamic var name = ""
     
     override static func primaryKey() -> String? {
         return "number"

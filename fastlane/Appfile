@@ -1,0 +1,3 @@
+app_identifier "com.tovkal.SaldoEMT"
+apple_id ENV["APPLE_ID"]
+team_id ENV["TEAM_ID"]

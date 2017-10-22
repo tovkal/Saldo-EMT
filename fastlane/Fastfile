@@ -1,0 +1,65 @@
+setup_travis
+
+fastlane_version "2.62.0"
+
+default_platform :ios
+
+desc "Run all the tests"
+lane :test do
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+  if !is_ci
+    sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool no")
+  end
+  scan(
+    scheme: "SaldoEMT",
+    devices: ["iPhone 8"],
+    output_types: "html",
+    skip_build: true
+  )
+  if !is_ci
+    sh("defaults write com.apple.iphonesimulator ConnectHardwareKeyboard -bool yes")
+  end
+end
+
+desc "Build and send the beta to TestFlight"
+lane :beta do
+  ensure_git_status_clean
+
+  increment_build_number
+
+  match(type: "appstore")
+
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+
+  # build your iOS app
+  gym(
+    scheme: "SaldoEMT"
+  )
+
+  test
+
+  # Upload to test flight
+  pilot(skip_waiting_for_build_processing: true)
+
+  # Commit version bump
+  version = get_version_number(xcodeproj: "SaldoEMT.xcodeproj")
+  build_number = get_build_number(xcodeproj: "SaldoEMT.xcodeproj")
+  version_tag = "#{version}-#{build_number}"
+
+  commit_version_bump(
+    message: "Version bump to #{version_tag}",
+    xcodeproj: "SaldoEMT.xcodeproj"
+  )
+  add_git_tag(
+    tag: version_tag
+  )
+  push_to_git_remote
+end
+
+desc "Upload dsyms to Fabric"
+lane :refresh_dsyms do
+  download_dsyms                  # Download dSYM files from iTC
+  upload_symbols_to_crashlytics   # Upload them to Crashlytics
+  clean_build_artifacts           # Delete the local dSYM files
+end
+

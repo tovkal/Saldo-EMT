@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
-		952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* MainTests.swift */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
@@ -24,7 +23,6 @@
 		9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22B1C4AB97B008E2A47 /* BusLine.swift */; };
 		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
-		9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
 		957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957FE81E1DBFE5FF002833D5 /* Settings.swift */; };
 		959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F31DEA2A8800194E89 /* Crashlytics.framework */; };
 		959021F71DEA2A8800194E89 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F41DEA2A8800194E89 /* Fabric.framework */; };
@@ -38,17 +36,21 @@
 		95A83F721DEA26870016B080 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F701DEA26870016B080 /* Store.swift */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
+		95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
 		95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9F5FB1C4C0C9000A696B9 /* Balance.swift */; };
-		95DACD851DC64DB5005C7180 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
 		95DACD891DC905B0005C7180 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DACD881DC905B0005C7180 /* Logger.swift */; };
 		95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */; };
 		95DDB9F11DEF4F3500895E0F /* BalanceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDB9F01DEF4F3500895E0F /* BalanceStore.swift */; };
-		95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
-		95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
 		95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */; };
 		95E27DFF1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */; };
+		95FEB1E31F9D3C130076361A /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
+		95FEB1E51F9D3C9C0076361A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
+		95FEB1E61F9D3CF10076361A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
+		95FEB1E71F9D3CF50076361A /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
+		95FEB1E81F9D3D420076361A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
+		95FEB1EA1F9D3D6E0076361A /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,7 @@
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 		95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithUnlimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithUnlimitedRidesCell.xib; sourceTree = "<group>"; };
+		95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +146,12 @@
 				959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */,
 				959021F71DEA2A8800194E89 /* Fabric.framework in Frameworks */,
 				959021F81DEA2A8800194E89 /* GoogleMobileAds.framework in Frameworks */,
-				95DACD851DC64DB5005C7180 /* XCGLogger.framework in Frameworks */,
-				95DE71101DC4E63200093EB4 /* Realm.framework in Frameworks */,
-				95DE71111DC4E63200093EB4 /* RealmSwift.framework in Frameworks */,
-				9578B9801DA93E810073CC66 /* SwiftyJSON.framework in Frameworks */,
-				952832B61DAA46D400E3028D /* SVProgressHUD.framework in Frameworks */,
+				95FEB1E31F9D3C130076361A /* SVProgressHUD.framework in Frameworks */,
+				95FEB1E51F9D3C9C0076361A /* RealmSwift.framework in Frameworks */,
+				95FEB1E61F9D3CF10076361A /* SwiftyJSON.framework in Frameworks */,
+				95FEB1E71F9D3CF50076361A /* XCGLogger.framework in Frameworks */,
+				95FEB1E81F9D3D420076361A /* Realm.framework in Frameworks */,
+				95FEB1EA1F9D3D6E0076361A /* ObjcExceptionBridging.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +245,7 @@
 		9578B96B1DA93A550073CC66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */,
 				959021F31DEA2A8800194E89 /* Crashlytics.framework */,
 				959021F41DEA2A8800194E89 /* Fabric.framework */,
 				959021F51DEA2A8800194E89 /* GoogleMobileAds.framework */,
@@ -401,7 +407,7 @@
 				95A4CBD01B5A852A002FB3E9 /* Frameworks */,
 				95A4CBD11B5A852A002FB3E9 /* Resources */,
 				95C31B751C46590400365F87 /* ShellScript */,
-				95383DA61DAA4991001914DC /* ShellScript */,
+				95FEB1E41F9D3C4D0076361A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -519,29 +525,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		95383DA61DAA4991001914DC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJson.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		95C31B751C46590400365F87 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -554,6 +537,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Vendor/Fabric.framework/run 2a83bde9cbf98b48f34f2f27fdb7baa31cf9b5f8 8edbf06d5de27983cb0bf34ca9e266b949a15616bfd9e7a3f6ee013b97cc3d46";
+		};
+		95FEB1E41F9D3C4D0076361A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 

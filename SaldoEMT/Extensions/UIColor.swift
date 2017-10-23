@@ -32,7 +32,7 @@ extension UIColor {
         var hexString = hexColor
         
         if hexColor.hasPrefix("#") {
-            hexString = hexColor.substring(from: hexColor.characters.index(hexColor.startIndex, offsetBy: 1))
+            hexString = String(hexColor[hexColor.index(hexColor.startIndex, offsetBy: 1)...])
         }
         
         var hexValue: UInt32 = 0

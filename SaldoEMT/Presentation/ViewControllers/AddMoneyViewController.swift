@@ -20,7 +20,7 @@ class AddMoneyViewController: UIViewController {
     @IBAction func acceptAmount(_ sender: UIButton) {
         if let input = input.text, let amount = Double(input) {
             
-            guard amount > 5 else { SVProgressHUD.showError(withStatus: "A minimum of 5 € is required"); return }
+            guard amount >= 5 else { SVProgressHUD.showError(withStatus: "A minimum of 5 € is required"); return }
             
             Store.sharedInstance.addMoney(amount)
             

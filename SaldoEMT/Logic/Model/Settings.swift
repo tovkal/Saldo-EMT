@@ -13,7 +13,7 @@ class Settings: Object {
     // Last processed fares files timestamp
     @objc dynamic var lastTimestamp = 0
     // Current selected fare
-    @objc dynamic var currentFare = -1
+    @objc dynamic var currentFare: Fare?
     @objc dynamic var balance: Double = 0.0 // Current balance
     @objc dynamic var tripsDone = 0 // Trips done
     @objc dynamic var tripsRemaining = 0 // Remaining trips given current balance

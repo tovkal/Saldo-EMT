@@ -62,7 +62,9 @@ class ViewController: UIViewController {
         log.debug("Setting up labels")
         let settings = Store.sharedInstance.getSettings()
 
-        // TODO fareName.text = settings. Store.sharedInstance.getSelectedFare()
+        if let currentFareName = settings.currentFare?.name {
+            fareName.text = currentFareName
+        }
         tripsMade.text = "\(settings.tripsDone)"
         tripsRemaining.text = "\(settings.tripsRemaining)"
         remainingAmount.text = settings.balance.toDecimalString()

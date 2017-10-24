@@ -45,13 +45,13 @@ class Store {
      */
     func initFare() {
         let settings = settingsStore.getSettings()
-        if settings.currentFare == -1 {
+        if settings.currentFare == nil {
             let results = fareStore.getFare(forId: 1).first
             
             if let fare = results {
                 let realm = try! Realm()
                 try! realm.write {
-                    settings.currentFare = fare.id
+                    settings.currentFare = fare
                 }
             }
         }
@@ -65,8 +65,7 @@ class Store {
      @return Selected fare. If no fare is selected returns nil.
      */
     func getSelectedFare() -> String? {
-        let results = getCurrentFare()
-        if let fare = results.first {
+        if let fare = getSettings().currentFare {
             return fare.name
         } else {
             return nil
@@ -78,13 +77,12 @@ class Store {
         let settings = settingsStore.getSettings()
         
         try! realm.write {
-            settings.currentFare = fare.id
+            settings.currentFare = fare
         }
     }
     
     func getCurrentTripCost() throws -> Double {
-        let results = getCurrentFare()
-        if let fare = results.first {
+        if let fare = getSettings().currentFare {
             return fare.tripCost
         }
         
@@ -132,7 +130,6 @@ class Store {
         setNewCurrentFare(fareStore.getFare(forId: 1).first!)
         
         log.debug("Fare after reset: \(self.getSelectedFare() ?? "unknown")")
-
 
         settingsStore.reset()
     }
@@ -254,10 +251,6 @@ class Store {
     
     func getAllFares() -> [Fare] {
         return fareStore.getAllFares()
-    }
-    
-    fileprivate func getCurrentFare() -> [Fare] {
-        return fareStore.getFare(forId: settingsStore.getSettings().currentFare)
     }
     
     // MARK: - Settings functions

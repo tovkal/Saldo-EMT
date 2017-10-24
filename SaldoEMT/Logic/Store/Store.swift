@@ -18,7 +18,6 @@ class Store {
     
     fileprivate let settingsStore: SettingsStore
     fileprivate let fareStore: FareStore
-    fileprivate let balanceStore: BalanceStore
     fileprivate let jsonParser: JsonParser
     
     // MARK: - Init
@@ -31,7 +30,6 @@ class Store {
     fileprivate init() {
         settingsStore = SettingsStore()
         fareStore = FareStore()
-        balanceStore = BalanceStore()
         jsonParser = JsonParser()
         
         if fareStore.getAllFares().isEmpty {
@@ -98,12 +96,13 @@ class Store {
     func addTrip() -> String? {
         do {
             let cost = try getCurrentTripCost()
+            let settings = getSettings()
             
-            if getRemainingBalance() < cost {
+            if settings.balance < cost {
                 throw StoreError.insufficientBalance
             }
             
-            try balanceStore.addTrip(withCost: cost)
+            try settingsStore.addTrip(withCost: cost)
         } catch StoreError.costPerTripUnknown {
             return "Cost per trip is unknown, can't add trip"
         } catch StoreError.insufficientBalance {
@@ -120,7 +119,7 @@ class Store {
         do {
             let costPerTrip = try getCurrentTripCost()
             
-            try balanceStore.recalculateRemainingTrips(addingToBalance: amount, withTripCost: costPerTrip)
+            try settingsStore.recalculateRemainingTrips(addingToBalance: amount, withTripCost: costPerTrip)
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
@@ -134,10 +133,8 @@ class Store {
         
         log.debug("Fare after reset: \(self.getSelectedFare() ?? "unknown")")
 
-        let realm = try! Realm()
-        try! realm.write {
-            balanceStore.reset()
-        }
+
+        settingsStore.reset()
     }
     
     /**
@@ -247,7 +244,7 @@ class Store {
         do {
             let newCost = try getCurrentTripCost()
             
-            try balanceStore.recalculateRemainingTrips(withNewTripCost: newCost)
+            try settingsStore.recalculateRemainingTrips(withNewTripCost: newCost)
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
@@ -263,17 +260,9 @@ class Store {
         return fareStore.getFare(forId: settingsStore.getSettings().currentFare)
     }
     
-    // MARK: - Balance functions
+    // MARK: - Settings functions
     
-    func getTripsDone() -> Int {
-        return balanceStore.getBalance().tripsDone
-    }
-    
-    func getTripsRemaining() -> Int {
-        return balanceStore.getBalance().tripsRemaining
-    }
-    
-    func getRemainingBalance() -> Double {
-        return balanceStore.getBalance().current
+    func getSettings() -> Settings {
+        return settingsStore.getSettings()
     }
 }

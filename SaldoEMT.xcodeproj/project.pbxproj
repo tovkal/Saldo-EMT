@@ -41,7 +41,6 @@
 		95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9F5FB1C4C0C9000A696B9 /* Balance.swift */; };
 		95DACD891DC905B0005C7180 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DACD881DC905B0005C7180 /* Logger.swift */; };
 		95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */; };
-		95DDB9F11DEF4F3500895E0F /* BalanceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDB9F01DEF4F3500895E0F /* BalanceStore.swift */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
 		95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */; };
@@ -125,7 +124,6 @@
 		95DACD8C1DC91F24005C7180 /* ca-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ca-ES"; path = "ca-ES.lproj/LaunchScreen.xib"; sourceTree = "<group>"; };
 		95DACD8D1DC91F24005C7180 /* ca-ES */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ca-ES"; path = "ca-ES.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareStore.swift; sourceTree = "<group>"; };
-		95DDB9F01DEF4F3500895E0F /* BalanceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceStore.swift; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 		95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithUnlimitedRidesCell.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */,
-				95DDB9F01DEF4F3500895E0F /* BalanceStore.swift */,
 				95A83F6F1DEA26870016B080 /* SettingsStore.swift */,
 				95A83F701DEA26870016B080 /* Store.swift */,
 			);
@@ -588,7 +585,6 @@
 				95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
-				95DDB9F11DEF4F3500895E0F /* BalanceStore.swift in Sources */,
 				95559B171C516E6B0003E32F /* StoreError.swift in Sources */,
 				953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,

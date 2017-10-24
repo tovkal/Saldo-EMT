@@ -60,10 +60,12 @@ class ViewController: UIViewController {
     
     fileprivate func setupLabels() {
         log.debug("Setting up labels")
-        fareName.text = Store.sharedInstance.getSelectedFare()
-        tripsMade.text = "\(Store.sharedInstance.getTripsDone())"
-        tripsRemaining.text = "\(Store.sharedInstance.getTripsRemaining())"
-        remainingAmount.text = Store.sharedInstance.getRemainingBalance().toDecimalString()
+        let settings = Store.sharedInstance.getSettings()
+
+        // TODO fareName.text = settings. Store.sharedInstance.getSelectedFare()
+        tripsMade.text = "\(settings.tripsDone)"
+        tripsRemaining.text = "\(settings.tripsRemaining)"
+        remainingAmount.text = settings.balance.toDecimalString()
     }
     
     @objc fileprivate func updateLabels() {

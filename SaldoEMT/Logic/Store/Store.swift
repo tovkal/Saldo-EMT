@@ -31,9 +31,9 @@ class Store {
      */
     fileprivate init() {
         realm = try! Realm()
-        settingsStore = SettingsStore(realm: realm)
-        fareStore = FareStore(realm: realm)
-        balanceStore = BalanceStore(realm: realm)
+        settingsStore = SettingsStore()
+        fareStore = FareStore()
+        balanceStore = BalanceStore()
         jsonParser = JsonParser()
         
         if fareStore.getAllFares().isEmpty {

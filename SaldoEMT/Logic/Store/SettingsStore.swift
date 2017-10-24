@@ -10,11 +10,10 @@ import RealmSwift
 
 class SettingsStore {
     
-    fileprivate let realm: Realm
     fileprivate let settings: Settings
     
-    init(realm: Realm) {
-        self.realm = realm
+    init() {
+        let realm = try! Realm()
         
         if realm.isEmpty {
             self.settings = Settings()
@@ -28,6 +27,7 @@ class SettingsStore {
     }
     
     func getSettings() -> Settings {
-        return settings
+        let realm = try! Realm()
+        return realm.objects(Settings.self).first!
     }
 }

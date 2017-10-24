@@ -10,23 +10,19 @@ import Foundation
 import RealmSwift
 
 class FareStore {
-    
-    fileprivate let realm: Realm
-    
-    init(realm: Realm) {
-        self.realm = realm
-    }
-    
     func getAllFares() -> [Fare] {
+        let realm = try! Realm()
         return Array(realm.objects(Fare.self))
     }
     
     func getFare(forName fareName: String) -> [Fare] {
+        let realm = try! Realm()
         let predicate = NSPredicate(format: "name == %@", fareName)
         return Array(realm.objects(Fare.self).filter(predicate))
     }
     
     func getFare(forId fareId: Int) -> [Fare] {
+        let realm = try! Realm()
         let predicate = NSPredicate(format: "id == %d", fareId)
         return Array(realm.objects(Fare.self).filter(predicate))
     }

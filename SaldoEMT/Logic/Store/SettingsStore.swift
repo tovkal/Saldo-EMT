@@ -30,11 +30,4 @@ class SettingsStore {
     func getSettings() -> Settings {
         return settings
     }
-    
-    func isNewUpdate(timestamp: Int) -> Bool {
-        log.debug("settings timestamp < downloaded timestamp: \(self.settings.lastTimestamp) < \(timestamp)")
-        
-        // Settins.lastTimestamp is 0 when a fares json file has never been processed
-        return settings.lastTimestamp == 0 || settings.lastTimestamp < timestamp
-    }
 }

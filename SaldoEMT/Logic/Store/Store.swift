@@ -20,6 +20,7 @@ class Store {
     fileprivate let settingsStore: SettingsStore
     fileprivate let fareStore: FareStore
     fileprivate let balanceStore: BalanceStore
+    fileprivate let jsonParser: JsonParser
     
     // MARK: - Init
     
@@ -33,10 +34,11 @@ class Store {
         settingsStore = SettingsStore(realm: realm)
         fareStore = FareStore(realm: realm)
         balanceStore = BalanceStore(realm: realm)
+        jsonParser = JsonParser()
         
         if fareStore.getAllFares().isEmpty {
             if let json = getFileData() {
-                processJSON(json: json, realm: realm)
+                jsonParser.processJSON(json: json)
                 log.debug("finished parsing file")
             }
         }
@@ -188,14 +190,19 @@ class Store {
             }
             
             log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
-            
+
+            let realm = try! Realm()
+            let settings = realm.objects(Settings.self).first!
+
             let json = JSON(data: responseData)
-            if self.settingsStore.isNewUpdate(timestamp: json["timestamp"].intValue) {
-                self.processJSON(json: json, realm: self.realm)
+            let timestamp = json["timestamp"].intValue
+
+            // Settins.lastTimestamp is 0 when a fares json file has never been processed
+            if settings.lastTimestamp == 0 || settings.lastTimestamp < timestamp {
+                self.jsonParser.processJSON(json: json)
                 self.updateBalanceAfterUpdatingFares()
-                
-                let settings = self.realm.objects(Settings.self).first!
-                try! self.realm.write {
+
+                try! realm.write {
                     settings.lastTimestamp = json["timestamp"].intValue
                 }
                 
@@ -218,14 +225,7 @@ class Store {
         
         task.resume()
     }
-    
-    // MARK: - JSON Processing
-    
-    fileprivate func processJSON(json: JSON, realm: Realm) {
-        parseBusLines(json, realm: realm)
-        parseFares(json)
-    }
-    
+
     fileprivate func getFileData() -> JSON? {
         if let path = Bundle.main.path(forResource: "fares_es", ofType: "json") {
             do {
@@ -237,39 +237,11 @@ class Store {
         } else {
             log.error("Invalid filename/path.")
         }
-        
+
         return nil
     }
     
-    fileprivate func parseBusLines(_ json: JSON, realm: Realm) {
-        for (_, line) in json["lines"] {
-            for (lineNumber, lineInfo) in line {
-                
-                // TODO: Move to BusLineStore
-                let busLine = BusLine()
-                
-                busLine.number = Int(lineNumber)!
-                busLine.hexColor = lineInfo["color"].stringValue
-                busLine.name = lineInfo["name"].stringValue
-                
-                try! realm.write {
-                    // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
-                    realm.add(busLine, update: true)
-                }
-                
-                // END
-            }
-        }
-    }
-    
     // MARK: - Realm private functions
-    
-    // TODO: Move to BusLineStore
-    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> [BusLine] {
-        let predicate = NSPredicate(format: "number IN %@", busLines)
-        return Array(realm.objects(BusLine.self).filter(predicate))
-    }
-    
     fileprivate func updateBalanceAfterUpdatingFares() {
         do {
             let newCost = try getCurrentTripCost()
@@ -288,14 +260,6 @@ class Store {
     
     fileprivate func getCurrentFare() -> [Fare] {
         return fareStore.getFare(forId: settingsStore.getSettings().currentFare)
-    }
-    
-    fileprivate func parseFares(_ json: JSON) {
-        for (_, fare) in json["fares"] {
-            for (fareNumber, fareInfo) in fare {
-                fareStore.storeFare(id: Int(fareNumber)!, name: fareInfo["name"].stringValue, rides: fareInfo["rides"].int, price: fareInfo["price"].doubleValue, days: fareInfo["days"].int, busLines: getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as! [Int]))
-            }
-        }
     }
     
     // MARK: - Balance functions

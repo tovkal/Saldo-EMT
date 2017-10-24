@@ -32,6 +32,7 @@
 		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
 		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
+		95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A42A1F9FA74200DBB166 /* JsonParser.swift */; };
 		95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F6F1DEA26870016B080 /* SettingsStore.swift */; };
 		95A83F721DEA26870016B080 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F701DEA26870016B080 /* Store.swift */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
@@ -109,6 +110,7 @@
 		95A4CBE21B5A852A002FB3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBED1B5A852B002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A7A42A1F9FA74200DBB166 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		95A83F6F1DEA26870016B080 /* SettingsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		95A83F701DEA26870016B080 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				95DACD881DC905B0005C7180 /* Logger.swift */,
 				950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */,
 				95559B161C516E6B0003E32F /* StoreError.swift */,
+				95A7A42A1F9FA74200DBB166 /* JsonParser.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */,
 				95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */,
 				950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */,
+				95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */,
 				954020A21BC9714A009419EA /* FaresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

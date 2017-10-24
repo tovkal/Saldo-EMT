@@ -30,28 +30,4 @@ class FareStore {
         let predicate = NSPredicate(format: "id == %d", fareId)
         return Array(realm.objects(Fare.self).filter(predicate))
     }
-    
-    func storeFare(id: Int, name: String, rides: Int?, price: Double, days: Int?, busLines: [BusLine]) {
-        let fare = Fare()
-        
-        fare.name = name
-        fare.id = id
-        fare.rides.value = rides
-        fare.cost = price
-        fare.days.value = days
-        for busLine in busLines {
-            fare.lines.append(busLine)
-        }
-        
-        if let rides = fare.rides.value {
-            fare.tripCost = fare.cost / Double(rides)
-        } else {
-            fare.tripCost = fare.cost
-        }
-        
-        try! realm.write {
-            // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
-            realm.add(fare, update: true)
-        }
-    }
 }

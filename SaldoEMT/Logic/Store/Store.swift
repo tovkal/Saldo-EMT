@@ -16,7 +16,6 @@ class Store {
     
     static let sharedInstance = Store()
     
-    fileprivate let realm: Realm
     fileprivate let settingsStore: SettingsStore
     fileprivate let fareStore: FareStore
     fileprivate let balanceStore: BalanceStore
@@ -30,7 +29,6 @@ class Store {
      By default bus lines and fares are extracted from a minimized json filed bundled with the app in the Assets folder.
      */
     fileprivate init() {
-        realm = try! Realm()
         settingsStore = SettingsStore()
         fareStore = FareStore()
         balanceStore = BalanceStore()
@@ -53,6 +51,7 @@ class Store {
             let results = fareStore.getFare(forId: 1).first
             
             if let fare = results {
+                let realm = try! Realm()
                 try! realm.write {
                     settings.currentFare = fare.id
                 }
@@ -77,7 +76,8 @@ class Store {
     }
     
     func setNewCurrentFare(_ fare: Fare) {
-        let settings = realm.objects(Settings.self).first!
+        let realm = try! Realm()
+        let settings = settingsStore.getSettings()
         
         try! realm.write {
             settings.currentFare = fare.id
@@ -133,7 +133,8 @@ class Store {
         setNewCurrentFare(fareStore.getFare(forId: 1).first!)
         
         log.debug("Fare after reset: \(self.getSelectedFare() ?? "unknown")")
-        
+
+        let realm = try! Realm()
         try! realm.write {
             balanceStore.reset()
         }

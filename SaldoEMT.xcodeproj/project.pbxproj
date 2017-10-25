@@ -14,7 +14,6 @@
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
 		953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */; };
 		953C2CCF1DCE80B100C8CEF7 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */; };
-		953C2CD21DCE836400C8CEF7 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CD11DCE836400C8CEF7 /* StoreTests.swift */; };
 		953FDF451BB8126900D2C9DA /* BusLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 953FDF441BB8126900D2C9DA /* BusLineView.xib */; };
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
 		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
@@ -83,7 +82,6 @@
 		953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
-		953C2CD11DCE836400C8CEF7 /* StoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		953FDF441BB8126900D2C9DA /* BusLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusLineView.xib; sourceTree = "<group>"; };
 		953FDF461BB812B500D2C9DA /* BusLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLineView.swift; sourceTree = "<group>"; };
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
@@ -171,7 +169,6 @@
 		95211F161DEA2869005EBE81 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				953C2CD11DCE836400C8CEF7 /* StoreTests.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -627,7 +624,6 @@
 				953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */,
 				953C2CCF1DCE80B100C8CEF7 /* BaseTest.swift in Sources */,
 				953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */,
-				953C2CD21DCE836400C8CEF7 /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

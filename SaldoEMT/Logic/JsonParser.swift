@@ -12,7 +12,7 @@ import RealmSwift
 import Crashlytics
 
 class JsonParser: NSObject {
-    let realm = try! Realm()
+    let realm = RealmHelper.getRealm()
 
     func processJSON(json: JSON) {
         parseBusLines(json)
@@ -27,8 +27,13 @@ class JsonParser: NSObject {
                 busLine.hexColor = lineInfo["color"].stringValue
                 busLine.name = lineInfo["name"].stringValue
 
-                try! realm.write {
-                    realm.add(busLine, update: true)
+                do {
+                    try realm.write {
+                        realm.add(busLine, update: true)
+                    }
+                } catch let error as NSError {
+                    log.error(error)
+                    Crashlytics.sharedInstance().recordError(error)
                 }
             }
         }
@@ -39,7 +44,7 @@ class JsonParser: NSObject {
             for (fareNumber, fareInfo) in fare {
                 storeFare(id: Int(fareNumber)!, name: fareInfo["name"].stringValue, rides: fareInfo["rides"].int,
                           price: fareInfo["price"].doubleValue, days: fareInfo["days"].int,
-                          busLines: getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as! [Int]))
+                          busLines: getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as? [Int]))
             }
         }
     }
@@ -62,13 +67,19 @@ class JsonParser: NSObject {
             fare.tripCost = fare.cost
         }
 
-        try! realm.write {
-            // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
-            realm.add(fare, update: true)
+        do {
+            try realm.write {
+                // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
+                realm.add(fare, update: true)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
         }
     }
 
-    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]) -> [BusLine] {
+    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]?) -> [BusLine] {
+        guard let busLines = busLines else { fatalError("A Fare must have at least one BusLine") }
         let predicate = NSPredicate(format: "number IN %@", busLines)
         return Array(realm.objects(BusLine.self).filter(predicate))
     }

@@ -14,7 +14,7 @@ class BusLine: Object {
     @objc dynamic var number = 0
     @objc dynamic var hexColor = ""
     @objc dynamic var name = ""
-    
+
     override static func primaryKey() -> String? {
         return "number"
     }

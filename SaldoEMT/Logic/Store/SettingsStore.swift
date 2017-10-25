@@ -7,38 +7,45 @@
 //
 
 import RealmSwift
+import Crashlytics
 
 class SettingsStore {
 
     init() {
-        let realm = try! Realm()
-        
+        let realm = RealmHelper.getRealm()
+
         if realm.isEmpty {
-            try! realm.write {
-                realm.add(Settings())
+            do {
+                try realm.write {
+                    realm.add(Settings())
+                }
+            } catch let error as NSError {
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
+                fatalError("Settings object is needed")
             }
         }
     }
-    
+
     func getSettings() -> Settings {
-        let realm = try! Realm()
+        let realm = RealmHelper.getRealm()
         return realm.objects(Settings.self).first!
     }
 
     func addTrip(withCost tripCost: Double) throws {
-        let realm = try! Realm()
+        let realm = RealmHelper.getRealm()
         let settings = getSettings()
         let remaining = settings.balance - tripCost
 
         try realm.write {
-            settings.tripsDone += 1;
-            settings.tripsRemaining -= 1;
+            settings.tripsDone += 1
+            settings.tripsRemaining -= 1
             settings.balance = remaining
         }
     }
 
     func recalculateRemainingTrips(withNewTripCost newCost: Double) throws {
-        let realm = try! Realm()
+        let realm = RealmHelper.getRealm()
         let settings = getSettings()
         let currentSettings = settings.balance
 
@@ -48,7 +55,7 @@ class SettingsStore {
     }
 
     func recalculateRemainingTrips(addingToBalance amount: Double, withTripCost costPerTrip: Double) throws {
-        let realm = try! Realm()
+        let realm = RealmHelper.getRealm()
         let settings = getSettings()
         let currentSettings = amount + settings.balance
 
@@ -59,13 +66,18 @@ class SettingsStore {
     }
 
     func reset() {
-        let realm = try! Realm()
+        let realm = RealmHelper.getRealm()
         let settings = getSettings()
 
-        try! realm.write {
-            settings.balance = 4
-            settings.tripsRemaining = 5
-            settings.tripsDone = 0
+        do {
+            try realm.write {
+                settings.balance = 4
+                settings.tripsRemaining = 5
+                settings.tripsDone = 0
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
         }
     }
 }

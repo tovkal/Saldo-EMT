@@ -17,7 +17,7 @@ class Fare: Object {
     @objc dynamic var id = -1
     let rides = RealmOptional<Int>()
     @objc dynamic var tripCost: Double = 0.0
-    
+
     override static func primaryKey() -> String? {
         return "id"
     }

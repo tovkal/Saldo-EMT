@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
+		952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C24271FA11D8A005F7CB5 /* RealmHelper.swift */; };
 		953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* MainTests.swift */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
+		952C24271FA11D8A005F7CB5 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -363,6 +365,7 @@
 				950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */,
 				95559B161C516E6B0003E32F /* StoreError.swift */,
 				95A7A42A1F9FA74200DBB166 /* JsonParser.swift */,
+				952C24271FA11D8A005F7CB5 /* RealmHelper.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				95A4CBD11B5A852A002FB3E9 /* Resources */,
 				95C31B751C46590400365F87 /* ShellScript */,
 				95FEB1E41F9D3C4D0076361A /* ShellScript */,
+				952C24261FA11001005F7CB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -525,6 +529,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		952C24261FA11001005F7CB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		95C31B751C46590400365F87 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -585,6 +602,7 @@
 				95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
+				952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */,
 				95559B171C516E6B0003E32F /* StoreError.swift in Sources */,
 				953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,

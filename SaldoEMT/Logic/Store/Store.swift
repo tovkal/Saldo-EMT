@@ -13,15 +13,15 @@ import Crashlytics
 import RealmSwift
 
 class Store {
-    
+
     static let sharedInstance = Store()
-    
+
     fileprivate let settingsStore: SettingsStore
     fileprivate let fareStore: FareStore
     fileprivate let jsonParser: JsonParser
-    
+
     // MARK: - Init
-    
+
     /**
      Init Store
      
@@ -31,7 +31,7 @@ class Store {
         settingsStore = SettingsStore()
         fareStore = FareStore()
         jsonParser = JsonParser()
-        
+
         if fareStore.getAllFares().isEmpty {
             if let json = getFileData() {
                 jsonParser.processJSON(json: json)
@@ -39,7 +39,7 @@ class Store {
             }
         }
     }
-    
+
     /**
      If there is no selected fare, select default (Resident for urban zone)
      */
@@ -47,18 +47,23 @@ class Store {
         let settings = settingsStore.getSettings()
         if settings.currentFare == nil {
             let results = fareStore.getFare(forId: 1).first
-            
+
             if let fare = results {
-                let realm = try! Realm()
-                try! realm.write {
-                    settings.currentFare = fare
+                let realm = RealmHelper.getRealm()
+                do {
+                    try realm.write {
+                        settings.currentFare = fare
+                    }
+                } catch let error as NSError {
+                    log.error(error)
+                    Crashlytics.sharedInstance().recordError(error)
                 }
             }
         }
     }
-    
+
     // MARK: - Public
-    
+
     /**
      Get current selected fare.
      
@@ -71,35 +76,40 @@ class Store {
             return nil
         }
     }
-    
+
     func setNewCurrentFare(_ fare: Fare) {
-        let realm = try! Realm()
+        let realm = RealmHelper.getRealm()
         let settings = settingsStore.getSettings()
-        
-        try! realm.write {
-            settings.currentFare = fare
+
+        do {
+            try realm.write {
+                settings.currentFare = fare
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
         }
     }
-    
+
     func getCurrentTripCost() throws -> Double {
         if let fare = getSettings().currentFare {
             return fare.tripCost
         }
-        
+
         throw StoreError.costPerTripUnknown
     }
-    
+
     // MARK: User actions
-    
+
     func addTrip() -> String? {
         do {
             let cost = try getCurrentTripCost()
             let settings = getSettings()
-            
+
             if settings.balance < cost {
                 throw StoreError.insufficientBalance
             }
-            
+
             try settingsStore.addTrip(withCost: cost)
         } catch StoreError.costPerTripUnknown {
             return "Cost per trip is unknown, can't add trip"
@@ -109,31 +119,31 @@ class Store {
             Crashlytics.sharedInstance().recordError(error)
             return "Unknown error ocurred"
         }
-        
+
         return nil
     }
-    
+
     func addMoney(_ amount: Double) {
         do {
             let costPerTrip = try getCurrentTripCost()
-            
+
             try settingsStore.recalculateRemainingTrips(addingToBalance: amount, withTripCost: costPerTrip)
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
     }
-    
+
     // MARK: Dev functions
     func reset() {
         log.debug("Fare before reset: \(self.getSelectedFare() ?? "unknown")")
-        
+
         setNewCurrentFare(fareStore.getFare(forId: 1).first!)
-        
+
         log.debug("Fare after reset: \(self.getSelectedFare() ?? "unknown")")
 
         settingsStore.reset()
     }
-    
+
     /**
      Update fares and bus lines.
      
@@ -141,52 +151,51 @@ class Store {
      */
     func updateFares(performFetchWithCompletionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         log.debug("Downloading fares json")
-        
+
         let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
         guard let url = URL(string: endpoint) else {
             log.error("Error: cannot create URL")
-            
+
             if let completionHandler = performFetchWithCompletionHandler {
                 completionHandler(.failed)
             }
-            
+
             return
         }
         let urlRequest = URLRequest(url: url)
-        
+
         // set up the session
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        
+
         // make the request
-        let task = session.dataTask(with: urlRequest) {
-            (data, response, error) in
-            
+        let task = session.dataTask(with: urlRequest) { (data, _, error) in
+
             // check for any errors
             guard error == nil else {
                 log.error("error fetching fares")
                 log.error(error!)
-                
+
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.failed)
                 }
-                
+
                 return
             }
             // make sure we got data
             guard let responseData = data else {
                 log.error("Error: did not receive data")
-                
+
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.failed)
                 }
-                
+
                 return
             }
-            
+
             log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
 
-            let realm = try! Realm()
+            let realm = RealmHelper.getRealm()
             let settings = realm.objects(Settings.self).first!
 
             let json = JSON(data: responseData)
@@ -197,27 +206,31 @@ class Store {
                 self.jsonParser.processJSON(json: json)
                 self.updateBalanceAfterUpdatingFares()
 
-                try! realm.write {
-                    settings.lastTimestamp = json["timestamp"].intValue
+                do {
+                    try realm.write {
+                        settings.lastTimestamp = json["timestamp"].intValue
+                    }} catch let error as NSError {
+                        log.error(error)
+                        Crashlytics.sharedInstance().recordError(error)
                 }
-                
+
                 // Send updated fares notification
-                NotificationCenter.default.post(name: Notification.Name(rawValue: BUS_AND_FARES_UPDATE), object: self)
-                
+                NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
+
                 log.debug("Processed new fare data")
-                
+
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.newData)
                 }
             } else {
                 log.debug("No new data downloaded")
-                
+
                 if let completionHandler = performFetchWithCompletionHandler {
                     completionHandler(.noData)
                 }
             }
         }
-        
+
         task.resume()
     }
 
@@ -227,6 +240,7 @@ class Store {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
                 return JSON(data: data)
             } catch let error as NSError {
+                log.error(error)
                 Crashlytics.sharedInstance().recordError(error)
             }
         } else {
@@ -235,26 +249,26 @@ class Store {
 
         return nil
     }
-    
+
     // MARK: - Realm private functions
     fileprivate func updateBalanceAfterUpdatingFares() {
         do {
             let newCost = try getCurrentTripCost()
-            
+
             try settingsStore.recalculateRemainingTrips(withNewTripCost: newCost)
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
     }
-    
+
     // MARK: - Fare functions
-    
+
     func getAllFares() -> [Fare] {
         return fareStore.getAllFares()
     }
-    
+
     // MARK: - Settings functions
-    
+
     func getSettings() -> Settings {
         return settingsStore.getSettings()
     }

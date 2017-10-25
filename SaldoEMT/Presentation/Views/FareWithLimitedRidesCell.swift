@@ -9,13 +9,13 @@
 import UIKit
 
 class FareWithLimitedRidesCell: FareCell {
-    
+
     @IBOutlet weak var totalRides: UILabel!
     @IBOutlet weak var totalCost: UILabel!
-    
+
     override func populateWithFare(_ fare: Fare) {
         super.populateWithFare(fare)
-        
+
         totalCost.text = fare.cost.toDecimalString()
 
         if let rides = fare.rides.value {

@@ -11,24 +11,24 @@ import RealmSwift
 @testable import SaldoEMT
 
 class MainTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
-        
+
         continueAfterFailure = false
         let app = XCUIApplication()
         app.launchEnvironment["-isUITest"] = "true"
         app.launch()
     }
-    
+
     func testChangeFare() {
         let app = XCUIApplication()
         XCTAssert(app.staticTexts["Residente"].exists)
         app.buttons["Fares"].tap()
-        app.tables.cells.containing(.staticText, identifier:"1.15").staticTexts["No residente"].tap()
+        app.tables.cells.containing(.staticText, identifier: "1.15").staticTexts["No residente"].tap()
         XCTAssert(app.staticTexts["No residente"].exists)
     }
-    
+
     func testAddBalance() {
         let app = XCUIApplication()
         XCTAssert(app.staticTexts["4.0"].exists)
@@ -39,7 +39,7 @@ class MainTests: XCTestCase {
         app.buttons["Accept"].tap()
         XCTAssert(app.staticTexts["10.0"].exists)
     }
-    
+
     func testCancelBalance() {
         let app = XCUIApplication()
         let fare = app.staticTexts["Residente"]
@@ -48,7 +48,7 @@ class MainTests: XCTestCase {
         app.buttons["Cancel"].tap()
         XCTAssert(fare.exists)
     }
-    
+
     func testAddTrip() {
         let app = XCUIApplication()
         XCTAssert(app.staticTexts["5"].exists)

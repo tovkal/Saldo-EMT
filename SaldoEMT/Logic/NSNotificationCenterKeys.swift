@@ -6,4 +6,6 @@
 //  Copyright © 2016 tovkal. All rights reserved.
 //
 
-let BUS_AND_FARES_UPDATE = "com.tovkal.busAndFaresUpdate"
+struct NotificationCenterKeys {
+    static let BusAndFaresUpdate = "com.tovkal.busAndFaresUpdate"
+}

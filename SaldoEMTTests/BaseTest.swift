@@ -10,10 +10,10 @@ import XCTest
 import RealmSwift
 
 class BaseTest: XCTestCase {
-        
+
     override func setUp() {
         super.setUp()
-        
+
         Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
     }
 }

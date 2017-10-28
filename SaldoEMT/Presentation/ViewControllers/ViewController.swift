@@ -21,58 +21,65 @@ class ViewController: UIViewController {
     @IBOutlet weak var tripButton: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
 
+    var dataManager: DataManager!
+    var viewModel: HomeViewModel? {
+        didSet {
+            guard let viewModel = viewModel else { return }
+            fareName.text = viewModel.currentFareName
+            tripsMade.text = "\(viewModel.tripsDone)"
+            tripsRemaining.text = "\(viewModel.tripsRemaining)"
+            remainingAmount.text = viewModel.balance.toDecimalString()
+        }
+    }
+
     // MARK: - Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initBanner()
 
-        Store.sharedInstance.initFare()
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateLabels), name: NSNotification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateLabels),
+                                               name: NSNotification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        setupLabels()
+        viewModel = dataManager.getCurrentState()
     }
 
     // MARK: - Actions
 
     @IBAction func addTrip(_ sender: UIButton) {
-        if let errorMessage = Store.sharedInstance.addTrip() {
+        dataManager.addTrip { errorMessage in
             SVProgressHUD.showError(withStatus: errorMessage)
         }
 
         updateLabels()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddMoney", let vc = segue.destination as? AddMoneyViewController {
+            vc.dataManager = dataManager
+        } else if segue.identifier == "Fares", let nav = segue.destination as? UINavigationController,
+            let vc = nav.topViewController as? FaresViewController {
+            vc.dataManager = dataManager
+        }
+    }
+
     // MARK: Dev actions
 
     @IBAction func reset(_ sender: UIButton) {
-        Store.sharedInstance.reset()
-        updateLabels()
+        dataManager.reset()
+        viewModel = dataManager.getCurrentState()
     }
 
     @IBAction func forceDownload(_ sender: UIButton) {
-        Store.sharedInstance.updateFares(performFetchWithCompletionHandler: nil)
+        dataManager.downloadNewFares(completionHandler: nil)
     }
 
     // MARK: - Private functions
-
-    fileprivate func setupLabels() {
-        log.debug("Setting up labels")
-        let settings = Store.sharedInstance.getSettings()
-
-        if let currentFareName = settings.currentFare?.name {
-            fareName.text = currentFareName
-        }
-        tripsMade.text = "\(settings.tripsDone)"
-        tripsRemaining.text = "\(settings.tripsRemaining)"
-        remainingAmount.text = settings.balance.toDecimalString()
-    }
-
     @objc fileprivate func updateLabels() {
         DispatchQueue.main.async {
-            self.setupLabels()
+            self.viewModel = self.dataManager.getCurrentState()
         }
     }
 

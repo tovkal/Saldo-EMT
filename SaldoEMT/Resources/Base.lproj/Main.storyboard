@@ -45,7 +45,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="XTu-Cu-tWs" kind="show" id="5bX-Rb-SJr"/>
+                                            <segue destination="XTu-Cu-tWs" kind="show" identifier="Fares" id="5bX-Rb-SJr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cP-w7-dTC">
@@ -62,7 +62,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         </variation>
                                         <connections>
-                                            <action selector="addTrip:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HOE-AH-ZNZ"/>
+                                            <action selector="addTrip:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="AEs-67-Yf5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="vlg-7O-HpL">
@@ -72,7 +72,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Vyn-bm-Okm" kind="show" id="xdM-Dt-XWg"/>
+                                            <segue destination="Vyn-bm-Okm" kind="show" identifier="AddMoney" id="xdM-Dt-XWg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -323,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xco-e0-m1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1382.608695652174" y="461.41304347826093"/>
+            <point key="canvasLocation" x="1609" y="461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UYp-9u-zBW">

@@ -13,9 +13,10 @@ private let fareWithRidesIdentifier = "FareWithLimitedRidesCell"
 private let fareWithUnlimitedRidesIdentifier = "FareWithUnlimitedRidesCell"
 
 class FaresViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
-    fileprivate var fares: [Fare] = Store.sharedInstance.getAllFares()
+    fileprivate var fares: [Fare]!
+
+    var dataManager: DataManager!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class FaresViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        fares = Store.sharedInstance.getAllFares()
+        fares = dataManager.getAllFares()
     }
 
     @IBAction func didCancelFareSelection(_ sender: UIBarButtonItem) {
@@ -47,7 +48,7 @@ extension FaresViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let fare = fares[(indexPath as NSIndexPath).row]
+        let fare = fares[indexPath.row]
 
         if fare.rides.value == nil && fare.days.value == nil {
             let cell = tableView.dequeueReusableCell(withIdentifier: fareIdentifier, for: indexPath) as! FareCell
@@ -78,8 +79,8 @@ extension FaresViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         DispatchQueue.main.async(execute: {
-            Store.sharedInstance.setNewCurrentFare(self.fares[(indexPath as NSIndexPath).row])
-            log.debug("Selected fare: \(self.fares[(indexPath as NSIndexPath).row].name)")
+            self.dataManager.selectNewFare(self.fares[indexPath.row])
+            log.debug("Selected fare: \(self.fares[indexPath.row].name)")
             self.dismiss(animated: true, completion: nil)
         })
     }

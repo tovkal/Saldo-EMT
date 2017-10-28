@@ -9,8 +9,17 @@
 import RealmSwift
 import Crashlytics
 
-class SettingsStore {
+protocol SettingsStore {
+    func getSelectedFare() -> Fare?
+    func selectNewFare(_ fare: Fare)
+    func addTrip(withCost: Double) throws
+    func reset()
+    func recalculateRemainingTrips(withNewTripCost newCost: Double) throws
+    func recalculateRemainingTrips(addingToBalance amount: Double, withTripCost costPerTrip: Double) throws
+    func getCurrentState(with fare: Fare) -> HomeViewModel
+}
 
+class SettingsStoreImpl: SettingsStore {
     init() {
         let realm = RealmHelper.getRealm()
 
@@ -35,12 +44,15 @@ class SettingsStore {
     func addTrip(withCost tripCost: Double) throws {
         let realm = RealmHelper.getRealm()
         let settings = getSettings()
-        let remaining = settings.balance - tripCost
+
+        if settings.balance < tripCost {
+            throw StoreError.insufficientBalance
+        }
 
         try realm.write {
             settings.tripsDone += 1
             settings.tripsRemaining -= 1
-            settings.balance = remaining
+            settings.balance -= tripCost
         }
     }
 
@@ -79,5 +91,29 @@ class SettingsStore {
             log.error(error)
             Crashlytics.sharedInstance().recordError(error)
         }
+    }
+
+    func getSelectedFare() -> Fare? {
+        return getSettings().currentFare
+    }
+
+    func selectNewFare(_ fare: Fare) {
+        let realm = RealmHelper.getRealm()
+        let settings = getSettings()
+
+        do {
+            try realm.write {
+                settings.currentFare = fare
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+
+    func getCurrentState(with fare: Fare) -> HomeViewModel {
+        let settings = getSettings()
+        return HomeViewModel(currentFareName: fare.name, tripsDone: settings.tripsDone,
+                             tripsRemaining: settings.tripsRemaining, balance: settings.balance)
     }
 }

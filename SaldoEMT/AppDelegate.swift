@@ -44,14 +44,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
 
+        let dataManager = createDataManager()
+
         #if DEBUG
             if "true" == ProcessInfo.processInfo.environment["-isUITest"] {
-                Store.sharedInstance.reset()
+                dataManager.reset()
             }
         #else
             // Download JSON and update bus lines and fare info if needed
-            Store.sharedInstance.updateFares(performFetchWithCompletionHandler: nil)
+            dataManager.downloadNewFares(completionHandler: nil)
         #endif
+
+        if let vc = window?.rootViewController as? ViewController {
+            vc.dataManager = dataManager
+        }
 
         log.debug("End didFinishLaunchingWithOptions")
 
@@ -59,8 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        Store.sharedInstance.updateFares(performFetchWithCompletionHandler: completionHandler)
-
+        createDataManager().downloadNewFares(completionHandler: completionHandler)
         log.debug("End background fetch")
+    }
+
+    private func createDataManager() -> DataManager {
+        return DataManagerImpl(settingsStore: SettingsStoreImpl(), fareStore: FareStore(jsonParser: JsonParser()), jsonParser: JsonParser())
     }
 }

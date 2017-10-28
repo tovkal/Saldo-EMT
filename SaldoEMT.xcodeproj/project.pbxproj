@@ -34,7 +34,8 @@
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
 		95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A42A1F9FA74200DBB166 /* JsonParser.swift */; };
 		95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F6F1DEA26870016B080 /* SettingsStore.swift */; };
-		95A83F721DEA26870016B080 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F701DEA26870016B080 /* Store.swift */; };
+		95A83F721DEA26870016B080 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F701DEA26870016B080 /* DataManager.swift */; };
+		95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB781B1FA4F33600065166 /* HomeViewModel.swift */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
@@ -111,7 +112,8 @@
 		95A4CBED1B5A852B002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A7A42A1F9FA74200DBB166 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		95A83F6F1DEA26870016B080 /* SettingsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
-		95A83F701DEA26870016B080 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		95A83F701DEA26870016B080 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		95AB781B1FA4F33600065166 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
 		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -323,14 +325,22 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		95A83F731DEA268C0016B080 /* Store */ = {
+		95A83F731DEA268C0016B080 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
 				95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */,
 				95A83F6F1DEA26870016B080 /* SettingsStore.swift */,
-				95A83F701DEA26870016B080 /* Store.swift */,
+				95A83F701DEA26870016B080 /* DataManager.swift */,
 			);
-			path = Store;
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		95AB781A1FA4F32500065166 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				95AB781B1FA4F33600065166 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		95BF51E71B5B97FA00E4259B /* Resources */ = {
@@ -357,7 +367,8 @@
 			isa = PBXGroup;
 			children = (
 				95D4356F1BB846D300745E64 /* Model */,
-				95A83F731DEA268C0016B080 /* Store */,
+				95A83F731DEA268C0016B080 /* DataManager */,
+				95AB781A1FA4F32500065166 /* ViewModel */,
 				95DACD881DC905B0005C7180 /* Logger.swift */,
 				950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */,
 				95559B161C516E6B0003E32F /* StoreError.swift */,
@@ -597,6 +608,7 @@
 				957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */,
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
 				95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */,
+				95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
 				952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */,
@@ -607,7 +619,7 @@
 				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,
-				95A83F721DEA26870016B080 /* Store.swift in Sources */,
+				95A83F721DEA26870016B080 /* DataManager.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
 				95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */,
 				95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */,

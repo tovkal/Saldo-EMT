@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dataManager.downloadNewFares(completionHandler: nil)
         #endif
 
-        if let vc = window?.rootViewController as? ViewController {
+        if let vc = window?.rootViewController as? HomeViewController {
             vc.dataManager = dataManager
         }
 

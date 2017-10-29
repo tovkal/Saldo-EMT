@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  SaldoEMT
 //
 //  Created by Andrés Pizá on 18/7/15.
@@ -10,7 +10,7 @@ import UIKit
 import SVProgressHUD
 import GoogleMobileAds
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 
         initBanner()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.updateLabels),
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateLabels),
                                                name: NSNotification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: nil)
     }
 

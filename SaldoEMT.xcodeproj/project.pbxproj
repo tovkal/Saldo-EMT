@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
+		951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951ACD331FA63CA600976DEC /* NotificationCenterProtocol.swift */; };
 		952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C24271FA11D8A005F7CB5 /* RealmHelper.swift */; };
 		953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* MainTests.swift */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
@@ -18,15 +19,21 @@
 		953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953FDF461BB812B500D2C9DA /* BusLineView.swift */; };
 		954020A21BC9714A009419EA /* FaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020A11BC9714A009419EA /* FaresViewController.swift */; };
 		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; };
-		95559B171C516E6B0003E32F /* StoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95559B161C516E6B0003E32F /* StoreError.swift */; };
+		95559B171C516E6B0003E32F /* DataManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95559B161C516E6B0003E32F /* DataManagerError.swift */; };
 		9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D2291C4AB8CE008E2A47 /* Fare.swift */; };
 		9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22B1C4AB97B008E2A47 /* BusLine.swift */; };
 		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
+		95636D641FA64D530057081E /* SettingsStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95636D631FA64D530057081E /* SettingsStoreMock.swift */; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
+		957AEDD61FA64DEC0083B8C9 /* JsonParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD51FA64DEC0083B8C9 /* JsonParserMock.swift */; };
+		957AEDD81FA64E080083B8C9 /* FareStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */; };
+		957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */; };
+		957AEDDC1FA64E5B0083B8C9 /* NotificationCenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */; };
 		957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957FE81E1DBFE5FF002833D5 /* Settings.swift */; };
 		959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F31DEA2A8800194E89 /* Crashlytics.framework */; };
 		959021F71DEA2A8800194E89 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F41DEA2A8800194E89 /* Fabric.framework */; };
 		959021F81DEA2A8800194E89 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F51DEA2A8800194E89 /* GoogleMobileAds.framework */; };
+		95A43F4A1FA5DE73003FD9A2 /* DataManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A43F491FA5DE73003FD9A2 /* DataManagerSpec.swift */; };
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* HomeViewController.swift */; };
 		95A4CBDE1B5A852A002FB3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDC1B5A852A002FB3E9 /* Main.storyboard */; };
@@ -34,11 +41,16 @@
 		95A4CBE31B5A852A002FB3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBE11B5A852A002FB3E9 /* LaunchScreen.xib */; };
 		95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A42A1F9FA74200DBB166 /* JsonParser.swift */; };
 		95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F6F1DEA26870016B080 /* SettingsStore.swift */; };
-		95A83F721DEA26870016B080 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F701DEA26870016B080 /* DataManager.swift */; };
 		95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB781B1FA4F33600065166 /* HomeViewModel.swift */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
+		95D960E71FA5E42F00C205E3 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D960E61FA5E42F00C205E3 /* Quick.framework */; };
+		95D960E91FA5E43B00C205E3 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D960E81FA5E43B00C205E3 /* Nimble.framework */; };
+		95D960EC1FA5EB1800C205E3 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95D960E81FA5E43B00C205E3 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95D960ED1FA5EB1C00C205E3 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95D960E61FA5E42F00C205E3 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95D960EF1FA5EB5800C205E3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F701DEA26870016B080 /* DataManager.swift */; };
+		95D960F21FA6222200C205E3 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D960F11FA6222200C205E3 /* URLSessionProtocol.swift */; };
 		95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9F5FB1C4C0C9000A696B9 /* Balance.swift */; };
 		95DACD891DC905B0005C7180 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DACD881DC905B0005C7180 /* Logger.swift */; };
 		95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */; };
@@ -71,8 +83,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		95D960EB1FA5EB0A00C205E3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95D960ED1FA5EB1C00C205E3 /* Quick.framework in CopyFiles */,
+				95D960EC1FA5EB1800C205E3 /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
+		951ACD331FA63CA600976DEC /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
 		952C24271FA11D8A005F7CB5 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
@@ -88,19 +115,25 @@
 		9540209F1BC970AE009419EA /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		954020A11BC9714A009419EA /* FaresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaresViewController.swift; sourceTree = "<group>"; };
 		954020AB1BCA627C009419EA /* FareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareCell.swift; sourceTree = "<group>"; };
-		95559B161C516E6B0003E32F /* StoreError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
+		95559B161C516E6B0003E32F /* DataManagerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerError.swift; sourceTree = "<group>"; };
 		9562D2291C4AB8CE008E2A47 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
 		9562D22B1C4AB97B008E2A47 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
 		9562D22D1C4AE00B008E2A47 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		95636D631FA64D530057081E /* SettingsStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreMock.swift; sourceTree = "<group>"; };
 		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
 		9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = SOURCE_ROOT; };
 		9578B97B1DA93E810073CC66 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9578B97C1DA93E810073CC66 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		957AEDD51FA64DEC0083B8C9 /* JsonParserMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParserMock.swift; sourceTree = "<group>"; };
+		957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareStoreMock.swift; sourceTree = "<group>"; };
+		957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterMock.swift; sourceTree = "<group>"; };
 		957FE81E1DBFE5FF002833D5 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		959021F31DEA2A8800194E89 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics.framework; sourceTree = "<group>"; };
 		959021F41DEA2A8800194E89 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Vendor/Fabric.framework; sourceTree = "<group>"; };
 		959021F51DEA2A8800194E89 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Vendor/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		95A43F491FA5DE73003FD9A2 /* DataManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerSpec.swift; sourceTree = "<group>"; };
 		95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaldoEMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBD71B5A852A002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +151,9 @@
 		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
+		95D960E61FA5E42F00C205E3 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		95D960E81FA5E43B00C205E3 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		95D960F11FA6222200C205E3 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		95D9F5FB1C4C0C9000A696B9 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		95DACD841DC64DB5005C7180 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DACD881DC905B0005C7180 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -161,6 +197,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D960E91FA5E43B00C205E3 /* Nimble.framework in Frameworks */,
+				95D960E71FA5E42F00C205E3 /* Quick.framework in Frameworks */,
 				95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,13 +206,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		95211F161DEA2869005EBE81 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
 		953B35C21DD674A100B36AA9 /* SaldoEMTUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,14 +222,6 @@
 				953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		953C2CD01DCE834D00C8CEF7 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				95211F161DEA2869005EBE81 /* Store */,
-			);
-			path = Logic;
 			sourceTree = "<group>";
 		};
 		953FDF2D1BB8072F00D2C9DA /* Views */ = {
@@ -235,6 +258,18 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		95636D621FA64D380057081E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				95636D631FA64D530057081E /* SettingsStoreMock.swift */,
+				957AEDD51FA64DEC0083B8C9 /* JsonParserMock.swift */,
+				957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */,
+				957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */,
+				957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		9566B8B61BB85B4A000ED3E1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +281,8 @@
 		9578B96B1DA93A550073CC66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95D960E81FA5E43B00C205E3 /* Nimble.framework */,
+				95D960E61FA5E42F00C205E3 /* Quick.framework */,
 				95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */,
 				959021F31DEA2A8800194E89 /* Crashlytics.framework */,
 				959021F41DEA2A8800194E89 /* Fabric.framework */,
@@ -261,6 +298,22 @@
 				9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95A43F471FA5DE5F003FD9A2 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				95A43F481FA5DE68003FD9A2 /* DataManager */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		95A43F481FA5DE68003FD9A2 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				95A43F491FA5DE73003FD9A2 /* DataManagerSpec.swift */,
+			);
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		95A4CBCA1B5A852A002FB3E9 = {
@@ -309,8 +362,9 @@
 		95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */ = {
 			isa = PBXGroup;
 			children = (
+				95636D621FA64D380057081E /* Mocks */,
 				953C2CC21DCE009600C8CEF7 /* Extensions */,
-				953C2CD01DCE834D00C8CEF7 /* Logic */,
+				95A43F471FA5DE5F003FD9A2 /* Logic */,
 				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
 				953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */,
 			);
@@ -369,9 +423,10 @@
 				95D4356F1BB846D300745E64 /* Model */,
 				95A83F731DEA268C0016B080 /* DataManager */,
 				95AB781A1FA4F32500065166 /* ViewModel */,
+				95D960F01FA6221200C205E3 /* Protocol */,
 				95DACD881DC905B0005C7180 /* Logger.swift */,
 				950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */,
-				95559B161C516E6B0003E32F /* StoreError.swift */,
+				95559B161C516E6B0003E32F /* DataManagerError.swift */,
 				95A7A42A1F9FA74200DBB166 /* JsonParser.swift */,
 				952C24271FA11D8A005F7CB5 /* RealmHelper.swift */,
 			);
@@ -387,6 +442,15 @@
 				957FE81E1DBFE5FF002833D5 /* Settings.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		95D960F01FA6221200C205E3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				95D960F11FA6222200C205E3 /* URLSessionProtocol.swift */,
+				951ACD331FA63CA600976DEC /* NotificationCenterProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +501,7 @@
 				95A4CBE41B5A852B002FB3E9 /* Sources */,
 				95A4CBE51B5A852B002FB3E9 /* Frameworks */,
 				95A4CBE61B5A852B002FB3E9 /* Resources */,
+				95D960EB1FA5EB0A00C205E3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -608,18 +673,20 @@
 				957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */,
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
 				95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */,
+				95D960EF1FA5EB5800C205E3 /* DataManager.swift in Sources */,
 				95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */,
 				953FDF471BB812B500D2C9DA /* BusLineView.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
 				952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */,
-				95559B171C516E6B0003E32F /* StoreError.swift in Sources */,
+				95559B171C516E6B0003E32F /* DataManagerError.swift in Sources */,
 				953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */,
+				95D960F21FA6222200C205E3 /* URLSessionProtocol.swift in Sources */,
+				951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
 				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,
 				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,
-				95A83F721DEA26870016B080 /* DataManager.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
 				95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */,
 				95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */,
@@ -633,9 +700,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */,
 				953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */,
+				95636D641FA64D530057081E /* SettingsStoreMock.swift in Sources */,
+				95A43F4A1FA5DE73003FD9A2 /* DataManagerSpec.swift in Sources */,
 				953C2CCF1DCE80B100C8CEF7 /* BaseTest.swift in Sources */,
+				957AEDD81FA64E080083B8C9 /* FareStoreMock.swift in Sources */,
+				957AEDD61FA64DEC0083B8C9 /* JsonParserMock.swift in Sources */,
 				953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */,
+				957AEDDC1FA64E5B0083B8C9 /* NotificationCenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

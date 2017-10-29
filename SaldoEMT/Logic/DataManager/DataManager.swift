@@ -10,9 +10,15 @@ import Foundation
 import SwiftyJSON
 import UIKit
 import Crashlytics
-import RealmSwift
 
-protocol DataManager {
+struct DataManagerErrors {
+    static let costPerTripUnknown = "Cost per trip is unknown, can't add trip"
+    static let insufficientBalance = "There is not enough money to pay for the trip"
+    static let unknown = "Unknown error ocurred"
+}
+
+protocol DataManagerProtocol {
+    init(settingsStore: SettingsStoreProtocol, fareStore: FareStoreProtocol, jsonParser: JsonParserProtocol, session: URLSessionProtocol, notificationCenter: NotificationCenterProtocol)
     func getAllFares() -> [Fare]
     func selectNewFare(_ fare: Fare)
     func addMoney(_ amount: Double)
@@ -22,10 +28,12 @@ protocol DataManager {
     func getCurrentState() -> HomeViewModel
 }
 
-class DataManagerImpl: DataManager {
-    let settingsStore: SettingsStore
-    let fareStore: FareStore
-    let jsonParser: JsonParser
+class DataManager: DataManagerProtocol {
+    let settingsStore: SettingsStoreProtocol
+    let fareStore: FareStoreProtocol
+    let jsonParser: JsonParserProtocol
+    let session: URLSessionProtocol
+    let notificationCenter: NotificationCenterProtocol
 
     // MARK: - Init
 
@@ -34,10 +42,14 @@ class DataManagerImpl: DataManager {
      
      By default bus lines and fares are extracted from a minimized json filed bundled with the app in the Assets folder.
      */
-    init(settingsStore: SettingsStore, fareStore: FareStore, jsonParser: JsonParser) {
+    required init(settingsStore: SettingsStoreProtocol, fareStore: FareStoreProtocol,
+                  jsonParser: JsonParserProtocol, session: URLSessionProtocol = URLSession.shared,
+                  notificationCenter: NotificationCenterProtocol = NotificationCenter.default) {
         self.settingsStore = settingsStore
         self.fareStore = fareStore
         self.jsonParser = jsonParser
+        self.session = session
+        self.notificationCenter = notificationCenter
 
         // Select a default fare if none is currently selected
         _ = getSelectedFare()
@@ -83,10 +95,6 @@ class DataManagerImpl: DataManager {
         }
         let urlRequest = URLRequest(url: url)
 
-        // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-
         // make the request
         let task = session.dataTask(with: urlRequest) { (data, _, error) in
 
@@ -105,27 +113,17 @@ class DataManagerImpl: DataManager {
 
             log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
 
-            let realm = RealmHelper.getRealm()
-            let settings = realm.objects(Settings.self).first!
-
             let json = JSON(data: responseData)
             let timestamp = json["timestamp"].intValue
+            let lastTimestamp = self.settingsStore.getLastTimestamp()
 
-            // Settins.lastTimestamp is 0 when a fares json file has never been processed
-            if settings.lastTimestamp == 0 || settings.lastTimestamp < timestamp {
+            // lastTimestamp is 0 when no update has ever been received
+            if lastTimestamp == 0 || lastTimestamp < timestamp {
                 self.jsonParser.processJSON(json: json)
                 self.updateBalanceAfterUpdatingFares()
-
-                do {
-                    try realm.write {
-                        settings.lastTimestamp = json["timestamp"].intValue
-                    }} catch let error as NSError {
-                        log.error(error)
-                        Crashlytics.sharedInstance().recordError(error)
-                }
-
+                self.settingsStore.updateTimestamp(timestamp)
                 // Send updated fares notification
-                NotificationCenter.default.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
+                self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
 
                 log.debug("Processed new fare data")
                 completionHandler?(.newData)
@@ -144,13 +142,13 @@ class DataManagerImpl: DataManager {
         do {
             let cost = try getCurrentTripCost()
             try settingsStore.addTrip(withCost: cost)
-        } catch StoreError.costPerTripUnknown {
-            onError?("Cost per trip is unknown, can't add trip")
-        } catch StoreError.insufficientBalance {
-            onError?("There is not enough money to pay for the trip")
+        } catch DataManagerError.costPerTripUnknown {
+            onError?(DataManagerErrors.costPerTripUnknown)
+        } catch DataManagerError.insufficientBalance {
+            onError?(DataManagerErrors.insufficientBalance)
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
-            onError?("Unknown error ocurred")
+            onError?(DataManagerErrors.unknown)
         }
     }
 
@@ -184,7 +182,7 @@ class DataManagerImpl: DataManager {
             return tripCost
         }
 
-        throw StoreError.costPerTripUnknown
+        throw DataManagerError.costPerTripUnknown
     }
 
     private func updateBalanceAfterUpdatingFares() {

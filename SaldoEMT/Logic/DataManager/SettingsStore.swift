@@ -9,7 +9,7 @@
 import RealmSwift
 import Crashlytics
 
-protocol SettingsStore {
+protocol SettingsStoreProtocol {
     func getSelectedFare() -> Fare?
     func selectNewFare(_ fare: Fare)
     func addTrip(withCost: Double) throws
@@ -17,9 +17,11 @@ protocol SettingsStore {
     func recalculateRemainingTrips(withNewTripCost newCost: Double) throws
     func recalculateRemainingTrips(addingToBalance amount: Double, withTripCost costPerTrip: Double) throws
     func getCurrentState(with fare: Fare) -> HomeViewModel
+    func getLastTimestamp() -> Int
+    func updateTimestamp(_ timestamp: Int)
 }
 
-class SettingsStoreImpl: SettingsStore {
+class SettingsStore: SettingsStoreProtocol {
     init() {
         let realm = RealmHelper.getRealm()
 
@@ -46,7 +48,7 @@ class SettingsStoreImpl: SettingsStore {
         let settings = getSettings()
 
         if settings.balance < tripCost {
-            throw StoreError.insufficientBalance
+            throw DataManagerError.insufficientBalance
         }
 
         try realm.write {
@@ -115,5 +117,23 @@ class SettingsStoreImpl: SettingsStore {
         let settings = getSettings()
         return HomeViewModel(currentFareName: fare.name, tripsDone: settings.tripsDone,
                              tripsRemaining: settings.tripsRemaining, balance: settings.balance)
+    }
+
+    func getLastTimestamp() -> Int {
+        return getSettings().lastTimestamp
+    }
+
+    func updateTimestamp(_ timestamp: Int) {
+        let realm = RealmHelper.getRealm()
+        let settings = getSettings()
+
+        do {
+            try realm.write {
+                settings.lastTimestamp = timestamp
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
     }
 }

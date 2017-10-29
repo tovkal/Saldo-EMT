@@ -11,7 +11,7 @@ import SVProgressHUD
 
 class AddMoneyViewController: UIViewController {
     @IBOutlet weak var input: UITextField!
-    var dataManager: DataManager!
+    var dataManager: DataManagerProtocol!
 
     @IBAction func cancelModal(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)

@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tripButton: UIButton!
     @IBOutlet weak var bannerView: GADBannerView!
 
-    var dataManager: DataManager!
+    var dataManager: DataManagerProtocol!
     var viewModel: HomeViewModel? {
         didSet {
             guard let viewModel = viewModel else { return }

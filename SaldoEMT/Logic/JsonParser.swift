@@ -11,7 +11,11 @@ import SwiftyJSON
 import RealmSwift
 import Crashlytics
 
-class JsonParser: NSObject {
+protocol JsonParserProtocol {
+    func processJSON(json: JSON)
+}
+
+class JsonParser: NSObject, JsonParserProtocol {
     let realm = RealmHelper.getRealm()
 
     func processJSON(json: JSON) {
@@ -19,7 +23,7 @@ class JsonParser: NSObject {
         parseFares(json)
     }
 
-    func parseBusLines(_ json: JSON) {
+    private func parseBusLines(_ json: JSON) {
         for (_, line) in json["lines"] {
             for (lineNumber, lineInfo) in line {
                 let busLine = BusLine()
@@ -39,7 +43,7 @@ class JsonParser: NSObject {
         }
     }
 
-    func parseFares(_ json: JSON) {
+    private func parseFares(_ json: JSON) {
         for (_, fare) in json["fares"] {
             for (fareNumber, fareInfo) in fare {
                 storeFare(id: Int(fareNumber)!, name: fareInfo["name"].stringValue, rides: fareInfo["rides"].int,
@@ -49,7 +53,7 @@ class JsonParser: NSObject {
         }
     }
 
-    func storeFare(id: Int, name: String, rides: Int?, price: Double, days: Int?, busLines: [BusLine]) {
+    private func storeFare(id: Int, name: String, rides: Int?, price: Double, days: Int?, busLines: [BusLine]) {
         let fare = Fare()
 
         fare.name = name
@@ -78,7 +82,7 @@ class JsonParser: NSObject {
         }
     }
 
-    fileprivate func getBusLinesForLineNumbers(_ busLines: [Int]?) -> [BusLine] {
+    private func getBusLinesForLineNumbers(_ busLines: [Int]?) -> [BusLine] {
         guard let busLines = busLines else { fatalError("A Fare must have at least one BusLine") }
         let predicate = NSPredicate(format: "number IN %@", busLines)
         return Array(realm.objects(BusLine.self).filter(predicate))

@@ -11,10 +11,17 @@ import RealmSwift
 import SwiftyJSON
 import Crashlytics
 
-class FareStore {
-    let jsonParser: JsonParser
+protocol FareStoreProtocol {
+    init(jsonParser: JsonParserProtocol)
+    func getAllFares() -> [Fare]
+    func getFare(forName fareName: String) -> [Fare]
+    func getFare(forId fareId: Int) -> [Fare]
+}
 
-    init(jsonParser: JsonParser) {
+class FareStore: FareStoreProtocol {
+    let jsonParser: JsonParserProtocol
+
+    required init(jsonParser: JsonParserProtocol) {
         self.jsonParser = jsonParser
 
         if getAllFares().isEmpty {

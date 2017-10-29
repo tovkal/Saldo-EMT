@@ -16,7 +16,7 @@ class FaresViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate var fares: [Fare]!
 
-    var dataManager: DataManager!
+    var dataManager: DataManagerProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()

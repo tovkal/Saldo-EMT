@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="594.33333333333337" width="414" height="91.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CW4-dl-NtV">
-                                        <rect key="frame" x="0.0" y="49.666666666666629" width="124.33333333333333" height="42"/>
+                                        <rect key="frame" x="0.0" y="41.666666666666629" width="124.33333333333333" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Fares">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +65,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="vlg-7O-HpL">
-                                        <rect key="frame" x="289.66666666666669" y="49.666666666666629" width="124.33333333333331" height="42"/>
+                                        <rect key="frame" x="289.66666666666669" y="41.666666666666629" width="124.33333333333331" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Balance">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -186,6 +186,7 @@
                         <constraints>
                             <constraint firstItem="hYm-lk-4xs" firstAttribute="trailing" secondItem="cNc-Bj-r0d" secondAttribute="trailing" constant="20" id="0Um-Ri-ejw"/>
                             <constraint firstItem="cNc-Bj-r0d" firstAttribute="top" secondItem="Phf-uA-0jK" secondAttribute="bottom" constant="20" id="3t1-JW-9D1"/>
+                            <constraint firstItem="vlg-7O-HpL" firstAttribute="height" secondItem="2Pw-59-1Rd" secondAttribute="height" id="7M8-p4-wSd"/>
                             <constraint firstItem="Phf-uA-0jK" firstAttribute="top" secondItem="AZC-KR-Cub" secondAttribute="bottom" constant="25" id="89V-Eg-gSI"/>
                             <constraint firstItem="2Pw-59-1Rd" firstAttribute="top" secondItem="dAe-3h-f7C" secondAttribute="bottom" id="APH-ua-dk9"/>
                             <constraint firstItem="AZC-KR-Cub" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="BgJ-ZL-QyD"/>
@@ -203,6 +204,7 @@
                             <constraint firstItem="Oce-vJ-3Zk" firstAttribute="top" secondItem="2Pw-59-1Rd" secondAttribute="bottom" id="nBo-6u-nOf"/>
                             <constraint firstItem="8cP-w7-dTC" firstAttribute="top" secondItem="cNc-Bj-r0d" secondAttribute="bottom" constant="8" id="sHX-ZW-sIO"/>
                             <constraint firstItem="AZC-KR-Cub" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="saO-6t-aUk"/>
+                            <constraint firstItem="CW4-dl-NtV" firstAttribute="height" secondItem="2Pw-59-1Rd" secondAttribute="height" id="t9l-6R-tbK"/>
                             <constraint firstItem="Oce-vJ-3Zk" firstAttribute="leading" secondItem="hYm-lk-4xs" secondAttribute="leading" id="uNy-1N-2Qz"/>
                             <constraint firstItem="x2g-dG-Gii" firstAttribute="leading" secondItem="hYm-lk-4xs" secondAttribute="leading" id="usC-Cw-g5j"/>
                             <constraint firstItem="Phf-uA-0jK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hYm-lk-4xs" secondAttribute="leading" id="wYO-vt-YJl"/>

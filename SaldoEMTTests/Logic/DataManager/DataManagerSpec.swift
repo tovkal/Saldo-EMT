@@ -6,7 +6,6 @@
 //  Copyright © 2017 tovkal. All rights reserved.
 //
 
-import XCTest
 @testable import SaldoEMT
 import Quick
 import Nimble

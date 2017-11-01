@@ -43,6 +43,7 @@
 		95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F6F1DEA26870016B080 /* SettingsStore.swift */; };
 		95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB781B1FA4F33600065166 /* HomeViewModel.swift */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
+		95BEFC841FA7BAE500F9D7DC /* FareStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
 		95D960E71FA5E42F00C205E3 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D960E61FA5E42F00C205E3 /* Quick.framework */; };
@@ -148,6 +149,7 @@
 		95A83F701DEA26870016B080 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		95AB781B1FA4F33600065166 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
+		95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareStoreSpec.swift; sourceTree = "<group>"; };
 		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				95A43F491FA5DE73003FD9A2 /* DataManagerSpec.swift */,
+				95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 			files = (
 				957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */,
 				953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */,
+				95BEFC841FA7BAE500F9D7DC /* FareStoreSpec.swift in Sources */,
 				95636D641FA64D530057081E /* SettingsStoreMock.swift in Sources */,
 				95A43F4A1FA5DE73003FD9A2 /* DataManagerSpec.swift in Sources */,
 				953C2CCF1DCE80B100C8CEF7 /* BaseTest.swift in Sources */,

@@ -11,7 +11,9 @@ import Foundation
 import SwiftyJSON
 
 class JsonParserMock: JsonParserProtocol {
-    func processJSON(json: JSON) {
+    private (set) var processJSONCalled = false
 
+    func processJSON(json: JSON) {
+        processJSONCalled = true
     }
 }

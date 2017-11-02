@@ -21,7 +21,7 @@ extension UIColor {
     }
 
     public convenience init(_ hexColor: String) throws {
-        if hexColor.characters.count != 6 && !(hexColor.characters.count == 7 && hexColor.hasPrefix("#")) {
+        if hexColor.count != 6 && !(hexColor.count == 7 && hexColor.hasPrefix("#")) {
             throw UIColorError.inputSizeNotValid
         }
 

@@ -61,10 +61,9 @@ class SettingsStore: SettingsStoreProtocol {
     func recalculateRemainingTrips(withNewTripCost newCost: Double) throws {
         let realm = RealmHelper.getRealm()
         let settings = getSettings()
-        let currentSettings = settings.balance
 
         try realm.write {
-            settings.tripsRemaining = Int(currentSettings / newCost)
+            settings.tripsRemaining = Int(settings.balance / newCost)
         }
     }
 
@@ -79,6 +78,7 @@ class SettingsStore: SettingsStoreProtocol {
         }
     }
 
+    // Dev function
     func reset() {
         let realm = RealmHelper.getRealm()
         let settings = getSettings()

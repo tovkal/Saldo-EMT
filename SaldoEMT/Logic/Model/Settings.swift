@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Settings: Object {
+    @objc private dynamic var id = 0
     // Last processed fares files timestamp
     @objc dynamic var lastTimestamp = 0
     // Current selected fare
@@ -17,4 +18,8 @@ class Settings: Object {
     @objc dynamic var balance: Double = 0.0 // Current balance
     @objc dynamic var tripsDone = 0 // Trips done
     @objc dynamic var tripsRemaining = 0 // Remaining trips given current balance
+
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }

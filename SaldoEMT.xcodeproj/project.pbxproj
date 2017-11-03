@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */; };
 		951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951ACD331FA63CA600976DEC /* NotificationCenterProtocol.swift */; };
+		951DC71C1FABC4CE00C98E4B /* SettingsStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951DC71B1FABC4CE00C98E4B /* SettingsStoreSpec.swift */; };
 		952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C24271FA11D8A005F7CB5 /* RealmHelper.swift */; };
 		953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* MainTests.swift */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
@@ -101,6 +102,7 @@
 /* Begin PBXFileReference section */
 		950BB1061DBD052D008A988F /* NSNotificationCenterKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterKeys.swift; sourceTree = "<group>"; };
 		951ACD331FA63CA600976DEC /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
+		951DC71B1FABC4CE00C98E4B /* SettingsStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreSpec.swift; sourceTree = "<group>"; };
 		952C24271FA11D8A005F7CB5 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				95A43F491FA5DE73003FD9A2 /* DataManagerSpec.swift */,
 				95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */,
+				951DC71B1FABC4CE00C98E4B /* SettingsStoreSpec.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				957AEDD61FA64DEC0083B8C9 /* JsonParserMock.swift in Sources */,
 				953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */,
 				957AEDDC1FA64E5B0083B8C9 /* NotificationCenterMock.swift in Sources */,
+				951DC71C1FABC4CE00C98E4B /* SettingsStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

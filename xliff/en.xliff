@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="SaldoEMT/Resources/Supporting Files/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="SaldoEMT/Resources/en.lproj/Localizable.strings" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
+    </header>
+    <body>
+      <trans-unit id="balance.enter-amount">
+        <source>Enter amount:</source>
+      </trans-unit>
+      <trans-unit id="balance.minimum-amount-info">
+        <source>Minimum amount is 5€</source>
+      </trans-unit>
+      <trans-unit id="buttons.accept">
+        <source>Accept</source>
+      </trans-unit>
+      <trans-unit id="buttons.cancel">
+        <source>Cancel</source>
+      </trans-unit>
+      <trans-unit id="home.button-bar.add-trip">
+        <source>+1 Trip</source>
+      </trans-unit>
+      <trans-unit id="home.button-bar.balance">
+        <source>Balance</source>
+      </trans-unit>
+      <trans-unit id="home.button-bar.fares">
+        <source>Fares</source>
+      </trans-unit>
+      <trans-unit id="home.dev-buttons.force-download">
+        <source>Force download</source>
+      </trans-unit>
+      <trans-unit id="home.dev-buttons.reset">
+        <source>Reset</source>
+      </trans-unit>
+      <trans-unit id="home.state.remaining-balance">
+        <source>remaining balance</source>
+      </trans-unit>
+      <trans-unit id="home.state.trips-made">
+        <source>trips made</source>
+      </trans-unit>
+      <trans-unit id="home.state.trips-remaining">
+        <source>trips remaining</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

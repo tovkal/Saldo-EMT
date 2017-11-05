@@ -1,0 +1,36 @@
+/* (No Comment) */
+"balance.enter-amount" = "Introduïu l'import:";
+
+/* (No Comment) */
+"balance.minimum-amount-info" = "La quantitat mínima és de 5€";
+
+/* (No Comment) */
+"buttons.accept" = "Acceptar";
+
+/* (No Comment) */
+"buttons.cancel" = "Cancel·lar";
+
+/* (No Comment) */
+"home.button-bar.add-trip" = "+1 Viatge";
+
+/* (No Comment) */
+"home.button-bar.balance" = "Saldo";
+
+/* (No Comment) */
+"home.button-bar.fares" = "Tarifes";
+
+/* (No Comment) */
+"home.dev-buttons.force-download" = "Forçar la descàrrega";
+
+/* (No Comment) */
+"home.dev-buttons.reset" = "Restablir";
+
+/* (No Comment) */
+"home.state.remaining-balance" = "saldo restant";
+
+/* (No Comment) */
+"home.state.trips-made" = "viatges realitzats";
+
+/* (No Comment) */
+"home.state.trips-remaining" = "viatges restants";
+

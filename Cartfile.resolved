@@ -1,4 +1,5 @@
 github "DaveWoodCom/XCGLogger" "6.0.1"
+github "PiXeL16/IBLocalizable" "1.1.0"
 github "Quick/Nimble" "v7.0.2"
 github "Quick/Quick" "v1.2.0"
 github "SVProgressHUD/SVProgressHUD" "2.2.2"

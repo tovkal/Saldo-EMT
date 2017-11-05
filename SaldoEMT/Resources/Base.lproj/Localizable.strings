@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  SaldoEMT
+
+  Created by Andrés Pizá Bückmann on 05/11/2017.
+  Copyright © 2017 tovkal. All rights reserved.
+*/
+
+// MARK: - Common
+"buttons.cancel" = "Cancel";
+"buttons.accept" = "Accept";
+
+// MARK: - Home
+// MARK: State
+
+"home.state.trips-remaining" = "trips remaining";
+"home.state.trips-made" = "trips made";
+"home.state.remaining-balance" = "remaining balance";
+
+// MARK: Dev buttons
+"home.dev-buttons.reset" = "Reset";
+"home.dev-buttons.force-download" = "Force download";
+
+// MARK: Button bar
+"home.button-bar.fares" = "Fares";
+"home.button-bar.add-trip" = "+1 Trip";
+"home.button-bar.balance" = "Balance";
+
+// MARK: - Balance
+/* Remember the colon at the end */
+"balance.enter-amount" = "Enter amount:";
+"balance.minimum-amount-info" = "Minimum amout is 5€";

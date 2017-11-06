@@ -89,7 +89,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-3h-f7C" userLabel="Dev buttons">
-                                <rect key="frame" x="0.0" y="586" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="576" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE5-gK-Dt3">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="50"/>
@@ -212,7 +212,7 @@
                             <constraint firstItem="cNc-Bj-r0d" firstAttribute="top" secondItem="Phf-uA-0jK" secondAttribute="bottom" constant="20" id="3t1-JW-9D1"/>
                             <constraint firstItem="vlg-7O-HpL" firstAttribute="height" secondItem="2Pw-59-1Rd" secondAttribute="height" id="7M8-p4-wSd"/>
                             <constraint firstItem="Phf-uA-0jK" firstAttribute="top" secondItem="AZC-KR-Cub" secondAttribute="bottom" constant="25" id="89V-Eg-gSI"/>
-                            <constraint firstItem="2Pw-59-1Rd" firstAttribute="top" secondItem="dAe-3h-f7C" secondAttribute="bottom" id="APH-ua-dk9"/>
+                            <constraint firstItem="2Pw-59-1Rd" firstAttribute="top" secondItem="dAe-3h-f7C" secondAttribute="bottom" constant="10" id="APH-ua-dk9"/>
                             <constraint firstItem="AZC-KR-Cub" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="BgJ-ZL-QyD"/>
                             <constraint firstItem="hYm-lk-4xs" firstAttribute="trailing" secondItem="2Pw-59-1Rd" secondAttribute="trailing" id="EEz-vZ-7kP"/>
                             <constraint firstItem="hYm-lk-4xs" firstAttribute="trailing" secondItem="Oce-vJ-3Zk" secondAttribute="trailing" id="HfC-q5-e9t"/>

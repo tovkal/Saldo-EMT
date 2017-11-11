@@ -33,7 +33,7 @@ class MainTests: XCTestCase {
         let app = XCUIApplication()
         XCTAssert(app.staticTexts["4.0"].exists)
         app.buttons["Balance"].tap()
-        let textField = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element
+        let textField = app.textFields.firstMatch
         textField.tap()
         textField.typeText("6")
         app.buttons["Accept"].tap()

@@ -53,7 +53,7 @@ class FareStore: FareStoreProtocol {
         if let path = Bundle.main.path(forResource: "fares_es", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
-                return JSON(data: data)
+                return try JSON(data: data)
             } catch let error as NSError {
                 log.error(error)
                 Crashlytics.sharedInstance().recordError(error)

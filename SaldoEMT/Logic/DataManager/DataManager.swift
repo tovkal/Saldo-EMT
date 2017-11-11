@@ -113,23 +113,29 @@ class DataManager: DataManagerProtocol {
 
             log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
 
-            let json = JSON(data: responseData)
-            let timestamp = json["timestamp"].intValue
-            let lastTimestamp = self.settingsStore.getLastTimestamp()
+            do {
+                let json = try JSON(data: responseData)
+                let timestamp = json["timestamp"].intValue
+                let lastTimestamp = self.settingsStore.getLastTimestamp()
 
-            // lastTimestamp is 0 when no update has ever been received
-            if lastTimestamp == 0 || lastTimestamp < timestamp {
-                self.jsonParser.processJSON(json: json)
-                self.updateBalanceAfterUpdatingFares()
-                self.settingsStore.updateTimestamp(timestamp)
-                // Send updated fares notification
-                self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
+                // lastTimestamp is 0 when no update has ever been received
+                if lastTimestamp == 0 || lastTimestamp < timestamp {
+                    self.jsonParser.processJSON(json: json)
+                    self.updateBalanceAfterUpdatingFares()
+                    self.settingsStore.updateTimestamp(timestamp)
+                    // Send updated fares notification
+                    self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
 
-                log.debug("Processed new fare data")
-                completionHandler?(.newData)
-            } else {
-                log.debug("No new data downloaded")
-                completionHandler?(.noData)
+                    log.debug("Processed new fare data")
+                    completionHandler?(.newData)
+                } else {
+                    log.debug("No new data downloaded")
+                    completionHandler?(.noData)
+                }
+            } catch let error as NSError {
+                Crashlytics.sharedInstance().recordError(error)
+                completionHandler?(.failed)
+                return
             }
         }
 

@@ -1,0 +1,12 @@
+language: objective-c
+osx_image: xcode9
+cache:
+  directories:
+  - Carthage
+before_install:
+- gem install fastlane --no-rdoc --no-ri --no-document --quiet
+script:
+- fastlane test
+env:
+  global:
+    secure: lklWqJ/XzDSGYeogj+i3LsUcyZHNkU1kwTbSBgGXZ+zu5LBIiPOh6sZTKl4AbBOwzQXjx/zMRtGFT9+U3hvjkAw0MYtCEQ+MMC7o0UAJkwyLACbg8qK2YKnruYM2+iNtyBej2S8id3TnwYq9y41E5esmC45h7qfBBteepqZk3wLDiIiVGdoRIil27jlG+CvbAlcIqWcTo7zSlj2HxDdQEXQKb+EtpMduQItjxIR5RjrM/xnFnhsP9g0YkwmwoFwaNVfuwjiuuat825fJBbrBMiQIv86Fq4Wd1TjuNxCHKp8rKz588aLIHpxjA3JmsqPsVEDI/7rDXvQyejx03p898wZQUqHl6OQgoadK8y/3/TwvU69pdrLWdgRGhRjtC1iuhDQOienD23WWzdCMwWNPBocOmvqGspyxaBJmKSsZU5rteUhlwLNOFlTVr2mmetq4rmIudPf+apqRE1GdxKlcINhdRIsWkCsJq8b+tsVuzL78OgfYWAyQOlRXNRhIPkoVX3vvTg7u9JkkH76Rtw6/Yg4CdBdnbvbcbl5sXOmxbSewZAhbIAjkZCbCcCNKcknw7BSpOHJerN12wcnoglhj/lVkVYcO00lTkI5aDAnpOplJDZo7LppNK0V7jw8uyUGqhv0p8g+4ph4CmojE0jAopU/Tq6s5CEcLn9kjMLQuoew=

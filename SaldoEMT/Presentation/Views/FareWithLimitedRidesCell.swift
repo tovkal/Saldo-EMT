@@ -13,8 +13,8 @@ class FareWithLimitedRidesCell: FareCell {
     @IBOutlet weak var totalRides: UILabel!
     @IBOutlet weak var totalCost: UILabel!
 
-    override func populateWithFare(_ fare: Fare) {
-        super.populateWithFare(fare)
+    override func populateWithFare(_ fare: Fare, completionHandler: (() -> Void)? = nil) {
+        super.populateWithFare(fare, completionHandler: completionHandler)
 
         totalCost.text = fare.cost.toDecimalString()
 

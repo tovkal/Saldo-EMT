@@ -50,25 +50,35 @@ extension FaresViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fare = fares[indexPath.row]
 
+        let completionHandler = { [weak self] in
+            guard let visibleRows = self?.tableView.indexPathsForVisibleRows else { return }
+            if visibleRows.contains(indexPath) {
+                DispatchQueue.main.async {
+                    self?.tableView.beginUpdates()
+                    self?.tableView.endUpdates()
+                }
+            }
+        }
+
         if fare.rides.value == nil && fare.days.value == nil {
             let cell = tableView.dequeueReusableCell(withIdentifier: fareIdentifier, for: indexPath) as! FareCell
             // swiftlint:disable:previous force_cast
 
-            cell.populateWithFare(fare)
+            cell.populateWithFare(fare, completionHandler: completionHandler)
 
             return cell
         } else if fare.rides.value == nil && fare.days.value != nil {
             let cell = tableView.dequeueReusableCell(withIdentifier: fareWithUnlimitedRidesIdentifier, for: indexPath) as! FareWithUnlimitedRidesCell
             // swiftlint:disable:previous force_cast
 
-            cell.populateWithFare(fare)
+            cell.populateWithFare(fare, completionHandler: completionHandler)
 
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fareWithRidesIdentifier, for: indexPath) as! FareWithLimitedRidesCell
             // swiftlint:disable:previous force_cast
 
-            cell.populateWithFare(fare)
+            cell.populateWithFare(fare, completionHandler: completionHandler)
 
             return cell
         }

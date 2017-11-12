@@ -41,6 +41,7 @@
 		95A8EFBA1FAF8D180065EFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A8EFBC1FAF8D180065EFC5 /* InfoPlist.strings */; };
 		95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB781B1FA4F33600065166 /* HomeViewModel.swift */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
+		95B510531FB8DE39004B79A5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B510521FB8DE38004B79A5 /* Kingfisher.framework */; };
 		95BEFC841FA7BAE500F9D7DC /* FareStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
@@ -152,6 +153,7 @@
 		95A8EFBD1FAF8D5F0065EFC5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95AB781B1FA4F33600065166 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
+		95B510521FB8DE38004B79A5 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareStoreSpec.swift; sourceTree = "<group>"; };
 		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B510531FB8DE39004B79A5 /* Kingfisher.framework in Frameworks */,
 				959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */,
 				959021F71DEA2A8800194E89 /* Fabric.framework in Frameworks */,
 				959021F81DEA2A8800194E89 /* GoogleMobileAds.framework in Frameworks */,
@@ -284,6 +287,7 @@
 		9578B96B1DA93A550073CC66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95B510521FB8DE38004B79A5 /* Kingfisher.framework */,
 				95FF4A691FAF7D7800392025 /* IBLocalizable.framework */,
 				95D960E81FA5E43B00C205E3 /* Nimble.framework */,
 				95D960E61FA5E42F00C205E3 /* Quick.framework */,
@@ -672,6 +676,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
@@ -680,6 +685,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

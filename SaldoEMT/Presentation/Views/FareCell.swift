@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
-private let few = "FewLines"
-private let many = "MuchLines"
+import Kingfisher
 
 class FareCell: UITableViewCell {
 
@@ -21,9 +19,19 @@ class FareCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    func populateWithFare(_ fare: Fare) {
+    func populateWithFare(_ fare: Fare, completionHandler: (() -> Void)? = nil) {
         fareName.text = fare.name
-        // TODO Download image busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)
+        if let url = URL(string: fare.imageUrl) {
+            busLines.kf.setImage(with: url) { _, _, _, _ in
+                if self.busLines.frame.height == 0 {
+                    completionHandler?()
+                }
+            }
+        }
         costPerRide.text = fare.cost.toDecimalString()
+    }
+
+    override func prepareForReuse() {
+        self.busLines.kf.cancelDownloadTask()
     }
 }

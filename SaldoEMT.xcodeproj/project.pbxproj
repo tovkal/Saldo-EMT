@@ -56,8 +56,6 @@
 		95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
-		95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */; };
-		95E27DFF1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */; };
 		95FEB1E31F9D3C130076361A /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		95FEB1E51F9D3C9C0076361A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		95FEB1E61F9D3CF10076361A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
@@ -167,8 +165,6 @@
 		95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareStore.swift; sourceTree = "<group>"; };
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
-		95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithUnlimitedRidesCell.swift; sourceTree = "<group>"; };
-		95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithUnlimitedRidesCell.xib; sourceTree = "<group>"; };
 		95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95FF4A691FAF7D7800392025 /* IBLocalizable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBLocalizable.framework; path = Carthage/Build/iOS/IBLocalizable.framework; sourceTree = "<group>"; };
 		95FF4A6E1FAF7F4800392025 /* IBLocalizable */ = {isa = PBXFileReference; lastKnownFileType = folder; name = IBLocalizable; path = Carthage/Checkouts/IBLocalizable/IBLocalizable; sourceTree = SOURCE_ROOT; };
@@ -239,8 +235,6 @@
 				95AC90861BCC000D00787C79 /* FareCell.xib */,
 				95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */,
 				95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */,
-				95E27DFC1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift */,
-				95E27DFD1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -615,7 +609,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95E27DFF1BED38B30047AD01 /* FareWithUnlimitedRidesCell.xib in Resources */,
 				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				95A8EFB31FAF89940065EFC5 /* Localizable.strings in Resources */,
 				9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */,
@@ -720,7 +713,6 @@
 				95D960F21FA6222200C205E3 /* URLSessionProtocol.swift in Sources */,
 				951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
-				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,

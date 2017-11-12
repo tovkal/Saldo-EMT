@@ -67,13 +67,6 @@ extension FaresViewController: UITableViewDataSource {
             cell.populateWithFare(fare, completionHandler: completionHandler)
 
             return cell
-        } else if fare.rides.value == nil && fare.days.value != nil {
-            let cell = tableView.dequeueReusableCell(withIdentifier: fareWithUnlimitedRidesIdentifier, for: indexPath) as! FareWithUnlimitedRidesCell
-            // swiftlint:disable:previous force_cast
-
-            cell.populateWithFare(fare, completionHandler: completionHandler)
-
-            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: fareWithRidesIdentifier, for: indexPath) as! FareWithLimitedRidesCell
             // swiftlint:disable:previous force_cast

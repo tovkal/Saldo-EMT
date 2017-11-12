@@ -22,10 +22,8 @@ class FareCell: UITableViewCell {
     }
 
     func populateWithFare(_ fare: Fare) {
-        if !fare.lines.isEmpty {
-            fareName.text = fare.name
-            busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)
-            costPerRide.text = fare.cost.toDecimalString()
-        }
+        fareName.text = fare.name
+        // TODO Download image busLines.image = UIImage(named: fare.lines.count == 2 ? few : many)
+        costPerRide.text = fare.cost.toDecimalString()
     }
 }

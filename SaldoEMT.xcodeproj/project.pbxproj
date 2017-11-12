@@ -20,7 +20,6 @@
 		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; };
 		95559B171C516E6B0003E32F /* DataManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95559B161C516E6B0003E32F /* DataManagerError.swift */; };
 		9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D2291C4AB8CE008E2A47 /* Fare.swift */; };
-		9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22B1C4AB97B008E2A47 /* BusLine.swift */; };
 		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
 		95636D641FA64D530057081E /* SettingsStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95636D631FA64D530057081E /* SettingsStoreMock.swift */; };
 		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
@@ -120,7 +119,6 @@
 		954020AB1BCA627C009419EA /* FareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareCell.swift; sourceTree = "<group>"; };
 		95559B161C516E6B0003E32F /* DataManagerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerError.swift; sourceTree = "<group>"; };
 		9562D2291C4AB8CE008E2A47 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
-		9562D22B1C4AB97B008E2A47 /* BusLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusLine.swift; sourceTree = "<group>"; };
 		9562D22D1C4AE00B008E2A47 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		95636D631FA64D530057081E /* SettingsStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreMock.swift; sourceTree = "<group>"; };
 		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
@@ -448,7 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				95D9F5FB1C4C0C9000A696B9 /* Balance.swift */,
-				9562D22B1C4AB97B008E2A47 /* BusLine.swift */,
 				9562D2291C4AB8CE008E2A47 /* Fare.swift */,
 				957FE81E1DBFE5FF002833D5 /* Settings.swift */,
 			);
@@ -717,7 +714,6 @@
 				95D960F21FA6222200C205E3 /* URLSessionProtocol.swift in Sources */,
 				951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
-				9562D22C1C4AB97B008E2A47 /* BusLine.swift in Sources */,
 				95E27DFE1BED38B30047AD01 /* FareWithUnlimitedRidesCell.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,

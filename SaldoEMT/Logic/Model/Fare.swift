@@ -10,12 +10,13 @@ import Foundation
 import RealmSwift
 
 class Fare: Object {
+    @objc dynamic var id = -1
+    @objc dynamic var name = ""
+    @objc dynamic var busLineType = ""
     @objc dynamic var cost: Double = 0.0
     let days = RealmOptional<Int>()
-    let lines = List<BusLine>()
-    @objc dynamic var name = ""
-    @objc dynamic var id = -1
     let rides = RealmOptional<Int>()
+    @objc dynamic var imageUrl = ""
     @objc dynamic var tripCost: Double = 0.0
 
     override static func primaryKey() -> String? {

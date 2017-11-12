@@ -19,51 +19,34 @@ class JsonParser: NSObject, JsonParserProtocol {
     let realm = RealmHelper.getRealm()
 
     func processJSON(json: JSON) {
-        parseBusLines(json)
         parseFares(json)
-    }
-
-    private func parseBusLines(_ json: JSON) {
-        for (_, line) in json["lines"] {
-            for (lineNumber, lineInfo) in line {
-                let busLine = BusLine()
-                busLine.number = Int(lineNumber)!
-                busLine.hexColor = lineInfo["color"].stringValue
-                busLine.name = lineInfo["name"].stringValue
-
-                do {
-                    try realm.write {
-                        realm.add(busLine, update: true)
-                    }
-                } catch let error as NSError {
-                    log.error(error)
-                    Crashlytics.sharedInstance().recordError(error)
-                }
-            }
-        }
     }
 
     private func parseFares(_ json: JSON) {
         for (_, fare) in json["fares"] {
             for (fareNumber, fareInfo) in fare {
-                storeFare(id: Int(fareNumber)!, name: fareInfo["name"].stringValue, rides: fareInfo["rides"].int,
-                          price: fareInfo["price"].doubleValue, days: fareInfo["days"].int,
-                          busLines: getBusLinesForLineNumbers(fareInfo["lines"].arrayObject as? [Int]))
+                storeFare(id: Int(fareNumber)!,
+                          name: fareInfo["name"].stringValue,
+                          busLineType: fareInfo["busLineType"].stringValue,
+                          cost: fareInfo["cost"].doubleValue,
+                          days: fareInfo["days"].int,
+                          rides: fareInfo["rides"].int,
+                          imageUrl: fareInfo["imageUrl"].stringValue)
             }
         }
     }
 
-    private func storeFare(id: Int, name: String, rides: Int?, price: Double, days: Int?, busLines: [BusLine]) {
+    // swiftlint:disable:next function_parameter_count
+    private func storeFare(id: Int, name: String, busLineType: String, cost: Double, days: Int?, rides: Int?, imageUrl: String) {
         let fare = Fare()
 
-        fare.name = name
         fare.id = id
-        fare.rides.value = rides
-        fare.cost = price
+        fare.name = name
+        fare.busLineType = busLineType
+        fare.cost = cost
         fare.days.value = days
-        for busLine in busLines {
-            fare.lines.append(busLine)
-        }
+        fare.rides.value = rides
+        fare.imageUrl = imageUrl
 
         if let rides = fare.rides.value {
             fare.tripCost = fare.cost / Double(rides)
@@ -80,11 +63,5 @@ class JsonParser: NSObject, JsonParserProtocol {
             log.error(error)
             Crashlytics.sharedInstance().recordError(error)
         }
-    }
-
-    private func getBusLinesForLineNumbers(_ busLines: [Int]?) -> [BusLine] {
-        guard let busLines = busLines else { fatalError("A Fare must have at least one BusLine") }
-        let predicate = NSPredicate(format: "number IN %@", busLines)
-        return Array(realm.objects(BusLine.self).filter(predicate))
     }
 }

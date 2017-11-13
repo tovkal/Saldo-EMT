@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 import UIKit
 import Crashlytics
+import Kingfisher
 
 struct DataManagerErrors {
     static let costPerTripUnknown = "Cost per trip is unknown, can't add trip"
@@ -53,6 +54,7 @@ class DataManager: DataManagerProtocol {
 
         // Select a default fare if none is currently selected
         _ = getSelectedFare()
+        prefetchBusLineTypeImages()
     }
 
     // MARK: - Fare functions
@@ -199,5 +201,10 @@ class DataManager: DataManagerProtocol {
         } catch let error as NSError {
             Crashlytics.sharedInstance().recordError(error)
         }
+    }
+
+    private func prefetchBusLineTypeImages() {
+        let urls: [URL] = Set(getAllFares().map {$0.imageUrl}).flatMap {URL(string: $0 )}
+        ImagePrefetcher(urls: urls).start()
     }
 }

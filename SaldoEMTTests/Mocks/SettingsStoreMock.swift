@@ -58,7 +58,7 @@ class SettingsStoreMock: SettingsStoreProtocol {
 
     func getCurrentState(with fare: Fare) -> HomeViewModel {
         getCurrentStateCalled = true
-        return HomeViewModel(currentFareName: "", tripsDone: 0, tripsRemaining: 0, balance: 0.0)
+        return HomeViewModel(currentFareName: "", tripsDone: 0, tripsRemaining: 0, balance: 0.0, imageUrl: "http://www.test.com/image.png")
     }
 
     func getLastTimestamp() -> Int {

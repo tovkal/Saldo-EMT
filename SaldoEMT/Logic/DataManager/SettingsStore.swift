@@ -116,7 +116,8 @@ class SettingsStore: SettingsStoreProtocol {
     func getCurrentState(with fare: Fare) -> HomeViewModel {
         let settings = getSettings()
         return HomeViewModel(currentFareName: fare.name, tripsDone: settings.tripsDone,
-                             tripsRemaining: settings.tripsRemaining, balance: settings.balance)
+                             tripsRemaining: settings.tripsRemaining, balance: settings.balance,
+                             imageUrl: fare.imageUrl)
     }
 
     func getLastTimestamp() -> Int {

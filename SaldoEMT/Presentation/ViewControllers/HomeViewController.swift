@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tripsMade: UILabel!
     @IBOutlet weak var tripsRemaining: UILabel!
     @IBOutlet weak var tripButton: UIButton!
+    @IBOutlet weak var busLineType: UIImageView!
     @IBOutlet weak var bannerView: GADBannerView!
 
     var dataManager: DataManagerProtocol!
@@ -29,6 +30,8 @@ class HomeViewController: UIViewController {
             tripsMade.text = "\(viewModel.tripsDone)"
             tripsRemaining.text = "\(viewModel.tripsRemaining)"
             remainingAmount.text = viewModel.balance.toDecimalString()
+            guard let url = URL(string: viewModel.imageUrl) else { return }
+            busLineType.kf.setImage(with: url)
         }
     }
 

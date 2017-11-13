@@ -241,6 +241,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="bannerView" destination="Oce-vJ-3Zk" id="P3x-Th-WT3"/>
+                        <outlet property="busLineType" destination="cNc-Bj-r0d" id="d6p-nx-08f"/>
                         <outlet property="fareName" destination="AZC-KR-Cub" id="EHX-8H-xjE"/>
                         <outlet property="remainingAmount" destination="cbr-vr-66a" id="OWi-Dx-MXc"/>
                         <outlet property="tripButton" destination="8cP-w7-dTC" id="BMc-e2-kGY"/>

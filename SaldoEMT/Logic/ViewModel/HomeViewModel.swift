@@ -13,4 +13,5 @@ struct HomeViewModel {
     let tripsDone: Int
     let tripsRemaining: Int
     let balance: Double
+    let imageUrl: String
 }

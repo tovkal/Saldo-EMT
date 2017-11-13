@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 import Crashlytics
+import UIKit
 
 protocol JsonParserProtocol {
     func processJSON(json: JSON)
@@ -46,7 +47,7 @@ class JsonParser: NSObject, JsonParserProtocol {
         fare.cost = cost
         fare.days.value = days
         fare.rides.value = rides
-        fare.imageUrl = imageUrl
+        fare.imageUrl = getUrlForScaleFactor(imageUrl)
 
         if let rides = fare.rides.value {
             fare.tripCost = fare.cost / Double(rides)
@@ -63,5 +64,12 @@ class JsonParser: NSObject, JsonParserProtocol {
             log.error(error)
             Crashlytics.sharedInstance().recordError(error)
         }
+    }
+
+    private func getUrlForScaleFactor(_ url: String) -> String {
+        let file = url[..<url.index(url.endIndex, offsetBy: -4)]
+        let urlExtension = url[url.index(url.endIndex, offsetBy: -4)...]
+        let scale = UIScreen.main.scale > 1.0 ? "@\(Int(UIScreen.main.scale))x" : ""
+        return file + scale + urlExtension
     }
 }

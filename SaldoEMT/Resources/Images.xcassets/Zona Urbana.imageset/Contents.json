@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "FewLines.png",
+      "filename" : "Zona Urbana.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "FewLines@2x.png",
+      "filename" : "Zona Urbana@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "FewLines@3x.png",
+      "filename" : "Zona Urbana@3x.png",
       "scale" : "3x"
     }
   ],

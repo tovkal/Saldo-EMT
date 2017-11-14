@@ -39,6 +39,8 @@ class JsonParser: NSObject, JsonParserProtocol {
 
     // swiftlint:disable:next function_parameter_count
     private func storeFare(id: Int, name: String, busLineType: String, cost: Double, days: Int?, rides: Int?, imageUrl: String) {
+        guard cost > 0.0 else { return }
+
         let fare = Fare()
 
         fare.id = id

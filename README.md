@@ -1,4 +1,6 @@
 # Saldo-EMT
+[![Build Status](https://travis-ci.org/Tovkal/Saldo-EMT.svg?branch=master)](https://travis-ci.org/Tovkal/Saldo-EMT)
+
 iOS app to log bus rides and manually manage bus pass balance from Palma's buses.
 
 # Building the app

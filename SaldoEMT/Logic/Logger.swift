@@ -17,7 +17,7 @@ let log: XCGLogger = {
 
     // Optionally set some configuration options
     #if DEBUG
-        systemDestination.outputLevel = .info
+        systemDestination.outputLevel = .debug
     #else
         systemDestination.outputLevel = .error
     #endif

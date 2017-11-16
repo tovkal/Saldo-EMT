@@ -17,7 +17,6 @@ protocol JsonParserProtocol {
 }
 
 class JsonParser: NSObject, JsonParserProtocol {
-    let realm = RealmHelper.getRealm()
 
     func processJSON(json: JSON) {
         parseFares(json)
@@ -56,6 +55,8 @@ class JsonParser: NSObject, JsonParserProtocol {
         } else {
             fare.tripCost = fare.cost
         }
+
+        let realm = RealmHelper.getRealm()
 
         do {
             try realm.write {

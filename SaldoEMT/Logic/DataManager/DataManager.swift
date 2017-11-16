@@ -135,6 +135,7 @@ class DataManager: DataManagerProtocol {
                     completionHandler?(.noData)
                 }
             } catch let error as NSError {
+                log.debug("Failed parsing data")
                 Crashlytics.sharedInstance().recordError(error)
                 completionHandler?(.failed)
                 return

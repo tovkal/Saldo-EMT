@@ -19,13 +19,24 @@ protocol JsonParserProtocol {
 class JsonParser: NSObject, JsonParserProtocol {
 
     func processJSON(json: JSON) {
-        parseFares(json)
+        let realm = RealmHelper.getRealm()
+
+        do {
+            try realm.write {
+                parseFares(realm, json)
+                updateSettings(realm, json)
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
     }
 
-    private func parseFares(_ json: JSON) {
+    private func parseFares(_ realm: Realm, _ json: JSON) {
         for (_, fare) in json["fares"] {
             for (fareNumber, fareInfo) in fare {
-                storeFare(id: Int(fareNumber)!,
+                storeFare(realm,
+                          id: Int(fareNumber)!,
                           name: fareInfo["name"].stringValue,
                           busLineType: fareInfo["busLineType"].stringValue,
                           cost: fareInfo["cost"].doubleValue,
@@ -37,7 +48,8 @@ class JsonParser: NSObject, JsonParserProtocol {
     }
 
     // swiftlint:disable:next function_parameter_count
-    private func storeFare(id: Int, name: String, busLineType: String, cost: Double, days: Int?, rides: Int?, imageUrl: String) {
+    private func storeFare(_ realm: Realm, id: Int, name: String, busLineType: String,
+                           cost: Double, days: Int?, rides: Int?, imageUrl: String) {
         guard cost > 0.0 else { return }
 
         let fare = Fare()
@@ -55,18 +67,8 @@ class JsonParser: NSObject, JsonParserProtocol {
         } else {
             fare.tripCost = fare.cost
         }
-
-        let realm = RealmHelper.getRealm()
-
-        do {
-            try realm.write {
-                // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
-                realm.add(fare, update: true)
-            }
-        } catch let error as NSError {
-            log.error(error)
-            Crashlytics.sharedInstance().recordError(error)
-        }
+        // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
+        realm.add(fare, update: true)
     }
 
     private func getUrlForScaleFactor(_ url: String) -> String {
@@ -74,5 +76,14 @@ class JsonParser: NSObject, JsonParserProtocol {
         let urlExtension = url[url.index(url.endIndex, offsetBy: -4)...]
         let scale = UIScreen.main.scale > 1.0 ? "@\(Int(UIScreen.main.scale))x" : ""
         return file + scale + urlExtension
+    }
+
+    private func updateSettings(_ realm: Realm, _ json: JSON) {
+        guard let timestamp = json["timestamp"].int else { return }
+        let settings = realm.objects(Settings.self).first ?? Settings()
+        guard settings.lastTimestamp == 0 else { return }
+        log.debug("Setting initial timestamp")
+        settings.lastTimestamp = timestamp
+        realm.add(settings, update: true)
     }
 }

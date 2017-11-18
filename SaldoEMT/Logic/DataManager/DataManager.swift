@@ -89,7 +89,7 @@ class DataManager: DataManagerProtocol {
     func downloadNewFares(completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         log.debug("Downloading fares json")
 
-        let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_es.json"
+        let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_\(getLanguageCode()).json"
         guard let url = URL(string: endpoint) else {
             log.error("Error: cannot create URL")
             completionHandler?(.failed)
@@ -207,5 +207,16 @@ class DataManager: DataManagerProtocol {
     private func prefetchBusLineTypeImages() {
         let urls: [URL] = Set(getAllFares().map {$0.imageUrl}).flatMap {URL(string: $0 )}
         ImagePrefetcher(urls: urls).start()
+    }
+
+    private func getLanguageCode() -> String {
+        let supportedLanguages = ["es", "ca", "en"]
+        for language in Locale.preferredLanguages {
+            if supportedLanguages.contains(language) {
+                return language
+            }
+        }
+
+        return "en"
     }
 }

@@ -50,7 +50,7 @@ class FareStore: FareStoreProtocol {
     }
 
     private func getFileData() -> JSON? {
-        if let path = Bundle.main.path(forResource: "fares_es", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "fares", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
                 return try JSON(data: data)

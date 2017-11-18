@@ -22,7 +22,7 @@
 		9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D2291C4AB8CE008E2A47 /* Fare.swift */; };
 		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
 		95636D641FA64D530057081E /* SettingsStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95636D631FA64D530057081E /* SettingsStoreMock.swift */; };
-		9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 9566B8B81BB85B53000ED3E1 /* fares_es.json */; };
+		956EEB291FC0D15200794D99 /* fares.json in Resources */ = {isa = PBXBuildFile; fileRef = 956EEB2B1FC0D15200794D99 /* fares.json */; };
 		957AEDD61FA64DEC0083B8C9 /* JsonParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD51FA64DEC0083B8C9 /* JsonParserMock.swift */; };
 		957AEDD81FA64E080083B8C9 /* FareStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */; };
 		957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */; };
@@ -120,7 +120,9 @@
 		9562D2291C4AB8CE008E2A47 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
 		9562D22D1C4AE00B008E2A47 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		95636D631FA64D530057081E /* SettingsStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreMock.swift; sourceTree = "<group>"; };
-		9566B8B81BB85B53000ED3E1 /* fares_es.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fares_es.json; sourceTree = "<group>"; };
+		956EEB2A1FC0D15200794D99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/fares.json; sourceTree = "<group>"; };
+		956EEB2C1FC0D90400794D99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/fares.json; sourceTree = "<group>"; };
+		956EEB2D1FC0D90500794D99 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = ca; path = ca.lproj/fares.json; sourceTree = "<group>"; };
 		9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = SOURCE_ROOT; };
 		9578B97B1DA93E810073CC66 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9578B97C1DA93E810073CC66 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -273,7 +275,7 @@
 		9566B8B61BB85B4A000ED3E1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				9566B8B81BB85B53000ED3E1 /* fares_es.json */,
+				956EEB2B1FC0D15200794D99 /* fares.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -611,7 +613,7 @@
 			files = (
 				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				95A8EFB31FAF89940065EFC5 /* Localizable.strings in Resources */,
-				9566B8BA1BB85B53000ED3E1 /* fares_es.json in Resources */,
+				956EEB291FC0D15200794D99 /* fares.json in Resources */,
 				95FF4A781FAF83C200392025 /* Main.storyboard in Resources */,
 				95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */,
 				95FF4A6F1FAF7F4800392025 /* IBLocalizable in Resources */,
@@ -758,6 +760,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		956EEB2B1FC0D15200794D99 /* fares.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				956EEB2A1FC0D15200794D99 /* es */,
+				956EEB2C1FC0D90400794D99 /* en */,
+				956EEB2D1FC0D90500794D99 /* ca */,
+			);
+			name = fares.json;
+			sourceTree = "<group>";
+		};
 		95A8EFB51FAF89940065EFC5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

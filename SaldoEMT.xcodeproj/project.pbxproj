@@ -38,7 +38,6 @@
 		95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A42A1F9FA74200DBB166 /* JsonParser.swift */; };
 		95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F6F1DEA26870016B080 /* SettingsStore.swift */; };
 		95A8EFB31FAF89940065EFC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A8EFB51FAF89940065EFC5 /* Localizable.strings */; };
-		95A8EFBA1FAF8D180065EFC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A8EFBC1FAF8D180065EFC5 /* InfoPlist.strings */; };
 		95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB781B1FA4F33600065166 /* HomeViewModel.swift */; };
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
 		95B510531FB8DE39004B79A5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B510521FB8DE38004B79A5 /* Kingfisher.framework */; };
@@ -149,8 +148,6 @@
 		95A8EFB41FAF89940065EFC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A8EFB61FAF89C10065EFC5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		95A8EFB71FAF89CB0065EFC5 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
-		95A8EFBB1FAF8D180065EFC5 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		95A8EFBD1FAF8D5F0065EFC5 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95AB781B1FA4F33600065166 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
 		95B510521FB8DE38004B79A5 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -361,7 +358,6 @@
 		95A4CBD61B5A852A002FB3E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				95A8EFBC1FAF8D180065EFC5 /* InfoPlist.strings */,
 				95A4CBD71B5A852A002FB3E9 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -618,7 +614,6 @@
 				95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */,
 				95FF4A6F1FAF7F4800392025 /* IBLocalizable in Resources */,
 				95FF4A7A1FAF861800392025 /* LaunchScreen.xib in Resources */,
-				95A8EFBA1FAF8D180065EFC5 /* InfoPlist.strings in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,15 +773,6 @@
 				95A8EFB71FAF89CB0065EFC5 /* ca */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		95A8EFBC1FAF8D180065EFC5 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95A8EFBB1FAF8D180065EFC5 /* ca */,
-				95A8EFBD1FAF8D5F0065EFC5 /* es */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

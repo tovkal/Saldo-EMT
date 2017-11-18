@@ -42,6 +42,17 @@
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
 		95B510531FB8DE39004B79A5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B510521FB8DE38004B79A5 /* Kingfisher.framework */; };
 		95BEFC841FA7BAE500F9D7DC /* FareStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */; };
+		95CFCC6E1FC0E7C30051167F /* LocalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC611FC0E7C20051167F /* LocalizableString.swift */; };
+		95CFCC6F1FC0E7C30051167F /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC631FC0E7C20051167F /* Localizable.swift */; };
+		95CFCC701FC0E7C30051167F /* IBLocalizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CFCC641FC0E7C20051167F /* IBLocalizable.h */; };
+		95CFCC711FC0E7C30051167F /* LocalizableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC661FC0E7C20051167F /* LocalizableTextField.swift */; };
+		95CFCC721FC0E7C30051167F /* LocalizableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC671FC0E7C20051167F /* LocalizableTextView.swift */; };
+		95CFCC731FC0E7C30051167F /* LocalizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC681FC0E7C20051167F /* LocalizableButton.swift */; };
+		95CFCC741FC0E7C30051167F /* LocalizableNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC691FC0E7C20051167F /* LocalizableNavigationItem.swift */; };
+		95CFCC751FC0E7C30051167F /* LocalizableUISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC6A1FC0E7C20051167F /* LocalizableUISearchBar.swift */; };
+		95CFCC761FC0E7C30051167F /* LocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC6B1FC0E7C20051167F /* LocalizableLabel.swift */; };
+		95CFCC771FC0E7C30051167F /* LocalizableUIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC6C1FC0E7C20051167F /* LocalizableUIBarItem.swift */; };
+		95CFCC781FC0E7C30051167F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95CFCC6D1FC0E7C20051167F /* Info.plist */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
 		95D960E71FA5E42F00C205E3 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D960E61FA5E42F00C205E3 /* Quick.framework */; };
@@ -62,7 +73,6 @@
 		95FEB1E81F9D3D420076361A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97B1DA93E810073CC66 /* Realm.framework */; };
 		95FEB1EA1F9D3D6E0076361A /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */; };
 		95FF4A6C1FAF7E4B00392025 /* IBLocalizable.framework in Headers */ = {isa = PBXBuildFile; fileRef = 95FF4A691FAF7D7800392025 /* IBLocalizable.framework */; };
-		95FF4A6F1FAF7F4800392025 /* IBLocalizable in Resources */ = {isa = PBXBuildFile; fileRef = 95FF4A6E1FAF7F4800392025 /* IBLocalizable */; };
 		95FF4A781FAF83C200392025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FF4A771FAF83C100392025 /* Main.storyboard */; };
 		95FF4A7A1FAF861800392025 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FF4A791FAF861800392025 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
@@ -154,6 +164,18 @@
 		95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareStoreSpec.swift; sourceTree = "<group>"; };
 		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		95CFCC611FC0E7C20051167F /* LocalizableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableString.swift; sourceTree = "<group>"; };
+		95CFCC631FC0E7C20051167F /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		95CFCC641FC0E7C20051167F /* IBLocalizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBLocalizable.h; sourceTree = "<group>"; };
+		95CFCC661FC0E7C20051167F /* LocalizableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableTextField.swift; sourceTree = "<group>"; };
+		95CFCC671FC0E7C20051167F /* LocalizableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableTextView.swift; sourceTree = "<group>"; };
+		95CFCC681FC0E7C20051167F /* LocalizableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableButton.swift; sourceTree = "<group>"; };
+		95CFCC691FC0E7C20051167F /* LocalizableNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableNavigationItem.swift; sourceTree = "<group>"; };
+		95CFCC6A1FC0E7C20051167F /* LocalizableUISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableUISearchBar.swift; sourceTree = "<group>"; };
+		95CFCC6B1FC0E7C20051167F /* LocalizableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableLabel.swift; sourceTree = "<group>"; };
+		95CFCC6C1FC0E7C20051167F /* LocalizableUIBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableUIBarItem.swift; sourceTree = "<group>"; };
+		95CFCC6D1FC0E7C20051167F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95CFCC791FC0E84D0051167F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Vendor/README.md; sourceTree = SOURCE_ROOT; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95D960E61FA5E42F00C205E3 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		95D960E81FA5E43B00C205E3 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -166,7 +188,6 @@
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 		95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95FF4A691FAF7D7800392025 /* IBLocalizable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBLocalizable.framework; path = Carthage/Build/iOS/IBLocalizable.framework; sourceTree = "<group>"; };
-		95FF4A6E1FAF7F4800392025 /* IBLocalizable */ = {isa = PBXFileReference; lastKnownFileType = folder; name = IBLocalizable; path = Carthage/Checkouts/IBLocalizable/IBLocalizable; sourceTree = SOURCE_ROOT; };
 		95FF4A771FAF83C100392025 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		95FF4A791FAF861800392025 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -413,6 +434,49 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		95CFCC5F1FC0E7C20051167F /* IBLocalizable */ = {
+			isa = PBXGroup;
+			children = (
+				95CFCC601FC0E7C20051167F /* Utils */,
+				95CFCC621FC0E7C20051167F /* Protocol */,
+				95CFCC641FC0E7C20051167F /* IBLocalizable.h */,
+				95CFCC651FC0E7C20051167F /* Views */,
+				95CFCC6D1FC0E7C20051167F /* Info.plist */,
+			);
+			name = IBLocalizable;
+			path = Carthage/Checkouts/IBLocalizable/IBLocalizable;
+			sourceTree = SOURCE_ROOT;
+		};
+		95CFCC601FC0E7C20051167F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				95CFCC611FC0E7C20051167F /* LocalizableString.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		95CFCC621FC0E7C20051167F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				95CFCC631FC0E7C20051167F /* Localizable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		95CFCC651FC0E7C20051167F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95CFCC661FC0E7C20051167F /* LocalizableTextField.swift */,
+				95CFCC671FC0E7C20051167F /* LocalizableTextView.swift */,
+				95CFCC681FC0E7C20051167F /* LocalizableButton.swift */,
+				95CFCC691FC0E7C20051167F /* LocalizableNavigationItem.swift */,
+				95CFCC6A1FC0E7C20051167F /* LocalizableUISearchBar.swift */,
+				95CFCC6B1FC0E7C20051167F /* LocalizableLabel.swift */,
+				95CFCC6C1FC0E7C20051167F /* LocalizableUIBarItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		95D153D21B6A923C00866B59 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,9 +524,11 @@
 		95FF4A6D1FAF7F2F00392025 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				95FF4A6E1FAF7F4800392025 /* IBLocalizable */,
+				95CFCC5F1FC0E7C20051167F /* IBLocalizable */,
+				95CFCC791FC0E84D0051167F /* README.md */,
 			);
 			name = Vendor;
+			path = ../Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +538,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CFCC701FC0E7C30051167F /* IBLocalizable.h in Headers */,
 				95FF4A6C1FAF7E4B00392025 /* IBLocalizable.framework in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,12 +674,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CFCC781FC0E7C30051167F /* Info.plist in Resources */,
 				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				95A8EFB31FAF89940065EFC5 /* Localizable.strings in Resources */,
 				956EEB291FC0D15200794D99 /* fares.json in Resources */,
 				95FF4A781FAF83C200392025 /* Main.storyboard in Resources */,
 				95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */,
-				95FF4A6F1FAF7F4800392025 /* IBLocalizable in Resources */,
 				95FF4A7A1FAF861800392025 /* LaunchScreen.xib in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
 			);
@@ -697,6 +764,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */,
+				95CFCC711FC0E7C30051167F /* LocalizableTextField.swift in Sources */,
 				95A4CBDB1B5A852A002FB3E9 /* HomeViewController.swift in Sources */,
 				957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */,
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
@@ -704,19 +772,27 @@
 				95D960EF1FA5EB5800C205E3 /* DataManager.swift in Sources */,
 				95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
+				95CFCC751FC0E7C30051167F /* LocalizableUISearchBar.swift in Sources */,
 				952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */,
 				95559B171C516E6B0003E32F /* DataManagerError.swift in Sources */,
 				953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */,
 				95D960F21FA6222200C205E3 /* URLSessionProtocol.swift in Sources */,
 				951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */,
+				95CFCC761FC0E7C30051167F /* LocalizableLabel.swift in Sources */,
 				95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */,
+				95CFCC741FC0E7C30051167F /* LocalizableNavigationItem.swift in Sources */,
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
+				95CFCC721FC0E7C30051167F /* LocalizableTextView.swift in Sources */,
 				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,
+				95CFCC771FC0E7C30051167F /* LocalizableUIBarItem.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
 				95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */,
 				95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */,
+				95CFCC731FC0E7C30051167F /* LocalizableButton.swift in Sources */,
 				950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */,
 				95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */,
+				95CFCC6E1FC0E7C30051167F /* LocalizableString.swift in Sources */,
+				95CFCC6F1FC0E7C30051167F /* Localizable.swift in Sources */,
 				954020A21BC9714A009419EA /* FaresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,7 +26,7 @@ class DataManagerSpec: QuickSpec {
             Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
             settingsStore = SettingsStoreMock()
             jsonParser = JsonParserMock()
-            fareStore = FareStoreMock(jsonParser: jsonParser)
+            fareStore = FareStoreMock()
             session = URLSessionMock()
             notificationCenter = NotificationCenterMock()
             dataManager = DataManager(settingsStore: settingsStore, fareStore: fareStore, jsonParser: jsonParser,

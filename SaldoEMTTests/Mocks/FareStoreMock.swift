@@ -23,7 +23,7 @@ class FareStoreMock: FareStoreProtocol {
     private (set) var getFareForIdCalled = false
     private (set) var getFareForId: Int?
 
-    required init(jsonParser: JsonParserProtocol) {
+    init() {
         firstFare = Fare()
         secondFare = Fare()
         firstFare.name = firstFareName

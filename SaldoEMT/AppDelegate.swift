@@ -70,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func createDataManager() -> DataManager {
-        let jsonParser = JsonParser()
-        return DataManager(settingsStore: SettingsStore(), fareStore: FareStore(jsonParser: jsonParser), jsonParser: jsonParser)
+        return DataManager(settingsStore: SettingsStore(), fareStore: FareStore(), jsonParser: JsonParser())
     }
 }

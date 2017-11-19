@@ -12,26 +12,16 @@ import Nimble
 import RealmSwift
 import SwiftyJSON
 
-// swiftlint:disable function_body_length
 class FareStoreSpec: QuickSpec {
     override func spec() {
         var fareStore: FareStore!
-        var jsonParser: JsonParserMock!
 
         beforeEach {
             Realm.Configuration.defaultConfiguration.inMemoryIdentifier = self.name
-            jsonParser = JsonParserMock()
-            fareStore = FareStore(jsonParser: jsonParser)
+            fareStore = FareStore()
         }
 
         describe("init") {
-            context("realm is empty") {
-                it("parses fare file") {
-                    _ = FareStore(jsonParser: jsonParser)
-                    expect(jsonParser.processJSONCalled).to(beTrue())
-                }
-            }
-
             context("realm is not empty") {
                 beforeEach {
                     let fare = Fare()
@@ -41,12 +31,6 @@ class FareStoreSpec: QuickSpec {
                         realm.deleteAll()
                         realm.add(fare)
                     }
-                }
-
-                it("does not parse fare file") {
-                    jsonParser = JsonParserMock()
-                    _ = FareStore(jsonParser: jsonParser)
-                    expect(jsonParser.processJSONCalled).to(beFalse())
                 }
             }
         }

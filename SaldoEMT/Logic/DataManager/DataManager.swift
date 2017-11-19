@@ -18,6 +18,11 @@ struct DataManagerErrors {
     static let unknown = "Unknown error ocurred"
 }
 
+enum UpdateResult {
+    case newFares
+    case noUpdate
+}
+
 protocol DataManagerProtocol {
     init(settingsStore: SettingsStoreProtocol, fareStore: FareStoreProtocol, jsonParser: JsonParserProtocol, session: URLSessionProtocol, notificationCenter: NotificationCenterProtocol)
     func getAllFares() -> [Fare]
@@ -51,6 +56,11 @@ class DataManager: DataManagerProtocol {
         self.jsonParser = jsonParser
         self.session = session
         self.notificationCenter = notificationCenter
+
+        // On first run create database from file. On subsequent runs check if embedded file is updated
+        if let json = getFileData() {
+            _ = processFares(from: json)
+        }
 
         // Select a default fare if none is currently selected
         _ = getSelectedFare()
@@ -117,21 +127,10 @@ class DataManager: DataManagerProtocol {
 
             do {
                 let json = try JSON(data: responseData)
-                let timestamp = json["timestamp"].intValue
-                let lastTimestamp = self.settingsStore.getLastTimestamp()
-
-                // lastTimestamp is 0 when no update has ever been received
-                if lastTimestamp == 0 || lastTimestamp < timestamp {
-                    self.jsonParser.processJSON(json: json)
-                    self.updateBalanceAfterUpdatingFares()
-                    self.settingsStore.updateTimestamp(timestamp)
-                    // Send updated fares notification
-                    self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
-
-                    log.debug("Processed new fare data")
+                switch self.processFares(from: json) {
+                case .newFares:
                     completionHandler?(.newData)
-                } else {
-                    log.debug("No new data downloaded")
+                case .noUpdate:
                     completionHandler?(.noData)
                 }
             } catch let error as NSError {
@@ -218,5 +217,41 @@ class DataManager: DataManagerProtocol {
         }
 
         return "en"
+    }
+
+    private func getFileData() -> JSON? {
+        if let path = Bundle.main.path(forResource: "fares", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
+                return try JSON(data: data)
+            } catch let error as NSError {
+                log.error(error)
+                Crashlytics.sharedInstance().recordError(error)
+            }
+        } else {
+            log.error("Invalid filename/path.")
+        }
+
+        return nil
+    }
+
+    private func processFares(from json: JSON) -> UpdateResult {
+        let timestamp = json["timestamp"].intValue
+        let lastTimestamp = self.settingsStore.getLastTimestamp()
+
+        // lastTimestamp is 0 when no update has ever been received
+        if lastTimestamp == 0 || lastTimestamp < timestamp {
+            self.jsonParser.processJSON(json: json)
+            self.updateBalanceAfterUpdatingFares()
+            self.settingsStore.updateTimestamp(timestamp)
+            // Send updated fares notification
+            self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
+
+            log.debug("Processed new fare data")
+            return .newFares
+        } else {
+            log.debug("No new fares data to be processed")
+            return .noUpdate
+        }
     }
 }

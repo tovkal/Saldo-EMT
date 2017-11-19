@@ -22,7 +22,9 @@ class JsonParser: NSObject, JsonParserProtocol {
         let realm = RealmHelper.getRealm()
 
         do {
+            let fares = realm.objects(Fare.self)
             try realm.write {
+                realm.delete(fares)
                 parseFares(realm, json)
                 updateSettings(realm, json)
             }

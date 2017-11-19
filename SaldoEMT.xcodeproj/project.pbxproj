@@ -62,7 +62,6 @@
 		95D960ED1FA5EB1C00C205E3 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95D960E61FA5E42F00C205E3 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95D960EF1FA5EB5800C205E3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F701DEA26870016B080 /* DataManager.swift */; };
 		95D960F21FA6222200C205E3 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D960F11FA6222200C205E3 /* URLSessionProtocol.swift */; };
-		95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9F5FB1C4C0C9000A696B9 /* Balance.swift */; };
 		95DACD891DC905B0005C7180 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DACD881DC905B0005C7180 /* Logger.swift */; };
 		95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */; };
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
@@ -182,7 +181,6 @@
 		95D960E61FA5E42F00C205E3 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		95D960E81FA5E43B00C205E3 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		95D960F11FA6222200C205E3 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
-		95D9F5FB1C4C0C9000A696B9 /* Balance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		95DACD841DC64DB5005C7180 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		95DACD881DC905B0005C7180 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		95DDB9EE1DEA2BEF00895E0F /* FareStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareStore.swift; sourceTree = "<group>"; };
@@ -508,7 +506,6 @@
 		95D4356F1BB846D300745E64 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				95D9F5FB1C4C0C9000A696B9 /* Balance.swift */,
 				9562D2291C4AB8CE008E2A47 /* Fare.swift */,
 				957FE81E1DBFE5FF002833D5 /* Settings.swift */,
 			);
@@ -790,7 +787,6 @@
 				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,
 				95CFCC771FC0E7C30051167F /* LocalizableUIBarItem.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
-				95D9F5FC1C4C0C9000A696B9 /* Balance.swift in Sources */,
 				95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */,
 				95CFCC731FC0E7C30051167F /* LocalizableButton.swift in Sources */,
 				950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */,

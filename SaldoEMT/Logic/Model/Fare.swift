@@ -18,6 +18,7 @@ class Fare: Object {
     let rides = RealmOptional<Int>()
     @objc dynamic var imageUrl = ""
     @objc dynamic var tripCost: Double = 0.0
+    @objc dynamic var displayBusLineTypeName = false
 
     override static func primaryKey() -> String? {
         return "id"

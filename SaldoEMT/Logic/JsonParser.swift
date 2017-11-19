@@ -44,14 +44,15 @@ class JsonParser: NSObject, JsonParserProtocol {
                           cost: fareInfo["cost"].doubleValue,
                           days: fareInfo["days"].int,
                           rides: fareInfo["rides"].int,
-                          imageUrl: fareInfo["imageUrl"].stringValue)
+                          imageUrl: fareInfo["imageUrl"].stringValue,
+                          displayBusLineTypeName: fareInfo["displayBusLineTypeName"].boolValue)
             }
         }
     }
 
     // swiftlint:disable:next function_parameter_count
     private func storeFare(_ realm: Realm, id: Int, name: String, busLineType: String,
-                           cost: Double, days: Int?, rides: Int?, imageUrl: String) {
+                           cost: Double, days: Int?, rides: Int?, imageUrl: String, displayBusLineTypeName: Bool) {
         guard cost > 0.0 else { return }
 
         let fare = Fare()
@@ -63,6 +64,7 @@ class JsonParser: NSObject, JsonParserProtocol {
         fare.days.value = days
         fare.rides.value = rides
         fare.imageUrl = getUrlForScaleFactor(imageUrl)
+        fare.displayBusLineTypeName = displayBusLineTypeName
 
         if let rides = fare.rides.value {
             fare.tripCost = fare.cost / Double(rides)

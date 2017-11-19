@@ -20,7 +20,7 @@ class FareCell: UITableViewCell {
     }
 
     func populateWithFare(_ fare: Fare, completionHandler: (() -> Void)? = nil) {
-        fareName.text = fare.name
+        fareName.text = fare.name + (fare.displayBusLineTypeName ? " - \(fare.busLineType)" : "")
         if let url = URL(string: fare.imageUrl) {
             busLines.kf.setImage(with: url) { _, _, _, _ in
                 if self.busLines.frame.height == 0 {

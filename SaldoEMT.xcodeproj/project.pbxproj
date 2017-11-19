@@ -11,7 +11,7 @@
 		951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951ACD331FA63CA600976DEC /* NotificationCenterProtocol.swift */; };
 		951DC71C1FABC4CE00C98E4B /* SettingsStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951DC71B1FABC4CE00C98E4B /* SettingsStoreSpec.swift */; };
 		952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C24271FA11D8A005F7CB5 /* RealmHelper.swift */; };
-		953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* MainTests.swift */; };
+		953B35CE1DD675D600B36AA9 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* CoreTests.swift */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
 		953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */; };
@@ -53,6 +53,7 @@
 		95CFCC761FC0E7C30051167F /* LocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC6B1FC0E7C20051167F /* LocalizableLabel.swift */; };
 		95CFCC771FC0E7C30051167F /* LocalizableUIBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC6C1FC0E7C20051167F /* LocalizableUIBarItem.swift */; };
 		95CFCC781FC0E7C30051167F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95CFCC6D1FC0E7C20051167F /* Info.plist */; };
+		95CFCC7B1FC1E3230051167F /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC7A1FC1E3220051167F /* UITestCase.swift */; };
 		95D153DA1B6A9E7800866B59 /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */; };
 		95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DACD841DC64DB5005C7180 /* XCGLogger.framework */; };
 		95D960E71FA5E42F00C205E3 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D960E61FA5E42F00C205E3 /* Quick.framework */; };
@@ -117,7 +118,7 @@
 		953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		953B35C51DD674A100B36AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		953B35CD1DD675D600B36AA9 /* MainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTests.swift; sourceTree = "<group>"; };
+		953B35CD1DD675D600B36AA9 /* CoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTests.swift; sourceTree = "<group>"; };
 		953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
@@ -176,6 +177,7 @@
 		95CFCC6C1FC0E7C20051167F /* LocalizableUIBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableUIBarItem.swift; sourceTree = "<group>"; };
 		95CFCC6D1FC0E7C20051167F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CFCC791FC0E84D0051167F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Vendor/README.md; sourceTree = SOURCE_ROOT; };
+		95CFCC7A1FC1E3220051167F /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 		95D960E61FA5E42F00C205E3 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		95D960E81FA5E43B00C205E3 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -234,7 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				953B35C51DD674A100B36AA9 /* Info.plist */,
-				953B35CD1DD675D600B36AA9 /* MainTests.swift */,
+				953B35CD1DD675D600B36AA9 /* CoreTests.swift */,
+				95CFCC7A1FC1E3220051167F /* UITestCase.swift */,
 			);
 			path = SaldoEMTUITests;
 			sourceTree = "<group>";
@@ -755,7 +758,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953B35CE1DD675D600B36AA9 /* MainTests.swift in Sources */,
+				953B35CE1DD675D600B36AA9 /* CoreTests.swift in Sources */,
+				95CFCC7B1FC1E3230051167F /* UITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

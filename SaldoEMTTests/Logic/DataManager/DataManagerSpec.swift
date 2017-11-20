@@ -106,55 +106,6 @@ class DataManagerSpec: QuickSpec {
             }
         }
 
-        describe("downloadNewFares") {
-            var backgroundFetchResult: UIBackgroundFetchResult?
-            let completionHandler: ((UIBackgroundFetchResult) -> Void)? = { result in backgroundFetchResult = result }
-
-            it("fails when response is error") {
-                session.error = NSError(domain: "domain", code: 0)
-
-                dataManager.downloadNewFares(completionHandler: completionHandler)
-
-                expect(backgroundFetchResult).to(equal(.failed))
-            }
-
-            it("fails when response has no data") {
-                session.data = nil
-
-                dataManager.downloadNewFares(completionHandler: completionHandler)
-
-                expect(backgroundFetchResult).to(equal(.failed))
-            }
-
-            it("succeeds with new data") {
-                let jsonTimestamp = 123456789
-                settingsStore.lastTimestamp = jsonTimestamp - 1
-                var json = JSON()
-                json["timestamp"] = JSON(jsonTimestamp)
-                session.data = try! json.rawData() // swiftlint:disable:this force_try
-
-                dataManager.downloadNewFares(completionHandler: completionHandler)
-
-                expect(settingsStore.lastTimestamp).to(equal(jsonTimestamp))
-                expect(notificationCenter.postCalled).to(beTrue())
-                expect(notificationCenter.notificationName).to(equal(NotificationCenterKeys.BusAndFaresUpdate))
-                expect(backgroundFetchResult).to(equal(.newData))
-                expect(session.dataTask.resumeWasCalled).to(beTrue())
-            }
-
-            it("succeeds without new data") {
-                let jsonTimestamp = 123456789
-                settingsStore.lastTimestamp = jsonTimestamp + 1
-                var json = JSON()
-                json["timestamp"] = JSON(jsonTimestamp)
-                session.data = try! json.rawData() // swiftlint:disable:this force_try
-
-                dataManager.downloadNewFares(completionHandler: completionHandler)
-
-                expect(backgroundFetchResult).to(equal(.noData))
-            }
-        }
-
         describe("addTrip") {
             it("adds trip to settings") {
                 let tripCost = 1.5

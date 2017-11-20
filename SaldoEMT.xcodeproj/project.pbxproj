@@ -11,6 +11,7 @@
 		951ACD341FA63CA600976DEC /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951ACD331FA63CA600976DEC /* NotificationCenterProtocol.swift */; };
 		951DC71C1FABC4CE00C98E4B /* SettingsStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951DC71B1FABC4CE00C98E4B /* SettingsStoreSpec.swift */; };
 		952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C24271FA11D8A005F7CB5 /* RealmHelper.swift */; };
+		953A03AD1FC4DA1A00C7AE18 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953A03AC1FC4DA1A00C7AE18 /* Secrets.plist */; };
 		953B35CE1DD675D600B36AA9 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* CoreTests.swift */; };
 		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
@@ -67,6 +68,9 @@
 		95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */; };
 		95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */; };
 		95E3FA881FC230CD0028C398 /* RealmMigrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3FA871FC230CD0028C398 /* RealmMigrator.swift */; };
+		95E3FA8C1FC4BB290028C398 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8B1FC4BB290028C398 /* AWSS3.framework */; };
+		95E3FA8E1FC4BEAF0028C398 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */; };
+		95E3FA901FC4C09A0028C398 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */; };
 		95FEB1E31F9D3C130076361A /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		95FEB1E51F9D3C9C0076361A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		95FEB1E61F9D3CF10076361A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
@@ -115,6 +119,7 @@
 		951DC71B1FABC4CE00C98E4B /* SettingsStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreSpec.swift; sourceTree = "<group>"; };
 		952C24271FA11D8A005F7CB5 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		953987421BD2699E005DB2C7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		953A03AC1FC4DA1A00C7AE18 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		953B35A91DD1042B00B36AA9 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		953B35C51DD674A100B36AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +193,9 @@
 		95E27DF81BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareWithLimitedRidesCell.swift; sourceTree = "<group>"; };
 		95E27DF91BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareWithLimitedRidesCell.xib; sourceTree = "<group>"; };
 		95E3FA871FC230CD0028C398 /* RealmMigrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigrator.swift; sourceTree = "<group>"; };
+		95E3FA8B1FC4BB290028C398 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
+		95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
+		95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = Carthage/Build/iOS/AWSCognito.framework; sourceTree = "<group>"; };
 		95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95FF4A691FAF7D7800392025 /* IBLocalizable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBLocalizable.framework; path = Carthage/Build/iOS/IBLocalizable.framework; sourceTree = "<group>"; };
 		95FF4A771FAF83C100392025 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +214,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95E3FA901FC4C09A0028C398 /* AWSCognito.framework in Frameworks */,
+				95E3FA8E1FC4BEAF0028C398 /* AWSCore.framework in Frameworks */,
+				95E3FA8C1FC4BB290028C398 /* AWSS3.framework in Frameworks */,
 				95B510531FB8DE39004B79A5 /* Kingfisher.framework in Frameworks */,
 				959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */,
 				959021F71DEA2A8800194E89 /* Fabric.framework in Frameworks */,
@@ -304,6 +315,9 @@
 		9578B96B1DA93A550073CC66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */,
+				95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */,
+				95E3FA8B1FC4BB290028C398 /* AWSS3.framework */,
 				95B510521FB8DE38004B79A5 /* Kingfisher.framework */,
 				95FF4A691FAF7D7800392025 /* IBLocalizable.framework */,
 				95D960E81FA5E43B00C205E3 /* Nimble.framework */,
@@ -433,6 +447,7 @@
 				95FF4A791FAF861800392025 /* LaunchScreen.xib */,
 				95FF4A771FAF83C100392025 /* Main.storyboard */,
 				95A8EFB51FAF89940065EFC5 /* Localizable.strings */,
+				953A03AC1FC4DA1A00C7AE18 /* Secrets.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -677,6 +692,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953A03AD1FC4DA1A00C7AE18 /* Secrets.plist in Resources */,
 				95CFCC781FC0E7C30051167F /* Info.plist in Resources */,
 				95AC90881BCC000D00787C79 /* FareCell.xib in Resources */,
 				95A8EFB31FAF89940065EFC5 /* Localizable.strings in Resources */,
@@ -737,6 +753,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSS3.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AWSCognito.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
@@ -746,6 +765,9 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AWSS3.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AWSCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AWSCognito.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

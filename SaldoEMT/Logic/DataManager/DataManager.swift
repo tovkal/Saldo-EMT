@@ -11,6 +11,7 @@ import SwiftyJSON
 import UIKit
 import Crashlytics
 import Kingfisher
+import AWSS3
 
 struct DataManagerErrors {
     static let costPerTripUnknown = "Cost per trip is unknown, can't add trip"
@@ -99,29 +100,36 @@ class DataManager: DataManagerProtocol {
     func downloadNewFares(completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         log.debug("Downloading fares json")
 
-        let endpoint: String = "https://s3.eu-central-1.amazonaws.com/saldo-emt/fares_\(getLanguageCode()).json"
-        guard let url = URL(string: endpoint) else {
-            log.error("Error: cannot create URL")
-            completionHandler?(.failed)
-            return
-        }
-        let urlRequest = URLRequest(url: url)
+        let transferManager = AWSS3TransferManager.default()
+        let downloadingFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("fares_\(getLanguageCode()).json")
+        guard let downloadRequest = AWSS3TransferManagerDownloadRequest() else { return }
 
-        // make the request
-        let task = session.dataTask(with: urlRequest) { (data, _, error) in
+        downloadRequest.bucket = "saldo-emt"
+        downloadRequest.key = "fares_\(getLanguageCode()).json"
+        downloadRequest.downloadingFileURL = downloadingFileURL
 
-            // check for any errors
-            guard error == nil else {
-                log.error("error fetching fares \(error!)")
+        // transferManager.download(downloadRequest).continueWith(executor: AWSExecutor.mainThread(), block: { (task: AWSTask<AnyObject>) -> Any? in
+        transferManager.download(downloadRequest).continueWith(executor: AWSExecutor.default(), block: { (task: AWSTask<AnyObject>) -> Any? in
+            if let error = task.error as NSError? {
+                if error.domain == AWSS3TransferManagerErrorDomain, let code = AWSS3TransferManagerErrorType(rawValue: error.code) {
+                    switch code {
+                    case .cancelled, .paused:
+                        break
+                    default:
+                        log.error(error)
+                        Crashlytics.sharedInstance().recordError(error)
+                    }
+                } else {
+                    log.error(error)
+                    Crashlytics.sharedInstance().recordError(error)
+                }
                 completionHandler?(.failed)
-                return
+                return nil
             }
-            // make sure we got data
-            guard let responseData = data else {
-                log.error("Error: did not receive data")
-                completionHandler?(.failed)
-                return
-            }
+
+            print(task.result!)
+
+            guard let responseData = task.result as? Data else { completionHandler?(.failed); return nil }
 
             log.info("Downloaded file size is: \(Float(responseData.count) / 1000) KB")
 
@@ -137,11 +145,11 @@ class DataManager: DataManagerProtocol {
                 log.debug("Failed parsing data")
                 Crashlytics.sharedInstance().recordError(error)
                 completionHandler?(.failed)
-                return
+                return nil
             }
-        }
 
-        task.resume()
+            return nil
+        })
     }
 
     // MARK: - Settings functions

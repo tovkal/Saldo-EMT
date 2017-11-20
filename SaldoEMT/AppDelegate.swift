@@ -11,6 +11,7 @@ import Fabric
 import Crashlytics
 import RealmSwift
 import GoogleMobileAds
+import AWSCognito
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
 
         // Initialize Google Mobile Ads SDK
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-0951032527002077~5254398214")
+        guard let applicationID = valueForSecretKey("applicationID") else {
+            fatalError("Missing application id for Google Ads")
+        }
+
+        GADMobileAds.configure(withApplicationID: applicationID)
 
         let config = Realm.Configuration(
             schemaVersion: 3,
@@ -32,6 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
 
         Realm.Configuration.defaultConfiguration = config
+
+        // AWS
+        guard let identityPoolId = valueForSecretKey("identityPoolId") else {
+            fatalError("Missing identityPoolId for AWS")
+        }
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .EUCentral1, identityPoolId: identityPoolId)
+        let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider: credentialsProvider)
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
 
         let dataManager = createDataManager()
 
@@ -60,5 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func createDataManager() -> DataManager {
         return DataManager(settingsStore: SettingsStore(), fareStore: FareStore(), jsonParser: JsonParser())
+    }
+
+    private func valueForSecretKey(_ key: String) -> String? {
+        guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist") else { return nil }
+        let plist = NSDictionary(contentsOfFile:filePath)
+        return plist?.object(forKey: key) as? String
     }
 }

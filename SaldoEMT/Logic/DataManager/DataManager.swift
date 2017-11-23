@@ -61,11 +61,11 @@ class DataManager: DataManagerProtocol {
         // On first run create database from file. On subsequent runs check if embedded file is updated
         if let json = getFileData() {
             _ = processFares(from: json)
+            precacheImagesFromAssets()
         }
 
         // Select a default fare if none is currently selected
         _ = getSelectedFare()
-        prefetchBusLineTypeImages()
     }
 
     // MARK: - Fare functions
@@ -108,7 +108,6 @@ class DataManager: DataManagerProtocol {
         downloadRequest.key = "fares_\(getLanguageCode()).json"
         downloadRequest.downloadingFileURL = downloadingFileURL
 
-        // transferManager.download(downloadRequest).continueWith(executor: AWSExecutor.mainThread(), block: { (task: AWSTask<AnyObject>) -> Any? in
         transferManager.download(downloadRequest).continueWith(executor: AWSExecutor.default(), block: { (task: AWSTask<AnyObject>) -> Any? in
             if let error = task.error as NSError? {
                 if error.domain == AWSS3TransferManagerErrorDomain, let code = AWSS3TransferManagerErrorType(rawValue: error.code) {
@@ -137,6 +136,7 @@ class DataManager: DataManagerProtocol {
                 let json = try JSON(data: responseData)
                 switch self.processFares(from: json) {
                 case .newFares:
+                    self.precacheImagesFromS3()
                     completionHandler?(.newData)
                 case .noUpdate:
                     completionHandler?(.noData)
@@ -211,7 +211,7 @@ class DataManager: DataManagerProtocol {
         }
     }
 
-    private func prefetchBusLineTypeImages() {
+    private func precacheImagesFromS3() {
         let urls: [URL] = Set(getAllFares().map {$0.imageUrl}).flatMap {URL(string: $0 )}
         ImagePrefetcher(urls: urls).start()
     }
@@ -260,6 +260,20 @@ class DataManager: DataManagerProtocol {
         } else {
             log.debug("No new fares data to be processed")
             return .noUpdate
+        }
+    }
+
+    private func precacheImagesFromAssets() {
+        let urls = Set(getAllFares().map {$0.imageUrl})
+        let images: [(String, String)] = urls.flatMap({ url in
+            guard let lastSlashIndex = url.range(of: "/", options: .backwards)?.upperBound else { return nil }
+            let offset = url.contains("@") ? -7 : -4 // Account for scale factor suffix, i.e. Image.png and Image@2x.png
+            return (String(url[lastSlashIndex..<url.index(url.endIndex, offsetBy: offset)]), url)
+        })
+        for (imageName, url) in images {
+            if let image = UIImage(named: imageName) {
+                ImageCache.default.store(image, forKey: url)
+            }
         }
     }
 }

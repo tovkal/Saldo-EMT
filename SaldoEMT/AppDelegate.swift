@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func valueForSecretKey(_ key: String) -> String? {
         guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist") else { return nil }
-        let plist = NSDictionary(contentsOfFile:filePath)
+        let plist = NSDictionary(contentsOfFile: filePath)
         return plist?.object(forKey: key) as? String
     }
 }

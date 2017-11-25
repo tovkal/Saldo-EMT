@@ -118,7 +118,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="Zona Urbana" translatesAutoresizingMaskIntoConstraints="NO" id="cNc-Bj-r0d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="cNc-Bj-r0d">
                                 <rect key="frame" x="20" y="233.99999999999997" width="374" height="352.33333333333326"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZC-KR-Cub">
@@ -448,6 +448,5 @@
     <resources>
         <image name="Button bar" width="640" height="96"/>
         <image name="Oval" width="323" height="162"/>
-        <image name="Zona Urbana" width="310" height="175"/>
     </resources>
 </document>

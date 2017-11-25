@@ -60,8 +60,7 @@ class DataManager: DataManagerProtocol {
 
         // On first run create database from file. On subsequent runs check if embedded file is updated
         if let json = getFileData() {
-            _ = processFares(from: json)
-            precacheImagesFromAssets()
+            _ = processFares(from: json, precacheImages: precacheImagesFromAssets)
         }
 
         // Select a default fare if none is currently selected
@@ -134,9 +133,8 @@ class DataManager: DataManagerProtocol {
 
             do {
                 let json = try JSON(data: responseData)
-                switch self.processFares(from: json) {
+                switch self.processFares(from: json, precacheImages: self.precacheImagesFromS3) {
                 case .newFares:
-                    self.precacheImagesFromS3()
                     completionHandler?(.newData)
                 case .noUpdate:
                     completionHandler?(.noData)
@@ -243,7 +241,7 @@ class DataManager: DataManagerProtocol {
         return nil
     }
 
-    private func processFares(from json: JSON) -> UpdateResult {
+    private func processFares(from json: JSON, precacheImages: () -> Void) -> UpdateResult {
         let timestamp = json["timestamp"].intValue
         let lastTimestamp = self.settingsStore.getLastTimestamp()
 
@@ -252,6 +250,7 @@ class DataManager: DataManagerProtocol {
             self.jsonParser.processJSON(json: json)
             self.updateBalanceAfterUpdatingFares()
             self.settingsStore.updateTimestamp(timestamp)
+            precacheImages()
             // Send updated fares notification
             self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
 

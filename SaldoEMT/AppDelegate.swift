@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
 
         // Initialize Google Mobile Ads SDK
-        guard let applicationID = valueForSecretKey("applicationID") else {
+        guard let applicationID = valueForSecretKey("applicationID") as? String else {
             fatalError("Missing application id for Google Ads")
         }
 
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
 
         // AWS
-        guard let identityPoolId = valueForSecretKey("identityPoolId") else {
+        guard let identityPoolId = valueForSecretKey("identityPoolId") as? String else {
             fatalError("Missing identityPoolId for AWS")
         }
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .EUCentral1, identityPoolId: identityPoolId)
@@ -74,10 +74,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func createDataManager() -> DataManager {
         return DataManager(settingsStore: SettingsStore(), fareStore: FareStore(), jsonParser: JsonParser())
     }
+}
 
-    private func valueForSecretKey(_ key: String) -> String? {
-        guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist") else { return nil }
-        let plist = NSDictionary(contentsOfFile: filePath)
-        return plist?.object(forKey: key) as? String
-    }
+func valueForSecretKey(_ key: String) -> Any? {
+    guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist") else { return nil }
+    let plist = NSDictionary(contentsOfFile: filePath)
+    return plist?.object(forKey: key)
 }

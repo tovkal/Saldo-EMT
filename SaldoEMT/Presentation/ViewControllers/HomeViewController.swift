@@ -106,10 +106,15 @@ class HomeViewController: UIViewController {
     }
 
     fileprivate func initBanner() {
-        bannerView.adUnitID = "ca-app-pub-0951032527002077/6731131411"
+        if let adUnitID = valueForSecretKey("adUnitID") as? String {
+            bannerView.adUnitID = adUnitID
+        }
         bannerView.rootViewController = self
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID, "8c4736685495e1d2bd6b4c2c78c101d7"]
+        if var testDevices = valueForSecretKey("googleAdsTestDeviceIds") as? [Any] {
+            testDevices += [kGADSimulatorID]
+            request.testDevices = testDevices
+        }
         bannerView.load(request)
     }
 }

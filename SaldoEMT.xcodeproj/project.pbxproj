@@ -1050,6 +1050,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1068,6 +1069,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.tovkal.SaldoEMT";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1080,6 +1082,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1097,6 +1100,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.tovkal.SaldoEMT";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

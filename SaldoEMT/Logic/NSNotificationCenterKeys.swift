@@ -7,5 +7,5 @@
 //
 
 struct NotificationCenterKeys {
-    static let BusAndFaresUpdate = "com.tovkal.busAndFaresUpdate"
+    static let busAndFaresUpdate = "com.tovkal.busAndFaresUpdate"
 }

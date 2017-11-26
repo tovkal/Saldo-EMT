@@ -42,11 +42,19 @@ class HomeViewController: UIViewController {
         initBanner()
 
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateLabels),
-                                               name: NSNotification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: nil)
+                                               name: NSNotification.Name(rawValue: NotificationCenterKeys.busAndFaresUpdate), object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel = dataManager.getCurrentState()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.chooseNewFare) {
+            chooseNewFare()
+        }
     }
 
     // MARK: - Actions
@@ -84,6 +92,17 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async {
             self.viewModel = self.dataManager.getCurrentState()
         }
+    }
+
+    private func chooseNewFare() {
+        let alert = UIAlertController(title: "choose-new-fare.alert.title".localized,
+                                      message: "choose-new-fare.alert.message".localized,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "buttons.ok".localized,
+                                      style: .default, handler: { _ in
+           self.performSegue(withIdentifier: "Fares", sender: self)
+        }))
+        self.present(alert, animated: true)
     }
 
     fileprivate func initBanner() {

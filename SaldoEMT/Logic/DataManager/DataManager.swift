@@ -22,6 +22,7 @@ struct DataManagerErrors {
 enum UpdateResult {
     case newFares
     case noUpdate
+    case missingCurrentFare // Got new data but the previously selected fare does not longer exist, promt the user to select a new one
 }
 
 protocol DataManagerProtocol {
@@ -74,6 +75,7 @@ class DataManager: DataManagerProtocol {
     }
 
     func selectNewFare(_ fare: Fare) {
+        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.chooseNewFare)
         settingsStore.selectNewFare(fare)
     }
 
@@ -83,7 +85,8 @@ class DataManager: DataManagerProtocol {
         if let fare = settingsStore.getSelectedFare() {
             selectedFare = fare
         } else {
-            let fare = fareStore.getFare(forId: 1).first!
+            // By default we use the Resident fare for Urban Zone, which should have id 1 always (yuk).
+            let fare = fareStore.getAllFares().first!
             settingsStore.selectNewFare(fare)
             selectedFare = fare
         }
@@ -138,6 +141,9 @@ class DataManager: DataManagerProtocol {
                     completionHandler?(.newData)
                 case .noUpdate:
                     completionHandler?(.noData)
+                case .missingCurrentFare:
+                    UserDefaults.standard.set(true, forKey: UserDefaultsKeys.chooseNewFare)
+                    completionHandler?(.newData)
                 }
             } catch let error as NSError {
                 log.debug("Failed parsing data")
@@ -247,12 +253,22 @@ class DataManager: DataManagerProtocol {
 
         // lastTimestamp is 0 when no update has ever been received
         if lastTimestamp == 0 || lastTimestamp < timestamp {
+            // Save details of selected fare
+            let name = self.settingsStore.getSelectedFare()?.name
+            let busLineType = self.settingsStore.getSelectedFare()?.busLineType
+
             self.jsonParser.processJSON(json: json)
             self.updateBalanceAfterUpdatingFares()
             self.settingsStore.updateTimestamp(timestamp)
             precacheImages()
             // Send updated fares notification
-            self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.BusAndFaresUpdate), object: self)
+            self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.busAndFaresUpdate), object: self)
+
+            if let name = name, let busLineType = busLineType, let fare = self.fareStore.getFare(for: name, and: busLineType) {
+                self.settingsStore.selectNewFare(fare)
+            } else if lastTimestamp != 0 { // lastTimestamp = 0 on first ever app run, when the user has never selected a fare. Use default fare then (Resident)
+                UserDefaults.standard.set(true, forKey: UserDefaultsKeys.chooseNewFare)
+            }
 
             log.debug("Processed new fare data")
             return .newFares

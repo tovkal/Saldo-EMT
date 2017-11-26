@@ -71,6 +71,7 @@
 		95E3FA8C1FC4BB290028C398 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8B1FC4BB290028C398 /* AWSS3.framework */; };
 		95E3FA8E1FC4BEAF0028C398 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */; };
 		95E3FA901FC4C09A0028C398 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */; };
+		95FE0DCE1FCACA700075AD8B /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0DCD1FCACA700075AD8B /* UserDefaultsKeys.swift */; };
 		95FEB1E31F9D3C130076361A /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		95FEB1E51F9D3C9C0076361A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		95FEB1E61F9D3CF10076361A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
@@ -196,6 +197,7 @@
 		95E3FA8B1FC4BB290028C398 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSS3.framework; path = Carthage/Build/iOS/AWSS3.framework; sourceTree = "<group>"; };
 		95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
 		95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = Carthage/Build/iOS/AWSCognito.framework; sourceTree = "<group>"; };
+		95FE0DCD1FCACA700075AD8B /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95FF4A691FAF7D7800392025 /* IBLocalizable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBLocalizable.framework; path = Carthage/Build/iOS/IBLocalizable.framework; sourceTree = "<group>"; };
 		95FF4A771FAF83C100392025 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				95A7A42A1F9FA74200DBB166 /* JsonParser.swift */,
 				952C24271FA11D8A005F7CB5 /* RealmHelper.swift */,
 				95E3FA871FC230CD0028C398 /* RealmMigrator.swift */,
+				95FE0DCD1FCACA700075AD8B /* UserDefaultsKeys.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -793,6 +796,7 @@
 				95CFCC711FC0E7C30051167F /* LocalizableTextField.swift in Sources */,
 				95A4CBDB1B5A852A002FB3E9 /* HomeViewController.swift in Sources */,
 				957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */,
+				95FE0DCE1FCACA700075AD8B /* UserDefaultsKeys.swift in Sources */,
 				954020AD1BCA627C009419EA /* FareCell.swift in Sources */,
 				95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */,
 				95D960EF1FA5EB5800C205E3 /* DataManager.swift in Sources */,

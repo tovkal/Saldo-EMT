@@ -10,6 +10,7 @@ import Foundation
 @testable import SaldoEMT
 
 class FareStoreMock: FareStoreProtocol {
+
     let firstFareName = "first_fare"
     let firstFareId = 1
     let secondFareName = "second_fare"
@@ -37,17 +38,17 @@ class FareStoreMock: FareStoreProtocol {
         return [firstFare, secondFare]
     }
 
-    func getFare(forName fareName: String) -> [Fare] {
+    func getFare(for fareName: String, and busLineType: String) -> Fare? {
         getAllFaresCalled = true
         getFareForName = fareName
 
         switch fareName {
         case firstFareName:
-            return [firstFare]
+            return firstFare
         case secondFareName:
-            return [secondFare]
+            return secondFare
         default:
-            return [Fare]()
+            return nil
         }
     }
 

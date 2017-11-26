@@ -41,8 +41,7 @@ class DataManagerSpec: QuickSpec {
                 }
 
                 it("sets the first fare as selected") {
-                    expect(fareStore.getFareForIdCalled).to(beTrue())
-                    expect(fareStore.getFareForId).to(equal(fareStore.firstFareId))
+                    expect(fareStore.getAllFaresCalled).to(beTrue())
                     expect(settingsStore.selectedNewFareCalled).to(beTrue())
                     XCTAssertEqual(settingsStore.selectedFare, fareStore.firstFare)
                 }
@@ -87,8 +86,7 @@ class DataManagerSpec: QuickSpec {
 
                 it("sets the first fare as selected") {
                     let fare = dataManager.getSelectedFare()
-                    expect(fareStore.getFareForIdCalled).to(beTrue())
-                    expect(fareStore.getFareForId).to(equal(fareStore.firstFareId))
+                    expect(fareStore.getAllFaresCalled).to(beTrue())
                     expect(settingsStore.selectedNewFareCalled).to(beTrue())
                     XCTAssertEqual(fare, fareStore.firstFare)
                 }

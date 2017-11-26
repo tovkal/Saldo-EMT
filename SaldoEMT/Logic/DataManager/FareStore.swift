@@ -13,7 +13,7 @@ import Crashlytics
 
 protocol FareStoreProtocol {
     func getAllFares() -> [Fare]
-    func getFare(forName fareName: String) -> [Fare]
+    func getFare(for fareName: String, and busLineType: String) -> Fare?
     func getFare(forId fareId: Int) -> [Fare]
 }
 
@@ -24,10 +24,10 @@ class FareStore: FareStoreProtocol {
         return Array(realm.objects(Fare.self))
     }
 
-    func getFare(forName fareName: String) -> [Fare] {
+    func getFare(for fareName: String, and busLineType: String) -> Fare? {
         let realm = RealmHelper.getRealm()
-        let predicate = NSPredicate(format: "name == %@", fareName)
-        return Array(realm.objects(Fare.self).filter(predicate))
+        let predicate = NSPredicate(format: "name == %@ && busLineType = %@", fareName, busLineType)
+        return realm.objects(Fare.self).filter(predicate).first
     }
 
     func getFare(forId fareId: Int) -> [Fare] {

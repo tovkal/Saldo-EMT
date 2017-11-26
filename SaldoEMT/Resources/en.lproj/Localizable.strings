@@ -9,6 +9,7 @@
 // MARK: - Common
 "buttons.cancel" = "Cancel";
 "buttons.accept" = "Accept";
+"buttons.ok" = "Ok";
 
 // MARK: - Home
 // MARK: State
@@ -30,3 +31,7 @@
 /* Remember the colon at the end */
 "balance.enter-amount" = "Enter amount:";
 "balance.minimum-amount-info" = "Minimum amount is 5€";
+
+// MARK: - ChooseNewFareViewController
+"choose-new-fare.alert.title" = "Choose a new fare";
+"choose-new-fare.alert.message" = "The list of fares has been updated. Your previsouly selected fare does no longer exist. Please select a new one.";

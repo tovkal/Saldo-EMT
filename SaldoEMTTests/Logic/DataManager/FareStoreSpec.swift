@@ -39,10 +39,12 @@ class FareStoreSpec: QuickSpec {
             var fare: Fare?
             let fareId = 1
             let fareName = "fareName"
+            let busLineType = "busLineType"
             beforeEach {
                 fare = Fare()
                 fare?.id = fareId
                 fare?.name = fareName
+                fare?.busLineType = busLineType
                 let realm = try! Realm() // swiftlint:disable:this force_try
                 try! realm.write { // swiftlint:disable:this force_try
                     realm.deleteAll()
@@ -59,8 +61,8 @@ class FareStoreSpec: QuickSpec {
 
             describe("getFareForName") {
                 it("returns fare for given name") {
-                    let result = fareStore.getFare(forName: fareName)
-                    XCTAssertEqual(result[0], fare)
+                    let result = fareStore.getFare(for: fareName, and: busLineType)
+                    XCTAssertEqual(result, fare)
                 }
             }
 

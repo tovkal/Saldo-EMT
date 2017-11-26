@@ -6,8 +6,6 @@ cache:
 before_install:
 - openssl aes-256-cbc -K $encrypted_ad15086dbf75_key -iv $encrypted_ad15086dbf75_iv
   -in SaldoEMT/Resources/Secrets.plist.enc -out SaldoEMT/Resources/Secrets.plist -d
-- openssl aes-256-cbc -K $encrypted_ad15086dbf75_key -iv $encrypted_ad15086dbf75_iv
-  -in fastlane/metadata.tar.enc -out fastlane/metadata.tar -d
 - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 script:
 - fastlane test

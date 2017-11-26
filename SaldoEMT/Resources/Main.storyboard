@@ -88,7 +88,7 @@
                                     <constraint firstItem="CW4-dl-NtV" firstAttribute="width" secondItem="vlg-7O-HpL" secondAttribute="width" id="osZ-en-kxX"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-3h-f7C" userLabel="Dev buttons">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dAe-3h-f7C" userLabel="Dev buttons">
                                 <rect key="frame" x="0.0" y="576" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE5-gK-Dt3">

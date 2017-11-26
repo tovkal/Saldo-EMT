@@ -5,6 +5,8 @@ iOS app to log bus rides and manually manage bus pass balance from Palma's buses
 
 # Building the app
 
+A file is needed to run the app properly, `SaldoEMT/Resources/Secrets.plist` that it is not included in the repository and contains a number of credentials for different dependencies.
+
 ## Dependencies
 We use Carthage for dependency management.
 

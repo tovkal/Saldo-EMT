@@ -24,11 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
 
         // Initialize Google Mobile Ads SDK
-        guard let applicationID = valueForSecretKey("applicationID") as? String else {
-            fatalError("Missing application id for Google Ads")
+        if let applicationID = valueForSecretKey("applicationID") as? String {
+            GADMobileAds.configure(withApplicationID: applicationID)
         }
-
-        GADMobileAds.configure(withApplicationID: applicationID)
 
         let config = Realm.Configuration(
             schemaVersion: 3,
@@ -39,12 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
 
         // AWS
-        guard let identityPoolId = valueForSecretKey("identityPoolId") as? String else {
-            fatalError("Missing identityPoolId for AWS")
+        if let identityPoolId = valueForSecretKey("identityPoolId") as? String {
+            let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .EUCentral1, identityPoolId: identityPoolId)
+            let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider: credentialsProvider)
+            AWSServiceManager.default().defaultServiceConfiguration = configuration
         }
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .EUCentral1, identityPoolId: identityPoolId)
-        let configuration = AWSServiceConfiguration(region: .EUCentral1, credentialsProvider: credentialsProvider)
-        AWSServiceManager.default().defaultServiceConfiguration = configuration
 
         let dataManager = createDataManager()
 

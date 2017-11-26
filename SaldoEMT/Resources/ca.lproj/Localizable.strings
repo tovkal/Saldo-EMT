@@ -26,7 +26,7 @@
 "home.dev-buttons.reset" = "Restablir";
 
 /* (No Comment) */
-"home.state.remaining-balance" = "saldo restant";
+"home.state.remaining-balance" = "€ saldo restant";
 
 /* (No Comment) */
 "home.state.trips-made" = "viatges realitzats";

@@ -16,7 +16,7 @@
 
 "home.state.trips-remaining" = "trips remaining";
 "home.state.trips-made" = "trips made";
-"home.state.remaining-balance" = "remaining balance";
+"home.state.remaining-balance" = "€ remaining balance";
 
 // MARK: Dev buttons
 "home.dev-buttons.reset" = "Reset";

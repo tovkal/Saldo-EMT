@@ -14,3 +14,4 @@ languages([
 scheme "SaldoEMT"
 
 clear_previous_screenshots true
+erase_simulator true

@@ -70,5 +70,5 @@ end
 
 desc "Take all screenshots"
 lane :screenshots do
-  snapshot(reinstall_app: true)
+  snapshot
 end

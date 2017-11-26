@@ -77,6 +77,7 @@ class DataManager: DataManagerProtocol {
     func selectNewFare(_ fare: Fare) {
         UserDefaults.standard.set(false, forKey: UserDefaultsKeys.chooseNewFare)
         settingsStore.selectNewFare(fare)
+        updateBalanceAfterUpdatingFares()
     }
 
     func getSelectedFare() -> Fare {

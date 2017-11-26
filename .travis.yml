@@ -4,7 +4,10 @@ cache:
   directories:
   - Carthage
 before_install:
-- openssl aes-256-cbc -K $encrypted_ad15086dbf75_key -iv $encrypted_ad15086dbf75_iv -in Secrets.plist.enc -out SaldoEMT/Resources/Secrets.plist -d
+- openssl aes-256-cbc -K $encrypted_5559c88dc7d2_key -iv $encrypted_5559c88dc7d2_iv
+  -in metadata.tar.enc -out metadata.tar -d
+- openssl aes-256-cbc -K $encrypted_ad15086dbf75_key -iv $encrypted_ad15086dbf75_iv
+  -in Secrets.plist.enc -out SaldoEMT/Resources/Secrets.plist -d
 - gem install fastlane --no-rdoc --no-ri --no-document --quiet
 script:
 - fastlane test

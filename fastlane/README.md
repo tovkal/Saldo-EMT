@@ -44,6 +44,11 @@ Build and send the beta to TestFlight
 fastlane refresh_dsyms
 ```
 Upload dsyms to Fabric
+### metadata
+```
+fastlane metadata
+```
+Upload metadata
 
 ----
 

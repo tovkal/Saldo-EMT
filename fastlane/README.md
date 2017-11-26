@@ -49,6 +49,11 @@ Upload dsyms to Fabric
 fastlane metadata
 ```
 Upload metadata
+### screenshots
+```
+fastlane screenshots
+```
+Take all screenshots
 
 ----
 

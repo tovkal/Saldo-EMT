@@ -1,0 +1,16 @@
+devices([
+  "iPhone 8",
+  "iPhone 8 Plus",
+  "iPhone 5s",
+  "iPhone X"
+])
+
+languages([
+  "en-US",
+  "es",
+  "ca"
+])
+
+scheme "SaldoEMT"
+
+clear_previous_screenshots true

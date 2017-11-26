@@ -67,3 +67,8 @@ desc "Upload metadata"
 lane :metadata do
   deliver(skip_binary_upload: true, app_icon: "./fastlane/metadata/Icon-App-iTunes.png")
 end
+
+desc "Take all screenshots"
+lane :screenshots do
+  snapshot(reinstall_app: true)
+end

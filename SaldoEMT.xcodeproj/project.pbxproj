@@ -72,6 +72,8 @@
 		95E3FA8E1FC4BEAF0028C398 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */; };
 		95E3FA901FC4C09A0028C398 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */; };
 		95FE0DCE1FCACA700075AD8B /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0DCD1FCACA700075AD8B /* UserDefaultsKeys.swift */; };
+		95FE0DDA1FCB54630075AD8B /* SaldoEMTScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0DD91FCB54630075AD8B /* SaldoEMTScreenshots.swift */; };
+		95FE0DE41FCB54BE0075AD8B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0DE31FCB54BE0075AD8B /* SnapshotHelper.swift */; };
 		95FEB1E31F9D3C130076361A /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B9701DA93B4C0073CC66 /* SVProgressHUD.framework */; };
 		95FEB1E51F9D3C9C0076361A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97C1DA93E810073CC66 /* RealmSwift.framework */; };
 		95FEB1E61F9D3CF10076361A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578B97D1DA93E810073CC66 /* SwiftyJSON.framework */; };
@@ -92,6 +94,13 @@
 			remoteInfo = SaldoEMT;
 		};
 		95A4CBE91B5A852B002FB3E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95A4CBCB1B5A852A002FB3E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95A4CBD21B5A852A002FB3E9;
+			remoteInfo = SaldoEMT;
+		};
+		95FE0DDC1FCB54630075AD8B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 95A4CBCB1B5A852A002FB3E9 /* Project object */;
 			proxyType = 1;
@@ -198,6 +207,10 @@
 		95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = Carthage/Build/iOS/AWSCore.framework; sourceTree = "<group>"; };
 		95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = Carthage/Build/iOS/AWSCognito.framework; sourceTree = "<group>"; };
 		95FE0DCD1FCACA700075AD8B /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		95FE0DD71FCB54620075AD8B /* SaldoEMTScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95FE0DD91FCB54630075AD8B /* SaldoEMTScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldoEMTScreenshots.swift; sourceTree = "<group>"; };
+		95FE0DDB1FCB54630075AD8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95FE0DE31FCB54BE0075AD8B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		95FEB1E91F9D3D6E0076361A /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		95FF4A691FAF7D7800392025 /* IBLocalizable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBLocalizable.framework; path = Carthage/Build/iOS/IBLocalizable.framework; sourceTree = "<group>"; };
 		95FF4A771FAF83C100392025 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -239,6 +252,13 @@
 				95D960E91FA5E43B00C205E3 /* Nimble.framework in Frameworks */,
 				95D960E71FA5E42F00C205E3 /* Quick.framework in Frameworks */,
 				95D8F3DC1F9D2FA4001A6491 /* XCGLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95FE0DD41FCB54620075AD8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +387,7 @@
 				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
 				953B35C21DD674A100B36AA9 /* SaldoEMTUITests */,
+				95FE0DD81FCB54630075AD8B /* SaldoEMTScreenshots */,
 				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -377,6 +398,7 @@
 				95A4CBD31B5A852A002FB3E9 /* SaldoEMT.app */,
 				95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */,
 				953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */,
+				95FE0DD71FCB54620075AD8B /* SaldoEMTScreenshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -542,6 +564,16 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		95FE0DD81FCB54630075AD8B /* SaldoEMTScreenshots */ = {
+			isa = PBXGroup;
+			children = (
+				95FE0DD91FCB54630075AD8B /* SaldoEMTScreenshots.swift */,
+				95FE0DE31FCB54BE0075AD8B /* SnapshotHelper.swift */,
+				95FE0DDB1FCB54630075AD8B /* Info.plist */,
+			);
+			path = SaldoEMTScreenshots;
+			sourceTree = "<group>";
+		};
 		95FF4A6D1FAF7F2F00392025 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,13 +657,31 @@
 			productReference = 95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		95FE0DD61FCB54620075AD8B /* SaldoEMTScreenshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95FE0DE01FCB54630075AD8B /* Build configuration list for PBXNativeTarget "SaldoEMTScreenshots" */;
+			buildPhases = (
+				95FE0DD31FCB54620075AD8B /* Sources */,
+				95FE0DD41FCB54620075AD8B /* Frameworks */,
+				95FE0DD51FCB54620075AD8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95FE0DDD1FCB54630075AD8B /* PBXTargetDependency */,
+			);
+			name = SaldoEMTScreenshots;
+			productName = SaldoEMTScreenshots;
+			productReference = 95FE0DD71FCB54620075AD8B /* SaldoEMTScreenshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		95A4CBCB1B5A852A002FB3E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = tovkal;
 				TargetAttributes = {
@@ -659,6 +709,11 @@
 						ProvisioningStyle = Manual;
 						TestTargetID = 95A4CBD21B5A852A002FB3E9;
 					};
+					95FE0DD61FCB54620075AD8B = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 95A4CBD21B5A852A002FB3E9;
+					};
 				};
 			};
 			buildConfigurationList = 95A4CBCE1B5A852A002FB3E9 /* Build configuration list for PBXProject "SaldoEMT" */;
@@ -679,6 +734,7 @@
 				95A4CBD21B5A852A002FB3E9 /* SaldoEMT */,
 				95A4CBE71B5A852B002FB3E9 /* SaldoEMTTests */,
 				953B35C01DD674A100B36AA9 /* SaldoEMTUITests */,
+				95FE0DD61FCB54620075AD8B /* SaldoEMTScreenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -708,6 +764,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		95A4CBE61B5A852B002FB3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95FE0DD51FCB54620075AD8B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -845,6 +908,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95FE0DD31FCB54620075AD8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95FE0DDA1FCB54630075AD8B /* SaldoEMTScreenshots.swift in Sources */,
+				95FE0DE41FCB54BE0075AD8B /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -857,6 +929,11 @@
 			isa = PBXTargetDependency;
 			target = 95A4CBD21B5A852A002FB3E9 /* SaldoEMT */;
 			targetProxy = 95A4CBE91B5A852B002FB3E9 /* PBXContainerItemProxy */;
+		};
+		95FE0DDD1FCB54630075AD8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95A4CBD21B5A852A002FB3E9 /* SaldoEMT */;
+			targetProxy = 95FE0DDC1FCB54630075AD8B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1159,6 +1236,60 @@
 			};
 			name = Release;
 		};
+		95FE0DDE1FCB54630075AD8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SaldoEMTScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5720219c-2584-40e4-913e-79d75c262c38";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SaldoEMT;
+			};
+			name = Debug;
+		};
+		95FE0DDF1FCB54630075AD8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JVHN2X67GT;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SaldoEMTScreenshots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTScreenshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5720219c-2584-40e4-913e-79d75c262c38";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SaldoEMT;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1194,6 +1325,15 @@
 			buildConfigurations = (
 				95A4CBF61B5A852B002FB3E9 /* Debug */,
 				95A4CBF71B5A852B002FB3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95FE0DE01FCB54630075AD8B /* Build configuration list for PBXNativeTarget "SaldoEMTScreenshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95FE0DDE1FCB54630075AD8B /* Debug */,
+				95FE0DDF1FCB54630075AD8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

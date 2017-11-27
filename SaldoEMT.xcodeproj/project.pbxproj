@@ -71,6 +71,7 @@
 		95E3FA8C1FC4BB290028C398 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8B1FC4BB290028C398 /* AWSS3.framework */; };
 		95E3FA8E1FC4BEAF0028C398 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8D1FC4BEAF0028C398 /* AWSCore.framework */; };
 		95E3FA901FC4C09A0028C398 /* AWSCognito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E3FA8F1FC4C0990028C398 /* AWSCognito.framework */; };
+		95F14EF01FCCBB8A00AC5EAB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A8EFB51FAF89940065EFC5 /* Localizable.strings */; };
 		95FE0DCE1FCACA700075AD8B /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0DCD1FCACA700075AD8B /* UserDefaultsKeys.swift */; };
 		95FE0DDA1FCB54630075AD8B /* SaldoEMTScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0DD91FCB54630075AD8B /* SaldoEMTScreenshots.swift */; };
 		95FE0DE41FCB54BE0075AD8B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE0DE31FCB54BE0075AD8B /* SnapshotHelper.swift */; };
@@ -774,6 +775,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F14EF01FCCBB8A00AC5EAB /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

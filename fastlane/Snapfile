@@ -6,12 +6,13 @@ devices([
 ])
 
 languages([
-  "en-US",
+  "en",
   "es",
   "ca"
 ])
 
-scheme "SaldoEMT"
+scheme "Screenshots"
 
 clear_previous_screenshots true
 erase_simulator true
+reinstall_app true

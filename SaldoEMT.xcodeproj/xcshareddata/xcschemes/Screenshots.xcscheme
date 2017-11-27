@@ -34,19 +34,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95A4CBE71B5A852B002FB3E9"
-               BuildableName = "SaldoEMTTests.xctest"
-               BlueprintName = "SaldoEMTTests"
-               ReferencedContainer = "container:SaldoEMT.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "953B35C01DD674A100B36AA9"
-               BuildableName = "SaldoEMTUITests.xctest"
-               BlueprintName = "SaldoEMTUITests"
+               BlueprintIdentifier = "95FE0DD61FCB54620075AD8B"
+               BuildableName = "SaldoEMTScreenshots.xctest"
+               BlueprintName = "SaldoEMTScreenshots"
                ReferencedContainer = "container:SaldoEMT.xcodeproj">
             </BuildableReference>
          </TestableReference>

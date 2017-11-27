@@ -266,14 +266,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		953B35C21DD674A100B36AA9 /* SaldoEMTUITests */ = {
+		953B35C21DD674A100B36AA9 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
 				953B35C51DD674A100B36AA9 /* Info.plist */,
 				953B35CD1DD675D600B36AA9 /* CoreTests.swift */,
 				95CFCC7A1FC1E3220051167F /* UITestCase.swift */,
 			);
-			path = SaldoEMTUITests;
+			path = UITests;
 			sourceTree = "<group>";
 		};
 		953C2CC21DCE009600C8CEF7 /* Extensions */ = {
@@ -385,10 +385,10 @@
 			children = (
 				9578B96B1DA93A550073CC66 /* Frameworks */,
 				95A4CBD41B5A852A002FB3E9 /* Products */,
-				95A4CBD51B5A852A002FB3E9 /* SaldoEMT */,
-				95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */,
-				953B35C21DD674A100B36AA9 /* SaldoEMTUITests */,
-				95FE0DD81FCB54630075AD8B /* SaldoEMTScreenshots */,
+				95A4CBD51B5A852A002FB3E9 /* Sources */,
+				95A4CBEB1B5A852B002FB3E9 /* Tests */,
+				953B35C21DD674A100B36AA9 /* UITests */,
+				95FE0DD81FCB54630075AD8B /* Screenshots */,
 				9540209F1BC970AE009419EA /* Warnings.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95A4CBD51B5A852A002FB3E9 /* SaldoEMT */ = {
+		95A4CBD51B5A852A002FB3E9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				95FF4A6D1FAF7F2F00392025 /* Vendor */,
@@ -415,7 +415,7 @@
 				95BF51E71B5B97FA00E4259B /* Resources */,
 				95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */,
 			);
-			path = SaldoEMT;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		95A4CBD61B5A852A002FB3E9 /* Supporting Files */ = {
@@ -426,7 +426,7 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		95A4CBEB1B5A852B002FB3E9 /* SaldoEMTTests */ = {
+		95A4CBEB1B5A852B002FB3E9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				95636D621FA64D380057081E /* Mocks */,
@@ -435,7 +435,7 @@
 				95A4CBEC1B5A852B002FB3E9 /* Supporting Files */,
 				953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */,
 			);
-			path = SaldoEMTTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		95A4CBEC1B5A852B002FB3E9 /* Supporting Files */ = {
@@ -565,14 +565,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		95FE0DD81FCB54630075AD8B /* SaldoEMTScreenshots */ = {
+		95FE0DD81FCB54630075AD8B /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
 				95FE0DD91FCB54630075AD8B /* SaldoEMTScreenshots.swift */,
 				95FE0DE31FCB54BE0075AD8B /* SnapshotHelper.swift */,
 				95FE0DDB1FCB54630075AD8B /* Info.plist */,
 			);
-			path = SaldoEMTScreenshots;
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		95FF4A6D1FAF7F2F00392025 /* Vendor */ = {
@@ -978,7 +978,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = SaldoEMTUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTUITests;
@@ -1007,7 +1007,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = SaldoEMTUITests/Info.plist;
+				INFOPLIST_FILE = UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTUITests;
@@ -1138,7 +1138,7 @@
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)/Vendor",
 				);
-				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Resources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
@@ -1170,7 +1170,7 @@
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)/Vendor",
 				);
-				INFOPLIST_FILE = "SaldoEMT/Resources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Resources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1201,7 +1201,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "SaldoEMTTests/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1227,7 +1227,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "SaldoEMTTests/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1253,7 +1253,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SaldoEMTScreenshots/Info.plist;
+				INFOPLIST_FILE = Screenshots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTScreenshots;
@@ -1280,7 +1280,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JVHN2X67GT;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = SaldoEMTScreenshots/Info.plist;
+				INFOPLIST_FILE = Screenshots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tovkal.SaldoEMTScreenshots;

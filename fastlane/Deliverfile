@@ -1,2 +1,5 @@
 app_identifier "com.tovkal.SaldoEMT"
 username ENV["APPLE_ID"]
+app_icon "./fastlane/metadata/Icon-App-iTunes.png"
+skip_binary_upload true
+screenshots_path "./fastlane/screenshots"

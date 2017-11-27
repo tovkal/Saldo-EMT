@@ -6,9 +6,8 @@ devices([
 ])
 
 languages([
-  "en",
-  "es",
-  "ca"
+  "en-GB",
+  "es-ES"
 ])
 
 scheme "Screenshots"

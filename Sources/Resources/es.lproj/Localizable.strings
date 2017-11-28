@@ -11,6 +11,15 @@
 "buttons.cancel" = "Cancelar";
 
 /* (No Comment) */
+"buttons.ok" = "Ok";
+
+/* (No Comment) */
+"choose-new-fare.alert.message" = "La lista de tarifas ha sido actualizada. Su tarifa seleccionada anteriormente ya no existe. Por favor selecciona una nueva.";
+
+/* (No Comment) */
+"choose-new-fare.alert.title" = "Elija una nueva tarifa";
+
+/* (No Comment) */
 "home.button-bar.add-trip" = "+1 Viaje";
 
 /* (No Comment) */

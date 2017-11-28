@@ -28,6 +28,8 @@
 		957AEDD81FA64E080083B8C9 /* FareStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */; };
 		957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */; };
 		957AEDDC1FA64E5B0083B8C9 /* NotificationCenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */; };
+		957CBD9B1FCE05BF000AA1EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957CBD9D1FCE05BF000AA1EE /* InfoPlist.strings */; };
+		957CBDA01FCE05BF000AA1EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957CBDA21FCE05BF000AA1EE /* InfoPlist.strings */; };
 		957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957FE81E1DBFE5FF002833D5 /* Settings.swift */; };
 		959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F31DEA2A8800194E89 /* Crashlytics.framework */; };
 		959021F71DEA2A8800194E89 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F41DEA2A8800194E89 /* Fabric.framework */; };
@@ -157,6 +159,10 @@
 		957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareStoreMock.swift; sourceTree = "<group>"; };
 		957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterMock.swift; sourceTree = "<group>"; };
+		957CBD9C1FCE05BF000AA1EE /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		957CBDA11FCE05BF000AA1EE /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		957CBDA31FCE061E000AA1EE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		957CBDA41FCE061F000AA1EE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		957FE81E1DBFE5FF002833D5 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		959021F31DEA2A8800194E89 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics.framework; sourceTree = "<group>"; };
 		959021F41DEA2A8800194E89 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Vendor/Fabric.framework; sourceTree = "<group>"; };
@@ -421,6 +427,7 @@
 		95A4CBD61B5A852A002FB3E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				957CBD9D1FCE05BF000AA1EE /* InfoPlist.strings */,
 				95A4CBD71B5A852A002FB3E9 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -568,6 +575,7 @@
 		95FE0DD81FCB54630075AD8B /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				957CBDA21FCE05BF000AA1EE /* InfoPlist.strings */,
 				95FE0DD91FCB54630075AD8B /* SaldoEMTScreenshots.swift */,
 				95FE0DE31FCB54BE0075AD8B /* SnapshotHelper.swift */,
 				95FE0DDB1FCB54630075AD8B /* Info.plist */,
@@ -761,6 +769,7 @@
 				95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */,
 				95FF4A7A1FAF861800392025 /* LaunchScreen.xib in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
+				957CBD9B1FCE05BF000AA1EE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F14EF01FCCBB8A00AC5EAB /* Localizable.strings in Resources */,
+				957CBDA01FCE05BF000AA1EE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +958,24 @@
 				956EEB2D1FC0D90500794D99 /* ca */,
 			);
 			name = fares.json;
+			sourceTree = "<group>";
+		};
+		957CBD9D1FCE05BF000AA1EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				957CBD9C1FCE05BF000AA1EE /* ca */,
+				957CBDA31FCE061E000AA1EE /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		957CBDA21FCE05BF000AA1EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				957CBDA11FCE05BF000AA1EE /* ca */,
+				957CBDA41FCE061F000AA1EE /* es */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		95A8EFB51FAF89940065EFC5 /* Localizable.strings */ = {

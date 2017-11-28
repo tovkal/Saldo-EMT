@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
-  <file original="SaldoEMT/Resources/Supporting Files/Info.plist" source-language="en" datatype="plaintext" target-language="es">
+  <file original="Screenshots/Info.plist" source-language="en" datatype="plaintext" target-language="es">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
@@ -10,7 +10,18 @@
       </trans-unit>
     </body>
   </file>
-  <file original="SaldoEMT/Resources/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="es">
+  <file original="Sources/Resources/Supporting Files/Info.plist" source-language="en" datatype="plaintext" target-language="es">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <target>$(PRODUCT_NAME)</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Sources/Resources/en.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="es">
     <header>
       <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.1" build-num="9B55"/>
     </header>
@@ -30,6 +41,18 @@
       <trans-unit id="buttons.cancel">
         <source>Cancel</source>
         <target>Cancelar</target>
+      </trans-unit>
+      <trans-unit id="buttons.ok">
+        <source>Ok</source>
+        <target>Ok</target>
+      </trans-unit>
+      <trans-unit id="choose-new-fare.alert.message">
+        <source>The list of fares has been updated. Your previously selected fare does no longer exist. Please select a new one.</source>
+        <target>La lista de tarifas ha sido actualizada. Su tarifa seleccionada anteriormente ya no existe. Por favor selecciona una nueva.</target>
+      </trans-unit>
+      <trans-unit id="choose-new-fare.alert.title">
+        <source>Choose a new fare</source>
+        <target>Elija una nueva tarifa</target>
       </trans-unit>
       <trans-unit id="home.button-bar.add-trip">
         <source>+1 Trip</source>
@@ -52,8 +75,8 @@
         <target>Resetear</target>
       </trans-unit>
       <trans-unit id="home.state.remaining-balance">
-        <source>remaining balance</source>
-        <target>saldo restante</target>
+        <source>€ remaining balance</source>
+        <target>€ saldo restante</target>
       </trans-unit>
       <trans-unit id="home.state.trips-made">
         <source>trips made</source>

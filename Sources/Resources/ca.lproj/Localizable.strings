@@ -11,6 +11,15 @@
 "buttons.cancel" = "Cancel·lar";
 
 /* (No Comment) */
+"buttons.ok" = "Ok";
+
+/* (No Comment) */
+"choose-new-fare.alert.message" = "S'ha actualitzat la llista de tarifes. La tarifa seleccionada anticipadament ja no existeix. Seleccioneu-ne un de nou.";
+
+/* (No Comment) */
+"choose-new-fare.alert.title" = "Trieu una tarifa nova";
+
+/* (No Comment) */
 "home.button-bar.add-trip" = "+1 Viatge";
 
 /* (No Comment) */

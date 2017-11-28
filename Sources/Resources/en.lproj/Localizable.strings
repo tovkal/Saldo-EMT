@@ -34,4 +34,4 @@
 
 // MARK: - ChooseNewFareViewController
 "choose-new-fare.alert.title" = "Choose a new fare";
-"choose-new-fare.alert.message" = "The list of fares has been updated. Your previsouly selected fare does no longer exist. Please select a new one.";
+"choose-new-fare.alert.message" = "The list of fares has been updated. Your previously selected fare does no longer exist. Please select a new one.";

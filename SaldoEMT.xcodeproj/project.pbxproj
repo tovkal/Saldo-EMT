@@ -1166,7 +1166,7 @@
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)/Vendor",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Resources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Sources/Resources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
@@ -1198,7 +1198,7 @@
 					"$(SRCROOT)/**",
 					"$(PROJECT_DIR)/Vendor",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Resources/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Sources/Resources/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tovkal.$(PRODUCT_NAME:rfc1034identifier)";

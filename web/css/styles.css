@@ -579,7 +579,7 @@ Hero
 .hero {
     position: relative;
     min-height: 800px;
-    background: rgb(40, 70, 102) url('../img/tramuntana-01.jpg') no-repeat center center;
+    background: rgb(40, 70, 102) url('../img/background-01.jpg') no-repeat center center;
     background-size: cover;
     color: #fff;
 }

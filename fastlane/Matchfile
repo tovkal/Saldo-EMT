@@ -1,4 +1,4 @@
-git_url "https://tovkal@bitbucket.org/tovkal/saldo-emt-certificates.git"
+git_url "https://tovkal@bitbucket.org/tovkal/openfoodfacts-ios-certificates.git"
 
 type "development" # The default type, can be: appstore, adhoc, enterprise or development
 

@@ -30,7 +30,11 @@
 // MARK: - Balance
 /* Remember the colon at the end */
 "balance.enter-amount" = "Enter amount:";
+"balance.enter-initial-balance" = "Enter your current balance:";
 "balance.minimum-amount-info" = "Minimum amount is 5€";
+"balance.initial-minimum-amount-info" = "You may cancel if your current balance is 0";
+"balance.errors.minimum-amount" = "A minimum of 5€ is required";
+"balance.errors.initial-minimum-amount" = "The initial amount cannot be less than zero";
 
 // MARK: - ChooseNewFareViewController
 "choose-new-fare.alert.title" = "Choose a new fare";

@@ -7,21 +7,13 @@
 //
 
 import UIKit
-import SVProgressHUD
 
-class AddMoneyViewController: UIViewController {
-    @IBOutlet weak var input: UITextField!
-    var dataManager: DataManagerProtocol!
-
-    @IBAction func cancelModal(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+class AddMoneyViewController: MoneyViewController {
+    override func checkMinimum(_ amount: Double) -> Bool {
+        return amount >= 5
     }
 
-    @IBAction func acceptAmount(_ sender: UIButton) {
-        if let input = input.text, let amount = Double(input) {
-            guard amount >= 5 else { SVProgressHUD.showError(withStatus: "A minimum of 5 € is required"); return }
-            dataManager.addMoney(amount)
-            self.dismiss(animated: true, completion: nil)
-        }
+    override func getMinimumAmountErrorMessage() -> String {
+        return "balance.errors.minimum-amount".localized
     }
 }

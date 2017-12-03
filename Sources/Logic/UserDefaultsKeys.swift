@@ -10,4 +10,5 @@ import Foundation
 
 struct UserDefaultsKeys {
     static let chooseNewFare = "choose_new_fare"
+    static let firstRun = "first_run"
 }

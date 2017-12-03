@@ -247,6 +247,7 @@
                         <outlet property="tripButton" destination="8cP-w7-dTC" id="BMc-e2-kGY"/>
                         <outlet property="tripsMade" destination="td1-41-azW" id="fqc-nf-9vA"/>
                         <outlet property="tripsRemaining" destination="zXU-q8-Au6" id="ZQU-ZN-Any"/>
+                        <segue destination="4yW-OX-dQj" kind="show" identifier="InitialMoney" id="zgw-HT-Mpm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -443,6 +444,117 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2115" y="1208"/>
+        </scene>
+        <!--Initial Money View Controller-->
+        <scene sceneID="IyZ-pm-aHS">
+            <objects>
+                <viewController id="4yW-OX-dQj" customClass="InitialMoneyViewController" customModule="SaldoEMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M1S-1U-u72">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-lf-4De">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQY-GZ-X67">
+                                        <rect key="frame" x="51.333333333333343" y="0.0" width="311.66666666666663" height="28.666666666666668"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Enter your current balance:">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="24" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="balance.enter-initial-balance"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFo-Es-1GA">
+                                        <rect key="frame" x="103.66666666666669" y="36.666666666666664" width="207" height="46.999999999999993"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bm-H2-Fjz">
+                                        <rect key="frame" x="41.333333333333343" y="91.666666666666686" width="331.33333333333326" height="574.33333333333326"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="You may cancel if your current balance is 0">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="18" name="HelveticaNeue-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="balance.initial-minimum-amount-info"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ROb-Zk-jHb">
+                                        <rect key="frame" x="0.0" y="674" width="414" height="42"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sg-ji-XIs">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="42"/>
+                                                <color key="backgroundColor" red="0.94117647059999998" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="buttons.cancel"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelModal:" destination="4yW-OX-dQj" eventType="touchUpInside" id="hjX-sM-7rp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLx-3r-dwF">
+                                                <rect key="frame" x="207" y="0.0" width="207" height="42"/>
+                                                <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <state key="normal" title="Accept">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="buttons.accept"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="acceptAmount:" destination="4yW-OX-dQj" eventType="touchUpInside" id="HE6-ix-ibn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="RFo-Es-1GA" firstAttribute="width" secondItem="x1d-lf-4De" secondAttribute="width" multiplier="1:2" id="2wX-N0-Hip"/>
+                                    <constraint firstItem="ROb-Zk-jHb" firstAttribute="width" secondItem="x1d-lf-4De" secondAttribute="width" id="sA0-IR-a5k"/>
+                                    <constraint firstItem="1bm-H2-Fjz" firstAttribute="width" secondItem="x1d-lf-4De" secondAttribute="width" multiplier="0.8" id="w8c-ia-aaO"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18823529410000001" green="0.32549019610000002" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="x1d-lf-4De" firstAttribute="leading" secondItem="A61-I2-bNJ" secondAttribute="leading" id="JEG-9X-Hoe"/>
+                            <constraint firstItem="x1d-lf-4De" firstAttribute="width" secondItem="M1S-1U-u72" secondAttribute="width" id="Mx6-1h-Yjp"/>
+                            <constraint firstItem="x1d-lf-4De" firstAttribute="top" secondItem="A61-I2-bNJ" secondAttribute="top" id="OaC-hi-F5L"/>
+                            <constraint firstItem="A61-I2-bNJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="x1d-lf-4De" secondAttribute="bottom" id="QPh-D0-szZ"/>
+                            <constraint firstItem="A61-I2-bNJ" firstAttribute="trailing" secondItem="x1d-lf-4De" secondAttribute="trailing" id="tjh-9f-C0q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A61-I2-bNJ"/>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="input" destination="RFo-Es-1GA" id="YlW-Eb-hxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lzm-dw-Nqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="-246"/>
         </scene>
     </scenes>
     <resources>

@@ -19,6 +19,11 @@ class UITestCase: XCTestCase {
         continueAfterFailure = false
         app.launchEnvironment["-isUITest"] = "true"
         app.launch()
+
+        // Close "InitialMoney" view
+        if app.staticTexts["Enter your current balance:"].exists {
+            app.buttons["Cancel"].tap()
+        }
     }
 
     override func tearDown() {

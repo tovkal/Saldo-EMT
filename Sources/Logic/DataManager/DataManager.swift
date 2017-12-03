@@ -34,6 +34,8 @@ protocol DataManagerProtocol {
     func downloadNewFares(completionHandler: ((UIBackgroundFetchResult) -> Void)?)
     func addTrip(_ onError: ((_ errorMessage: String) -> Void)?)
     func getCurrentState() -> HomeViewModel
+    func isFirstRun() -> Bool
+    func shouldChooseNewFare() -> Bool
 }
 
 class DataManager: DataManagerProtocol {
@@ -185,6 +187,16 @@ class DataManager: DataManagerProtocol {
     func getCurrentState() -> HomeViewModel {
         let fare = getSelectedFare()
         return settingsStore.getCurrentState(with: fare)
+    }
+
+    func isFirstRun() -> Bool {
+        let result = UserDefaults.standard.bool(forKey: UserDefaultsKeys.firstRun)
+        UserDefaults.standard.set(false, forKey: UserDefaultsKeys.firstRun)
+        return result
+    }
+
+    func shouldChooseNewFare() -> Bool {
+        return UserDefaults.standard.bool(forKey: UserDefaultsKeys.chooseNewFare)
     }
 
     // MARK: Dev functions

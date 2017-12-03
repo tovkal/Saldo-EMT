@@ -2,7 +2,19 @@
 "balance.enter-amount" = "Introduzca la cantidad:";
 
 /* (No Comment) */
-"balance.minimum-amount-info" = "La cantidad mínima es de 5 €";
+"balance.enter-initial-balance" = "Introduzca su saldo actual:";
+
+/* (No Comment) */
+"balance.errors.initial-minimum-amount" = "La cantidad inicial no puede ser menor que cero";
+
+/* (No Comment) */
+"balance.errors.minimum-amount" = "Se requiere un mínimo de 5€";
+
+/* (No Comment) */
+"balance.initial-minimum-amount-info" = "Puede cancelar si su saldo actual es 0";
+
+/* (No Comment) */
+"balance.minimum-amount-info" = "La cantidad mínima es de 5€";
 
 /* (No Comment) */
 "buttons.accept" = "Aceptar";

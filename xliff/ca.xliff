@@ -17,7 +17,7 @@
     <body>
       <trans-unit id="CFBundleName">
         <source>$(PRODUCT_NAME)</source>
-        <target>$(PRODUCT_NAME)</target>
+        <target>SaldoEMT</target>
       </trans-unit>
     </body>
   </file>
@@ -29,6 +29,22 @@
       <trans-unit id="balance.enter-amount">
         <source>Enter amount:</source>
         <target>Introduïu l'import:</target>
+      </trans-unit>
+      <trans-unit id="balance.enter-initial-balance">
+        <source>Enter your current balance:</source>
+        <target>Introduïu el vostre saldo actual:</target>
+      </trans-unit>
+      <trans-unit id="balance.errors.initial-minimum-amount">
+        <source>The initial amount cannot be less than zero</source>
+        <target>El saldo inicial no pot ser inferior a zero</target>
+      </trans-unit>
+      <trans-unit id="balance.errors.minimum-amount">
+        <source>A minimum of 5€ is required</source>
+        <target>Es requereix un mínim de 5€</target>
+      </trans-unit>
+      <trans-unit id="balance.initial-minimum-amount-info">
+        <source>You may cancel if your current balance is 0</source>
+        <target>Podeu cancel·lar si el vostre saldo actual és 0</target>
       </trans-unit>
       <trans-unit id="balance.minimum-amount-info">
         <source>Minimum amount is 5€</source>

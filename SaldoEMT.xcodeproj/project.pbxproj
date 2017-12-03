@@ -28,7 +28,6 @@
 		957AEDD81FA64E080083B8C9 /* FareStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */; };
 		957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */; };
 		957AEDDC1FA64E5B0083B8C9 /* NotificationCenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */; };
-		957CBD9B1FCE05BF000AA1EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957CBD9D1FCE05BF000AA1EE /* InfoPlist.strings */; };
 		957CBDA01FCE05BF000AA1EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957CBDA21FCE05BF000AA1EE /* InfoPlist.strings */; };
 		957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957FE81E1DBFE5FF002833D5 /* Settings.swift */; };
 		959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F31DEA2A8800194E89 /* Crashlytics.framework */; };
@@ -45,6 +44,10 @@
 		95AC90881BCC000D00787C79 /* FareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AC90861BCC000D00787C79 /* FareCell.xib */; };
 		95B510531FB8DE39004B79A5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B510521FB8DE38004B79A5 /* Kingfisher.framework */; };
 		95BEFC841FA7BAE500F9D7DC /* FareStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */; };
+		95C068E61FD46E0D00D5FC72 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C068E51FD46E0D00D5FC72 /* MoneyViewController.swift */; };
+		95C068E81FD474A400D5FC72 /* InitialMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C068E71FD474A400D5FC72 /* InitialMoneyViewController.swift */; };
+		95C068EA1FD47AAB00D5FC72 /* SegueKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C068E91FD47AAB00D5FC72 /* SegueKeys.swift */; };
+		95C068ED1FD47C3D00D5FC72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95C068EF1FD47C3D00D5FC72 /* InfoPlist.strings */; };
 		95CFCC6E1FC0E7C30051167F /* LocalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC611FC0E7C20051167F /* LocalizableString.swift */; };
 		95CFCC6F1FC0E7C30051167F /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CFCC631FC0E7C20051167F /* Localizable.swift */; };
 		95CFCC701FC0E7C30051167F /* IBLocalizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 95CFCC641FC0E7C20051167F /* IBLocalizable.h */; };
@@ -159,9 +162,7 @@
 		957AEDD71FA64E080083B8C9 /* FareStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareStoreMock.swift; sourceTree = "<group>"; };
 		957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterMock.swift; sourceTree = "<group>"; };
-		957CBD9C1FCE05BF000AA1EE /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		957CBDA11FCE05BF000AA1EE /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		957CBDA31FCE061E000AA1EE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		957CBDA41FCE061F000AA1EE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		957FE81E1DBFE5FF002833D5 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		959021F31DEA2A8800194E89 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics.framework; sourceTree = "<group>"; };
@@ -185,6 +186,11 @@
 		95AC90861BCC000D00787C79 /* FareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FareCell.xib; sourceTree = "<group>"; };
 		95B510521FB8DE38004B79A5 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		95BEFC831FA7BAE500F9D7DC /* FareStoreSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FareStoreSpec.swift; sourceTree = "<group>"; };
+		95C068E51FD46E0D00D5FC72 /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
+		95C068E71FD474A400D5FC72 /* InitialMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialMoneyViewController.swift; sourceTree = "<group>"; };
+		95C068E91FD47AAB00D5FC72 /* SegueKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueKeys.swift; sourceTree = "<group>"; };
+		95C068EE1FD47C3D00D5FC72 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95C068F01FD47C4800D5FC72 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95C31B761C46592800365F87 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		95C31B771C46592800365F87 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		95CFCC611FC0E7C20051167F /* LocalizableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizableString.swift; sourceTree = "<group>"; };
@@ -305,9 +311,11 @@
 		953FDF411BB80EA700D2C9DA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
 				954020A11BC9714A009419EA /* FaresViewController.swift */,
 				95A4CBDA1B5A852A002FB3E9 /* HomeViewController.swift */,
+				95C068E51FD46E0D00D5FC72 /* MoneyViewController.swift */,
+				95D153D91B6A9E7800866B59 /* AddMoneyViewController.swift */,
+				95C068E71FD474A400D5FC72 /* InitialMoneyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -427,7 +435,7 @@
 		95A4CBD61B5A852A002FB3E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				957CBD9D1FCE05BF000AA1EE /* InfoPlist.strings */,
+				95C068EF1FD47C3D00D5FC72 /* InfoPlist.strings */,
 				95A4CBD71B5A852A002FB3E9 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -550,6 +558,7 @@
 				952C24271FA11D8A005F7CB5 /* RealmHelper.swift */,
 				95E3FA871FC230CD0028C398 /* RealmMigrator.swift */,
 				95FE0DCD1FCACA700075AD8B /* UserDefaultsKeys.swift */,
+				95C068E91FD47AAB00D5FC72 /* SegueKeys.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -769,7 +778,7 @@
 				95E27DFB1BEBDDD70047AD01 /* FareWithLimitedRidesCell.xib in Resources */,
 				95FF4A7A1FAF861800392025 /* LaunchScreen.xib in Resources */,
 				95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */,
-				957CBD9B1FCE05BF000AA1EE /* InfoPlist.strings in Resources */,
+				95C068ED1FD47C3D00D5FC72 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +885,7 @@
 				95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */,
 				95D960EF1FA5EB5800C205E3 /* DataManager.swift in Sources */,
 				95AB781C1FA4F33600065166 /* HomeViewModel.swift in Sources */,
+				95C068E61FD46E0D00D5FC72 /* MoneyViewController.swift in Sources */,
 				9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */,
 				95CFCC751FC0E7C30051167F /* LocalizableUISearchBar.swift in Sources */,
 				952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */,
@@ -890,6 +900,8 @@
 				95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */,
 				95CFCC721FC0E7C30051167F /* LocalizableTextView.swift in Sources */,
 				95DACD891DC905B0005C7180 /* Logger.swift in Sources */,
+				95C068E81FD474A400D5FC72 /* InitialMoneyViewController.swift in Sources */,
+				95C068EA1FD47AAB00D5FC72 /* SegueKeys.swift in Sources */,
 				95CFCC771FC0E7C30051167F /* LocalizableUIBarItem.swift in Sources */,
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
 				95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */,
@@ -960,15 +972,6 @@
 			name = fares.json;
 			sourceTree = "<group>";
 		};
-		957CBD9D1FCE05BF000AA1EE /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				957CBD9C1FCE05BF000AA1EE /* ca */,
-				957CBDA31FCE061E000AA1EE /* es */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		957CBDA21FCE05BF000AA1EE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -986,6 +989,15 @@
 				95A8EFB71FAF89CB0065EFC5 /* ca */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		95C068EF1FD47C3D00D5FC72 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95C068EE1FD47C3D00D5FC72 /* ca */,
+				95C068F01FD47C4800D5FC72 /* es */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

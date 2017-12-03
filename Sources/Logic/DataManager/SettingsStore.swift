@@ -30,11 +30,14 @@ class SettingsStore: SettingsStoreProtocol {
                 try realm.write {
                     realm.add(Settings())
                 }
+                UserDefaults.standard.set(true, forKey: UserDefaultsKeys.firstRun)
             } catch let error as NSError {
                 log.error(error)
                 Crashlytics.sharedInstance().recordError(error)
                 fatalError("Settings object is needed")
             }
+        } else if UserDefaults.standard.bool(forKey: UserDefaultsKeys.firstRun) {
+            UserDefaults.standard.set(false, forKey: UserDefaultsKeys.firstRun)
         }
     }
 

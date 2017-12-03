@@ -52,8 +52,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.chooseNewFare) {
+        if dataManager.shouldChooseNewFare() {
             chooseNewFare()
+        } else if dataManager.isFirstRun() {
+            performSegue(withIdentifier: SegueKeys.initialMoney, sender: self)
         }
     }
 
@@ -69,10 +71,12 @@ class HomeViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         SVProgressHUD.dismiss()
-        if segue.identifier == "AddMoney", let vc = segue.destination as? AddMoneyViewController {
+        if segue.identifier == SegueKeys.balance, let vc = segue.destination as? AddMoneyViewController {
             vc.dataManager = dataManager
-        } else if segue.identifier == "Fares", let nav = segue.destination as? UINavigationController,
+        } else if segue.identifier == SegueKeys.fares, let nav = segue.destination as? UINavigationController,
             let vc = nav.topViewController as? FaresViewController {
+            vc.dataManager = dataManager
+        } else if segue.identifier == SegueKeys.initialMoney, let vc = segue.destination as? InitialMoneyViewController {
             vc.dataManager = dataManager
         }
     }
@@ -101,7 +105,7 @@ class HomeViewController: UIViewController {
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "buttons.ok".localized,
                                       style: .default, handler: { _ in
-           self.performSegue(withIdentifier: "Fares", sender: self)
+                                        self.performSegue(withIdentifier: SegueKeys.fares, sender: self)
         }))
         self.present(alert, animated: true)
     }

@@ -2,6 +2,18 @@
 "balance.enter-amount" = "Introduïu l'import:";
 
 /* (No Comment) */
+"balance.enter-initial-balance" = "Introduïu el vostre saldo actual:";
+
+/* (No Comment) */
+"balance.errors.initial-minimum-amount" = "El saldo inicial no pot ser inferior a zero";
+
+/* (No Comment) */
+"balance.errors.minimum-amount" = "Es requereix un mínim de 5€";
+
+/* (No Comment) */
+"balance.initial-minimum-amount-info" = "Podeu cancel·lar si el vostre saldo actual és 0";
+
+/* (No Comment) */
 "balance.minimum-amount-info" = "La quantitat mínima és de 5€";
 
 /* (No Comment) */

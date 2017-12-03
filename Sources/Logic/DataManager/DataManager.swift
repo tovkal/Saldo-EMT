@@ -14,9 +14,9 @@ import Kingfisher
 import AWSS3
 
 struct DataManagerErrors {
-    static let costPerTripUnknown = "Cost per trip is unknown, can't add trip"
-    static let insufficientBalance = "There is not enough money to pay for the trip"
-    static let unknown = "Unknown error ocurred"
+    static let costPerTripUnknown = "data-manager.errors.costPerTripUnknown".localized
+    static let insufficientBalance = "data-manager.errors.insufficientBalance".localized
+    static let unknown = "data-manager.errors.unknown".localized
 }
 
 enum UpdateResult {

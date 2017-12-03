@@ -20,6 +20,15 @@
 "choose-new-fare.alert.title" = "Trieu una tarifa nova";
 
 /* (No Comment) */
+"data-manager.errors.costPerTripUnknown" = "El cost per viatge és desconegut, no es pot afegir el viatge";
+
+/* (No Comment) */
+"data-manager.errors.insufficientBalance" = "No hi ha prou diners per pagar el viatge";
+
+/* (No Comment) */
+"data-manager.errors.unknown" = "S'ha produït un error desconegut";
+
+/* (No Comment) */
 "home.button-bar.add-trip" = "+1 Viatge";
 
 /* (No Comment) */

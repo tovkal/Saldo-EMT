@@ -35,3 +35,8 @@
 // MARK: - ChooseNewFareViewController
 "choose-new-fare.alert.title" = "Choose a new fare";
 "choose-new-fare.alert.message" = "The list of fares has been updated. Your previously selected fare does no longer exist. Please select a new one.";
+
+// MARK: - Trip errors
+"data-manager.errors.costPerTripUnknown" = "Cost per trip is unknown, can't add trip";
+"data-manager.errors.insufficientBalance" = "There is not enough money to pay for the trip";
+"data-manager.errors.unknown" = "Unknown error occurred";

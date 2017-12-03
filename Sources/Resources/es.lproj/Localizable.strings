@@ -20,6 +20,15 @@
 "choose-new-fare.alert.title" = "Elija una nueva tarifa";
 
 /* (No Comment) */
+"data-manager.errors.costPerTripUnknown" = "Coste por viaje desconocido, no se puede agregar el viaje";
+
+/* (No Comment) */
+"data-manager.errors.insufficientBalance" = "No hay suficiente dinero para pagar el viaje";
+
+/* (No Comment) */
+"data-manager.errors.unknown" = "Se produjo un error desconocido";
+
+/* (No Comment) */
 "home.button-bar.add-trip" = "+1 Viaje";
 
 /* (No Comment) */

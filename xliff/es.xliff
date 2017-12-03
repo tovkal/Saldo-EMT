@@ -54,6 +54,18 @@
         <source>Choose a new fare</source>
         <target>Elija una nueva tarifa</target>
       </trans-unit>
+      <trans-unit id="data-manager.errors.costPerTripUnknown">
+        <source>Cost per trip is unknown, can't add trip</source>
+        <target>Coste por viaje desconocido, no se puede agregar el viaje</target>
+      </trans-unit>
+      <trans-unit id="data-manager.errors.insufficientBalance">
+        <source>There is not enough money to pay for the trip</source>
+        <target>No hay suficiente dinero para pagar el viaje</target>
+      </trans-unit>
+      <trans-unit id="data-manager.errors.unknown">
+        <source>Unknown error occurred</source>
+        <target>Se produjo un error desconocido</target>
+      </trans-unit>
       <trans-unit id="home.button-bar.add-trip">
         <source>+1 Trip</source>
         <target>+1 Viaje</target>

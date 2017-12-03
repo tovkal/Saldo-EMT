@@ -68,6 +68,7 @@ class HomeViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        SVProgressHUD.dismiss()
         if segue.identifier == "AddMoney", let vc = segue.destination as? AddMoneyViewController {
             vc.dataManager = dataManager
         } else if segue.identifier == "Fares", let nav = segue.destination as? UINavigationController,

@@ -12,6 +12,7 @@ import Crashlytics
 import RealmSwift
 import GoogleMobileAds
 import AWSCognito
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -57,6 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let vc = window?.rootViewController as? HomeViewController {
             vc.dataManager = dataManager
         }
+
+        // Reduce global dismiss interval
+        SVProgressHUD.setMinimumDismissTimeInterval(2.5)
 
         log.debug("End didFinishLaunchingWithOptions")
 

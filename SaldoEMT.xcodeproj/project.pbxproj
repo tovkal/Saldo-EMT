@@ -37,6 +37,7 @@
 		95A4CBD91B5A852A002FB3E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBD81B5A852A002FB3E9 /* AppDelegate.swift */; };
 		95A4CBDB1B5A852A002FB3E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4CBDA1B5A852A002FB3E9 /* HomeViewController.swift */; };
 		95A4CBE01B5A852A002FB3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */; };
+		95A5661D1FD60D6700C997C8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A5661C1FD60D6700C997C8 /* String.swift */; };
 		95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A42A1F9FA74200DBB166 /* JsonParser.swift */; };
 		95A83F711DEA26870016B080 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A83F6F1DEA26870016B080 /* SettingsStore.swift */; };
 		95A8EFB31FAF89940065EFC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95A8EFB51FAF89940065EFC5 /* Localizable.strings */; };
@@ -176,6 +177,7 @@
 		95A4CBDF1B5A852A002FB3E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		95A4CBE81B5A852B002FB3E9 /* SaldoEMTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A4CBED1B5A852B002FB3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95A5661C1FD60D6700C997C8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		95A7A42A1F9FA74200DBB166 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		95A83F6F1DEA26870016B080 /* SettingsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		95A83F701DEA26870016B080 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 			children = (
 				9562D22D1C4AE00B008E2A47 /* Double.swift */,
 				953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */,
+				95A5661C1FD60D6700C997C8 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -906,6 +909,7 @@
 				95E27DFA1BEBDDD70047AD01 /* FareWithLimitedRidesCell.swift in Sources */,
 				95DDB9EF1DEA2BEF00895E0F /* FareStore.swift in Sources */,
 				95CFCC731FC0E7C30051167F /* LocalizableButton.swift in Sources */,
+				95A5661D1FD60D6700C997C8 /* String.swift in Sources */,
 				950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */,
 				95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */,
 				95CFCC6E1FC0E7C30051167F /* LocalizableString.swift in Sources */,

@@ -19,7 +19,7 @@ class MoneyViewController: UIViewController {
     }
 
     @IBAction func acceptAmount(_ sender: UIButton) {
-        if let input = input.text, let amount = Double(input) {
+        if let input = self.input.text, let amount = input.doubleValue {
             guard checkMinimum(amount) else { SVProgressHUD.showError(withStatus: getMinimumAmountErrorMessage()); return }
             dataManager.addMoney(amount)
             self.dismiss(animated: true, completion: nil)

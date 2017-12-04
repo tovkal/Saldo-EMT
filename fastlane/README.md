@@ -39,6 +39,11 @@ Run all the tests
 fastlane beta
 ```
 Build and send the beta to TestFlight
+### upload_build
+```
+fastlane upload_build
+```
+Build and upload to iTunes Connect
 ### refresh_dsyms
 ```
 fastlane refresh_dsyms

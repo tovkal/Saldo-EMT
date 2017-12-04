@@ -56,6 +56,30 @@ lane :beta do
   push_to_git_remote
 end
 
+desc "Build and upload to iTunes Connect"
+lane :upload_build do
+  ensure_git_status_clean
+
+  match(type: "appstore")
+
+  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+
+  # build your iOS app
+  gym(
+    scheme: "SaldoEMT"
+  )
+
+  test
+
+  # Upload to iTunes Connect
+  deliver(skip_binary_upload: false)
+
+  add_git_tag(
+    tag: get_version_number(xcodeproj: "SaldoEMT.xcodeproj")
+  )
+  push_to_git_remote
+end
+
 desc "Upload dsyms to Fabric"
 lane :refresh_dsyms do
   download_dsyms                  # Download dSYM files from iTC

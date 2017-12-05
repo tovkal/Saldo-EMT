@@ -19,6 +19,7 @@ protocol SettingsStoreProtocol {
     func getCurrentState(with fare: Fare) -> HomeViewModel
     func getLastTimestamp() -> Int
     func updateTimestamp(_ timestamp: Int)
+    func setBalance(_ amount: Double)
 }
 
 class SettingsStore: SettingsStoreProtocol {
@@ -134,6 +135,20 @@ class SettingsStore: SettingsStoreProtocol {
         do {
             try realm.write {
                 settings.lastTimestamp = timestamp
+            }
+        } catch let error as NSError {
+            log.error(error)
+            Crashlytics.sharedInstance().recordError(error)
+        }
+    }
+
+    func setBalance(_ amount: Double) {
+        let realm = RealmHelper.getRealm()
+        let settings = getSettings()
+
+        do {
+            try realm.write {
+                settings.balance = amount
             }
         } catch let error as NSError {
             log.error(error)

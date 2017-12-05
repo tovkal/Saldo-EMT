@@ -11,6 +11,7 @@ import Foundation
 
 // swiftlint:disable identifier_name
 class SettingsStoreMock: SettingsStoreProtocol {
+
     private (set) var getSelectedFareCalled = false
     private (set) var selectedNewFareCalled = false
     private (set) var addTripCalled = false
@@ -67,5 +68,8 @@ class SettingsStoreMock: SettingsStoreProtocol {
 
     func updateTimestamp(_ timestamp: Int) {
         lastTimestamp = timestamp
+    }
+
+    func setBalance(_ amount: Double) {
     }
 }

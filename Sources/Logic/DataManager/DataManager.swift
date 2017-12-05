@@ -36,6 +36,7 @@ protocol DataManagerProtocol {
     func getCurrentState() -> HomeViewModel
     func isFirstRun() -> Bool
     func shouldChooseNewFare() -> Bool
+    func setBalance(_ amount: Double)
 }
 
 class DataManager: DataManagerProtocol {
@@ -197,6 +198,16 @@ class DataManager: DataManagerProtocol {
 
     func shouldChooseNewFare() -> Bool {
         return UserDefaults.standard.bool(forKey: UserDefaultsKeys.chooseNewFare)
+    }
+
+    func setBalance(_ amount: Double) {
+        do {
+            settingsStore.setBalance(amount)
+            let costPerTrip = try getCurrentTripCost()
+            try settingsStore.recalculateRemainingTrips(withNewTripCost: costPerTrip)
+        } catch let error as NSError {
+            Crashlytics.sharedInstance().recordError(error)
+        }
     }
 
     // MARK: Dev functions

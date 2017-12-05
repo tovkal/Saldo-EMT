@@ -12,6 +12,7 @@ import SVProgressHUD
 class MoneyViewController: UIViewController {
 
     @IBOutlet weak var input: UITextField!
+    @IBOutlet weak var resetSwitch: UISwitch?
     var dataManager: DataManagerProtocol!
 
     @IBAction func cancelModal(_ sender: UIButton) {
@@ -20,8 +21,13 @@ class MoneyViewController: UIViewController {
 
     @IBAction func acceptAmount(_ sender: UIButton) {
         if let input = self.input.text, let amount = input.doubleValue {
-            guard checkMinimum(amount) else { SVProgressHUD.showError(withStatus: getMinimumAmountErrorMessage()); return }
-            dataManager.addMoney(amount)
+            if resetSwitch?.isOn == false {
+                guard checkMinimum(amount) else { SVProgressHUD.showError(withStatus: getMinimumAmountErrorMessage()); return }
+                dataManager.addMoney(amount)
+            } else {
+                guard amount >= 0 else { SVProgressHUD.show(withStatus: "balance.errors.initial-minimum-amount".localized); return }
+                dataManager.setBalance(amount)
+            }
             self.dismiss(animated: true, completion: nil)
         }
     }

@@ -71,11 +71,13 @@ lane :upload_build do
 
   test
 
+  version = get_version_number(xcodeproj: "SaldoEMT.xcodeproj")
+
   # Upload to iTunes Connect
-  deliver(skip_binary_upload: false)
+  deliver(skip_binary_upload: false, app_version: version)
 
   add_git_tag(
-    tag: get_version_number(xcodeproj: "SaldoEMT.xcodeproj")
+    tag: version
   )
   push_to_git_remote
 end

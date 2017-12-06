@@ -15,9 +15,9 @@ class SettingsStoreMock: SettingsStoreProtocol {
     private (set) var getSelectedFareCalled = false
     private (set) var selectedNewFareCalled = false
     private (set) var addTripCalled = false
-    private (set) var addTripCost: Double?
+    private (set) var addTripCost: NSDecimalNumber?
     private (set) var recalculateRemainingTripsAddingToBalanceCalled = false
-    private (set) var addMoney: Double?
+    private (set) var addMoney: NSDecimalNumber?
     private (set) var getCurrentStateCalled = false
     private (set) var resetCalled = false
 
@@ -35,7 +35,7 @@ class SettingsStoreMock: SettingsStoreProtocol {
         selectedFare = fare
     }
 
-    func addTrip(withCost: Double) throws {
+    func addTrip(withCost: NSDecimalNumber) throws {
         addTripCalled = true
         addTripCost = withCost
 
@@ -48,18 +48,18 @@ class SettingsStoreMock: SettingsStoreProtocol {
         resetCalled = true
     }
 
-    func recalculateRemainingTrips(withNewTripCost newCost: Double) {
+    func recalculateRemainingTrips(withNewTripCost newCost: NSDecimalNumber) {
 
     }
 
-    func recalculateRemainingTrips(addingToBalance amount: Double, withTripCost costPerTrip: Double) throws {
+    func recalculateRemainingTrips(addingToBalance amount: NSDecimalNumber, withTripCost costPerTrip: NSDecimalNumber) throws {
         recalculateRemainingTripsAddingToBalanceCalled = true
         addMoney = amount
     }
 
     func getCurrentState(with fare: Fare) -> HomeViewModel {
         getCurrentStateCalled = true
-        return HomeViewModel(currentFareName: "", tripsDone: 0, tripsRemaining: 0, balance: 0.0, imageUrl: "http://www.test.com/image.png")
+        return HomeViewModel(currentFareName: "", tripsDone: 0, tripsRemaining: 0, balance: "0.0", imageUrl: "http://www.test.com/image.png")
     }
 
     func getLastTimestamp() -> Int {
@@ -70,6 +70,6 @@ class SettingsStoreMock: SettingsStoreProtocol {
         lastTimestamp = timestamp
     }
 
-    func setBalance(_ amount: Double) {
+    func setBalance(_ amount: NSDecimalNumber) {
     }
 }

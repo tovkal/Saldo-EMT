@@ -60,14 +60,14 @@ class JsonParser: NSObject, JsonParserProtocol {
         fare.id = id
         fare.name = name
         fare.busLineType = busLineType
-        fare.cost = cost
+        fare.cost = NSDecimalNumber(value: cost)
         fare.days.value = days
         fare.rides.value = rides
         fare.imageUrl = getUrlForScaleFactor(imageUrl)
         fare.displayBusLineTypeName = displayBusLineTypeName
 
         if let rides = fare.rides.value {
-            fare.tripCost = fare.cost / Double(rides)
+            fare.tripCost = fare.cost / NSDecimalNumber(value: rides)
         } else {
             fare.tripCost = fare.cost
         }

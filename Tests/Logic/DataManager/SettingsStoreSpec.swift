@@ -43,7 +43,7 @@ class SettingsStoreSpec: QuickSpec {
 
         context("Settings exist") {
             var realm: Realm!
-            let balance = 1.5
+            let balance = NSDecimalNumber(value: 1.5)
             let tripsRemaining = 1
             let tripsDone = 2
             beforeEach {
@@ -60,7 +60,7 @@ class SettingsStoreSpec: QuickSpec {
 
             describe("addTrip") {
                 it("updates balance and trip counts") {
-                    let cost = 1.5
+                    let cost = NSDecimalNumber(value: 1.5)
                     try! settingsStore.addTrip(withCost: cost)
                     let settings = realm.objects(Settings.self).first!
                     expect(settings.tripsDone).to(equal(3))
@@ -69,7 +69,7 @@ class SettingsStoreSpec: QuickSpec {
                 }
 
                 it("throws exception when balance insufficient") {
-                    let cost: Double = 15
+                    let cost = NSDecimalNumber(value: 15)
 
                     do {
                         try settingsStore.addTrip(withCost: cost)
@@ -84,7 +84,7 @@ class SettingsStoreSpec: QuickSpec {
 
             describe("recalculateRemainingTrips") {
                 it("updates remaining trips for the new trip cost") {
-                    let newCost = 0.6
+                    let newCost = NSDecimalNumber(value: 0.6)
                     try! settingsStore.recalculateRemainingTrips(withNewTripCost: newCost)
                     let settings = realm.objects(Settings.self).first!
                     expect(settings.tripsRemaining).to(equal(2))
@@ -93,8 +93,8 @@ class SettingsStoreSpec: QuickSpec {
 
             describe("recalculateRemainingTrips") {
                 it("adds the amount to the balance and recalculates the remaining trips") {
-                    let amount = 0.5
-                    let tripCost = 0.5
+                    let amount = NSDecimalNumber(value: 0.5)
+                    let tripCost = NSDecimalNumber(value: 0.5)
                     try! settingsStore.recalculateRemainingTrips(addingToBalance: amount, withTripCost: tripCost)
                     let settings = realm.objects(Settings.self).first!
                     expect(settings.tripsRemaining).to(equal(4))
@@ -145,7 +145,7 @@ class SettingsStoreSpec: QuickSpec {
                     expect(result.currentFareName).to(equal(fareName))
                     expect(result.tripsDone).to(equal(tripsDone))
                     expect(result.tripsRemaining).to(equal(tripsRemaining))
-                    expect(result.balance).to(equal(balance))
+                    expect(result.balance).to(equal(balance.formattedStringValue))
                 }
             }
 

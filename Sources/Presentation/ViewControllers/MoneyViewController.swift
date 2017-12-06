@@ -20,7 +20,8 @@ class MoneyViewController: UIViewController {
     }
 
     @IBAction func acceptAmount(_ sender: UIButton) {
-        if let input = self.input.text, let amount = input.doubleValue {
+        if let input = self.input.text {
+            let amount = input.decimalNumber
             if resetSwitch?.isOn == false {
                 guard checkMinimum(amount) else { SVProgressHUD.showError(withStatus: getMinimumAmountErrorMessage()); return }
                 dataManager.addMoney(amount)
@@ -32,7 +33,7 @@ class MoneyViewController: UIViewController {
         }
     }
 
-    func checkMinimum(_ amount: Double) -> Bool {
+    func checkMinimum(_ amount: NSDecimalNumber) -> Bool {
         preconditionFailure("This method needs to be implemented in all sublclasses")
     }
 

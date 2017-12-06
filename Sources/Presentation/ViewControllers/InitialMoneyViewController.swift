@@ -14,7 +14,7 @@ class InitialMoneyViewController: MoneyViewController {
         input.text = "0"
     }
 
-    override func checkMinimum(_ amount: Double) -> Bool {
+    override func checkMinimum(_ amount: NSDecimalNumber) -> Bool {
         return amount >= 0
     }
 

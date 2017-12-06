@@ -9,7 +9,7 @@
 import UIKit
 
 class AddMoneyViewController: MoneyViewController {
-    override func checkMinimum(_ amount: Double) -> Bool {
+    override func checkMinimum(_ amount: NSDecimalNumber) -> Bool {
         return amount >= 5
     }
 

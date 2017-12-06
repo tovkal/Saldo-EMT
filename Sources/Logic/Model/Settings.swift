@@ -15,11 +15,20 @@ class Settings: Object {
     @objc dynamic var lastTimestamp = 0
     // Current selected fare
     @objc dynamic var currentFare: Fare?
-    @objc dynamic var balance: Double = 0.0 // Current balance
+    @objc private dynamic var _balance: String = "0.0" // Current balance
     @objc dynamic var tripsDone = 0 // Trips done
     @objc dynamic var tripsRemaining = 0 // Remaining trips given current balance
 
     override static func primaryKey() -> String? {
         return "id"
+    }
+
+    var balance: NSDecimalNumber {
+        get {
+            return NSDecimalNumber(string: _balance)
+        }
+        set {
+            _balance = newValue.formattedStringValue
+        }
     }
 }

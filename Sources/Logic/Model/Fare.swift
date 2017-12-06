@@ -13,14 +13,32 @@ class Fare: Object {
     @objc dynamic var id = -1
     @objc dynamic var name = ""
     @objc dynamic var busLineType = ""
-    @objc dynamic var cost: Double = 0.0
+    @objc private dynamic var _cost: String = "0.0"
     let days = RealmOptional<Int>()
     let rides = RealmOptional<Int>()
     @objc dynamic var imageUrl = ""
-    @objc dynamic var tripCost: Double = 0.0
+    @objc private dynamic var _tripCost: String = "0.0"
     @objc dynamic var displayBusLineTypeName = false
 
     override static func primaryKey() -> String? {
         return "id"
+    }
+
+    var cost: NSDecimalNumber {
+        get {
+            return NSDecimalNumber(string: _cost)
+        }
+        set {
+            _cost = newValue.formattedStringValue
+        }
+    }
+
+    var tripCost: NSDecimalNumber {
+        get {
+            return NSDecimalNumber(string: _tripCost)
+        }
+        set {
+            _tripCost = newValue.formattedStringValue
+        }
     }
 }

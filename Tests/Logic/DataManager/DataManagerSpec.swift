@@ -106,7 +106,7 @@ class DataManagerSpec: QuickSpec {
 
         describe("addTrip") {
             it("adds trip to settings") {
-                let tripCost = 1.5
+                let tripCost = NSDecimalNumber(value: 1.5)
                 let fare = fareStore.firstFare
                 fare.tripCost = tripCost
                 settingsStore.selectedFare = fare
@@ -144,7 +144,7 @@ class DataManagerSpec: QuickSpec {
 
         describe("addMoney") {
             it("adds amount to balance") {
-                let amount = 12.3
+                let amount = NSDecimalNumber(value: 12.3)
 
                 dataManager.addMoney(amount)
 

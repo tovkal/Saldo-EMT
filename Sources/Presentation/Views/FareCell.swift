@@ -28,7 +28,7 @@ class FareCell: UITableViewCell {
                 }
             }
         }
-        costPerRide.text = fare.cost.toDecimalString()
+        costPerRide.text = fare.cost.formattedStringValue
     }
 
     override func prepareForReuse() {

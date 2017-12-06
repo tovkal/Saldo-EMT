@@ -21,7 +21,6 @@
 		954020AD1BCA627C009419EA /* FareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954020AB1BCA627C009419EA /* FareCell.swift */; };
 		95559B171C516E6B0003E32F /* DataManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95559B161C516E6B0003E32F /* DataManagerError.swift */; };
 		9562D22A1C4AB8CE008E2A47 /* Fare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D2291C4AB8CE008E2A47 /* Fare.swift */; };
-		9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562D22D1C4AE00B008E2A47 /* Double.swift */; };
 		95636D641FA64D530057081E /* SettingsStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95636D631FA64D530057081E /* SettingsStoreMock.swift */; };
 		956EEB291FC0D15200794D99 /* fares.json in Resources */ = {isa = PBXBuildFile; fileRef = 956EEB2B1FC0D15200794D99 /* fares.json */; };
 		957AEDD61FA64DEC0083B8C9 /* JsonParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD51FA64DEC0083B8C9 /* JsonParserMock.swift */; };
@@ -29,6 +28,7 @@
 		957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDD91FA64E400083B8C9 /* URLSessionMock.swift */; };
 		957AEDDC1FA64E5B0083B8C9 /* NotificationCenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */; };
 		957CBDA01FCE05BF000AA1EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 957CBDA21FCE05BF000AA1EE /* InfoPlist.strings */; };
+		957EC50A1FD8114D00083638 /* NSDecimalNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957EC5091FD8114D00083638 /* NSDecimalNumber.swift */; };
 		957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957FE81E1DBFE5FF002833D5 /* Settings.swift */; };
 		959021F61DEA2A8800194E89 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F31DEA2A8800194E89 /* Crashlytics.framework */; };
 		959021F71DEA2A8800194E89 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 959021F41DEA2A8800194E89 /* Fabric.framework */; };
@@ -150,7 +150,6 @@
 		954020AB1BCA627C009419EA /* FareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FareCell.swift; sourceTree = "<group>"; };
 		95559B161C516E6B0003E32F /* DataManagerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerError.swift; sourceTree = "<group>"; };
 		9562D2291C4AB8CE008E2A47 /* Fare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fare.swift; sourceTree = "<group>"; };
-		9562D22D1C4AE00B008E2A47 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		95636D631FA64D530057081E /* SettingsStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreMock.swift; sourceTree = "<group>"; };
 		956EEB2A1FC0D15200794D99 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = es; path = es.lproj/fares.json; sourceTree = "<group>"; };
 		956EEB2C1FC0D90400794D99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/fares.json; sourceTree = "<group>"; };
@@ -165,6 +164,7 @@
 		957AEDDB1FA64E5B0083B8C9 /* NotificationCenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterMock.swift; sourceTree = "<group>"; };
 		957CBDA11FCE05BF000AA1EE /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		957CBDA41FCE061F000AA1EE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		957EC5091FD8114D00083638 /* NSDecimalNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDecimalNumber.swift; sourceTree = "<group>"; };
 		957FE81E1DBFE5FF002833D5 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		959021F31DEA2A8800194E89 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendor/Crashlytics.framework; sourceTree = "<group>"; };
 		959021F41DEA2A8800194E89 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Vendor/Fabric.framework; sourceTree = "<group>"; };
@@ -540,9 +540,9 @@
 		95D153D21B6A923C00866B59 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9562D22D1C4AE00B008E2A47 /* Double.swift */,
 				953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */,
 				95A5661C1FD60D6700C997C8 /* String.swift */,
+				957EC5091FD8114D00083638 /* NSDecimalNumber.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -879,7 +879,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9562D22E1C4AE00B008E2A47 /* Double.swift in Sources */,
 				95CFCC711FC0E7C30051167F /* LocalizableTextField.swift in Sources */,
 				95A4CBDB1B5A852A002FB3E9 /* HomeViewController.swift in Sources */,
 				957FE81F1DBFE5FF002833D5 /* Settings.swift in Sources */,
@@ -913,6 +912,7 @@
 				950BB1071DBD052D008A988F /* NSNotificationCenterKeys.swift in Sources */,
 				95A7A42B1F9FA74300DBB166 /* JsonParser.swift in Sources */,
 				95CFCC6E1FC0E7C30051167F /* LocalizableString.swift in Sources */,
+				957EC50A1FD8114D00083638 /* NSDecimalNumber.swift in Sources */,
 				95CFCC6F1FC0E7C30051167F /* Localizable.swift in Sources */,
 				954020A21BC9714A009419EA /* FaresViewController.swift in Sources */,
 			);

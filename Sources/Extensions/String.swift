@@ -23,4 +23,8 @@ extension String {
         }
         return nil
     }
+
+    var decimalNumber: NSDecimalNumber {
+        return NSDecimalNumber(string: self)
+    }
 }

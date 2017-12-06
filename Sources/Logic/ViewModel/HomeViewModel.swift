@@ -12,6 +12,6 @@ struct HomeViewModel {
     let currentFareName: String
     let tripsDone: Int
     let tripsRemaining: Int
-    let balance: Double
+    let balance: String
     let imageUrl: String
 }

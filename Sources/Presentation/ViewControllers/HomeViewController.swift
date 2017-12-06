@@ -29,7 +29,7 @@ class HomeViewController: UIViewController {
             fareName.text = viewModel.currentFareName
             tripsMade.text = "\(viewModel.tripsDone)"
             tripsRemaining.text = "\(viewModel.tripsRemaining)"
-            remainingAmount.text = viewModel.balance.toDecimalString()
+            remainingAmount.text = viewModel.balance
             guard let url = URL(string: viewModel.imageUrl) else { return }
             busLineType.kf.setImage(with: url)
         }

@@ -12,14 +12,14 @@ import Crashlytics
 protocol SettingsStoreProtocol {
     func getSelectedFare() -> Fare?
     func selectNewFare(_ fare: Fare)
-    func addTrip(withCost: Double) throws
+    func addTrip(withCost: NSDecimalNumber) throws
     func reset()
-    func recalculateRemainingTrips(withNewTripCost newCost: Double) throws
-    func recalculateRemainingTrips(addingToBalance amount: Double, withTripCost costPerTrip: Double) throws
+    func recalculateRemainingTrips(withNewTripCost newCost: NSDecimalNumber) throws
+    func recalculateRemainingTrips(addingToBalance amount: NSDecimalNumber, withTripCost costPerTrip: NSDecimalNumber) throws
     func getCurrentState(with fare: Fare) -> HomeViewModel
     func getLastTimestamp() -> Int
     func updateTimestamp(_ timestamp: Int)
-    func setBalance(_ amount: Double)
+    func setBalance(_ amount: NSDecimalNumber)
 }
 
 class SettingsStore: SettingsStoreProtocol {
@@ -47,7 +47,7 @@ class SettingsStore: SettingsStoreProtocol {
         return realm.objects(Settings.self).first!
     }
 
-    func addTrip(withCost tripCost: Double) throws {
+    func addTrip(withCost tripCost: NSDecimalNumber) throws {
         let realm = RealmHelper.getRealm()
         let settings = getSettings()
 
@@ -62,22 +62,22 @@ class SettingsStore: SettingsStoreProtocol {
         }
     }
 
-    func recalculateRemainingTrips(withNewTripCost newCost: Double) throws {
+    func recalculateRemainingTrips(withNewTripCost newCost: NSDecimalNumber) throws {
         let realm = RealmHelper.getRealm()
         let settings = getSettings()
 
         try realm.write {
-            settings.tripsRemaining = Int(settings.balance / newCost)
+            settings.tripsRemaining = (settings.balance / newCost).intValueRoundDown
         }
     }
 
-    func recalculateRemainingTrips(addingToBalance amount: Double, withTripCost costPerTrip: Double) throws {
+    func recalculateRemainingTrips(addingToBalance amount: NSDecimalNumber, withTripCost costPerTrip: NSDecimalNumber) throws {
         let realm = RealmHelper.getRealm()
         let settings = getSettings()
         let currentSettings = amount + settings.balance
 
         try realm.write {
-            settings.tripsRemaining = Int(currentSettings / costPerTrip)
+            settings.tripsRemaining = (currentSettings / costPerTrip).intValueRoundDown
             settings.balance = currentSettings
         }
     }
@@ -120,7 +120,7 @@ class SettingsStore: SettingsStoreProtocol {
     func getCurrentState(with fare: Fare) -> HomeViewModel {
         let settings = getSettings()
         return HomeViewModel(currentFareName: fare.name, tripsDone: settings.tripsDone,
-                             tripsRemaining: settings.tripsRemaining, balance: settings.balance,
+                             tripsRemaining: settings.tripsRemaining, balance: settings.balance.formattedStringValue,
                              imageUrl: fare.imageUrl)
     }
 
@@ -142,7 +142,7 @@ class SettingsStore: SettingsStoreProtocol {
         }
     }
 
-    func setBalance(_ amount: Double) {
+    func setBalance(_ amount: NSDecimalNumber) {
         let realm = RealmHelper.getRealm()
         let settings = getSettings()
 

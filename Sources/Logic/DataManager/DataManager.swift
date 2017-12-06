@@ -29,14 +29,14 @@ protocol DataManagerProtocol {
     init(settingsStore: SettingsStoreProtocol, fareStore: FareStoreProtocol, jsonParser: JsonParserProtocol, session: URLSessionProtocol, notificationCenter: NotificationCenterProtocol)
     func getAllFares() -> [Fare]
     func selectNewFare(_ fare: Fare)
-    func addMoney(_ amount: Double)
+    func addMoney(_ amount: NSDecimalNumber)
     func reset()
     func downloadNewFares(completionHandler: ((UIBackgroundFetchResult) -> Void)?)
     func addTrip(_ onError: ((_ errorMessage: String) -> Void)?)
     func getCurrentState() -> HomeViewModel
     func isFirstRun() -> Bool
     func shouldChooseNewFare() -> Bool
-    func setBalance(_ amount: Double)
+    func setBalance(_ amount: NSDecimalNumber)
 }
 
 class DataManager: DataManagerProtocol {
@@ -176,7 +176,7 @@ class DataManager: DataManagerProtocol {
         }
     }
 
-    func addMoney(_ amount: Double) {
+    func addMoney(_ amount: NSDecimalNumber) {
         do {
             let costPerTrip = try getCurrentTripCost()
             try settingsStore.recalculateRemainingTrips(addingToBalance: amount, withTripCost: costPerTrip)
@@ -200,7 +200,7 @@ class DataManager: DataManagerProtocol {
         return UserDefaults.standard.bool(forKey: UserDefaultsKeys.chooseNewFare)
     }
 
-    func setBalance(_ amount: Double) {
+    func setBalance(_ amount: NSDecimalNumber) {
         do {
             settingsStore.setBalance(amount)
             let costPerTrip = try getCurrentTripCost()
@@ -221,7 +221,7 @@ class DataManager: DataManagerProtocol {
 
     // MARK: - Private Functions
 
-    private func getCurrentTripCost() throws -> Double {
+    private func getCurrentTripCost() throws -> NSDecimalNumber {
         if let tripCost = settingsStore.getSelectedFare()?.tripCost {
             return tripCost
         }

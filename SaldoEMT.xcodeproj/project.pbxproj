@@ -13,7 +13,6 @@
 		952C24281FA11D8A005F7CB5 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952C24271FA11D8A005F7CB5 /* RealmHelper.swift */; };
 		953A03AD1FC4DA1A00C7AE18 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 953A03AC1FC4DA1A00C7AE18 /* Secrets.plist */; };
 		953B35CE1DD675D600B36AA9 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953B35CD1DD675D600B36AA9 /* CoreTests.swift */; };
-		953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */; };
 		953C2CC91DCE0F4300C8CEF7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */; };
 		953C2CCB1DCE142B00C8CEF7 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */; };
 		953C2CCF1DCE80B100C8CEF7 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */; };
@@ -141,7 +140,6 @@
 		953B35C11DD674A100B36AA9 /* SaldoEMTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaldoEMTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		953B35C51DD674A100B36AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		953B35CD1DD675D600B36AA9 /* CoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
-		953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleTests.swift; sourceTree = "<group>"; };
 		953C2CC81DCE0F4300C8CEF7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		953C2CCE1DCE80B100C8CEF7 /* BaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 		953C2CC21DCE009600C8CEF7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				953C2CC51DCE014500C8CEF7 /* DoubleTests.swift */,
 				953C2CCA1DCE142B00C8CEF7 /* UIColorTests.swift */,
 			);
 			path = Extensions;
@@ -923,7 +920,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				957AEDDA1FA64E400083B8C9 /* URLSessionMock.swift in Sources */,
-				953C2CC61DCE014500C8CEF7 /* DoubleTests.swift in Sources */,
 				95BEFC841FA7BAE500F9D7DC /* FareStoreSpec.swift in Sources */,
 				95636D641FA64D530057081E /* SettingsStoreMock.swift in Sources */,
 				95A43F4A1FA5DE73003FD9A2 /* DataManagerSpec.swift in Sources */,

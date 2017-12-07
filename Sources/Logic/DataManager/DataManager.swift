@@ -282,17 +282,24 @@ class DataManager: DataManagerProtocol {
             let busLineType = self.settingsStore.getSelectedFare()?.busLineType
 
             self.jsonParser.processJSON(json: json)
-            self.updateBalanceAfterUpdatingFares()
-            self.settingsStore.updateTimestamp(timestamp)
-            precacheImages()
-            // Send updated fares notification
-            self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.busAndFaresUpdate), object: self)
+
+            // Check previously selected fare exists
 
             if let name = name, let busLineType = busLineType, let fare = self.fareStore.getFare(for: name, and: busLineType) {
                 self.settingsStore.selectNewFare(fare)
+            } else if lastTimestamp == 0 { // On first app launch, select a default fare to prevent an error when calling updateBalanceAfterUpdatingFares
+                _ = getSelectedFare()
             } else if lastTimestamp != 0 { // lastTimestamp = 0 on first ever app run, when the user has never selected a fare. Use default fare then (Resident)
                 UserDefaults.standard.set(true, forKey: UserDefaultsKeys.chooseNewFare)
             }
+
+            self.updateBalanceAfterUpdatingFares()
+            self.settingsStore.updateTimestamp(timestamp)
+
+            precacheImages()
+
+            // Send updated fares notification
+            self.notificationCenter.post(name: Notification.Name(rawValue: NotificationCenterKeys.busAndFaresUpdate), object: self)
 
             log.debug("Processed new fare data")
             return .newFares

@@ -71,4 +71,4 @@ fastlane/metadata
 # macOS
 .DS_Store
 
-SaldoEMT/Resources/Secrets.plist
+Sources/Resources/Secrets.plist

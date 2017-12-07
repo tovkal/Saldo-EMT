@@ -25,6 +25,6 @@ extension String {
     }
 
     var decimalNumber: NSDecimalNumber {
-        return NSDecimalNumber(string: self)
+        return NSDecimalNumber(string: self.replacingOccurrences(of: ",", with: "."))
     }
 }

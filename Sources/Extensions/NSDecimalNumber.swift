@@ -18,6 +18,7 @@ extension NSDecimalNumber: Comparable {
     var formattedStringValue: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
 
         if self != 0.0 {
             formatter.minimumFractionDigits = 1

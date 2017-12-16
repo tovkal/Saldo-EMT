@@ -28,7 +28,7 @@ class Settings: Object {
             return NSDecimalNumber(string: _balance)
         }
         set {
-            _balance = newValue.formattedStringValue
+            _balance = newValue.stringValue
         }
     }
 }

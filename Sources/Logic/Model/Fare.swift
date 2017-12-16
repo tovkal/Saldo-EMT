@@ -29,7 +29,7 @@ class Fare: Object {
             return NSDecimalNumber(string: _cost)
         }
         set {
-            _cost = newValue.formattedStringValue
+            _cost = newValue.stringValue
         }
     }
 
@@ -38,7 +38,7 @@ class Fare: Object {
             return NSDecimalNumber(string: _tripCost)
         }
         set {
-            _tripCost = newValue.formattedStringValue
+            _tripCost = newValue.stringValue
         }
     }
 }

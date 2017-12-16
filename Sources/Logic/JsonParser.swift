@@ -71,6 +71,7 @@ class JsonParser: NSObject, JsonParserProtocol {
         } else {
             fare.tripCost = fare.cost
         }
+
         // With update true objects with a primary key (BusLine has one) get updated when they already exist or inserted when not
         realm.add(fare, update: true)
     }

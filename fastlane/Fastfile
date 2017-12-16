@@ -25,34 +25,17 @@ desc "Build and send the beta to TestFlight"
 lane :beta do
   ensure_git_status_clean
 
-  increment_build_number
+  notes = changelog
 
-  match(type: "appstore")
+  version = version_bump
+  build_number = get_build_number
 
-  carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
+  build(version: version)
 
-  # build your iOS app
-  gym(
-    scheme: "SaldoEMT"
-  )
+  pilot(wait_for_uploaded_build: true, changelog: notes)
 
-  test
+  refresh_dsyms(version: version, build_number: build_number)
 
-  # Upload to test flight
-  pilot(skip_waiting_for_build_processing: true)
-
-  # Commit version bump
-  version = get_version_number(xcodeproj: "SaldoEMT.xcodeproj")
-  build_number = get_build_number(xcodeproj: "SaldoEMT.xcodeproj")
-  version_tag = "#{version}-#{build_number}"
-
-  commit_version_bump(
-    message: "Version bump to #{version_tag}",
-    xcodeproj: "SaldoEMT.xcodeproj"
-  )
-  add_git_tag(
-    tag: version_tag
-  )
   push_to_git_remote
 end
 
@@ -60,6 +43,19 @@ desc "Build and upload to iTunes Connect"
 lane :upload_build do
   ensure_git_status_clean
 
+  version = version_bump
+
+  build(version: version)
+
+  deliver(skip_binary_upload: false, app_version: version, force: true)
+
+  push_to_git_remote
+end
+
+desc "Build and test"
+lane :build do |options|
+  metadata(app_version: options[:version])
+
   match(type: "appstore")
 
   carthage(command: "bootstrap", platform: "iOS", cache_builds: true)
@@ -70,31 +66,46 @@ lane :upload_build do
   )
 
   test
-
-  version = get_version_number(xcodeproj: "SaldoEMT.xcodeproj")
-
-  # Upload to iTunes Connect
-  deliver(skip_binary_upload: false, app_version: version, force: true)
-
-  add_git_tag(
-    tag: version
-  )
-  push_to_git_remote
 end
 
 desc "Upload dsyms to Fabric"
-lane :refresh_dsyms do
-  download_dsyms                  # Download dSYM files from iTC
-  upload_symbols_to_crashlytics   # Upload them to Crashlytics
-  clean_build_artifacts           # Delete the local dSYM files
+lane :refresh_dsyms do |options|
+  download_dsyms(version: options[:version], build_number: options[:build_number])
+  upload_symbols_to_crashlytics
+  clean_build_artifacts
 end
 
 desc "Upload metadata"
-lane :metadata do
-  deliver
+lane :metadata do |options|
+  deliver(app_version: options[:app_version])
 end
 
 desc "Take all screenshots"
 lane :screenshots do
   snapshot
+end
+
+desc "Increment and commit version bump"
+lane :version_bump do
+  version = increment_version_number
+  increment_build_number
+
+  commit_version_bump(
+    message: "Version bump to #{version}",
+    xcodeproj: "SaldoEMT.xcodeproj"
+  )
+  add_git_tag(
+    tag: version
+  )
+
+  version
+end
+
+desc "Generate changelog"
+lane :changelog do
+  changelog = changelog_from_git_commits(pretty: "- %s", merge_commit_filtering: "exclude_merges")
+  changelogAnyGood = prompt(text: "Does the changelog look good?", boolean: true)
+  if !changelogAnyGood
+    changelog = prompt(text: "Enter the desired changelog: ", multi_line_end_keyword: "END")
+  end
 end

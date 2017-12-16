@@ -44,6 +44,11 @@ Build and send the beta to TestFlight
 fastlane upload_build
 ```
 Build and upload to iTunes Connect
+### build
+```
+fastlane build
+```
+Build and test
 ### refresh_dsyms
 ```
 fastlane refresh_dsyms
@@ -59,6 +64,16 @@ Upload metadata
 fastlane screenshots
 ```
 Take all screenshots
+### version_bump
+```
+fastlane version_bump
+```
+Increment and commit version bump
+### changelog
+```
+fastlane changelog
+```
+Generate changelog
 
 ----
 
